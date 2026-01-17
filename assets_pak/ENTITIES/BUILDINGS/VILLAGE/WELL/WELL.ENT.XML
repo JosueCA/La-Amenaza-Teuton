@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="well" type="gaul building" radius="0" selection_radius="0" variations="1" pass_file="well.pass">
+<images>
+<image idx="1" file="well" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-182" offsety="-178"/>
+</layers>
+<states>
+<state idx="1" name="idle" sound_id=""/>
+</states>
+<anims>
+<anim idx="1" name="Anim" sound_id="" startstate="1" endstate="1" frames="1" duration="1000" default_duration="100" action_time="0" step="0">
+<frame idx="1" duration="0"/>
+</anim>
+</anims>
+</entity>

@@ -1,0 +1,10 @@
+<class id="Witch hut" cpp_class="CVXItemHolder" parent="ItemHolder"
+entity="assets/entities/Item_holders/Witch_hut.ent.xml">
+  <properties edittree_pos="Structures/Item holders/Witch hut"/>
+  <properties icon     ="gameres/icons/Witch hut.bmp"/>
+  <properties radius="50" selection_radius="50"/>
+  <properties display_name="Witch hut"/>
+  <properties 
+    respawn_time="300000"
+    respawn_item="Rye spikes"/>
+</class>

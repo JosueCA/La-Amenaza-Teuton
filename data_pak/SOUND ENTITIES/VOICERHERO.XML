@@ -1,0 +1,9 @@
+<entity description="RHero Voice" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/voices/RHero/Divide and rule.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RHero/Follow my orders.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RHero/For the glory of rome.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RHero/Knowledge is power.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RHero/Trained soldiers are better.wav" frequency="20"/>
+   </files>
+</entity>

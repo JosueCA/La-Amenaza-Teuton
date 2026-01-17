@@ -1,0 +1,13 @@
+<class id="ROutpost" cpp_class="CVXOutpost" parent="Outpost"
+  entity        = "assets/entities/buildings/ROutpost/ROutpost_as.ent.XML"
+  entity_winter = "assets/entities/buildings/ROutpost/ROutpost_w.ent.XML"
+>
+	<properties maxhealth="10000" sight="900"/>
+	<properties icon="gameres/icons/ROutpost.bmp"/>
+	<properties display_name="Stone Outpost"/>
+	<properties radius="345" selection_radius="350"/>
+	<properties edittree_pos="Structures/Interactive/Outpost (stone)"/>
+	<properties help="/contents/buildings/ROutpost"/>
+
+	<method sig="routpost_interest" vs="data/subai/routpost_interest.vs"/>
+</class>

@@ -1,0 +1,8 @@
+<class id="DeadTree" cpp_class="CVXItemHolder" parent="ItemHolder" entity = "assets/entities/Item_Holders/dead_tree.ent.xml">
+  <properties delete_empty="0"/>
+  <properties edittree_pos="Structures/Item holders/Dead tree"/>
+  <properties icon     ="gameres/icons/Dead tree.bmp"/>
+  <properties radius="30" selection_radius="40"/>
+  <properties respawn_item="Eagle feather" respawn_time="600000"/>
+  <properties display_name="Dead tree"/>
+</class>

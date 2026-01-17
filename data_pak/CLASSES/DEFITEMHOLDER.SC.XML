@@ -1,0 +1,7 @@
+<class id="DefItemHolder" cpp_class="CVXItemHolder" parent="ItemHolder" entity="assets/entities/visuals/ItemHolder2/Bag.ent.xml">
+  <properties delete_empty="1"/>
+  <properties edittree_pos="Structures/Item holders/Leather bag"/>
+  <properties icon     ="gameres/icons/Leather bag.bmp"/>
+  <properties radius="19" selection_radius="20"/>
+  <properties display_name="Leather bag"/>
+</class>

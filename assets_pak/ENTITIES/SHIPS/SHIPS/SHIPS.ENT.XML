@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="ShipS" type="vx/unit" variations="12" pass_file="">
+<images>
+<image idx="2" file="ShipS_Death" drawmode="player_color" remaping="none" rows="5" columns="4"/>
+<image idx="3" file="ShipS_Idle" drawmode="player_color" remaping="none" rows="10" columns="12"/>
+<image idx="4" file="ShipS_Walk" drawmode="player_color" remaping="none" rows="10" columns="12"/>
+<image idx="5" file="ShipS_Death" drawmode="player_color" remaping="none" rows="10" columns="12"/>
+<image idx="8" file="ShipS_Death_r" drawmode="player_color" remaping="none" rows="5" columns="4"/>
+<image idx="9" file="ShipS_Idle_r" drawmode="player_color" remaping="none" rows="10" columns="12"/>
+<image idx="10" file="ShipS_Walk_r" drawmode="player_color" remaping="none" rows="10" columns="12"/>
+<image idx="11" file="ShipS_Death_r" drawmode="player_color" remaping="none" rows="10" columns="12"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="unit" image="3" z="1000" offsetx="-125" offsety="-145" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="reflection" percent="50" image="9" z="950" offsetx="-125" offsety="-145" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="fight" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+<anim idx="1" name="walk" startstate="1" endstate="1" frames="12" duration="1600" default_duration="160" action_time="0" step="60">
+<replace layer="1" image="4" offsetx="-125" offsety="-145"/>
+<replace layer="2" image="10" offsetx="-125" offsety="-145"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="160"/>
+<frame idx="3" duration="160"/>
+<frame idx="4" duration="160"/>
+<frame idx="5" duration="160"/>
+<frame idx="6" duration="160"/>
+<frame idx="7" duration="160"/>
+<frame idx="8" duration="160"/>
+<frame idx="9" duration="160"/>
+<frame idx="10" duration="160"/>
+<frame idx="11" duration="160"/>
+<frame idx="12" duration="0"/>
+</anim>
+<anim idx="9" name="die" startstate="1" endstate="1" frames="12" duration="1500" default_duration="150" action_time="0" step="0">
+<replace layer="1" image="5" offsetx="-125" offsety="-145"/>
+<replace layer="2" image="11" offsetx="-125" offsety="-145"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="150"/>
+<frame idx="3" duration="150"/>
+<frame idx="4" duration="150"/>
+<frame idx="5" duration="150"/>
+<frame idx="6" duration="150"/>
+<frame idx="7" duration="150"/>
+<frame idx="8" duration="150"/>
+<frame idx="9" duration="150"/>
+<frame idx="10" duration="150"/>
+<frame idx="11" duration="150"/>
+<frame idx="12" duration="0"/>
+</anim>
+<anim idx="13" name="Idle" startstate="1" endstate="1" frames="12" duration="1500" default_duration="150" action_time="0" step="0">
+<replace layer="1" image="3" offsetx="-125" offsety="-145"/>
+<replace layer="2" image="9" offsetx="-125" offsety="-145"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="150"/>
+<frame idx="3" duration="150"/>
+<frame idx="4" duration="150"/>
+<frame idx="5" duration="150"/>
+<frame idx="6" duration="150"/>
+<frame idx="7" duration="150"/>
+<frame idx="8" duration="150"/>
+<frame idx="9" duration="150"/>
+<frame idx="10" duration="150"/>
+<frame idx="11" duration="150"/>
+<frame idx="12" duration="0"/>
+</anim>
+<anim idx="17" name="Building" startstate="1" endstate="1" frames="7" duration="360" default_duration="72" action_time="0" step="60">
+<replace layer="1" image="2" offsetx="-125" offsety="-145"/>
+<replace layer="2" image="8" offsetx="-125" offsety="-145"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="72"/>
+<frame idx="3" duration="72"/>
+<frame idx="4" duration="72"/>
+<frame idx="5" duration="72"/>
+<frame idx="6" duration="72"/>
+<frame idx="7" duration="0"/>
+</anim>
+</anims>
+</entity>

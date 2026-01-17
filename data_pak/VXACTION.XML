@@ -1,0 +1,48 @@
+<!--
+actions:
+  undo
+  redo
+  brushminus
+  brushplus
+  toolprev
+  toolnext
+  toolup
+  tooldown
+  tooldefault
+  tool1 - tool10
+  togglewnd
+  nextwnd
+  prevwnd
+  compilescript
+
+  <shortcut action="..." key="f1" ctrl="1" alt="yes" shift="on" />
+-->
+
+<table>
+	<shortcut action="brushplus"	key="+" />
+	<shortcut action="brushminus"	key="-" />
+	<shortcut action="undo"		key="Z" ctrl="on" />
+	<shortcut action="redo"		key="Y" ctrl="on" />
+	<shortcut action="toolprev"	key="up" />
+	<shortcut action="toolnext"	key="down" />
+	<shortcut action="toolup"	key="left" />
+	<shortcut action="tooldown"	key="right" />
+	<shortcut action="tool1"	key="1" />
+	<shortcut action="tool2"	key="2" />
+	<shortcut action="tool3"	key="3" />
+	<shortcut action="tool4"	key="4" />
+	<shortcut action="tool5"	key="5" />
+	<shortcut action="tool6"	key="6" />
+	<shortcut action="tool7"	key="7" />
+	<shortcut action="tool8"	key="8" />
+	<shortcut action="tool9"	key="9" />
+	<shortcut action="tool10"	key="0" />
+	<shortcut action="tooldefault"	key="esc" />
+	<shortcut action="delobjects"	key="del" />
+  <shortcut action="objprops"	key="enter" alt="on"/>
+	<shortcut action="togglewnd" key="`"/>
+	<shortcut action="nextwnd" ctrl="on" key="tab"/>
+	<shortcut action="compilescript" ctrl="on" key="enter"/>
+	<shortcut action="yes" key="Y"/>
+	<shortcut action="no"  key="N"/>
+</table>

@@ -1,0 +1,15 @@
+<class id="Hen" cpp_class="CVXUnit" parent="Animal" entity="assets/entities/Units/Hen/Hen.ent.xml">
+
+	<properties display_name="Hen"/>
+	<properties damage_type="none"/>
+	<properties radius="7" selection_radius="7"/>
+	<properties sight="100"/>
+	<properties speed="30"/>
+	<properties maxhealth="20" feeds="0"/>
+	<properties healthbaroffset="-30"/>
+	<properties target_factor="-1"/>
+	<properties no_transparent_draw="1" always_visible_on_minimap="0"/>
+
+	<method sig="idle" vs="data/subai/hen_idle.vs"/>
+
+</class>

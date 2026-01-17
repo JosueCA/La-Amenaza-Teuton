@@ -1,0 +1,3 @@
+<class id="Fire_Arrow" cpp_class="CVXScriptObj" parent="Object"
+entity="assets/entities/visuals/arrow/Fire_arrow.ent.xml">
+</class>

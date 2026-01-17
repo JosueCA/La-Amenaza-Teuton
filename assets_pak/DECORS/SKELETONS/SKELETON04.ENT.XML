@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="skeleton04" type="tree" variations="1" pass_file="skeleton04.pass">
+<images>
+<image idx="1" file="skeleton04" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="styblo" image="1" z="500" offsetx="-35" offsety="-24" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

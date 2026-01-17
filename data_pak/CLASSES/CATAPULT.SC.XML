@@ -1,0 +1,54 @@
+<class id="Catapult" cpp_class="CVXCatapult" parent="Building"
+  entity="assets/entities/Catapult/Catapult.ent.xml">
+
+  <properties radius="50" selection_radius="90"/>
+  <properties range="800" min_range="301"/>
+  <properties sight="850"/>
+  <properties minattack="60" maxattack="60" defense_slash="0" defense_pierce="0"/>
+  <properties damage_type="siege" attack_delay="500"/>
+  <properties splash_radius="100"/>
+  <properties maxhealth="1000"/>
+  <properties icon="gameres/icons/catapult.bmp"/>
+  <properties exit_interval="1000"/>
+
+  <properties interface="holder"/>
+  <properties display_name="Catapult"/>
+  <properties help="contents/units/Catapult"/>
+
+  <method sig="idle"   vs="data/subai/catapult_idle.vs"/>
+  <method sig="attack" vs="data/subai/catapult_attack.vs" verify="data/subai/catapult_attack_verify.vs"/>
+  <method sig="attack_ground" vs="data/subai/catapult_attack_ground.vs" verify="data/subai/catapult_attack_ground_verify.vs"/>
+  <method sig="autofire" vs="data/subai/catapult_autofire.vs"/>
+  <method sig="stop" vs="data/subai/catapult_stop.vs"/>
+  <method sig="disband" vs="data/subai/catapult_disband.vs"/>
+
+  <properties
+  		is_central_building = "1"
+  		can_be_captured = "0"
+  		can_be_attacked = "1"
+  		produces_gold = "0"
+  		produces_food = "0"
+  		is_single_building = "1"
+  		settlement_food = "0"
+  		settlement_gold = "0"
+  		settlement_maxfood = "0"
+  		settlement_maxgold = "0"
+  		population = "0"
+  		efficiency = "1"
+  		max_population = "0"
+  		max_units = "10"
+  		settlement_icon_name = ""
+  />
+
+  <defaultcmd target="Obj">
+    <cmd name="attack"/>
+    <cmd name="attack" ctrl="1"/>
+  </defaultcmd>
+
+  <defaultcmd target="">
+    <cmd name="attack_ground"/>
+    <cmd name="attack_ground" ctrl="1"/>
+  </defaultcmd>
+
+	<sounds attack="Assets/sounds/effects/catapult_attack.wav" die="Assets/sounds/effects/catapult_die.wav"/>
+</class>

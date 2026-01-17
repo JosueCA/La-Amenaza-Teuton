@@ -1,0 +1,19 @@
+<class id="RPrinciple" altid="RSpearman" cpp_class="CVXUnit" parent="Melee" entity="assets/entities/units/RSpearman/RSpearman.ent.xml">
+  <properties maxhealth="350"/>
+  <properties minattack="20" maxattack="30" defense_slash="7" defense_pierce="15"/>
+  <properties speed="80"/>
+  <properties speciality="defensive stand, spike damage"/>
+
+  <properties damage_type="pierce"/>
+  <properties edittree_pos="Units/Roman/Principle"/>
+  <properties icon     ="gameres/icons/RSpearman.bmp"/>
+  <properties display_name="Principle" display_name_plural="Principles"/>
+  <properties help="contents/units/RPrinciple"/>
+
+  <sounds attack="UnitPikeFight" command="data/sound entities/VoiceRPrinciple.xml"/>
+
+	<value1
+		icon="gameres/infobar/common/piercing ico.bmp"
+		script="return .AsUnit.minattack + '-' + .AsUnit.maxattack;"
+		help="contents/stats/attack"/>
+</class>

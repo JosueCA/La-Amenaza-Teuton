@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Oracul" type="tree" variations="1" pass_file="Oracul.pass">
+<images>
+<image idx="1" file="oracul1" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="oracul2" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="oracul3" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="4" file="oracul4" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="5" file="oracul5" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="6" file="oracul6" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="7" file="oracul7" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="8" file="oracul8" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="9" file="oracul9" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="10" file="oracul_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="2" x="-7" y="-26"/>
+<point idx="2" type="1" x="-9" y="-25"/>
+</points>
+<layers>
+<layer idx="1" name="oracul1" image="1" z="800" offsetx="-306" offsety="-318" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="oracul2" image="2" z="1000" offsetx="-306" offsety="-318" sortoffsetx="10" sortoffsety="-8"/>
+<layer idx="3" name="oracul3" image="3" z="1000" offsetx="-306" offsety="-318" sortoffsetx="-57" sortoffsety="-12"/>
+<layer idx="4" name="oracul4" image="4" z="1000" offsetx="-306" offsety="-318" sortoffsetx="-9" sortoffsety="-11"/>
+<layer idx="5" name="oracul5" image="5" z="1000" offsetx="-306" offsety="-318" sortoffsetx="-84" sortoffsety="105"/>
+<layer idx="6" name="oracul6" image="6" z="1000" offsetx="-306" offsety="-318" sortoffsetx="-78" sortoffsety="-107"/>
+<layer idx="7" name="oracul7" image="7" z="1000" offsetx="-306" offsety="-318" sortoffsetx="-112" sortoffsety="139"/>
+<layer idx="8" name="oracul8" image="8" z="1000" offsetx="-306" offsety="-318" sortoffsetx="-49" sortoffsety="-81"/>
+<layer idx="9" name="oracul9" image="9" z="1000" offsetx="-306" offsety="-318" sortoffsetx="190" sortoffsety="35"/>
+<layer idx="10" name="shadow" image="10" z="800" offsetx="-306" offsety="-318" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

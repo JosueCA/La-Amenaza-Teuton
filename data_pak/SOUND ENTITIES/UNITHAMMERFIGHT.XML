@@ -1,0 +1,9 @@
+<entity description="Hammer" priority="UnitFight" type="UnitFight">
+   <files>
+      <sound file="assets/sounds/hammer/hammer1.wav" frequency="20"/>
+      <sound file="assets/sounds/hammer/hammer2.wav" frequency="20"/>
+      <sound file="assets/sounds/hammer/hammer3.wav" frequency="20"/>
+      <sound file="assets/sounds/hammer/hammer4.wav" frequency="20"/>
+      <sound file="assets/sounds/hammer/hammer5.wav" frequency="20"/>
+   </files>
+</entity>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Dead_tree" type="tree" variations="1" pass_file="Dead_tree.pass">
+<images>
+<image idx="1" file="Dead_tree" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="10" x="-1" y="-12"/>
+</points>
+<layers>
+<layer idx="1" name="styblo" image="1" z="1000" offsetx="-77" offsety="-182" sortoffsetx="0" sortoffsety="-34"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

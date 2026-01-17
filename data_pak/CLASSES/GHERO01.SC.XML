@@ -1,0 +1,7 @@
+<class id="GHero01" cpp_class="CVXHero" parent="GaulHero" entity="assets/entities/Units/GHero01/GHero01.ent.xml">
+
+  <properties edittree_pos="Units/Heroes/Mraxis (Gaul)"/>
+	<properties icon="gameres/icons/GHero1.bmp"/>
+  <properties display_name="Mraxis" display_name_plural="Heroes"/>
+  <sounds command="data/sound entities/VoiceGHero.xml"/>
+</class>

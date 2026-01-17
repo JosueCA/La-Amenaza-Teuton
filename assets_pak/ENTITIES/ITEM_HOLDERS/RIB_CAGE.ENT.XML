@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Rib_cage" type="tree" variations="1" pass_file="Rib_cage.pass">
+<images>
+<image idx="1" file="Rib_cage" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="10" x="0" y="0"/>
+</points>
+<layers>
+<layer idx="1" name="styblo" image="1" z="1000" offsetx="-31" offsety="-42" sortoffsetx="0" sortoffsety="-24"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

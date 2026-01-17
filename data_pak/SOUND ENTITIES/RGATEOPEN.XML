@@ -1,0 +1,5 @@
+<entity description="RGateOpen" priority="Event" type="UnitOrder">
+	<files>
+		<sound file="assets/sounds/gates/gate_open.wav" frequency="100"/>
+	</files>
+</entity>

@@ -1,0 +1,13 @@
+<class id="RVillage" cpp_class="CVXTownHall" parent="BaseVillage"
+entity="assets/entities/buildings/RWarehouse/RWarehouse_as.ent.xml"
+entity_autumn="assets/entities/buildings/RWarehouse/RWarehouse_as.ent.xml"
+entity_spring="assets/entities/buildings/RWarehouse/RWarehouse_as.ent.xml"
+entity_winter="assets/entities/buildings/RWarehouse/RWarehouse_w.ent.xml">
+	<properties radius="245" selection_radius="250"/>
+	<properties icon="gameres/icons/RStorage.bmp"/>
+	<properties radius="230" selection_radius="250"/>
+	<properties edittree_pos="Structures/Village (Roman)/Village hall"/>
+	<properties foodperpop="100"/>
+	<properties help="/contents/buildings/Village"/>
+
+</class>

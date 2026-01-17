@@ -1,0 +1,17 @@
+<class id="Ranged" cpp_class="CVXUnit" parent="Military" entity="">
+
+  <properties formation_priority="500"/>
+  <properties sight="450" range="300"/>
+  <properties maxhealth="150"/>
+  <properties radius="10" selection_radius="10" />
+
+  <sounds attack="UnitArrowFight" die="UnitDeath" />
+  <properties projectile_class="Arrow"/>
+  <properties building_projectile_class="Fire_Arrow"/>
+
+  <value1
+	icon="gameres/infobar/common/piercing ico.bmp"
+	script="return .AsUnit.minattack + '-' + .AsUnit.maxattack;"
+	help="/contents/stats/attack"/>
+
+</class>

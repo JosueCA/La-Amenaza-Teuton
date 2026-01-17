@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="ship_wreck" type="tree" variations="1" pass_file="ship_wreck.pass">
+<images>
+<image idx="1" file="ship_wreck" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="ship_wreck_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="ship_wreck_sail" drawmode="normal" remaping="none" rows="5" columns="1"/>
+<image idx="4" file="ship_wreck_reflection" drawmode="normal" remaping="none" rows="5" columns="1"/>
+</images>
+<points>
+<point idx="1" type="11" x="8" y="-58"/>
+<point idx="2" type="11" x="-84" y="-19"/>
+<point idx="3" type="11" x="-163" y="5"/>
+<point idx="4" type="11" x="-165" y="51"/>
+<point idx="5" type="11" x="-116" y="98"/>
+<point idx="6" type="11" x="-46" y="140"/>
+<point idx="7" type="11" x="32" y="116"/>
+<point idx="8" type="11" x="94" y="73"/>
+<point idx="9" type="11" x="139" y="15"/>
+<point idx="10" type="11" x="132" y="-49"/>
+<point idx="11" type="11" x="80" y="-62"/>
+</points>
+<layers>
+<layer idx="1" name="ship_wreck" image="1" z="1000" offsetx="-218" offsety="-192" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="ship_wreck_shad" image="2" z="800" offsetx="-218" offsety="-192" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="ship_wreck_sail" image="3" z="1050" offsetx="-218" offsety="-192" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="4" name="ship_wreck_refl" percent="50" image="4" z="950" offsetx="-218" offsety="-192" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+<anim idx="1" name="ship_wreck" startstate="1" endstate="1" frames="7" duration="1000" default_duration="200" action_time="0" step="0">
+<replace layer="3" image="3" offsetx="-218" offsety="-192"/>
+<replace layer="4" image="4" offsetx="-218" offsety="-192"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="200"/>
+<frame idx="3" duration="200"/>
+<frame idx="4" duration="200"/>
+<frame idx="5" duration="200"/>
+<frame idx="6" duration="200"/>
+<frame idx="7" duration="0"/>
+</anim>
+</anims>
+</entity>

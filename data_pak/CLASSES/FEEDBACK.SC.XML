@@ -1,0 +1,4 @@
+<class id="Feedback" cpp_class="CVXScriptObj" parent="Object"
+entity="assets/entities/visuals/Feedback/Feedback.ent.xml">
+  <properties desync_hash="0"/>
+</class>

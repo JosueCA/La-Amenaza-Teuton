@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="RTemple_w" type="" variations="1" pass_file="RTemple.pass">
+<images>
+<image idx="1" file="RTemple_a_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="RTemple_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="RTemple_b_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="4" file="RTemple_c_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="5" file="RTemple_d_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="6" file="RTemple_e_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="7" file="RTemple_door" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="1" x="-4" y="-37"/>
+<point idx="2" type="2" x="-4" y="-38"/>
+<point idx="3" type="4" x="11" y="-68"/>
+<point idx="4" type="4" x="73" y="-117"/>
+<point idx="5" type="4" x="37" y="-131"/>
+<point idx="6" type="9" x="32" y="75"/>
+<point idx="7" type="11" x="-1" y="-19"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-177" offsety="-217" sortoffsetx="-22" sortoffsety="70"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-177" offsety="-217" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="base" image="3" z="500" offsetx="-177" offsety="-217" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="4" name="base" image="4" z="1000" offsetx="-177" offsety="-217" sortoffsetx="90" sortoffsety="-29"/>
+<layer idx="5" name="base" image="5" z="1000" offsetx="-177" offsety="-217" sortoffsetx="-96" sortoffsety="-8"/>
+<layer idx="6" name="base" image="6" z="1000" offsetx="-177" offsety="-217" sortoffsetx="-55" sortoffsety="-9"/>
+<layer idx="7" name="base" image="7" z="500" offsetx="-177" offsety="-217" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

@@ -1,0 +1,7 @@
+<entity description="SoundForestautumn">
+	<files>
+		<sound file="assets/sounds/ambient/prolet~2.ogg" frequency="7"/>
+		<sound file="assets/sounds/ambient/prolet~3.ogg" frequency="7"/>
+		<sound file="assets/sounds/ambient/prolet~4.ogg" frequency="7"/>
+	</files>
+</entity>

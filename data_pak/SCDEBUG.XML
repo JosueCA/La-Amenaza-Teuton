@@ -1,0 +1,10 @@
+<scdebug>
+	<keys>
+		<key id="Add" script="int i; for (i=1; i&lt;=5; i+=1) if (GetSpeed()&lt;GetConst('Speed'+i)) { SetSpeed(GetConst('Speed'+i)); break; }"/>
+		<key id="Sub" script="int i; for (i=5; i&gt;=1; i-=1) if (GetSpeed()&gt;GetConst('Speed'+i)) { SetSpeed(GetConst('Speed'+i)); break; }"/>
+		<key id="Pause" script="Pause();"/>
+		<key id="Tab" script="if (!IsViewLocked()) ShowLastNotificationPos();"/>
+		<key id="Mul" script="if (GetSpeed() != 10000) SetSpeed(10000); else SetSpeed(1000);"/>
+	</keys>
+</scdebug>
+

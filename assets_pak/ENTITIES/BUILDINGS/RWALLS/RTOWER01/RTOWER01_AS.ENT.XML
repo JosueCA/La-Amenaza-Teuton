@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="RTower01_as" type="" variations="1" pass_file="RTower01.pass">
+<images>
+<image idx="1" file="RTower01_as" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="RTower01_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="4" x="0" y="-108"/>
+<point idx="2" type="4" x="1" y="-162"/>
+<point idx="3" type="4" x="38" y="-113"/>
+<point idx="4" type="4" x="-31" y="-161"/>
+<point idx="5" type="3" x="-2" y="-55"/>
+<point idx="6" type="3" x="40" y="-74"/>
+<point idx="7" type="3" x="40" y="-151"/>
+<point idx="8" type="3" x="-40" y="-78"/>
+<point idx="9" type="3" x="-51" y="-120"/>
+<point idx="10" type="3" x="2" y="-167"/>
+<point idx="11" type="4" x="5" y="-64"/>
+<point idx="12" type="8" x="0" y="-188"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-167" offsety="-234" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-167" offsety="-234" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

@@ -1,0 +1,13 @@
+<class id="GOutpost" cpp_class="CVXOutpost" parent="Outpost"
+  entity        = "assets/entities/buildings/GOutpost/GOutpost_as.ent.XML"
+  entity_winter = "assets/entities/buildings/GOutpost/GOutpost_w.ent.XML"
+>
+	<properties maxhealth="10000" sight="900"/>
+	<properties icon="gameres/icons/goutpost.bmp"/>
+	<properties display_name="Wooden Outpost"/>
+	<properties radius="345" selection_radius="350"/>
+	<properties edittree_pos="Structures/Interactive/Outpost (wooden)"/>
+	<properties help="/contents/buildings/GOutpost"/>
+
+	<method sig="goutpost_sellfood" vs="data/subai/goutpost_sellfood.vs"/>
+</class>

@@ -1,0 +1,3 @@
+<class id="FireSmoke" cpp_class="CVXDecor" parent="Object"
+entity="assets/entities/visuals/Smoke/Smoke.ent.xml">
+</class>

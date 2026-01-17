@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="tr6_a" type="tree" radius="0" selection_radius="0" variations="1" pass_file="pass">
+<images>
+<image idx="1" file="tr6_shadow_a" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="tr6_a" drawmode="normal" remaping="pingpong" rows="11" columns="1"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="korona" image="2" z="1000" offsetx="-195" offsety="-244"/>
+<layer idx="2" name="shadow" image="1" z="800" offsetx="-153" offsety="-244"/>
+</layers>
+<states>
+<state idx="1" name="idle" sound_id=""/>
+</states>
+<anims>
+<anim idx="1" name="tr6_a" sound_id="" startstate="1" endstate="1" frames="13" duration="6200" default_duration="140" action_time="0" step="0">
+<replace layer="1" image="2" offsetx="-195" offsety="-244"/>
+<frame idx="1" duration="140"/>
+<frame idx="2" duration="200"/>
+<frame idx="3" duration="300"/>
+<frame idx="4" duration="140"/>
+<frame idx="5" duration="400"/>
+<frame idx="6" duration="500"/>
+<frame idx="7" duration="200"/>
+<frame idx="8" duration="140"/>
+<frame idx="9" duration="200"/>
+<frame idx="10" duration="500"/>
+<frame idx="11" duration="300"/>
+<frame idx="12" duration="140"/>
+<frame idx="13" duration="300"/>
+</anim>
+</anims>
+</entity>

@@ -1,0 +1,10 @@
+<class id="GTower01" altid="Tower01" cpp_class="CVXBuilding" parent="Tower"
+entity="assets/entities/buildings/Tower01/Tower01_as.ent.xml"
+entity_autumn="assets/entities/buildings/Tower01/Tower01_as.ent.xml"
+entity_spring="assets/entities/buildings/Tower01/Tower01_as.ent.xml"
+entity_winter="assets/entities/buildings/Tower01/Tower01_w.ent.xml">
+
+  <properties radius="47" selection_radius="49"/>
+  <properties wall_set="Wooden walls"/>
+  <properties icon="gameres/icons/GTower.bmp"/>
+</class>

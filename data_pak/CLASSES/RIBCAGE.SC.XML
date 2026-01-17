@@ -1,0 +1,7 @@
+<class id="RibCage" cpp_class="CVXItemHolder" parent="ItemHolder"
+entity="assets/entities/Item_holders/Rib_cage.ent.xml">
+  <properties edittree_pos="Structures/Item holders/Rib cage"/>
+  <properties icon     ="gameres/icons/Rib cage.bmp"/>
+  <properties radius="28" selection_radius="30"/>
+  <properties display_name="Rib cage"/>
+</class>

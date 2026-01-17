@@ -1,0 +1,6 @@
+<class id="BaseBlacksmith" cpp_class="CVXBuilding" parent="BaseTownBuilding">
+	<properties interface="queue"/>
+	<properties auto_repair="no"/>
+
+	<sounds select="assets/sounds/selection/blacksmith.wav"/>
+</class>

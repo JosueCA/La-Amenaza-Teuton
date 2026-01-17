@@ -1,0 +1,12 @@
+Ambient sounds are divided in two categories - longer and more quiet sounds for the main theme in the view (Ambient*.xml) and shorter ones for additional mood (Sound*.xml)
+
+There is 3 distinctive types of ambient terrain sounds:  Plains, Forest and Sea
+And additionally one can specify ambient sounds for buildings and settlements:
+   if building has ambient sound - it is played
+   if building hasn't specified ambient sound, but the central building (townhalls) of its settlement has - it is played!
+
+   amboent sound of a building is specified in its class file by 'ambient_sound1' and 'ambient_sound2' fields, which must represent valid sound entity ( \Assets\Sounds\Entities\*.xml )
+
+Ambient sounds has theme, which typically is current map season, so ALL sound entities used by ambient sound manager is refered by their initial name + theme string, so if we are in forest and the season is spring the entity 'AmbientForestsping' and 'SoundForestspring' will be used. If for settlement ambient sound we choose 'AmbientGaulCity' then we must provide 'AmbientGaulCityspring', 'AmbientGaulCitywinter' and 'AmbientGaulCityautumn' respectively, even if they match!
+
+NOTE: 'frequency' fields in the sound entity shows the probability in percents for playing each given sound file. So, the sum of all frequences inside single entity must equals to 100!

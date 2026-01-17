@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="nivag1 asw" type="tree" radius="0" selection_radius="0" variations="1" pass_file="pass">
+<images>
+<image idx="1" file="nivag1 asw" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="styblo" image="1" z="500" offsetx="-162" offsety="-162"/>
+</layers>
+<states>
+<state idx="1" name="idle" sound_id=""/>
+</states>
+<anims>
+</anims>
+</entity>

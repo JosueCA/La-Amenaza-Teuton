@@ -1,0 +1,18 @@
+<class id="GWFighter" cpp_class="CVXUnit" parent="Melee" entity="assets/entities/units/GWFighter/GWFighter.ent.xml">
+
+  <properties maxhealth="360"/>
+  <properties minattack="20" maxattack="36" defense_slash="8" defense_pierce="8"/>
+  <properties speed="80"/>
+  <properties speciality="vampire blow"/>
+
+  <properties formation_priority="1000"/>
+  <properties formation_radius="16"/>
+  <properties radius="10" selection_radius="10"/>
+
+  <properties icon     ="gameres/icons/womanwarrior.bmp"/>
+  <properties display_name="Woman Warrior" display_name_plural="Woman Warriors"/>
+  <properties help="contents/units/GWWarrior"/>
+
+  <properties edittree_pos="Units/Gaul/Woman Warrior"/>
+  <sounds command="data/sound entities/VoiceGWWarrior.xml"/>
+</class>

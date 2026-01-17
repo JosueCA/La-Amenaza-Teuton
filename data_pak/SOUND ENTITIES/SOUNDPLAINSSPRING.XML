@@ -1,0 +1,5 @@
+<entity description="SoundPlainsspring">
+	<files>
+		<sound file="assets/sounds/ambient/field02.ogg" frequency="7"/>
+	</files>
+</entity>

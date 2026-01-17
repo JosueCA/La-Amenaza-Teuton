@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="class.xsl"?>
+
+<class id="Unit" cpp_class="CVXUnit" parent="Object" entity="">
+  <method sig="idle" vs="data/subai/unit_idle.vs"/>
+
+  <method sig="standstill" vs="data/subai/unit_standstill.vs"/>
+  <method sig="advance" vs="data/subai/unit_advance.vs"/>
+  <method sig="attach" vs="data/subai/unit_attach.vs" verify="data/subai/unit_attach_verify.vs"/>
+  <method sig="attack" vs="data/subai/unit_attack.vs" verify="data/subai/unit_attack_verify.vs"/>
+  <method sig="engage" vs="data/subai/unit_engage.vs"/>
+  <method sig="attack" vs="data/subai/unit_advance.vs"/>
+  <method sig="enter" vs="data/subai/unit_enter.vs" verify="data/subai/unit_enter_verify.vs"/>
+  <method sig="move" vs="data/subai/unit_move.vs"/>
+  <method sig="smartmove" vs="data/subai/unit_smartmove.vs"/>
+  <method sig="form_move" vs="data/subai/unit_form_move.vs"/>
+  <method sig="patrol" vs="data/subai/unit_patrol.vs"/>
+  <method sig="protect" vs="data/subai/unit_protect.vs"/>
+  <method sig="follow" vs="data/subai/unit_follow.vs"/>
+  <method sig="approach" vs="data/subai/unit_approach.vs"/>
+  <method sig="giveitem" vs="data/subai/unit_giveitem.vs"/>
+  <method sig="putitem" vs="data/subai/unit_putitem.vs"/>
+  <method sig="dropitem" vs="data/subai/unit_dropitem.vs"/>
+  <method sig="getitems" vs="data/subai/unit_getitems.vs"/>
+  <method sig="getitem" vs="data/subai/unit_getitem.vs"/>
+  <method sig="stay_hidden" vs="data/subai/unit_stay_hidden.vs" verify="data/subai/unit_stay_verify.vs"/>
+  <method sig="build_catapult" vs="data/subai/unit_build_catapult.vs"/>
+  <method sig="hold_position" vs="data/subai/unit_hold_position.vs"/>
+  <method sig="selfdestroy" vs="data/subai/unit_selfdestroy.vs"/>
+  <method sig="wander" vs="data/subai/unit_wander.vs"/>
+  <method sig="explore" vs="data/subai/unit_explore.vs"/>
+  <method sig="teleport" vs="data/subai/unit_teleport.vs"/>
+  <method sig="advanceenter" vs="data/subai/unit_advance_enter.vs" verify="data/subai/unit_enter_verify.vs"/>
+  <method sig="face" vs="data/subai/unit_face.vs"/>
+  <method sig="ai_attack_gate" vs="data/subai/unit_ai_attack_gate.vs"/>
+  <method sig="ai_killall" vs="data/subai/unit_ai_killall.vs"/>
+  <method sig="boardship"
+		vs="data/subai/unit_board.vs"
+		verify="data/subai/unit_board_verify.vs"/>
+  <method sig="boardshipcommon"
+	vs="data/subai/unit_board_common.vs"
+	onfinish="data/subai/unit_board_common_onfinish.vs"/>
+  <method sig="capture" vs="data/subai/unit_capture.vs" verify="data/subai/unit_capture_verify.vs"/>
+  <method sig="transport"  vs="data/subai/unit_transport.vs" verify="data/subai/unit_transport_verify.vs"/>
+  <method sig="disappear"  vs="data/subai/unit_disappear.vs"/>
+  <method sig="dismiss"    vs="data/subai/unit_dismiss.vs"/>
+  <method sig="grab_water" vs="data/subai/unit_grab_water.vs"/>
+  <method sig="grab_goods" vs="data/subai/unit_grab_goods.vs"/>
+  <method sig="grab_free"  vs="data/subai/unit_grab_free.vs"/>
+  <method sig="talk"       vs="data/subai/unit_talk.vs"/>
+  <method sig="walkanddie" vs="data/subai/unit_walk_and_die.vs"/>
+  <method sig="moveenter"  vs="data/subai/unit_move_enter.vs"/>
+  <method sig="stand_position" vs="data/subai/unit_stand_position.vs"/>
+  <method sig="attack_unit_type" vs="data/subai/unit_attack_unit_type.vs" verify="data/subai/unit_attack_verify.vs"/>
+  <method sig="engage_unit_type" vs="data/subai/unit_engage_unit_type.vs" verify="data/subai/unit_attack_verify.vs"/>
+  <method sig="go_talk" vs="data/subai/unit_go_talk.vs"/>
+  <method sig="boar_tooth_use" vs="data/subai/boar_tooth_use.vs"/>
+
+  <properties damage_type = "slash"/>
+  <properties max_food="20"/>
+  <properties repair_rate="15"/>
+  <properties display_name="Unit" display_name_plural="Units"/>
+  <properties help="/contents/units"/>
+  <properties minattack="10" maxattack="10" defense_slash="0" defense_pierce="0"/>
+  <properties inventory_size="4"/>
+
+  <properties maxhealth="200"/>
+  <properties sight="400"/>
+  <properties formation_radius="16" radius="10" selection_radius="10"/>
+  <properties speed="50"/>
+	<properties water_unit="0"/>
+
+	<properties feeds           ="1"/>
+	<properties damaged_by_ghost="1"/>
+	<properties can_be_invisible="1"/>
+
+	<properties interface="items"/>
+
+	<value0
+		icon="gameres/infobar/common/level ico.bmp"
+		script="return .AsUnit.level;"
+		help="/contents/stats/level"/>
+	<value1
+		icon="gameres/infobar/common/attack ico.bmp"
+		script="return .AsUnit.minattack + '-' + .AsUnit.maxattack;"
+		help="/contents/stats/attack"/>
+	<value2
+		icon="gameres/infobar/common/defense ico.bmp"
+		script="return .AsUnit.defense_slash + '/' + .AsUnit.defense_pierce;"
+		help="/contents/stats/defense"/>
+	<value3
+		icon="gameres/infobar/common/food ico.bmp"
+		script="return .AsUnit.food + '/20';"
+		help="/contents/feeding"/>
+
+
+  <defaultcmd target="">
+    <cmd name="move"/>
+    <cmd name="advance" ctrl="1"/>
+  </defaultcmd>
+
+  <defaultcmd target="Inn">
+	<cmd name="transport"/>
+	<cmd name="approach"/>
+  </defaultcmd>
+
+
+  <defaultcmd target="ShipL">
+	<cmd name="boardship"/>
+	<cmd name="approach"/>
+  </defaultcmd>
+
+  <defaultcmd target="Unit">
+    <cmd name="attack"/>
+    <cmd name="stay_hidden"/>
+	<cmd name="approach"/>
+	<cmd name="attack_unit_type" ctrl="1"/>
+
+  </defaultcmd>
+
+  <defaultcmd target="Hero">
+    <cmd name="attach"/>
+	<cmd name="attack"/>
+	<cmd name="approach"/>
+  </defaultcmd>
+
+	<!-- no capture for towers, gates and walls -->
+	<defaultcmd target="Tower">
+		<cmd name="attack"/>
+		<cmd name="enter"/>
+		<cmd name="approach"/>
+	</defaultcmd>
+	<defaultcmd target="Gate">
+		<cmd name="attack"/>
+		<cmd name="enter"/>
+		<cmd name="approach"/>
+	</defaultcmd>
+	<defaultcmd target="Wall">
+		<cmd name="attack"/>
+		<cmd name="enter"/>
+		<cmd name="approach"/>
+	</defaultcmd>
+
+	<defaultcmd target="Building">
+		<cmd name="capture"/>
+		<cmd name="attack"/>
+		<cmd name="enter"/>
+		<cmd name="approach"/>
+	</defaultcmd>
+
+	<defaultcmd target="Teleport">
+		<cmd name="teleport"/>
+		<cmd name="approach"/>
+	</defaultcmd>
+
+	<defaultcmd target="ItemHolder">
+		<cmd name="getitems"/>
+		<cmd name="approach"/>
+	</defaultcmd>
+
+</class>

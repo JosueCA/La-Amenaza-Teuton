@@ -1,0 +1,10 @@
+<class id="Possess" cpp_class="CVXSacrifice" parent="Sacrifice" 
+   entity=""
+>
+
+  <properties radius = "100"/>
+	<properties range =  "200"/>
+
+  <method sig="idle" vs="data/subai/possess_idle.vs"/>
+
+</class>

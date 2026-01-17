@@ -1,0 +1,10 @@
+<class id="Trader" cpp_class="CVXWagon" parent="Wagon" entity="assets/entities/Units/Trader/Trader.ent.xml">
+
+  <properties maxhealth="400"/>
+  <properties display_name="Mule" display_name_plural="Mules"/>
+  <properties help="contents/units/Mule"/>
+  <properties icon="gameres/icons/Wagon.bmp"/>
+  <properties radius="40" selection_radius="45" speed="80"/>
+
+  <properties edittree_pos="Units/Others/Mule"/>
+</class>

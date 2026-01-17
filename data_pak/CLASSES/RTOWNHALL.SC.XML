@@ -1,0 +1,14 @@
+<class id="RTownhall" cpp_class="CVXTownHall" parent="BaseTownhall"
+entity="assets/entities/buildings/RTownhall/RTownhall_as.ent.xml"
+entity_winter="assets/entities/buildings/RTownhall/RTownhall_w.ent.xml">
+
+	<properties foodperpop = "100" />
+	<properties display_name="Townhall"/>
+	<properties icon="gameres/icons/Rtownhall.bmp"/>
+	<properties radius="170" selection_radius="175"/>
+	<properties edittree_pos="Structures/Stronghold (Roman)/Townhall"/>
+	<properties help="/contents/buildings/RTownhall"/>
+
+	<behavior script="data/subai/settlement_behavior_ambient.vs"/>
+
+</class>

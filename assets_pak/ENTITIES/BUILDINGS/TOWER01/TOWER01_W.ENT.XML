@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Tower01_w" type="" variations="1" pass_file="Tower01.pass">
+<images>
+<image idx="1" file="Tower01_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="Tower01_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="3" x="-1" y="-65"/>
+<point idx="2" type="3" x="-38" y="-82"/>
+<point idx="3" type="3" x="38" y="-82"/>
+<point idx="4" type="3" x="-26" y="-134"/>
+<point idx="5" type="3" x="33" y="-129"/>
+<point idx="6" type="3" x="6" y="-156"/>
+<point idx="7" type="4" x="8" y="-124"/>
+<point idx="8" type="4" x="-1" y="-95"/>
+<point idx="9" type="8" x="-91" y="-64"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-171" offsety="-222" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-171" offsety="-222" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

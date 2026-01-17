@@ -1,0 +1,12 @@
+<class id="RBarracks" cpp_class="CVXBarrack" parent="BaseBarracks"
+  entity        = "assets/entities/buildings/RBarracks/RBarracks_as.ent.xml"
+  entity_winter = "assets/entities/buildings/RBarracks/RBarracks_w.ent.xml">
+
+	<properties icon="gameres/icons/RBarracks.bmp"/>
+	<properties display_name="Barracks"/>
+	<properties radius="245" selection_radius="250"/>
+	<properties edittree_pos="Structures/Stronghold (Roman)/Barracks"/>
+	<properties auto_repair="no"/>
+	<properties help="/contents/buildings/RBarracks"/>
+
+</class>

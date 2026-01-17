@@ -1,0 +1,151 @@
+<notifications>
+<notification
+			id="unit attacked"
+			anim="Assets/entities/notifications/battle.rle"
+			text="Unit under attack"
+			sound = "Assets/Sounds/Notifications/unit attacked.wav"
+			activetime = "3000"
+			suspendradius = "1000"
+			changepositiontime = "4000"
+			framechangetime = "100"
+			priority = "1"
+			objnotifytime = "2000"
+			/>
+
+<notification
+			id="building attacked"
+			anim="Assets/entities/notifications/flag_red.rle"
+			text="Building under attack"
+			sound = "Assets/Sounds/Notifications/building attacked.wav"
+			activetime = "5000"
+			suspendradius = "1000"
+			/>
+
+<notification
+			id="settlement captured"
+			anim="Assets/entities/notifications/flag_red.rle"
+			text="Settlement captured"
+			sound = "Assets/Sounds/Notifications/building captured.wav"
+			activetime = "5000"
+			suspendradius = "1000"
+			/>
+
+<notification
+			id="hero level up"
+			anim="Assets/entities/notifications/barrackidle.rle"
+			sound = ""
+			activetime = "5000"
+			objnotifytime = "5000"
+			suspendradius = "0"
+			changepositiontime = "700"
+			framechangetime = "100"
+			priority = "1"
+			text=""
+			/>
+
+<notification
+			id="train completed"
+			anim="Assets/entities/notifications/barrackidle.rle"
+			sound = "Assets/Sounds/Notifications/barrack idle.wav"
+			activetime = "7000"
+			suspendradius = "1000"
+			text=""
+			/>
+
+<notification
+			id="army starving"
+			anim="Assets/entities/notifications/hunger.rle"
+			text=""
+			sound = "Assets/Sounds/Notifications/army starving.wav"
+			activetime = "2000"
+			changepositiontime = "700"
+			suspendradius = "1000"
+			framechangetime = "80"
+			/>
+
+<notification
+			id="note added"
+			anim="Assets/entities/notifications/message.rle"
+			text="Notes changed"
+			activetime = "5000"
+			/>
+
+<notification
+			id="note removed"
+			anim="Assets/entities/notifications/message.rle"
+			text="Notes changed"
+			activetime = "5000"
+			/>
+
+<notification
+			id="diplomacy changed"
+			text="Diplomacy relations changed"
+      sound="Assets/Sounds/Notifications/dipomacy change.wav"			
+			activetime = "5000"
+			/>
+<notification
+			id="gold lack"
+			text="Not enough gold"
+      sound="Assets/Sounds/Notifications/not enough.wav"			
+			activetime = "500"
+			/>
+<notification
+			id="food lack"
+			text="Not enough food"
+      sound="Assets/Sounds/Notifications/not enough.wav"			
+			activetime = "500"
+			/>
+<notification
+			id="pop lack"
+			text="Not enough population"
+      sound="Assets/Sounds/Notifications/not enough.wav"			
+			activetime = "500"
+			/>
+
+<notification
+			id="friendly target only"
+			text="Can target friendly units only"
+			activetime = "500"
+			/>
+<notification
+			id="unit target only"
+			text="Can target units only"
+			activetime = "500"
+			/>
+<notification
+			id="enemy target only"
+			text="Can target enemy units only"
+			activetime = "500"
+			/>
+<notification
+			id="location message"
+			anim="Assets/entities/notifications/message.rle"
+			text="Location message"
+			sound = "Assets/Sounds/Notifications/location message.wav"
+			activetime = "8000"
+			suspendradius = "1000"
+			/>
+
+<notification
+			id="inn spotted"
+			anim="Assets/entities/notifications/flag_red.rle"
+			text=""
+			sound = "Assets/Sounds/Notifications/building captured.wav"
+			activetime = "8000"
+			suspendradius = "1000"
+			/>
+
+<notification
+			id="player lost"
+			text=""
+			activetime = "8000"
+			/>
+
+<notification
+			id="cannot train"
+			text="Unable to train units - there are enemies around"
+			activetime = "3000"
+			suspendradius = "500"
+			/>
+
+</notifications>			

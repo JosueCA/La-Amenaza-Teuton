@@ -1,0 +1,7 @@
+<entity description="Fire" priority="UnitFight" type="UnitFight">
+   <files>
+      <sound file="assets/sounds/effects/fire1.wav" frequency="40"/>
+      <sound file="assets/sounds/effects/fire2.wav" frequency="40"/>
+      <sound file="assets/sounds/effects/fire3.wav" frequency="40"/>
+   </files>
+</entity>

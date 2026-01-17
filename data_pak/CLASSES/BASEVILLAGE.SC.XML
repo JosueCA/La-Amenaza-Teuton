@@ -1,0 +1,78 @@
+<class id="BaseVillage" cpp_class="CVXTownHall" parent="Building">
+
+	<properties house_pop_bonus="10"/>
+	<properties interface="queue"/>
+	<properties radius="230" selection_radius="250"/>
+	<properties auto_repair="yes" repair_rate="250"/>
+	<properties
+  		is_central_building = "1"
+  		can_be_captured = "1"
+  		can_be_attacked = "1"
+  		produces_gold = "0"
+  		produces_food = "1"
+  		is_single_building = "0"
+  		settlement_food = "100"
+  		settlement_gold = "0"
+  		settlement_maxfood = "5000"
+  		settlement_maxgold = "5000"
+  		population = "12"
+  		efficiency = "1"
+  		max_population = "20"
+  		max_units = "0"
+  		settlement_icon_name = "assets/interface/settlement icon"
+	/>
+	<properties minimap_icon_type="color"/>
+	<properties display_name="Village Hall"/>
+
+	<value0
+		icon="gameres/infobar/common/pop ico.bmp"
+		script="Settlement set; set = .AsBuilding.settlement; return set.population + ' / ' + set.max_population;"
+		flags="-1"
+		help="/contents/resources"/>
+	<value1
+		icon="gameres/infobar/common/gold ico.bmp"
+		script="return .AsBuilding.settlement.gold;"
+		flags="5"
+		help="/contents/resources"/>
+	<value2
+		icon="gameres/infobar/common/food ico.bmp"
+		script="return .AsBuilding.settlement.food;"
+		flags="5"
+		help="/contents/resources"/>
+	<value3
+		icon="gameres/infobar/common/Loyality.bmp"
+		script="return .AsBuilding.settlement.loyalty;"
+		flags="-1"
+		help="/contents/capturing"/>
+
+	<method sig="idle"               vs="data/subai/village_idle.vs"/>
+	<method sig="tribute"            vs="data/subai/village_tributefood.vs"/>
+	<method sig="tribute_default"    vs="data/subai/village_tributefood.vs"/>
+	<method sig="stoptribute"        vs="data/subai/village_stoptribute.vs"/>
+	<method sig="createfoodmulesmall"       vs="data/subai/create_food_mule_small.vs"/>
+	<method sig="createfoodmulebig"       vs="data/subai/create_food_mule_big.vs"/>
+	<method sig="creategoldmulesmall"       vs="data/subai/create_gold_mule_small.vs"/>
+	<method sig="creategoldmulebig"       vs="data/subai/create_gold_mule_big.vs"/>
+	<!-- <method sig="trainpeasant"  vs="data/subai/village_trainpeasant.vs"/> -->
+
+	<behavior script="data/subai/settlement_behavior_ambient.vs"/>
+	<behavior script="data/subai/village_behavior_givefood.vs"/>
+
+	<defaultcmd target="BaseTownhall">
+		<cmd name="tribute_default"/>
+	</defaultcmd>
+
+	<defaultcmd target="BaseVillage">
+		<cmd name="tribute_default"/>
+	</defaultcmd>
+
+	<defaultcmd target="Outpost">
+		<cmd name="tribute_default"/>
+	</defaultcmd>
+
+	<defaultcmd target="BaseShipyard">
+		<cmd name="tribute_default"/>
+	</defaultcmd>
+
+	<sounds select="assets/sounds/selection/village.wav"/>
+</class>

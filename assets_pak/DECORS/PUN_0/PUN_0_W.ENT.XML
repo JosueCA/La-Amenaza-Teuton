@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="pun_0_w" type="tree" radius="0" selection_radius="0" variations="1" pass_file="pun_0_w.pass">
+<images>
+<image idx="1" file="pun_0_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="pun_0_w_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="styblo" image="1" z="550" offsetx="-38" offsety="-43" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="2" z="520" offsetx="-38" offsety="-43" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" sound_id="" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

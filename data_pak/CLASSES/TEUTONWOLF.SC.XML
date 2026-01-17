@@ -1,0 +1,14 @@
+<class id="TeutonWolf" cpp_class="CVXUnit" parent="Horse" entity="assets/entities/Units/TeutonMetal/TeutonMetal.ent.xml">
+
+  <properties minattack="12" maxattack="22" defense_slash="0" defense_pierce="0"/>
+  <properties maxhealth="250"/>
+  <properties display_name="Teuton Raider" display_name_plural="Teuton Riders"/>
+  <properties help="contents/units/TRider"/>
+  <properties icon="gameres/icons/TeutonMetal.bmp"/>
+
+  <properties speciality="trample damage"/>
+
+   <!--given ONLY by the behaviour script-->
+   <method sig="enter_tent" vs="data/subai/teuton_enter_tent.vs"/>
+  <sounds command="data/sound entities/VoiceTeutonHorseman.xml"/>
+</class>

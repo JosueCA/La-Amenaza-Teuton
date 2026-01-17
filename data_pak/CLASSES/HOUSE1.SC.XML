@@ -1,0 +1,9 @@
+<class id="GHouse1" altid="House1" cpp_class="CVXBuilding" parent="BaseHouse"
+	entity="assets/entities/buildings/House1/House 01 as.ent.xml"
+	entity_winter="assets/entities/buildings/House1/House 01 w.ent.xml"
+>
+  <properties display_name="House"/>
+  <properties icon="gameres/icons/ghouse.bmp"/>
+  <properties radius="110" selection_radius="112"/>
+    <properties edittree_pos="Structures/Village (Gaul)/House 1"/>
+</class>

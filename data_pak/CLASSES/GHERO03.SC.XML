@@ -1,0 +1,8 @@
+<class id="GHero03" cpp_class="CVXHero" parent="GaulHero" entity="assets/entities/Units/GHero03/GHero03.ent.xml">
+
+  <properties display_name="Dumnorix" display_name_plural="Heroes"/>
+  <properties edittree_pos="Units/Heroes/Dumnorix (Gaul)"/>
+	<properties icon="gameres/icons/GHero3.bmp"/>
+
+  <sounds command="data/sound entities/VoiceGHero.xml"/>
+</class>

@@ -1,0 +1,9 @@
+<class id="BaseWell" cpp_class="CVXItemHolder" parent="ItemHolder" entity="">
+	<behavior script="data/subai/magic_well_behavior.vs"/>
+	<method sig="idle" vs="data/subai/anim.vs"/>
+  <properties sight="0"/>
+
+  <sounds select="assets/sounds/selection/well.wav"/>
+	<properties display_name="Well" /> 
+
+</class>

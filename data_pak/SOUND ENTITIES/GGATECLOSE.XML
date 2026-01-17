@@ -1,0 +1,5 @@
+<entity description="GGateClose" priority="Event" type="UnitOrder">
+	<files>
+		<sound file="assets/sounds/gates/gate_close.wav" frequency="100"/>
+	</files>
+</entity>

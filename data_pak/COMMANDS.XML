@@ -1,0 +1,2179 @@
+<commands>
+
+<!-- STONEHENGE COMMANDS-->
+<cmd name="wind_of_wisdom"
+	offset="1"
+	button = "Actions/Wise Wind.bmp"
+	groupverifier="data/subai/stonehenge_wind_of_wisdom_verify.vs"
+	voidgroupdispatch="1"
+	groupdispatch="data/subai/stonehenge_wind_of_wisdom.vs"
+	rollover = "Wind of wisdom ritual"
+	description="Increases the level of all existing units"
+	key = "w"
+>
+	<src obj="Stonehenge" sticky="no"/>
+</cmd>
+<cmd name="starvation"
+	offset="1"
+	button = "Actions/Hunger.bmp"
+	groupverifier="data/subai/stonehenge_starvation_verify.vs"
+	voidgroupdispatch="1"
+	groupdispatch="data/subai/stonehenge_starvation.vs"
+	rollover = "Starvation ritual"
+	description="Slowly decreases all food supplies for 2 minutes"
+	key = "s"
+>
+	<src obj="Stonehenge" sticky="no"/>
+</cmd>
+<cmd name="golden_rain"
+	offset="1"
+	button = "Actions/Gold Rain.bmp"
+	groupverifier="data/subai/stonehenge_golden_rain_verify.vs"
+	voidgroupdispatch="1"
+	groupdispatch="data/subai/stonehenge_golden_rain.vs"
+	rollover = "Golden rain ritual"
+	description="Slowly adds gold to every settlement storage for 2 minutes"
+	key = "g"
+>
+	<src obj="Stonehenge" sticky="no"/>
+</cmd>
+<cmd name="death_wish"
+	offset="1"
+	button = "Actions/Last Sacrifice.bmp"
+	groupverifier="data/subai/stonehenge_death_wish_verify.vs"
+	voidgroupdispatch="1"
+	groupdispatch="data/subai/stonehenge_death_wish.vs"
+	rollover = "Death wish ritual"
+	description="Drains the life out of every druid and priest for 1 minute"
+	key = "d"
+>
+	<src obj="Stonehenge" sticky="no"/>
+</cmd>
+<cmd name="bloodlust"
+	offset="1"
+	button = "Actions/Bloodlust.bmp"
+	groupverifier="data/subai/stonehenge_bloodlust_verify.vs"
+	voidgroupdispatch="1"
+	groupdispatch="data/subai/stonehenge_bloodlust.vs"
+	rollover = "Bloodlust ritual"
+	description="Enables all units to inflict maximum damage for 6 minutes"
+	key = "b"
+>
+	<src obj="Stonehenge" sticky="no"/>
+</cmd>
+
+<cmd name="teuton_disaster"
+	offset="1"
+	button = "Actions/T Invasion.bmp"
+	groupverifier="data/subai/stonehenge_teuton_disaster_verify.vs"
+	voidgroupdispatch="1"
+	groupdispatch="data/subai/stonehenge_teuton_disaster.vs"
+	rollover = "Teuton uprising ritual"
+	description="Starts a Teuton uprising in every Teuton tent"
+	key = "t"
+>
+	<src obj="Stonehenge" sticky="no"/>
+</cmd>
+
+
+
+<!-- INN COMMANDS-->
+<cmd name="transport_request"
+	offset="1"
+	button = "Actions/InnTransport.bmp"
+	rollover = "Transport Party"
+	description="Transports the party to another map"
+	key = "t"
+>
+	<src obj="Inn" sticky="yes"/>
+</cmd>
+
+<!-- UNIT COMMANDS -->
+
+<cmd name="stand_position"
+	offset="1"
+	button="Actions/Stand Ground.bmp"
+	key="s"
+	rollover="Stand ground"
+	groupverifier=""
+	groupdispatch="">
+	<src obj="Unit"/>
+	<nsrc obj="Hero"/>
+</cmd>
+
+<cmd name="move" priority="0"
+	offset="1"
+	button="Actions/Move.bmp"
+	rollover="Move"
+	key="m"
+>
+	<cmdtext target=""
+	         text="Click to move at the point"
+	         default-text="Right-click to move at the point"/>
+
+	<src obj="Unit" sticky="yes"/>
+	<src obj="Deer" sticky="yes"/>
+	<src obj="Wolf" sticky="yes"/>
+	<src obj="Crow" sticky="yes"/>
+</cmd>
+
+<cmd name="transport" priority="1" offset="1"
+	cursor="do_something"
+>
+	<cmdtext target="Inn"
+		text="###############"
+		default-text="Right-click to transport from this Inn"/>
+	<src obj="Unit" sticky="no"/>
+</cmd>
+
+<cmd name="attack" priority="1"
+	offset="1"
+	button="Actions/attack.bmp"
+	key="a"
+	rollover="Attack"
+	cursor="attack"
+>
+	<cmdtext target="Hero"
+		text="Click to attack this hero"
+		default-text="Right-click to attack this hero"/>
+	<cmdtext target="Unit"
+		text="Click to attack this unit"
+		default-text="Right-click to attack this unit"/>
+	<cmdtext target="Building"
+		text="Click to attack this building"
+		default-text="Right-click to attack this building"/>
+	<cmdtext target=""
+		text="Click to advance to this position"
+		default-text="Right-click to advance to this position"/>
+
+	<src obj="Military" sticky="yes"/>
+	<src obj="Wolf" sticky="yes"/>
+</cmd>
+
+<cmd name="attack_unit_type"
+	cursor="attack"
+>
+	<cmdtext target="Unit"
+	        default-text="Right-click to attack this type of units"/>
+			text="Click to attack this type of units"
+	<src obj="Unit"/>
+</cmd>
+
+<cmd name="approach" priority="1"
+>
+	<cmdtext target="Object"
+		text="Approach"
+		default-text="Right-click to approach"/>
+	<src obj="Obj" sticky="no"/>
+</cmd>
+
+
+<cmd name="capture" priority="2"
+	offset="1"
+	button="Actions/capture.bmp"
+	key="u"
+	rollover="Capture"
+	cursor="do_something"
+>
+	<cmdtext target="Wall"
+		text="Walls cannot be captured, only attacked"
+		default-text="Walls cannot be captured, only attacked"/>
+	<cmdtext target="Gate"
+		text="Gates cannot be captured, only attacked"
+		default-text="Gates cannot be captured, only attacked"/>
+	<cmdtext target="Tower"
+		text="Towers cannot be captured, only attacked"
+		default-text="Towers cannot be captured, only attacked"/>
+	<cmdtext target="Building"
+		text="Click to capture this settlement"
+		default-text="Right-click to capture this settlement"/>
+
+	<cmdtext target=""
+		text="Click to advance to this position"
+		default-text="Right-click to advance to this position"/>
+
+	<src obj="Military" sticky="yes"/>
+	<nsrc obj="ShipL"/>
+</cmd>
+
+
+<cmd name="explore" priority="3"
+	offset="1"
+	button="Actions/explore.bmp"
+	rollover="Explore"
+	key="e"
+>
+	<cmdtext target=""
+	         text="Click to explore from this point"
+	         default-text="*****************************"/>
+
+	<src obj="Military" sticky="no"/>
+</cmd>
+
+<cmd name="attach" priority="3"
+	rollover="Attach to hero"
+	cursor="do_something"
+>
+	<cmdtext target="Hero"
+	         text="Click to attach to hero"
+	         default-text="Right-click to attach to hero"/>
+
+<!-- Default command only
+	<src obj="Unit" sticky="yes"/>
+	<nsrc obj="Hero"/>
+	<nsrc obj="GGhost"/>
+	<nsrc obj="Wagon"/>
+-->
+</cmd>
+
+
+<cmd name="teleport" priority="4"
+	cursor="do_something"
+>
+	<cmdtext target="Teleport"
+	         text="Click to enter this cave"
+	         default-text="Right-click to enter this cave"/>
+</cmd>
+
+<cmd name="enter" priority="4"
+	cursor="do_something"
+>
+	<cmdtext target="Building"
+	         text="Click to enter this building"
+	         default-text="Right-click to enter this building"/>
+</cmd>
+
+<cmd name="advance" priority="5"
+	offset="1"
+	cursor="attack"
+>
+	<cmdtext target=""
+	         text="Click to advance to this position"
+	         default-text="Right-click to advance to this position"/>
+
+	<src obj="Military" sticky="yes"/>
+	<src obj="Wolf" sticky="yes"/>
+</cmd>
+
+<cmd name="getitems" priority="8"
+	button=""
+	cursor="do_something"
+>
+	<cmdtext target="ItemHolder"
+	         text=""
+	         default-text="Right-click to get all items"/>
+</cmd>
+
+<cmd name="patrol" priority="8"
+	offset="1"
+	button="actions/patrol.bmp"
+	key="p"
+	rollover="Patrol"
+>
+	<cmdtext target=""
+	         text="Click to patrol this position"/>
+
+	<src obj="Military" sticky="yes"/>
+</cmd>
+
+<cmd name="build_catapult" priority="9"
+	offset="1"
+	button="actions/Build Catapult.bmp"
+	key="c"
+	rollover="Build catapult"
+	description="Builds immobile long range catapult"
+	groupverifier="data/subai/build_catapult_verify.vs"
+	groupdispatch="data/subai/build_catapult.vs"
+>
+	<cmdtext target=""
+	         text="Select a place to build catapult"/>
+
+	<src obj="Military"/>
+	<nsrc obj="Hero"/>
+	<nsrc obj="ShipL"/>
+</cmd>
+
+<!-- HERO COMMANDS -->
+
+<cmd name="stand_ground" priority="3"
+	offset="1"
+	button="Actions/Stand Ground.bmp"
+	key="s"
+	rollover="Stand ground"
+	description="Keeps army in battle formation (applies bonus)"
+	groupverifier=""
+	groupdispatch="">
+	<src obj="Hero"/>
+</cmd>
+
+<cmd name="boardshiphero" priority="0"
+	key=""
+	cursor="do_something">
+
+	<cmdtext target="ShipL"
+	         default-text="Right-click to board this ship"/>
+</cmd>
+
+<cmd name="form-line" priority="1"
+	button="States/line form.bmp"
+	immediate="yes"
+	key="l"
+	rollover="Selects Line formation">
+
+	<src obj="Hero"/>
+</cmd>
+
+<cmd name="form-block" priority="1"
+	button="States/block form.bmp"
+	immediate="yes"
+	key="b"
+	rollover="Select Block formation">
+
+	<src obj="Hero"/>
+</cmd>
+
+<cmd name="form-horse-wings" priority="1"
+	button="states/horse wing form.bmp"
+	immediate="yes"
+	key="h"
+	rollover="Select Horse wings formation">
+
+	<src obj="Hero"/>
+</cmd>
+
+<cmd name="leavearmy" priority="6"
+	button="specials/Leave Army.bmp"
+	cursor=""
+	key="v"
+	rollover="Leave army"
+	description="Leaves the attached units on their own">
+
+	<src obj="Hero"/>
+</cmd>
+
+<cmd name="moveinfight" priority="0"
+	offset="1"
+	key=""
+	cursor="move_in_fight">
+	<cmdtext target=""
+	         default-text="Right-click to move the hero to this position"/>
+
+	<src obj="Hero" sticky="yes"/>
+</cmd>
+
+
+<!-- DRUID COMMANDS -->
+
+<cmd name="help-sacrifice" priority="12"
+	button="actions/Sacrifice.bmp"
+	groupverifier="data/subai/verify_isresearched.vs"
+	onaddremovescript="data/subai/helpsacrifice_onaddremove.vs"
+	cursor="do_something"
+	param="Help Sacrifice"
+	researchcommand="yes">
+	<cmdtext target="BaseMage"
+		text=""
+		default-text="Right-click to join ritual"/>
+</cmd>
+
+<cmd name="learn" priority="10"
+	button="actions/Learn.bmp"
+	key="l"
+	rollover="Learn from unit"
+	description="Gains knowledge from a more experienced unit"
+	>
+
+	<cmdtext target="Unit"
+		text="Click to learn from unit"
+		default-text="Right-click to learn from unit"/>
+
+	<src obj="BaseMage" sticky="yes"/>
+</cmd>
+
+<cmd name="heal" priority="11"
+	button="actions/heal.bmp"
+	key="h"
+	rollover="Heal unit"
+	cursor="do_something">
+	<cmdtext target="Unit"
+		text="Click to heal this unit"
+		default-text="Right-click to heal this unit"/>
+
+	<src obj="BaseMage" sticky="yes"/>
+</cmd>
+
+<cmd name="cloud_of_plague" priority="14"
+	method="mist"
+	button="actions/mist.bmp"
+	key="c"
+	groupverifier="data/subai/verify_isresearched.vs"
+	groupdispatch="data/subai/group_mist.vs"
+	rollover="Create Cloud of Plague"
+	description="Creates a cloud that slowly kills all affected units"
+	param="Cloud of Plague, %s1 (requires Temple ritual)">
+	<src obj="RPriest" sticky="yes"/>
+	<src obj="DLleldoryn" sticky="yes"/>
+</cmd>
+
+<cmd name="ghoul_summoning" priority="14"
+	method="ghost"
+	button="actions/ghost.bmp"
+	key="g"
+	groupverifier="data/subai/verify_isresearched.vs"
+	groupdispatch="data/subai/group_ghost.vs"
+	rollover="Summon ghoul"
+	description="Summons a controllable ghoul that drains the life of nearby enemy units"
+	param="Ghoul Summoning, %s1 (requires Druid House ritual)">
+
+	<src obj="GDruid" sticky="yes"/>
+	<src obj="DLleldoryn" sticky="yes"/>
+</cmd>
+
+<cmd name="beast_control" priority="15"
+	button="actions/possess.bmp"
+	key="b"
+	groupverifier="data/subai/verify_isresearched.vs"
+	rollover="Beast control"
+	description="Takes control of one or more nearby animals (eagle, deer, wolf or crow)"
+	param="Beast control, %s1 (requires Druid House ritual)">
+
+	<src obj="GDruid"/>
+	<src obj="DLleldoryn"/>
+</cmd>
+
+<cmd name="mass_heal" priority="16"
+	button="actions/Mass Healing.bmp"
+	key="a"
+	groupverifier="data/subai/verify_isresearched.vs"
+	rollover="Mass heal"
+	description="Heals nearby friendly units (sacrificing the person's life)"
+	param="Mass Heal, %s1 (requires Druid House ritual)">
+
+	<src obj="GDruid"/>
+</cmd>
+
+<cmd name="hide" priority="15"
+	button="actions/hide.bmp"
+	key="i"
+	groupverifier="data/subai/verify_isresearched.vs"
+	groupdispatch="data/subai/group_hide.vs"
+	onaddremovescript="data/subai/helpsacrifice_onaddremove.vs"
+
+	rollover="Invisibility"
+	description="Renders all units in area invisible"
+	param="Invisibility, %s1 (requires Druid House ritual)">
+	<cmdtext target="Unit"
+		text="Click to hide all units around this position"
+		default-text=""/>
+	<cmdtext target=""
+		text="Click to hide all units around this position"
+		default-text=""/>
+	<src obj="GDruid" sticky="yes"/>
+	<src obj="DLleldoryn" sticky="yes"/>
+</cmd>
+
+<cmd name="wrath_of_jupiter" priority="16"
+	button="actions/jupiter.bmp"
+	key="j"
+	groupverifier="data/subai/verify_isresearched.vs"
+	rollover="Wrath of Jupiter"
+	description="Channels the Wrath of Jupiter hurting the target (sacrificing the person's life)"
+	param="Wrath of Jupiter, %s1 (requires Temple ritual)">
+	<src obj="RPriest" sticky="yes"/>
+</cmd>
+
+<!-- WAGON COMMANDS -->
+
+<cmd name="unload" priority="5"
+	button=""
+	rollover="Unload caravan"
+	cursor="do_something"
+>
+	<src obj="Wagon"/>
+
+	<cmdtext target="Building"
+			text=""
+			default-text="Unload caravan"/>
+</cmd>
+
+<cmd name="loadgold1" priority="3"
+	method="loadgoldbig"
+	button="actions/load gold.bmp"
+	rollover="Load 1000 gold"
+	mod="no">
+
+	<src obj="Wagon"/>
+</cmd>
+
+<cmd name="loadgold2" priority="3"
+	method="loadgoldsmall"
+	button="actions/load gold.bmp"
+	rollover="Load 250 gold"
+	mod="yes">
+
+	<src obj="Wagon"/>
+</cmd>
+
+<cmd name="loadfood1" priority="3"
+	method="loadfoodbig"
+	button="Actions/load food.bmp"
+	rollover="Load 1000 food"
+	mod="no">
+
+	<src obj="Wagon"/>
+</cmd>
+
+<cmd name="loadfood2" priority="3"
+	method="loadfoodsmall"
+	button="actions/load food.bmp"
+	rollover="Load 250 food"
+	mod="yes">
+
+	<src obj="Wagon"/>
+</cmd>
+
+<cmd name="follow" priority="1"
+	button=""
+	key="f"
+	cursor="do_something">
+
+	<cmdtext target="Unit"
+		text=""
+		default-text="Right-click to follow this unit"/>
+</cmd>
+
+<cmd name="boardship" priority="0"
+	cursor="do_something">
+
+	<src obj="Unit"/>
+	<src obj="Trader"/>
+
+	<cmdtext target="ShipL"
+	         default-text="Right-click to board this ship"/>
+</cmd>
+
+<!-- CATAPULT COMMANDS -->
+
+<cmd name="catapult_attack" priority="1" method="attack">
+	<cmdtext target="Building" default-text="Right-click to attack this building"/>
+	<src obj="Catapult"/>
+</cmd>
+
+<cmd name="attack_ground" priority="1"
+	cursor="attack"
+>
+	<cmdtext target="" default-text="Right-click to fire at this position"/>
+</cmd>
+
+<cmd name="autofire" priority="2"
+	button="actions/Catapult Attack.bmp"
+	key="a"
+	rollover="Fire at will"
+	>
+	<src obj="Catapult"/>
+</cmd>
+
+<cmd name="stop" priority="2"
+	button="actions/stand ground.bmp"
+	key="s"
+	rollover="Stop firing">
+  <src obj="Catapult"/>
+</cmd>
+
+<cmd name="disband" priority="3"
+	button="actions/Desert Catapult.bmp"
+	key="d"
+	rollover="Dismantle"
+	>
+	<src obj="Catapult"/>
+</cmd>
+
+
+<!-- VILLAGE COMMANDS -->
+
+<cmd name="repair village" priority="1"
+	method="repair"
+	button="actions/repair.bmp"
+	key="r"
+	queueicon="gameres/icons/upgrades/repair.bmp"
+	rollover="Repair"
+	costgold = "500"
+	costfood = "0"
+	execdelay = "60000">
+	<src obj="BaseVillage"/>
+</cmd>
+
+<cmd name="tribute" priority="2"
+	immediate="yes"
+	button="states/tribute.bmp"
+	key="t"
+	rollover="Tribute"
+	description="Sends resources to another location"
+	failtext="Click on a townhall, village or outpost to start sending resources">
+	<cmdtext target="BaseTownhall"
+		text="Click on this townhall to start sending resources"
+		default-text=""/>
+	<cmdtext target="Outpost"
+		text="Click on this outpost to start sending resources"
+		default-text=""/>
+	<cmdtext target="BaseVillage"
+		text="Click on this village to start sending resources"
+		default-text=""/>
+	<src obj="BaseVillage"/>
+	<src obj="Outpost"/>
+	<src obj="BaseShipyard"/>
+</cmd>
+
+<cmd name="tribute_default" priority="2" immediate="yes"
+	cursor="do_something">
+
+	<cmdtext target="BaseTownhall"
+		text=""
+		default-text="Right-click on this townhall to start sending resources"/>
+	<cmdtext target="Outpost"
+		text=""
+		default-text="Right-click on this outpost to start sending resources"/>
+	<cmdtext target="BaseVillage"
+		text=""
+		default-text="Right-click on this village to start sending resources"/>
+	<src obj="BaseVillage"/>
+	<src obj="Outpost"/>
+	<src obj="BaseShipyard"/>
+</cmd>
+
+<cmd name="stoptribute" priority="2"
+	immediate="yes"
+	button="states/Stop Tribute.bmp"
+	key="t"
+	rollover="Stop sending resources">
+	<src obj="BaseVillage"/>
+	<src obj="Outpost"/>
+	<src obj="BaseShipyard"/>
+</cmd>
+
+<cmd name="buyfoodforgold" priority="6"
+	button="actions/buy food.bmp"
+	immediate = "yes"
+	key="f"
+	costgold = "500"
+	param = "500"
+	rollover="Buy 500 food">
+	<src obj="RTavern"/>
+	<src obj="RTavern2"/>
+</cmd>
+
+<!-- TRAINPEASANT DESACTIVADO - Los campesinos se envian automaticamente en VILLAGE_IDLE.VS -->
+<cmd name="trainpeasantr" priority="4"
+	button="actions/train peasant.bmp"
+	queueicon="gameres/icons/train peasant r.bmp"
+	traincommand="yes"
+	key="c"
+	costgold = "0"
+	costfood = "0"
+	costpop = "5"
+	execdelay = "25000"
+	method = "trainpeasant"
+	rollover="Call peasants"
+	description="Calls 5 peasants of the population"
+	sclass="Peasant">
+	<!--<src obj="RVillage"/>-->
+	<!--<src obj="RTavern"/>-->
+	<!--<src obj="RTavern2"/>-->
+</cmd>
+<cmd name="trainpeasantg" priority="4"
+	button="actions/train peasant.bmp"
+	queueicon="gameres/icons/train peasant g.bmp"
+	traincommand="yes"
+	key="c"
+	costgold = "0"
+	costfood = "0"
+	costpop = "5"
+	execdelay = "25000"
+	method = "trainpeasant"
+	rollover="Call peasants"
+	description="Calls 5 peasants of the population"
+	sclass="Peasant">
+	<!--<src obj="Village"/>-->
+	<!--<src obj="Tavern"/>-->
+</cmd>
+
+
+<!-- For now the following four work without an int parameter -->
+
+<cmd name="createfoodmule1" priority="6"
+	method="createfoodmulesmall"
+	groupverifier="data/subai/create_food_mule_verify.vs"
+	mod="yes"
+	button="actions/Create Mule Food.bmp"
+	queueicon="gameres/icons/wagon.bmp"
+	transpicon="1"
+	cursor=""
+	key="f"
+	immediate="yes"
+	rollover="Create mule with 250 food">
+	<src obj="BaseVillage"/>
+	<src obj="BaseTownhall"/>
+	<src obj="Outpost"/>
+	<src obj="BaseShipyard"/>
+</cmd>
+
+<cmd name="createfoodmule2" priority="6"
+	method="createfoodmulebig"
+	groupverifier="data/subai/create_food_mule_verify.vs"
+	mod="no"
+	button="actions/Create Mule Food.bmp"
+	queueicon="gameres/icons/wagon.bmp"
+	transpicon="1"
+	cursor=""
+	key="f"
+	immediate="yes"
+	rollover="Create mule with 1000 food">
+	<src obj="BaseVillage"/>
+	<src obj="BaseTownhall"/>
+	<src obj="Outpost"/>
+	<src obj="BaseShipyard"/>
+</cmd>
+
+<cmd name="creategoldmule1" priority="6"
+	method="creategoldmulesmall"
+	groupverifier="data/subai/create_gold_mule_verify.vs"
+	mod="yes"
+	button="actions/Create Mule Gold.bmp"
+	queueicon="gameres/icons/wagon.bmp"
+	transpicon="1"
+	cursor=""
+	key="g"
+	immediate="yes"
+	rollover="Create mule loaded with 250 gold">
+	<src obj="BaseVillage"/>
+	<src obj="BaseTownhall"/>
+	<src obj="Outpost"/>
+	<src obj="BaseShipyard"/>
+</cmd>
+
+<cmd name="creategoldmule2" priority="6"
+	method="creategoldmulebig"
+	groupverifier="data/subai/create_gold_mule_verify.vs"
+	mod="no"
+	button="actions/Create Mule Gold.bmp"
+	queueicon="gameres/icons/wagon.bmp"
+	transpicon="1"
+	cursor=""
+	key="g"
+	immediate="yes"
+	rollover="Create mule loaded with 1000 gold">
+	<src obj="BaseVillage"/>
+	<src obj="BaseTownhall"/>
+	<src obj="Outpost"/>
+	<src obj="BaseShipyard"/>
+</cmd>
+
+<!-- 
+<cmd name="routpost_interest" priority="1"
+	button="states/trade.bmp"
+	immediate="yes"
+	traincommand="no"
+	method="routpost_interest"
+	groupverifier="data/subai/group_routpost_interest_verifiy.vs"
+	param="yes"
+	rollover="Start trade"
+	costgold="500">
+	<src obj="ROutpost"/>
+</cmd>
+
+<cmd name="routpost_no_interest" priority="1"
+	button="states/Stop Trade.bmp"
+	immediate="yes"
+	traincommand="no"
+	method="routpost_interest"
+	groupverifier="data/subai/group_routpost_no_interest_verifiy.vs"
+	param="no"
+	rollover="Stop trade">
+	<src obj="ROutpost"/>
+</cmd>
+-->
+
+<cmd name="goutpost_sellfood" priority="1"
+	button="states/sell food.bmp"
+	immediate="yes"
+	traincommand="no"
+	method="goutpost_sellfood"
+	param="yes"
+	groupverifier="data/subai/group_goutpost_sell_food_verifiy.vs"
+	key="s"
+	rollover="Sell food"
+	description="Slowly exchanges stored food for gold">
+	<src obj="GOutpost"/>
+</cmd>
+
+<cmd name="goutpost_no_sellfood" priority="1"
+	button="states/Stop Selling Food.bmp"
+	immediate="yes"
+	traincommand="no"
+	method="goutpost_sellfood"
+	param="no"
+	groupverifier="data/subai/group_goutpost_no_sell_food_verifiy.vs"
+	key="s"
+	rollover="Stop selling food">
+	<src obj="GOutpost"/>
+</cmd>
+
+
+<!-- DRUIDS HOUSE COMMANDS -->
+
+<cmd name="repair druid house" priority="1"
+	method="repair"
+	button="actions/repair.bmp"
+	key="r"
+	queueicon="gameres/icons/upgrades/repair.bmp"
+	rollover="Repair"
+	costgold="500"
+	costfood="0"
+	execdelay = "60000">
+	<src obj="DruidHouse"/>
+</cmd>
+
+<cmd name="trainGDruid" priority="1"
+	button="actions/train druid.bmp"
+	queueicon="gameres/icons/gdruid.bmp"
+	transpicon="1"
+	traincommand="yes"
+	key="d"
+	help="/contents/units/GDruid"
+	costgold = "200"
+	costfood = "0"
+	costpop = "0"
+	execdelay = "6000"
+	rollover="Call Druid"
+	method="train"
+	param="GDruid"
+	sclass="GDruid">
+	<src obj="DruidHouse"/>
+</cmd>
+
+<cmd name="Ritual chamber" priority="2"
+	button="research/druid relations.bmp"
+	key="r"
+	queueicon="gameres/icons/upgrades/druid relations.bmp"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "1000"
+	costfood = "0"
+	execdelay = "15000"
+	rollover="Ritual chamber"
+	description="Allows Druids to practice their skills"
+	method="research"
+	param="NameSet, Ritual chamber, default">
+	<src obj="DruidHouse"/>
+</cmd>
+
+
+<cmd name="Ghoul Summoning" priority="6"
+	queueicon="gameres/icons/upgrades/Ghost.bmp"
+	button="research/Ghost.bmp"
+	key="g"
+	help="/contents/units/Ghost"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "1600"
+	costfood = "0"
+	execdelay = "20000"
+	rollover="Allows Ghoul summoning ritual"
+	method="research"
+	param="ReqSet, Ritual chamber, default, NamePlr, Ghoul Summoning, default">
+	<src obj="DruidHouse"/>
+</cmd>
+
+<cmd name="Mass Heal" priority="9"
+	queueicon="gameres/icons/upgrades/Mass Healing.bmp"
+	button="research/Mass Healing.bmp"
+	key="m"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "1500"
+	costfood = "0"
+	execdelay = "20000"
+	rollover="Allows Mass heal ritual"
+	method="research"
+	param="ReqSet, Ritual chamber, default, NamePlr, Mass Heal, default">
+	<src obj="DruidHouse"/>
+</cmd>
+
+<cmd name="Beast control" priority="8"
+	queueicon="gameres/icons/upgrades/Possess.bmp"
+	button="research/Possess.bmp"
+	key="b"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "250"
+	costfood = "0"
+	execdelay = "20000"
+	rollover="Allows Beast control ritual"
+	method="research"
+	param="ReqSet, Ritual chamber, default, NamePlr, Beast control, default">
+	<src obj="DruidHouse"/>
+</cmd>
+
+
+<cmd name="Invisibility" priority="7"
+	queueicon="gameres/icons/upgrades/hide.bmp"
+	button="research/hide.bmp"
+	key="p"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "500"
+	costfood = "0"
+	execdelay = "10000"
+	rollover="Allows Invisibility ritual"
+	method="research"
+	param="ReqSet, Ritual chamber, default, NamePlr, Invisibility, default">
+	<src obj="DruidHouse"/>
+</cmd>
+
+
+
+<!-- TEMPLE COMMANDS -->
+<!-- NOTE : train command must have names like this:"trainClassName" -->
+<!--        where ClassName is the class of the unit to be trained -->
+
+<cmd name="repair temple" priority="1"
+	method="repair"
+	button="actions/repair.bmp"
+	key="r"
+	queueicon="gameres/icons/upgrades/repair.bmp"
+	rollover="Repair"
+	costgold="500"
+	costfood="0"
+	execdelay = "60000">
+	<src obj="RTemple"/>
+</cmd>
+
+<cmd name="trainRPriest" priority="1"
+	button="actions/train priest.bmp"
+	queueicon="gameres/icons/Priest.bmp"
+	traincommand="yes"
+	transpicon="1"
+	key="p"
+	help="/contents/units/RPriest"
+	costgold = "200"
+	costfood = "0"
+	costpop = "0"
+	execdelay = "6000"
+	rollover="Call Priest"
+	method="train"
+	param="RPriest"
+	sclass="RPriest">
+	<src obj="RTemple"/>
+</cmd>
+
+<cmd name="Altar of Jupiter" priority="2"
+	button="research/priest enlightment.bmp"
+	key="a"
+	queueicon="gameres/icons/upgrades/Priest Enlighment.bmp"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "1000"
+	costfood = "0"
+	execdelay = "15000"
+	rollover="Altar of Jupiter"
+	description="Allows Priests to practice their skills"
+	method="research"
+	param="NameSet, Altar of Jupiter, default">
+	<src obj="RTemple"/>
+</cmd>
+
+<cmd name="Cloud of Plague" priority="5"
+	queueicon="gameres/icons/upgrades/mist.bmp"
+	button="research/mist.bmp"
+	key="c"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "2000"
+	costfood = "0"
+	execdelay = "20000"
+	rollover="Allows Cloud of Plague ritual"
+	method="research"
+	param="ReqSet, Altar of Jupiter, default, NamePlr, Cloud of Plague, default">
+	<src obj="RTemple"/>
+</cmd>
+
+<cmd name="Wrath of Jupiter" priority="6"
+	button="research/Jupiter.bmp"
+	queueicon="gameres/icons/upgrades/Jupiter.bmp"
+	key="j"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "2000"
+	costfood = "0"
+	execdelay = "20000"
+	rollover="Allows Wrath of Jupiter ritual"
+	method="research"
+	param="ReqSet, Altar of Jupiter, default, NamePlr, Wrath of Jupiter, default">
+	<src obj="RTemple"/>
+</cmd>
+
+
+<!-- ROMAN BLACKSMITH COMMANDS -->
+
+<cmd name="repair rblacksmith" priority="1"
+	method="repair"
+	button="actions/repair.bmp"
+	key="r"
+	queueicon="gameres/icons/upgrades/repair.bmp"
+	rollover="Repair"
+	costgold = "500"
+	costfood = "0"
+	execdelay = "60000">
+	<src obj="RBlacksmith"/>
+</cmd>
+
+<cmd name="Roman Archers" priority="0"
+	queueicon="gameres/icons/upgrades/archer.bmp"
+	button="upgrades/Archer.bmp"
+	key="a"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "400"
+	costfood = "0"
+	execdelay = "30000"
+	rollover="Arrows"
+	description="Allows Archers"
+	method="research"
+	param="NameSet, RArcher, Archer equipment ready">
+	<src obj="RBlacksmith"/>
+</cmd>
+<cmd name="Roman Gladiator" priority="1"
+	queueicon="gameres/icons/upgrades/Gladiator.bmp"
+	button="upgrades/glad.bmp"
+	key="g"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "800"
+	costfood = "0"
+	execdelay = "30000"
+	rollover="Tridents"
+	description="Allows Gladiators"
+	method="research"
+	param="NameSet, RGladiator, Gladiator equipment ready">
+	<src obj="RBlacksmith"/>
+</cmd>
+<cmd name="Roman Principle" priority="2"
+	queueicon="gameres/icons/upgrades/Principle.bmp"
+	button="upgrades/Principle.bmp"
+	key="p"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "1000"
+	costfood = "0"
+	execdelay = "30000"
+	rollover="Pikes"
+	description="Allows Principles"
+	method="research"
+	param="NameSet, RSpearman, Principle equipment ready">
+	<src obj="RBlacksmith"/>
+</cmd>
+<cmd name="Roman Horseman" priority="3"
+	queueicon="gameres/icons/upgrades/HShoes.bmp"
+	button="upgrades/horseman.bmp"
+	key="h"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "1000"
+	costfood = "0"
+	execdelay = "30000"
+	rollover="Horseshoes"
+	description="Allows Scouts"
+	method="research"
+	param="NameSet, RHorseman, Scout equipment ready">
+	<src obj="RBlacksmith"/>
+</cmd>
+<cmd name="Roman Pretorian" priority="4"
+	queueicon="gameres/icons/upgrades/Pretorian.bmp"
+	button="upgrades/Pretorian.bmp"
+	key="k"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "2000"
+	costfood = "0"
+	execdelay = "30000"
+	rollover="Spike armor"
+	description="Allows Praetorians"
+	method="research"
+	param="NameSet, RPretorian, Praetorian equipment ready">
+	<src obj="RBlacksmith"/>
+</cmd>
+
+
+<!-- BLACKSMITH COMMANDS -->
+<!-- 'Horseman', 'Axeman', 'Spearman' and 'Woman warrior'-->
+
+<cmd name="repair blacksmith" priority="1"
+	method="repair"
+	button="actions/repair.bmp"
+	key="r"
+	queueicon="gameres/icons/upgrades/repair.bmp"
+	rollover="Repair"
+	costgold = "500"
+	costfood = "0"
+	execdelay = "60000">
+	<src obj="Blacksmith"/>
+</cmd>
+
+<cmd name="Steel Weapons" priority="0"
+	queueicon="gameres/icons/upgrades/Steel weapons.bmp"
+	button="upgrades/Steel weapons.bmp"
+	key="s"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "1200"
+	costfood = "0"
+	execdelay = "30000"
+	rollover="Steel weapons"
+	description="Equips level 12 Swordsmen and Archers"
+	method="research"
+	param="NameSet, Steel Weapons, default, SetsSet, levels/GSwordsman, 12, SetsSet, levels/GArcher, 12">
+	<src obj="Blacksmith"/>
+</cmd>
+<cmd name="Gaul Axeman" priority="0"
+	queueicon="gameres/icons/upgrades/axe.bmp"
+	button="upgrades/axes.bmp"
+	key="x"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "800"
+	costfood = "0"
+	execdelay = "30000"
+	rollover="Axes"
+	description="Allows Axemen"
+	method="research"
+	param="NameSet, GAxeman, Axeman equipment ready">
+	<src obj="Blacksmith"/>
+</cmd>
+<cmd name="Gaul Spearman" priority="1"
+	queueicon="gameres/icons/upgrades/spears.bmp"
+	button="upgrades/spears.bmp"
+	key="p"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "1000"
+	costfood = "0"
+	execdelay = "30000"
+	rollover="Spears"
+	description="Allows Spearmen"
+	method="research"
+	param="NameSet, GSpearman, Spearman equipment ready">
+	<src obj="Blacksmith"/>
+</cmd>
+<cmd name="Gaul Horseman" priority="2"
+	queueicon="gameres/icons/upgrades/HShoes.bmp"
+	button="upgrades/Horse Shoes.bmp"
+	key="h"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "1000"
+	costfood = "0"
+	execdelay = "30000"
+	rollover="Horseshoes"
+	description="Allows Horsemen"
+	method="research"
+	param="NameSet, GHorseman, Horseman equipment ready">
+	<src obj="Blacksmith"/>
+</cmd>
+<cmd name="Gaul Woman Warrior" priority="3"
+	queueicon="gameres/icons/upgrades/WBreast.bmp"
+	button="upgrades/WBreast.bmp"
+	key="w"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	costgold = "1500"
+	costfood = "0"
+	execdelay = "30000"
+	rollover="Woman armor"
+	description="Allows Woman Warriors"
+	method="research"
+	param="ReqSet, Steel Weapons, default, NameSet, GWFighter, Woman Warrior equipment ready">
+	<src obj="Blacksmith"/>
+</cmd>
+
+
+
+
+<!-- BARRACK COMMANDS -->
+
+
+<cmd name="repair barracks" priority="1"
+	method="repair"
+	button="actions/repair.bmp"
+	key="r"
+	queueicon="gameres/icons/upgrades/repair.bmp"
+	rollover="Repair"
+	costgold = "500"
+	costfood = "0"
+	execdelay = "60000">
+	<src obj="RBarracks"/>
+	<src obj="Barrack"/>
+</cmd>
+<cmd name="Barrack Level 1" priority="2"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	queueicon="gameres/icons/upgrades/Barrack1.bmp"
+	button="upgrades/barrack1.bmp"
+	key="f"
+	rollover="Fast warrior equipment"
+	description="Equips units twice as fast"
+	costgold = "500"
+	costfood = "0"
+	execdelay = "20000"
+	method="research"
+	param="NameSet, Barrack Level 1, , SetsSet, BarrackTrainTimeDecrease, 50">
+	<src obj="RBarracks"/>
+	<src obj="Barrack"/>
+</cmd>
+<cmd name="Barrack Level 2" priority="2"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	queueicon="gameres/icons/upgrades/Barrack2.bmp"
+	button="upgrades/barrack2.bmp"
+	key="f"
+	rollover="Faster warrior equipment"
+	description="Equips units four times as fast"
+	costgold = "500"
+	costfood = "0"
+	execdelay = "20000"
+	method="research"
+	param="ReqSet, Barrack Level 1, , NameSet, Barrack Level 2, , SetsSet, BarrackTrainTimeDecrease, 75">
+	<src obj="RBarracks"/>
+	<src obj="Barrack"/>
+</cmd>
+<cmd name="GBarrack Level 3" priority="2"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	queueicon="gameres/icons/upgrades/Barrack3.bmp"
+	button="upgrades/barrack3.bmp"
+	key="f"
+	rollover="Fastest warrior equipment"
+	description="Equips units eight times as fast"
+	costgold = "500"
+	costfood = "0"
+	execdelay = "20000"
+	method="research"
+	param="ReqSet, Barrack Level 2, , ReqSet, Fights, default, NameSet, Barrack Level 3, Fastest warrior equipment complete, SetsSet, BarrackTrainTimeDecrease, 87">
+	<src obj="Barrack"/>
+</cmd>
+
+<cmd name="RBarrack Level 3" priority="2"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	queueicon="gameres/icons/upgrades/Barrack3.bmp"
+	button="upgrades/barrack3.bmp"
+	key="f"
+	rollover="Fastest warrior equipment"
+	description="Equips units eight times as fast"
+	costgold = "500"
+	costfood = "0"
+	execdelay = "20000"
+	method="research"
+	param="ReqSet, Barrack Level 2, , ReqSet, Gladiator Shows, default, NameSet, Barrack Level 3, Fastest warrior equipment complete, SetsSet, BarrackTrainTimeDecrease, 87">
+	<src obj="RBarracks"/>
+</cmd>
+
+<!-- GAUL BARRACK TRAIN COMMANDS -->
+
+<cmd name="trainGSwordsman" priority="3"
+	button="actions/train gswordsman.bmp"
+	queueicon="gameres/icons/gswordsman.bmp"
+	transpicon="1"
+	traincommand="yes"
+	key="s"
+	help="/contents/units/GSwordsman"
+	costgold = "80"
+	costfood = "0"
+	costpop = "0"
+	execdelay = "3000"
+	rollover="Equip Swordsman"
+	method="train"
+	param="GSwordsman"
+	sclass="GSwordsman">
+	<src obj="Barrack"/>
+</cmd>
+
+<cmd name="trainGArcher" priority="4"
+	button="actions/train garcher.bmp"
+	queueicon="gameres/icons/garcher.bmp"
+	transpicon="1"
+	traincommand="yes"
+	key="a"
+	help="/contents/units/GArcher"
+	costgold = "100"
+	costfood = "0"
+	costpop = "0"
+	execdelay = "3000"
+	rollover="Equip Archer"
+	method="train"
+	param="GArcher"
+	sclass="GArcher">
+
+	<src obj="Barrack"/>
+</cmd>
+
+<cmd name="trainGAxeman" priority="5"
+	button="actions/train gaxeman.bmp"
+	queueicon="gameres/icons/gaxeman.bmp"
+	transpicon="1"
+	groupverifier="data/subai/barrack_train_verify.vs"
+	traincommand="yes"
+	key="x"
+	help="/contents/units/GAxeman"
+	costgold = "120"
+	costfood = "0"
+	costpop = "0"
+	execdelay = "3000"
+	rollover="Equip Axeman"
+	method="train"
+	param="GAxeman"
+	sclass="GAxeman">
+	<src obj="Barrack"/>
+</cmd>
+
+<cmd name="trainGSpearman" priority="6"
+	button="actions/train gspearman.bmp"
+	queueicon="gameres/icons/GSpearman.bmp"
+	transpicon="1"
+	traincommand="yes"
+	groupverifier="data/subai/barrack_train_verify.vs"
+	key="p"
+	help="/contents/units/GSpearman"
+	costgold = "200"
+	costfood = "0"
+	costpop = "1"
+	execdelay = "6000"
+	rollover="Equip Spearman"
+	method="train"
+	param="GSpearman"
+	sclass="GSpearman">
+
+	<src obj="Barrack"/>
+</cmd>
+
+<cmd name="trainGHorseman" priority="7"
+	button="actions/train ghorseman.bmp"
+	queueicon="gameres/icons/ghorseman.bmp"
+	transpicon="1"
+	groupverifier="data/subai/barrack_train_verify.vs"
+	traincommand="yes"
+	key="h"
+	help="/contents/units/GSpearman"
+	costgold = "200"
+	costfood = "0"
+	costpop = "1"
+	execdelay = "6000"
+	rollover="Equip Horseman"
+	method="train"
+	param="GHorseman"
+	sclass="GHorseman">
+
+	<src obj="Barrack"/>
+</cmd>
+
+<cmd name="trainGWFighter" priority="8"
+	button="actions/train ww.bmp"
+	queueicon="gameres/icons/WomanWarrior.bmp"
+	transpicon="1"
+	traincommand="yes"
+	groupverifier="data/subai/barrack_train_verify.vs"
+	key="w"
+	help="/contents/units/GWWarrior"
+	costgold = "240"
+	costfood = "0"
+	costpop = "1"
+	execdelay = "10000"
+	rollover="Equip Woman Warrior"
+	method="train"
+	param="GWFighter"
+	sclass="GWFighter">
+	<src obj="Barrack"/>
+</cmd>
+
+<!-- ROME BARRACK TRAIN COMMANDS -->
+
+<cmd name="trainRSwordsman" priority="3"
+	button="actions/train Rhastati.bmp"
+	queueicon="gameres/icons/rswordsman.bmp"
+	transpicon="1"
+	traincommand="yes"
+	key="h"
+	help="/contents/units/RHastatus"
+	costgold = "100"
+	costfood = "0"
+	costpop = "0"
+	execdelay = "3000"
+	rollover="Equip Hastatus"
+	method="train"
+	param="RSwordsman"
+	sclass="RSwordsman">
+	<src obj="RBarracks"/>
+</cmd>
+
+<cmd name="trainRArcher" priority="4"
+	button="actions/train rarcher.bmp"
+	groupverifier="data/subai/barrack_train_verify.vs"
+	queueicon="gameres/icons/rarcher.bmp"
+	transpicon="1"
+	traincommand="yes"
+	key="a"
+	help="/contents/units/RArcher"
+	costgold = "100"
+	costfood = "0"
+	costpop = "0"
+	execdelay = "3000"
+	rollover="Equip Archer"
+	method="train"
+	param="RArcher"
+	sclass="RArcher">
+
+	<src obj="RBarracks"/>
+</cmd>
+
+<cmd name="trainRGladiator" priority="5"
+	button="actions/train RGladiator.bmp"
+	queueicon="gameres/icons/gladiator.bmp"
+	transpicon="1"
+	groupverifier="data/subai/barrack_train_verify.vs"
+	traincommand="yes"
+	key="g"
+	help="/contents/units/RGladiator"
+	costgold = "150"
+	costfood = "0"
+	costpop = "0"
+	execdelay = "3000"
+	rollover="Equip Gladiator"
+	method="train"
+	param="RGladiator"
+	sclass="RGladiator">
+	<src obj="RBarracks"/>
+</cmd>
+
+<cmd name="trainRSpearman" priority="6"
+	button="actions/train rprinciple.bmp"
+	queueicon="gameres/icons/RSpearman.bmp"
+	transpicon="1"
+	traincommand="yes"
+	groupverifier="data/subai/barrack_train_verify.vs"
+	key="p"
+	help="/contents/units/RPrinciple"
+	costgold = "200"
+	costfood = "0"
+	costpop = "1"
+	execdelay = "6000"
+	rollover="Equip Principle"
+	method="train"
+	param="RSpearman"
+	sclass="RSpearman">
+
+	<src obj="RBarracks"/>
+</cmd>
+
+<cmd name="trainRHorseman" priority="7"
+	button="actions/train rScout.bmp"
+	queueicon="gameres/icons/rhorseman.bmp"
+	transpicon="1"
+	groupverifier="data/subai/barrack_train_verify.vs"
+	traincommand="yes"
+	key="s"
+	help="/contents/units/RScout"
+	costgold = "200"
+	costfood = "0"
+	costpop = "1"
+	execdelay = "6000"
+	rollover="Equip Scout"
+	method="train"
+	param="RHorseman"
+	sclass="RHorseman">
+
+	<src obj="RBarracks"/>
+</cmd>
+
+<cmd name="trainRPretorian" priority="8"
+	button="actions/train RPraetorian.bmp"
+	queueicon="gameres/icons/RPraetorian.bmp"
+	transpicon="1"
+	traincommand="yes"
+	groupverifier="data/subai/barrack_train_verify.vs"
+	key="r"
+	help="/contents/units/RPraetorian"
+	costgold = "300"
+	costfood = "0"
+	costpop = "1"
+	execdelay = "10000"
+	rollover="Equip Praetorian"
+	method="train"
+	param="RPretorian"
+	sclass="RPretorian">
+	<src obj="RBarracks"/>
+</cmd>
+
+
+
+<!-- TOWN HALL COMMANDS -->
+<cmd name="repair townhall" priority="1"
+	method="repair"
+	button="actions/repair.bmp"
+	key="r"
+	queueicon="gameres/icons/upgrades/repair.bmp"
+	rollover="Repair"
+	costgold = "500"
+	costfood = "0"
+	execdelay = "60000">
+	<src obj="BaseTownhall"/>
+</cmd>
+
+<cmd name="unitsout" priority="9"
+	traincommand="no"
+	key="o"
+	groupdispatch="data/subai/group_unitsout.vs"
+>
+	<cmdtext target=""
+		text=""
+		default-text="Right-click to send all units to this position"/>
+</cmd>
+
+
+
+<!-- TAVERN COMMANDS -->
+<cmd name="GAddPop" priority="2"
+	queueicon="gameres/icons/upgrades/Add population.bmp"
+	button="actions/Add population.bmp"
+	cursor=""
+	key="p"
+	traincommand="yes"
+	costfood="800"
+	execdelay="10000"
+	method="addpop"
+	description="Adds 10 peasants to the stronghold population"
+	rollover="Increase population">
+
+	<src obj="GTavern"/>
+</cmd>
+
+<cmd name="RAddPop" priority="2"
+	queueicon="gameres/icons/upgrades/Add population.bmp"
+	button="actions/Add population.bmp"
+	cursor=""
+	key="p"
+	traincommand="yes"
+	costfood="800"
+	execdelay="10000"
+ 	method="addpop"
+	description="Adds 10 peasants to the stronghold population"
+	rollover="Increase population">
+
+	<src obj="RTavern"/>
+	<src obj="RTavern2"/>
+</cmd>
+
+<cmd name="Free Beer" priority="8"
+	key="b"
+	queueicon="gameres/icons/upgrades/free beer.bmp"
+	groupverifier="data/subai/verify_research.vs"
+	button="research/free beer.bmp"
+	costgold="1000"
+	execdelay="15000"
+	researchcommand="yes"
+	method="research"
+	param="NameSet, Free Beer, default"
+	description="Allows advanced Tavern commands and upgrades"
+	rollover="Free beer"
+	>
+
+	<src obj="Tavern"/>
+</cmd>
+
+<cmd name="Free Wine" priority="8"
+	key="w"
+	queueicon="gameres/icons/upgrades/free wine.bmp"
+	groupverifier="data/subai/verify_research.vs"
+	button="research/free wine.bmp"
+	costgold="1000"
+	execdelay="15000"
+	researchcommand="yes"
+	method="research"
+	param="NameSet, Free Wine, default"
+	description="Allows advanced Tavern commands and upgrades"
+	rollover="Free wine"
+	>
+	<src obj="RTavern"/>
+	<src obj="RTavern2"/>
+</cmd>
+
+<cmd name="Import horses" priority="9"
+	key="h"
+	queueicon="gameres/icons/upgrades/Horses.bmp"
+	groupverifier="data/subai/verify_research.vs"
+	button="upgrades/Import horses.bmp"
+	costgold="1200"
+	execdelay="15000"
+	researchcommand="yes"
+	method="research"
+	param="NameSet, Import horses, default, SetsSet, levels/RHorseman, 12, ReqSet, Free Wine, default"
+	rollover="Import horses"
+	description="Equip level 12 Scouts">
+	<src obj="RTavern"/>
+	<src obj="RTavern2"/>
+</cmd>
+
+<cmd name="repair tavern" priority="1"
+	method="repair"
+	button="actions/repair.bmp"
+	key="r"
+	queueicon="gameres/icons/upgrades/repair.bmp"
+	rollover="Repair"
+	costgold="500"
+	execdelay = "60000">
+	<src obj="BaseTavern"/>
+</cmd>
+
+<cmd name="Buy map" priority="11"
+	queueicon="gameres/icons/upgrades/Buy Maps.bmp"
+	groupverifier="data/subai/verify_research.vs"
+	button="actions/buy maps.bmp"
+	costgold="2000"
+	execdelay="200000"
+	researchcommand="yes"
+	method="research"
+	key="m"
+	rollover="Buy map"
+	description="Explores large area around the stronghold"
+	param="ReqSet, Free Wine, default, NamePlr, Buy map, default">
+	<src obj="RTavern"/>
+	<src obj="RTavern2"/>
+</cmd>
+
+<!-- <cmd name="Scout Area" priority="12"
+	groupverifier="data/subai/verify_isresearched.vs"
+	button="actions/scouts.bmp"
+	key="s"
+	costgold="200"
+	rollover="Scout area"
+	description="Temporarily removes fog of war in chosen area"
+	immediate="yes"
+	param="Free Wine">
+	<src obj="RTavern"/>
+	<src obj="RTavern2"/>
+</cmd> -->
+
+<cmd name="investR" priority="14"
+	key="i"
+	execdelay="300000"
+	costgold="3000"
+	button="actions/invest.bmp"
+	queueicon="gameres/icons/upgrades/Invest.bmp"
+	groupverifier="data/subai/verify_isresearched.vs"
+	rollover="Investment"
+	description="Returns 4000 gold after the investment is complete"
+	method="invest"
+	traincommand="yes"
+	param="Free Wine">
+	<src obj="RTavern"/>
+	<src obj="RTavern2"/>
+</cmd>
+
+<cmd name="Food Tax" priority="16"
+	method="research"
+	queueicon="gameres/icons/upgrades/Food Tax.bmp"
+	button="upgrades/Food Tax.bmp"
+	key = "t"
+	rollover="Food tax"
+	description="Collects food tax from population"
+	costgold="1000"
+	execdelay="20000"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	param="ReqSet, Free Beer, default, NameSet, Food Tax, default">
+	<src obj="Tavern"/>
+</cmd>
+
+<cmd name="Nordic trade routes" priority="20"
+	method="research"
+	queueicon="gameres/icons/upgrades/Routes.bmp"
+	button="upgrades/Routes.bmp"
+	key="n"
+	rollover="Nordic trade routes"
+	description="Starts equipping all units with Bear Teeth Amulet (+4 max attack)"
+	costgold="1000"
+	execdelay="20000"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	param="ReqSet, Free Beer, default, NameSet, Nordic trade routes, default, SetsSet, items/Bear teeth amulet, 1">
+	<src obj="Tavern"/>
+</cmd>
+
+<cmd name="Herb Amulets of Luck" priority="20"
+	method="research"
+	queueicon="gameres/icons/upgrades/Herb Amulets Of Luck.bmp"
+	button="upgrades/Herb Amulets Of Luck.bmp"
+	key="h"
+	rollover="Herb amulets of Luck"
+	description="Starts equipping all units with Herb Amulet of Luck (+4 piercing defence)"
+	costgold="400"
+	execdelay="20000"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	param="ReqSet, Nordic trade routes, default, NameSet, Herb Amulets of Luck, default, SetsSet, items/Herb amulet of luck, 1">
+	<src obj="Tavern"/>
+</cmd>
+
+<cmd name="Belts of Might" priority="21"
+	method="research"
+	queueicon="gameres/icons/upgrades/Belt Of Might.bmp"
+	button="upgrades/Belt Of Might.bmp"
+	key="m"
+	rollover="Belts of Might"
+	description="Starts equipping all units with Belt of Might (+4 slashing defence)"
+	costgold="400"
+	execdelay="20000"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	param="ReqSet, Nordic trade routes, default, NameSet, Belts of Might, default, SetsSet, items/Belt of might, 1">
+	<src obj="Tavern"/>
+</cmd>
+
+<cmd name="getloan" priority="18"
+	method="getloan"
+	button="actions/get loan.bmp"
+	key="l"
+	rollover="Get loan"
+	description="Borrows 4000 gold at 10% interest"
+	groupverifier="data/subai/verify_isresearched.vs"
+	immediate="yes"
+	param="Free Beer">
+	<src obj="Tavern"/>
+</cmd>
+
+<cmd name="repayloan" priority="18"
+	method="repayloan"
+	button="actions/repay loan.bmp"
+	key="l"
+	rollover="Repay loan"
+	description="Gives all current gold to repay the loan (without interest)"
+	immediate="yes">
+	<src obj="BaseTavern"/>
+</cmd>
+
+<!-- ARENA COMMANDS -->
+
+<cmd name="repair arena" priority="1"
+	method="repair"
+	button="actions/repair.bmp"
+	key="r"
+	queueicon="gameres/icons/upgrades/repair.bmp"
+	rollover="Repair"
+	costgold="500"
+	execdelay = "60000">
+	<src obj="BaseArena"/>
+</cmd>
+
+<cmd name="Fights" priority="2"
+	button="Upgrades/Fights.bmp"
+	key="f"
+	queueicon="gameres/icons/upgrades/Fights.bmp"
+	costgold = "1000"
+	costfood = "0"
+	execdelay = "25000"
+	researchcommand="yes"
+	groupverifier="data/subai/verify_research.vs"
+	description="Allows advanced Arena commands and upgrades"
+	rollover="Fights"
+	method="research"
+	param="NameSet, Fights, default">
+	<src obj="Arena 1"/>
+	<src obj="Arena 2"/>
+</cmd>
+
+<cmd name="Gladiator Shows" priority="2"
+	button="Upgrades/Gladiator Show.bmp"
+	key="s"
+	queueicon="gameres/icons/upgrades/Gladiator Show.bmp"
+	costgold = "1000"
+	costfood = "0"
+	execdelay = "25000"
+	groupverifier="data/subai/verify_research.vs"
+	description="Allows advanced Arena commands and upgrades"
+	rollover="Gladiator shows"
+	method="research"
+	researchcommand="yes"
+	param="NameSet, Gladiator Shows, default">
+	<src obj="RArena"/>
+</cmd>
+
+<cmd name="Gaul Training 1" priority="3"
+	button="research/training.bmp"
+	key="t"
+	queueicon="gameres/icons/upgrades/btrain.bmp"
+	costgold = "500"
+	costfood = "0"
+	execdelay = "25000"
+	groupverifier="data/subai/verify_research.vs"
+	rollover="Training"
+	description="Allows training of units to level 4"
+	method="research"
+	researchcommand="yes"
+	param="ReqSet, Fights, default, SetsPlr, maxtrainlevel, 4, NamePlr, Training, ">
+	<src obj="Arena 2"/>
+	<src obj="Arena 1"/>
+</cmd>
+
+<cmd name="Rome Training 1" priority="3"
+	button="research/training.bmp"
+	key="t"
+	queueicon="gameres/icons/upgrades/btrain.bmp"
+	costgold = "500"
+	costfood = "0"
+	execdelay = "25000"
+	groupverifier="data/subai/verify_research.vs"
+	rollover="Training"
+	description="Allows training of units to level 4"
+	method="research"
+	researchcommand="yes"
+	param="ReqSet, Gladiator Shows, default, SetsPlr, maxtrainlevel, 4, NamePlr, Training, ">
+	<src obj="RArena"/>
+</cmd>
+
+<cmd name="Gaul Training 2" priority="3"
+	button="research/Advanced training.bmp"
+	key="t"
+	queueicon="gameres/icons/upgrades/atrain.bmp"
+	costgold = "1000"
+	costfood = "0"
+	execdelay = "25000"
+	groupverifier="data/subai/verify_research.vs"
+	rollover="Advanced training"
+	description="Allows training of units to level 8"
+	method="research"
+	researchcommand="yes"
+	param="ReqSet, Fights, , ReqPlr, Training, , SetsPlr, maxtrainlevel, 8, NamePlr, Advanced Training, ">
+	<src obj="Arena 1"/>
+	<src obj="Arena 2"/>
+</cmd>
+
+<cmd name="Rome Training 2" priority="3"
+	button="research/Advanced training.bmp"
+	key="t"
+	queueicon="gameres/icons/upgrades/atrain.bmp"
+	costgold = "1000"
+	costfood = "0"
+	execdelay = "25000"
+	groupverifier="data/subai/verify_research.vs"
+	rollover="Advanced training"
+	description="Allows training of units to level 8"
+	method="research"
+	researchcommand="yes"
+	param="ReqSet, Gladiator Shows, , ReqPlr, Training, ,SetsPlr, maxtrainlevel, 8, NamePlr, Advanced Training, default">
+	<src obj="RArena"/>
+</cmd>
+
+<cmd name="Gaul Training 3" priority="3"
+	button="research/maser training.bmp"
+	queueicon="gameres/icons/upgrades/mtrain.bmp"
+	key="t"
+	costgold = "1500"
+	costfood = "0"
+	execdelay = "15000"
+	groupverifier="data/subai/verify_research.vs"
+	rollover="Special training"
+	description="Allows training of units to level 12"
+	method="research"
+	researchcommand="yes"
+	param="ReqSet, Fights, , ReqPlr, Advanced Training, ,SetsPlr, maxtrainlevel, 12, NamePlr, Special training, default">
+	<src obj="Arena 1"/>
+	<src obj="Arena 2"/>
+</cmd>
+
+<cmd name="hireheroR" priority="1"
+	button="actions/hire rhero.bmp"
+	queueicon="gameres/icons/hire rhero.bmp"
+	traincommand="yes"
+	key="h"
+	costgold = "800"
+	costfood = "0"
+	costpop = "0"
+	execdelay = "10000"
+	param = "RomanHero"
+	method="hirehero"
+	help="/contents/units/RHero"
+	rollover="Hire hero">
+	<src obj="RArena"/>
+</cmd>
+
+<cmd name="hireheroG" priority="1"
+	button="actions/hire Hero.bmp"
+	queueicon="gameres/icons/hire ghero.bmp"
+	traincommand="yes"
+	key="h"
+	costgold = "800"
+	costfood = "0"
+	costpop = "0"
+	execdelay = "10000"
+	param = "GaulHero"
+	method="hirehero"
+	help="/contents/units/GHero"
+	rollover="Hire hero">
+	<src obj="Arena 1"/>
+	<src obj="Arena 2"/>
+</cmd>
+
+<cmd name="Hire Viking Lord" priority="4"
+	button="actions/hire thoric.bmp"
+	queueicon="gameres/icons/Viking lord.bmp"
+	transpicon="1"
+	groupverifier="data/subai/verify_trainex.vs"
+	onaddremovescript="data/subai/trainex_onaddremove.vs"
+	traincommand="yes"
+	key="v"
+	help="/contents/units/GVikingLord"
+	costgold = "800"
+	costfood = "0"
+	costpop = "0"
+	execdelay = "10000"
+	rollover="Hire Viking Lord"
+	method="trainex"
+	param="1, 4, GVikingLord, GVikingLord, Fights">
+	<src obj="Arena 1"/>
+	<src obj="Arena 2"/>
+</cmd>
+
+<cmd name="Shrine of Thor" priority="5"
+	queueicon="gameres/icons/upgrades/Shrine of Tor.bmp"
+	button="upgrades/Shrine of Tor.bmp"
+	groupverifier="data/subai/verify_research.vs"
+	researchcommand="yes"
+	key="s"
+	costgold = "600"
+	costfood = "0"
+	costpop = "0"
+	execdelay = "20000"
+	rollover="Shrine of Thor"
+	description="Attracts better Viking Lords"
+	method="research"
+	param="ReqSet, Fights, default, NameSet, Shrine of Thor, default, SetsSet, levels/GVikingLord, 6">
+	<src obj="Arena 1"/>
+	<src obj="Arena 2"/>
+</cmd>
+
+<cmd name="Hire Liberati" priority="4"
+	button="actions/hire champs.bmp"
+	queueicon="gameres/icons/upgrades/Champions.bmp"
+	groupverifier="data/subai/verify_trainex.vs"
+	onaddremovescript="data/subai/trainex_onaddremove.vs"
+	traincommand="yes"
+	key="l"
+	help="/contents/units/RLiberatus"
+	costgold = "2000"
+	costfood = "0"
+	costpop = "0"
+	execdelay = "10000"
+ 	rollover="Hire Liberati"
+	description="Hires a group of 10 Liberati"
+	method="trainex"
+	param="10, 20, RLiberatus, Liberati, Gladiator Shows">
+	<src obj="RArena"/>
+</cmd>
+
+<cmd name="Liberati guild" priority="5"
+	button="research/Super champions.bmp"
+	key="i"
+	queueicon="gameres/icons/upgrades/Super champions.bmp"
+	costgold = "600"
+	costfood = "0"
+	execdelay = "25000"
+	groupverifier="data/subai/verify_research.vs"
+	rollover="Liberati guild"
+	description="Preserves the experience of the best Liberati"
+	method="research"
+	researchcommand="yes"
+	param="ReqSet, Gladiator Shows, default, NameSet, Liberati guild, default, SetsSet, levels/RLiberatus, 3">
+	<src obj="RArena"/>
+</cmd>
+
+<cmd name="Military Academy" priority="6"
+	button="upgrades/Military academy.bmp"
+	key="a"
+	queueicon="gameres/icons/upgrades/Military academy.bmp"
+	costgold = "1500"
+	costfood = "0"
+	execdelay = "25000"
+	groupverifier="data/subai/verify_research.vs"
+	rollover="Military academy"
+	description="Advances new heroes to level 12"
+	method="research"
+	researchcommand="yes"
+	param="ReqSet, Gladiator Shows, default, SetsSet, levels/Hero, 12, NameSet, Military Academy, default">
+	<src obj="RArena"/>
+</cmd>
+
+<cmd name="Battle tactics" priority="6"
+	button="research/Battle Library.bmp"
+	key="b"
+	queueicon="gameres/icons/upgrades/Battle Library.bmp"
+	costgold = "1000"
+	costfood = "0"
+	execdelay = "25000"
+	groupverifier="data/subai/verify_research.vs"
+	rollover="Battle tactics"
+	description="Doubles the experience from battles"
+	method="research"
+	researchcommand="yes"
+	param="ReqSet, Fights, default, NamePlr, Battle tactics, default">
+	<src obj="Arena 1"/>
+	<src obj="Arena 2"/>
+</cmd>
+
+<!-- GATE COMMANDS -->
+
+<cmd name="opengate" priority="1"
+	button="actions/open gate.bmp"
+	rollover="Open Gate"
+	key="o"
+	method="open">
+	<src obj="Gate"/>
+</cmd>
+
+<cmd name="closegate" priority="2"
+	button="actions/Close Gate.bmp"
+	rollover="Close Gate"
+	key="c"
+	method="close">
+	<src obj="Gate"/>
+</cmd>
+
+<cmd name="repair gate" priority="1"
+	method="repair"
+	button="actions/repair.bmp"
+	key="r"
+	queueicon="gameres/icons/upgrades/repair.bmp"
+	rollover="Repair"
+	costgold = "500"
+	costfood = "0"
+	execdelay = "60000">
+	<src obj="Gate"/>
+</cmd>
+
+<!-- SHIPYARD COMMANDS -->
+
+<cmd name="buildship" priority="13"
+	method="build_ship"
+	traincommand="yes"
+
+	button="actions/Ship.bmp"
+	queueicon="gameres/icons/Ship.bmp"
+
+	cursor=""
+	key="s"
+	costgold="1000"
+	costfood="0"
+	execdelay="20000"
+	transpicon="1"
+	rollover="Create Battle ship">
+	<src obj="BaseShipyard"/>
+</cmd>
+
+<cmd name="createfoodboat1" priority="6"
+	method="createfoodboatsmall"
+	groupverifier="data/subai/create_food_boat_verify.vs"
+	mod="yes"
+	button="actions/Boat Food.bmp"
+	queueicon="gameres/icons/Boat.bmp"
+	transpicon="1"
+	cursor=""
+	key="o"
+	rollover="Create boat with 250 food">
+	<src obj="BaseShipyard"/>
+</cmd>
+
+<cmd name="createfoodboat2" priority="6"
+	method="createfoodboatbig"
+	groupverifier="data/subai/create_food_boat_verify.vs"
+	mod="no"
+	button="actions/Boat Food.bmp"
+	queueicon="gameres/icons/Boat.bmp"
+	transpicon="1"
+	cursor=""
+	key="o"
+	rollover="Create boat with 1000 food">
+	<src obj="BaseShipyard"/>
+</cmd>
+
+<cmd name="creategoldboat1" priority="6"
+	method="creategoldboatsmall"
+	groupverifier="data/subai/create_gold_boat_verify.vs"
+	mod="yes"
+	button="actions/Boat Gold.bmp"
+	queueicon="gameres/icons/Boat.bmp"
+	transpicon="1"
+	cursor=""
+	key="a"
+	rollover="Create boat with 250 gold">
+	<src obj="BaseShipyard"/>
+</cmd>
+
+<cmd name="creategoldboat2" priority="6"
+	method="creategoldboatbig"
+	groupverifier="data/subai/create_gold_boat_verify.vs"
+	mod="no"
+	button="actions/Boat Gold.bmp"
+	queueicon="gameres/icons/Boat.bmp"
+	transpicon="1"
+	cursor=""
+	key="a"
+	rollover="Create boat with 1000 gold">
+	<src obj="BaseShipyard"/>
+</cmd>
+
+<!-- TOWER COMMAND -->
+
+<cmd name="repair tower" priority="1"
+	method="repair"
+	button="actions/repair.bmp"
+	key="r"
+	queueicon="gameres/icons/upgrades/repair.bmp"
+	rollover="Repair"
+	costgold = "250"
+	costfood = "0"
+	execdelay = "60000">
+	<src obj="Tower"/>
+</cmd>
+
+
+<!-- SHIP COMMANDS -->
+
+<cmd name="boardunit" priority="0"
+	cursor="do_something">
+
+	<src  obj="ShipL"/>
+	<nsrc obj="Unit"/>
+	<nsrc obj="GGhost"/>
+	<nsrc obj="ShipS"/>
+	<nsrc obj="Hero"/>
+</cmd>
+
+<cmd name="unboardall" priority="0"
+	button="actions/Unl Ship.bmp"
+	key="u"
+	rollover="Land units here">
+	<src obj="ShipL"/>
+	<nsrc obj="Unit"/>
+	<nsrc obj="GGhost"/>
+	<nsrc obj="ShipS"/>
+	<nsrc obj="Hero"/>
+</cmd>
+
+<!-- EAGLE COMMANDS -->
+
+<cmd name="hover" priority="0"
+	button="Actions/Move.bmp"
+	key="h"
+	rollover="Hover over that point">
+
+	<src obj="Eagle"/>
+</cmd>
+
+</commands>

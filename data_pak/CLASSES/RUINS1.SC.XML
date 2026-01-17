@@ -1,0 +1,11 @@
+<class id="Ruins1" cpp_class="CVXBuilding" parent="BaseRuins"
+	entity="assets/entities/MapObjects/Oracul/oracul.ent.xml">
+
+	<properties edittree_pos="Structures/Interactive/Ruins"/>
+	<properties radius="250" selection_radius="255"/>
+	<properties display_name="Ruins"/>
+	<properties hides_units="0"/>
+	<properties icon="gameres/icons/Oracul.bmp"/>
+	<properties minimap_icon_type="black"/>
+
+</class>

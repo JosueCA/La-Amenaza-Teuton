@@ -1,0 +1,9 @@
+<entity description="RPrinciple Voice" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/voices/RPrinciple/Be ready for anything.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RPrinciple/Move quietly.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RPrinciple/We fight to the end.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RPrinciple/We'll win again.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RPrinciple/We've won many battles.wav" frequency="20"/>
+   </files>
+</entity>

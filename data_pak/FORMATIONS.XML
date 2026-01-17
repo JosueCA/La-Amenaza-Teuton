@@ -1,0 +1,67 @@
+<Formations>
+	<Default Name="Horse Wings"/>
+	<FormationClass Name="Line"
+		Description="The line formation places all units at the front line. When standing on the ground all units have 50% attack bonus due to the clear sight they have."
+		Width="3"
+		Height="1"
+		BonusAttack="6"
+		BonusDefensePierce="50"
+		BonusRange="20"
+		OffsetFrontLineByY="5"
+		OffsetWingsByX="0"
+		OffsetWingsByY="0">
+
+		<Class Name="Unit" FrontLine="1"/>
+		<Class Name="BaseMage" CentralBlock="1"/>
+		<Class Name="Peasant" CentralBlock="1"/>
+
+	</FormationClass>
+
+	<FormationClass Name="Block"
+		Description="In the block formation all units gather around the hero to protect him and the weakest units in the formation from an unexpected attack. It is good when escorting some weaker units to a new destination.This is the most defensive formation.When standing on the ground all units have 100% defense bonus."
+		BonusDefence="100"
+		OffsetFrontLineByY="0"
+		OffsetWingsByX="0"
+		OffsetWingsByY="0">
+
+		<Class Name="Unit" CentralBlock="1"/>
+
+	</FormationClass>
+
+	<FormationClass Name="Horse Wings"
+		Description=""
+		Width="3"
+		Height="1"
+		BonusAttack="4"
+		BonusDefenceSlash="50"
+		OffsetFrontLineByY="5"
+		OffsetWingsByX="10"
+		OffsetWingsByY="0">
+
+		<Class Name="Unit" FrontLine="1"/>
+		<Class Name="Horse" Wings="1"/>
+		<Class Name="BaseMage" CentralBlock="1"/>
+		<Class Name="Peasant" CentralBlock="1"/>
+
+	</FormationClass>
+
+	<FormationClass Name="Ranged Wings"
+		Description=""
+		Width="3"
+		Height="1"
+		BonusAttack="4"
+		BonusDefenceSlash="5"
+		OffsetFrontLineByY="5"
+		OffsetWingsByX="5"
+		OffsetWingsByY="0">
+
+		<Class Name="Unit" CentralBlock="1"/>
+		<Class Name="Melee" FrontLine="1"/>
+		<Class Name="Horse" FrontLine="1"/>
+		<Class Name="Ranged" CentralBlock="1"/>
+		<Class Name="BaseMage" CentralBlock="1"/>
+		<Class Name="Peasant" CentralBlock="1"/>
+
+	</FormationClass>
+
+</Formations>

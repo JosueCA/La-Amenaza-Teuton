@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="House 02 as" type="" variations="1" pass_file="House 02.pass">
+<images>
+<image idx="1" file="House_02f_a" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="House 02 shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="House 02_p" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="4" file="House_02f_b" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="4" x="-25" y="-36"/>
+<point idx="2" type="4" x="13" y="-33"/>
+<point idx="3" type="1" x="-30" y="14"/>
+<point idx="4" type="2" x="-31" y="14"/>
+<point idx="5" type="12" x="-31" y="14"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-171" offsety="-202" sortoffsetx="0" sortoffsety="21"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-171" offsety="-202" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="podlojka" image="3" z="500" offsetx="-171" offsety="-202" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="4" name="base" image="4" z="1000" offsetx="-171" offsety="-202" sortoffsetx="-1" sortoffsety="-11"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

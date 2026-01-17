@@ -1,0 +1,7 @@
+<class id="ScullTree" cpp_class="CVXItemHolder" parent="ItemHolder"
+entity="assets/entities/Item_holders/Scull_tree.ent.xml">
+  <properties edittree_pos="Structures/Item holders/Skull tree"/>
+  <properties icon     ="gameres/icons/Scull tree.bmp"/>
+  <properties radius="28" selection_radius="30"/>
+  <properties display_name="Skull tree"/>
+</class>

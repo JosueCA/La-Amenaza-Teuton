@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<map-template name="Continent" >
+
+	<bitmap file="assets/RandomMap/Continent/"/>
+
+	<transform allow-rotate="1" allow-mirror="1" />
+
+	<distortion amp="0.25" first-oct="2" number-octs="4" persist="0.5"/>
+
+	<color-code red="0"   green="0"   blue="0"   meaning="sea"/>
+	<color-code red="255" green="255" blue="255" meaning="land"/>
+	<color-code red="255" green="0"   blue="0"   meaning="player-stronghold"/>
+	<color-code red="255"   green="0" blue="255"   meaning="mountain"/>
+
+	<limit map-size="small" max-players="4"/>
+	<limit map-size="medium" max-players="8"/>
+	<limit map-size="large" max-players="8"/>
+
+</map-template>

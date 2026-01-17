@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="class.xsl"?>
+
+<class id="Building" cpp_class="CVXBuilding" parent="Object" entity="">
+
+  <method sig="repair" vs="data/subai/building_repair.vs"/>
+  <method sig="broken" vs="data/subai/object_idle.vs"/>
+  <properties maxhealth="5000"/>
+  <properties sight="600"/>
+  <properties defense_slash="0" defense_pierce="0"/>
+  <properties radius="600" selection_radius="600"/>
+  <properties target_priority="100"/>
+  <properties auto_repair="yes"/>
+  <properties capture_health_percent="100"/>
+  <properties exit_interval="10"/>
+  <properties help="/contents/buildings"/>
+
+</class>

@@ -1,0 +1,24 @@
+<entity description="HorseUnitDeath" priority="UnitFight" type="UnitFight">
+   <files>
+      <sound file="assets/sounds/death/die 1.wav" frequency="7"/>
+      <sound file="assets/sounds/death/die 2.wav" frequency="7"/>
+      <sound file="assets/sounds/death/die 3.wav" frequency="7"/>
+      <sound file="assets/sounds/death/die 4.wav" frequency="7"/>
+      <sound file="assets/sounds/death/die 5.wav" frequency="7"/>
+      <sound file="assets/sounds/death/die 6.wav" frequency="7"/>
+      <sound file="assets/sounds/death/die 7.wav" frequency="7"/>
+      <sound file="assets/sounds/death/die 8.wav" frequency="7"/>
+      <sound file="assets/sounds/death/die 9.wav" frequency="7"/>
+      <sound file="assets/sounds/death/die 10.wav" frequency="7"/>
+      <sound file="assets/sounds/death/h die 1.wav" frequency="7"/>
+      <sound file="assets/sounds/death/h die 2.wav" frequency="7"/>
+      <sound file="assets/sounds/death/h die 3.wav" frequency="7"/>
+      <sound file="assets/sounds/death/h die 4.wav" frequency="7"/>
+      <sound file="assets/sounds/death/h die 5.wav" frequency="7"/>
+      <sound file="assets/sounds/death/h die 6.wav" frequency="7"/>
+      <sound file="assets/sounds/death/h die 7.wav" frequency="7"/>
+      <sound file="assets/sounds/death/h die 8.wav" frequency="7"/>
+      <sound file="assets/sounds/death/h die 9.wav" frequency="7"/>
+      <sound file="assets/sounds/death/h die 10.wav" frequency="7"/>
+   </files>
+</entity>

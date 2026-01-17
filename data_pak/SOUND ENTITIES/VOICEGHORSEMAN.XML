@@ -1,0 +1,9 @@
+<entity description="GHorseman Voice" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/voices/GHorseman/Death or glory.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GHorseman/I don't approve.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GHorseman/It is my honor.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GHorseman/I've done this before.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GHorseman/You can trust me.wav" frequency="20"/>
+   </files>
+</entity>

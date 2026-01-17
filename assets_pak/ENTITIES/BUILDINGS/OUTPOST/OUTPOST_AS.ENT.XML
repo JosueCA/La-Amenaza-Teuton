@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Outpost_as" type="" variations="1" pass_file="Outpost.pass">
+<images>
+<image idx="1" file="Outpost_as" drawmode="player_color" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="Outpost_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="Outpost_p" drawmode="index" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="3" x="-151" y="86"/>
+<point idx="2" type="3" x="183" y="31"/>
+<point idx="3" type="3" x="210" y="-153"/>
+<point idx="4" type="3" x="-102" y="-226"/>
+<point idx="5" type="3" x="211" y="11"/>
+<point idx="6" type="3" x="-157" y="-192"/>
+<point idx="7" type="4" x="33" y="-159"/>
+<point idx="8" type="4" x="65" y="-132"/>
+<point idx="9" type="4" x="-108" y="-11"/>
+<point idx="10" type="4" x="-14" y="26"/>
+<point idx="11" type="4" x="-17" y="-14"/>
+<point idx="12" type="4" x="-64" y="-29"/>
+<point idx="13" type="3" x="-184" y="68"/>
+<point idx="14" type="3" x="161" y="-182"/>
+<point idx="15" type="3" x="201" y="-187"/>
+<point idx="16" type="1" x="248" y="166"/>
+<point idx="17" type="1" x="308" y="129"/>
+<point idx="18" type="2" x="249" y="172"/>
+<point idx="19" type="2" x="311" y="131"/>
+<point idx="20" type="1" x="-150" y="-197"/>
+<point idx="21" type="1" x="-128" y="-210"/>
+<point idx="22" type="2" x="-150" y="-209"/>
+<point idx="23" type="2" x="-123" y="-224"/>
+<point idx="24" type="10" x="234" y="167"/>
+<point idx="25" type="10" x="309" y="120"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-425" offsety="-425" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-425" offsety="-425" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="podlojka" image="3" z="500" offsetx="-425" offsety="-425" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

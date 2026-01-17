@@ -1,0 +1,40 @@
+<class id="Tower" cpp_class="CVXBuilding" parent="Building">
+  <properties target_priority="300"/>
+
+	<properties display_name="Tower"/>
+	<properties auto_repair="no"/>
+
+  <method sig="idle" vs="data/subai/tower_guard.vs"/>
+
+	<properties damage_type="pierce"/>
+	<properties minattack="12" maxattack="40" defense_slash="0" defense_pierce="0"/>
+	<properties maxhealth="1500"/>
+	<properties attack_delay="400"/>
+	<properties sight="500" range="500" min_range="250" speed="0"/>
+	<properties radius="45" selection_radius="50"/>
+	<properties projectile_class="Arrow"/>
+	<properties target_priority="150"/>
+	<properties help="/contents/buildings/Fortification"/>
+
+	<value0
+		icon="gameres/infobar/common/pop ico.bmp"
+		script="Settlement set; set = .AsBuilding.settlement; return set.population + ' / ' + set.max_population;"
+		flags="-1"
+		help="/contents/resources"/>
+	<value1
+		icon="gameres/infobar/common/gold ico.bmp"
+		script="return .AsBuilding.settlement.gold;"
+		flags="5"
+		help="/contents/resources"/>
+	<value2
+		icon="gameres/infobar/common/food ico.bmp"
+		script="return .AsBuilding.settlement.food;"
+		flags="5"
+		help="/contents/resources"/>
+	<value3
+		icon="gameres/infobar/common/Loyality.bmp"
+		script="return .AsBuilding.settlement.loyalty;"
+		flags="-1"
+		help="/contents/capturing"/>
+
+</class>

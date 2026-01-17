@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="class.xsl"?>
+
+<class id="ShipL" cpp_class="CVXShip" parent="Ranged" entity="Assets/Entities/Ships/ShipL/ShipL.ent.xml">
+
+	<properties minattack="50" maxattack="100" defence_slash="10" defence_pierce="15"/>
+	<properties icon     ="gameres/icons/Ship.bmp"/>
+
+	<properties water_unit="1"/>
+	<properties damage_type="pierce"/>
+	<properties display_name="Ship" display_name_plural="Ships"/>
+
+	<properties maxhealth="3000"/>
+	<properties sight="600"/>
+	<properties radius="130" selection_radius="90" speed="240"/>
+	<properties max_units_to_board="60"/>
+
+	<properties edittree_pos="Units/Others/Ship"/>
+
+	<properties interface="holder"/>
+	<properties help="/contents/units/Ship"/>
+
+	<properties projectile_class="Fire_Arrow"/>
+	<properties range="500"/>
+
+	<method sig="boardunit"
+		vs="data/subai/ship_board.vs"
+		verify="data/subai/ship_board_verify.vs"
+		onfinish="data/subai/ship_board_onfinish.vs"/>
+	<method sig="unboard" vs="data/subai/ship_unboard.vs"/>
+	<method sig="unboardall" vs="data/subai/ship_unboard_all.vs" verify="data/subai/ship_unboard_all_verify.vs"/>
+	<method sig="idle" vs="data/subai/ship_idle.vs"/>
+	<method sig="aitransport" vs="data/subai/ship_aitransport.vs"/>
+	<method sig="enter"
+		vs     = "data/subai/ship_enter.vs"
+		verify = "data/subai/ship_enter_verify.vs"/>
+	<method sig="capture"
+		vs     = "data/subai/ship_capture.vs"
+		verify = "data/subai/ship_capture_verify.vs"/>
+
+	<defaultcmd target="Unit">
+		<cmd name="boardunit"/>
+	</defaultcmd>
+
+	<defaultcmd target="Building">
+		<cmd name="enter"/>
+		<cmd name="capture"/>
+	</defaultcmd>
+
+	<value1
+		icon="gameres/infobar/common/piercing ico.bmp"
+		script="return .AsUnit.minattack + '-' + .AsUnit.maxattack;"
+		help="/contents/stats/attack"/>
+
+	<value3
+		icon=""
+		script=""
+		help=""/>
+
+
+</class>

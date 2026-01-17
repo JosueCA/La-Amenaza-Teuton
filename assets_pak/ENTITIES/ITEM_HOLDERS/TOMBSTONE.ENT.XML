@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Tombstone" type="tree" variations="1" pass_file="Tombstone.pass">
+<images>
+<image idx="1" file="Tombstone" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="10" x="0" y="0"/>
+</points>
+<layers>
+<layer idx="1" name="styblo" image="1" z="1000" offsetx="-45" offsety="-70" sortoffsetx="0" sortoffsety="-19"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

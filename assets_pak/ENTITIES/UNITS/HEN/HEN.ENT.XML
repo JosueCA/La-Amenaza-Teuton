@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Hen" type="vx/unit" variations="8" pass_file="">
+<images>
+<image idx="2" file="Hen_Idle" drawmode="player_color" remaping="none" rows="20" columns="8"/>
+<image idx="3" file="Hen_Flight" drawmode="player_color" remaping="none" rows="10" columns="8"/>
+<image idx="4" file="Hen_Walk" drawmode="player_color" remaping="none" rows="12" columns="8"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="unit" image="2" z="1000" offsetx="-12" offsety="-13" sortoffsetx="0" sortoffsety="1"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+<anim idx="1" name="Walk" startstate="1" endstate="1" frames="14" duration="1296" default_duration="108" action_time="0" step="37">
+<replace layer="1" image="4" offsetx="-12" offsety="-13"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="108"/>
+<frame idx="3" duration="108"/>
+<frame idx="4" duration="108"/>
+<frame idx="5" duration="108"/>
+<frame idx="6" duration="108"/>
+<frame idx="7" duration="108"/>
+<frame idx="8" duration="108"/>
+<frame idx="9" duration="108"/>
+<frame idx="10" duration="108"/>
+<frame idx="11" duration="108"/>
+<frame idx="12" duration="108"/>
+<frame idx="13" duration="108"/>
+<frame idx="14" duration="0"/>
+</anim>
+<anim idx="13" name="Idle" startstate="1" endstate="1" frames="22" duration="2000" default_duration="100" action_time="0" step="0">
+<replace layer="1" image="2" offsetx="-12" offsety="-13"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="100"/>
+<frame idx="3" duration="100"/>
+<frame idx="4" duration="100"/>
+<frame idx="5" duration="100"/>
+<frame idx="6" duration="100"/>
+<frame idx="7" duration="100"/>
+<frame idx="8" duration="100"/>
+<frame idx="9" duration="100"/>
+<frame idx="10" duration="100"/>
+<frame idx="11" duration="100"/>
+<frame idx="12" duration="100"/>
+<frame idx="13" duration="100"/>
+<frame idx="14" duration="100"/>
+<frame idx="15" duration="100"/>
+<frame idx="16" duration="100"/>
+<frame idx="17" duration="100"/>
+<frame idx="18" duration="100"/>
+<frame idx="19" duration="100"/>
+<frame idx="20" duration="100"/>
+<frame idx="21" duration="100"/>
+<frame idx="22" duration="0"/>
+</anim>
+<anim idx="17" name="Flight" startstate="1" endstate="1" frames="12" duration="700" default_duration="70" action_time="0" step="30">
+<replace layer="1" image="3" offsetx="-16" offsety="-17"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="70"/>
+<frame idx="3" duration="70"/>
+<frame idx="4" duration="70"/>
+<frame idx="5" duration="70"/>
+<frame idx="6" duration="70"/>
+<frame idx="7" duration="70"/>
+<frame idx="8" duration="70"/>
+<frame idx="9" duration="70"/>
+<frame idx="10" duration="70"/>
+<frame idx="11" duration="70"/>
+<frame idx="12" duration="0"/>
+</anim>
+</anims>
+</entity>

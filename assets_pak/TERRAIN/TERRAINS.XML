@@ -1,0 +1,100 @@
+<terrain>
+	<layer 
+		z="0" type="2" display="Ground 1" 
+		image="assets/terrain/%Season%/ground1024.vq"
+		minimap="spring/ground1024.bmp"
+		/>
+	<layer 
+		z="1" type="2" display="Ground 2" 
+		image="assets/terrain/%Season%/ground256.vq"
+		minimap="spring/ground256.bmp"
+		/>
+	<layer 
+		z="2" type="2" display="Ground 3" 
+		image="assets/terrain/%Season%/ground1024.vq"
+		minimap="spring/ground1024.bmp"
+		/>
+
+	<layer 
+		z="3" type="1" display="Grass 1" 
+		image="assets/terrain/%Season%/grass1024.vq"
+		minimap="spring/grass1024.bmp"
+		/>
+	<layer 
+		z="4" type="1" display="Grass 2" 
+		image="assets/terrain/%Season%/grass2.vq"
+		minimap="spring/grass2.bmp"
+		/>
+	<layer 
+		z="5" type="1" display="Grass 3" 
+		image="assets/terrain/%Season%/grass3.vq"
+		minimap="spring/grass3.bmp"
+		/>
+
+	<layer 
+		z="6" type="5" display="Mountain rocks" passable="0" 
+		image="assets/terrain/%Season%/rocks1024.vq"
+		minimap="spring/rocks1024.bmp"
+		/>
+
+	<layer 
+		z="7" type="6" display="Roads" 
+		image="assets/terrain/%Season%/roads.vq"
+		minimap="spring/roads.bmp"
+		/>
+
+	<layer 
+		z="8" type="5" display="Rocks" 
+		image="assets/terrain/%Season%/rocks256.vq"
+		minimap="spring/rocks256.bmp"
+		/>
+
+	<layer 
+		z="9" type="3" display="Sand" 
+		image="assets/terrain/%Season%/sands.vq"
+		minimap="spring/sands.bmp"
+		/>
+
+	<layer 
+		z="10" type="7" 
+		image="assets/terrain/waves.vq"
+		minimap="waves.bmp"
+		/>
+
+	<layer 
+		z="11" type="5" display="Shore rocks" 
+		image="assets/terrain/%Season%/rocks2.vq"
+		minimap="rocks2.bmp"
+		/>
+
+<!-- the both waters are hardcoded in the source using DEEP_WATER_IDX and SHALLOW_WATER_IDX, change them if needed -->
+<!-- Ivko: kojto iska da ne mu murda vodata da si zabie igrata ili da si napravi lokalno kopie na tozi fajl -->
+	<layer 
+		z="12" type="4" display="Shallow water" dark="1" 
+		image="assets/terrain/swater.vq" 
+		minimap="swater.bmp"
+		frames="10"
+		transition_terrain="10" animate_transition="1" 
+		transition="2"
+		/>
+	<layer 
+		z="13" type="4" display="Water" dark="1"
+		image="assets/terrain/dwater.vq" 
+		minimap="dwater.bmp" 
+		passable_water="1"
+		frames="10"
+		transition="2"
+		/>
+
+	<layer 
+		z="14" type="6" display="Roman roads" 
+		image="assets/terrain/%Season%/rroads.vq"
+		minimap="spring/rroads.bmp"
+		/>
+	<layer 
+		z="15" type="0" display="Invalid" 
+		image="assets/terrain/invalid.vq"
+		minimap="invalid.bmp"
+		/>
+
+</terrain>

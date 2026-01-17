@@ -1,0 +1,4 @@
+<class id="dolmen1" cpp_class="CVXDecor" parent="Object"
+entity="assets/entities/MapObjects/dolmens/dolmen1/dolmen1.ent.xml">
+  <properties edittree_pos="Structures/Others/Dolmen 1"/>
+</class>

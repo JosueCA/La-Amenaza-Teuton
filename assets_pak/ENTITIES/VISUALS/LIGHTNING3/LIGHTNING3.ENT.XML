@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Lightning3" type="" variations="1" pass_file="">
+<images>
+<image idx="1" file="Lightning3" drawmode="clouds" remaping="none" rows="20" columns="1"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="Lightning3" image="1" z="1500" offsetx="-62" offsety="-289" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="Lightning3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+<anim idx="1" name="Lightning3" startstate="1" endstate="1" frames="22" duration="1100" default_duration="55" action_time="0" step="0">
+<replace layer="1" image="1" offsetx="-62" offsety="-289"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="55"/>
+<frame idx="3" duration="55"/>
+<frame idx="4" duration="55"/>
+<frame idx="5" duration="55"/>
+<frame idx="6" duration="55"/>
+<frame idx="7" duration="55"/>
+<frame idx="8" duration="55"/>
+<frame idx="9" duration="55"/>
+<frame idx="10" duration="55"/>
+<frame idx="11" duration="55"/>
+<frame idx="12" duration="55"/>
+<frame idx="13" duration="55"/>
+<frame idx="14" duration="55"/>
+<frame idx="15" duration="55"/>
+<frame idx="16" duration="55"/>
+<frame idx="17" duration="55"/>
+<frame idx="18" duration="55"/>
+<frame idx="19" duration="55"/>
+<frame idx="20" duration="55"/>
+<frame idx="21" duration="55"/>
+<frame idx="22" duration="0"/>
+</anim>
+</anims>
+</entity>

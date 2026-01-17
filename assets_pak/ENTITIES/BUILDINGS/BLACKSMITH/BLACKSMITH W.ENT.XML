@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Blacksmith w" type="" variations="1" pass_file="Blacksmith.pass">
+<images>
+<image idx="1" file="Blacksmith w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="Blacksmith shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="Blacksmith_w_p" drawmode="index" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="4" x="-76" y="-72"/>
+<point idx="2" type="4" x="-21" y="-95"/>
+<point idx="3" type="4" x="50" y="-45"/>
+<point idx="4" type="12" x="-114" y="15"/>
+<point idx="5" type="10" x="-122" y="20"/>
+<point idx="6" type="10" x="-204" y="-18"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-291" offsety="-317" sortoffsetx="-1" sortoffsety="25"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-291" offsety="-317" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="podlojka" image="3" z="500" offsetx="-291" offsety="-317" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

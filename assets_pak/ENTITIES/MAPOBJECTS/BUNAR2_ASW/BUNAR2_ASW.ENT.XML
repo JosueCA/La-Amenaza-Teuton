@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="bunar2_asw" type="tree" variations="1" pass_file="bunar2_asw.pass">
+<images>
+<image idx="1" file="bunar2_asw_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="bunar2_asw" drawmode="normal" remaping="none" rows="14" columns="1"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="structure" image="2" z="1000" offsetx="-206" offsety="-279" sortoffsetx="0" sortoffsety="-87"/>
+<layer idx="2" name="shadow" image="1" z="800" offsetx="-206" offsety="-279" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+<anim idx="1" name="bunar_asw" startstate="1" endstate="1" frames="16" duration="2800" default_duration="200" action_time="0" step="0">
+<replace layer="1" image="2" offsetx="-206" offsety="-279"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="200"/>
+<frame idx="3" duration="200"/>
+<frame idx="4" duration="200"/>
+<frame idx="5" duration="200"/>
+<frame idx="6" duration="200"/>
+<frame idx="7" duration="200"/>
+<frame idx="8" duration="200"/>
+<frame idx="9" duration="200"/>
+<frame idx="10" duration="200"/>
+<frame idx="11" duration="200"/>
+<frame idx="12" duration="200"/>
+<frame idx="13" duration="200"/>
+<frame idx="14" duration="200"/>
+<frame idx="15" duration="200"/>
+<frame idx="16" duration="0"/>
+</anim>
+</anims>
+</entity>

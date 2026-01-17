@@ -1,0 +1,26 @@
+<class id="BaseTownBuilding" cpp_class="CVXBuilding" parent="Building" entity="">
+	<properties auto_repair="no"/>
+	<value0
+		icon="gameres/infobar/common/pop ico.bmp"
+		script="Settlement set; set = .AsBuilding.settlement; return set.population + ' / ' + set.max_population;"
+		flags="-1"
+		help="/contents/resources"/>
+	<value1
+		icon="gameres/infobar/common/gold ico.bmp"
+		script="Settlement set; set = .AsBuilding.settlement; if(set.loan > 0)return set.gold + '(' + Translate('Debt') + ':' + set.loan +')'; else return set.gold; return '';"
+		flags="5"
+		help="/contents/resources"/>
+	<value2
+		icon="gameres/infobar/common/food ico.bmp"
+		script="return .AsBuilding.settlement.food;"
+		flags="5"
+		help="/contents/resources"/>
+	<value3
+		icon="gameres/infobar/common/Loyality.bmp"
+		script="return .AsBuilding.settlement.loyalty;"
+		flags="-1"
+		help="/contents/capturing"/>
+
+	<method sig="research"  vs="data/subai/research.vs" onfinish="data/subai/onfinish_research.vs"/>
+
+</class>

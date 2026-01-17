@@ -1,0 +1,7 @@
+<zbins>
+	<zbin startz="0" sort="1"/>
+	<zbin startz="750" sort="0"/> 
+	<zbin startz="900" sort="1"/>
+	<zbin startz="1080" sort="0"/>
+	<zbin startz="10000" sort="1"/>
+</zbins>

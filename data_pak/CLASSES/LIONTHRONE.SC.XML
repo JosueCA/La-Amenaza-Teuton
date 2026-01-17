@@ -1,0 +1,7 @@
+<class id="LionThrone" altid="artefakt2" cpp_class="CVXItemHolder" parent="ItemHolder"
+entity="assets/entities/Item_Holders/Lion_throne.ent.xml">
+  <properties edittree_pos="Structures/Item holders/Lion throne"/>
+  <properties icon     ="gameres/icons/Lion throne.bmp"/>
+  <properties radius="57" selection_radius="58"/>
+  <properties display_name="Lion Throne"/>
+</class>

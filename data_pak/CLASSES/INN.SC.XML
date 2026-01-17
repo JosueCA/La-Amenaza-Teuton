@@ -1,0 +1,13 @@
+<!-- edited with XML Spy v4.2 U (http://www.xmlspy.com) by Mincho Prazdnikov (Oblak Inc) -->
+<class id="Inn" altid="Inn" cpp_class="CVXTownHall" parent="BaseHouse" entity="assets/entities/buildings/Inn/Inn_as.ent.xml" entity_winter="assets/entities/buildings/Inn/Inn_w.ent.xml">
+	<properties display_name="Inn"/>
+	<properties icon="gameres/icons/inn.bmp"/>
+	<properties radius="270" selection_radius="280"/>
+	<properties edittree_pos="Structures/Interactive/Inn"/>
+	<properties maxhealth="15000" sight="900"/>
+	<properties minimap_icon_type="black"/>
+	<properties is_central_building="1" can_be_captured="0" can_be_attacked="1" produces_gold="0" produces_food="0" is_single_building="1" settlement_food="0" settlement_gold="0" settlement_maxfood="0" settlement_maxgold="0" population="0" efficiency="1" max_population="0" max_units="0" settlement_icon_name=""/>
+	<properties help="/contents/buildings/Inn"/>
+	<behavior script="data/subai/inn_behavior.vs"/>
+	<method sig="transport_request" vs="data/subai/inn_transport_request.vs"/>
+</class>

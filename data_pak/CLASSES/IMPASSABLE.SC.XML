@@ -1,0 +1,10 @@
+<class id="Impassable" cpp_class="CVXBuilding" parent="BaseTownBuilding"
+entity="assets/entities/buildings/Impassable spot/impassable.ent.xml">
+<properties sight="500" range="500" min_range="100" speed="0"/>
+
+<!-- This class is used when editting the random map template to put impassable regions
+	<properties edittree_pos="Structures/Impassable spot"/>
+-->
+	<properties radius="50" selection_radius="50"/>
+
+</class>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Teleport_1" type="tree" variations="1" pass_file="Teleport_1.pass">
+<images>
+<image idx="1" file="Teleport_1_f1" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="Teleport_1_f2" drawmode="index" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="1" x="-1" y="-2"/>
+<point idx="2" type="1" x="0" y="19"/>
+<point idx="3" type="2" x="-31" y="18"/>
+<point idx="4" type="2" x="-19" y="35"/>
+</points>
+<layers>
+<layer idx="1" name="l1" image="1" z="1000" offsetx="-289" offsety="-265" sortoffsetx="-113" sortoffsety="15"/>
+<layer idx="2" name="l2" image="2" z="1000" offsetx="-289" offsety="-265" sortoffsetx="102" sortoffsety="97"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

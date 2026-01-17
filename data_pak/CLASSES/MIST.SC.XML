@@ -1,0 +1,10 @@
+<class id="Mist" cpp_class="CVXSacrifice" parent="Sacrifice" 
+   entity="assets/entities/visuals/fogs/fogs.ent.xml"
+>
+
+  <properties radius = "100"/>
+	<properties range =  "200"/>
+
+  <method sig="idle" vs="data/subai/mist_idle.vs"/>
+
+</class>

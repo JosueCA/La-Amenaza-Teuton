@@ -1,0 +1,24 @@
+<class id="RPraetorian" altid="RPretorian" cpp_class="CVXUnit" parent="Melee" entity="assets/entities/Units/Pretorian/Pretorian.ent.xml">
+
+  <properties maxhealth="450"/>
+  <properties minattack="27" maxattack="47" defense_slash="10" defense_pierce="10"/>
+  <properties speed="80"/>
+  <properties speciality="death blow"/>
+
+  <properties damage_type="pierce"/>
+
+  <properties formation_priority="1000"/>
+  <properties formation_radius="16"/>
+  <properties radius="10" selection_radius="10"/>
+
+  <properties icon     ="gameres/icons/RPraetorian.bmp"/>
+  <properties display_name="Praetorian" display_name_plural="Praetorians"/>
+  <properties help="contents/units/RPraetorian"/>
+  <properties edittree_pos="Units/Roman/Praetorian"/>
+  <sounds attack="UnitPikeFight" command="data/sound entities/VoiceRPraetorian.xml"/>
+
+	<value1
+		icon="gameres/infobar/common/piercing ico.bmp"
+		script="return .AsUnit.minattack + '-' + .AsUnit.maxattack;"
+		help="contents/stats/attack"/>
+</class>

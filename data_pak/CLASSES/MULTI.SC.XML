@@ -1,0 +1,15 @@
+<class id="Multi" cpp_class="CVXScriptObj" parent="Object" entity="">
+	<properties icon     ="gameres/icons/multi.bmp"/>
+	<properties help="contents/units"/>
+
+	<value0
+		icon="gameres/infobar/common/level ico.bmp"
+		script="return SelAvgLevel();"
+		help="/contents/stats/level"/>
+	<value3
+		icon="gameres/infobar/common/food ico.bmp"
+		script="return SelAvgFood() + '/20';"
+		help="/contents/feeding"/>
+
+	<properties interface="holder"/>
+</class>

@@ -1,0 +1,48 @@
+<class id="Melee" cpp_class="CVXUnit" parent="Military" entity="">
+  <properties range="17" min_range="2"/>
+  <properties damage_type="slash"/>
+  <properties formation_priority="1100"/>
+  <properties formation_radius="16"/>
+  <properties radius="10" selection_radius="10"/>
+  <properties speed="60"/>
+
+  <method sig="attack" vs="data/subai/melee_attack.vs" verify="data/subai/melee_attack_verify.vs"/>
+
+  <sounds attack="UnitSwordFight" die="UnitDeath" />
+
+<!-- no capture for towers, gates and walls -->
+	<defaultcmd target="Tower">
+		<cmd name="attack"/>
+		<cmd name="enter"/>
+		<cmd name="approach"/>
+	</defaultcmd>
+	<defaultcmd target="Gate">
+		<cmd name="attack"/>
+		<cmd name="enter"/>
+		<cmd name="approach"/>
+	</defaultcmd>
+	<defaultcmd target="Wall">
+		<cmd name="attack"/>
+		<cmd name="enter"/>
+		<cmd name="approach"/>
+	</defaultcmd>
+
+  <defaultcmd target="Teleport">
+    <cmd name="teleport"/>
+	<cmd name="approach"/>
+  </defaultcmd>
+
+  <defaultcmd target="Inn">
+    <cmd name="transport"/>
+	<cmd name="approach"/>
+  </defaultcmd>
+
+
+	<defaultcmd target="Building">
+		<cmd name="capture"/>
+		<cmd name="attack"/>
+		<cmd name="enter"/>
+		<cmd name="approach"/>
+	</defaultcmd>
+
+</class>

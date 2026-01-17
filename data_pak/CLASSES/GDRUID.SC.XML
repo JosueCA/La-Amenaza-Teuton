@@ -1,0 +1,15 @@
+<class id="GDruid" cpp_class="CVXDruid" parent="BaseMage" entity="assets/entities/units/GDruid/GDruid.ent.xml">
+
+  <properties maxhealth="120"/>
+  <properties range="200" minrange="0" sight="400"/>
+  <properties speed="60"/>
+  <properties edittree_pos="Units/Gaul/Druid"/>
+  <properties icon="gameres/icons/GDruid.bmp"/>
+  <properties display_name="Druid" display_name_plural="Druids"/>
+  <properties help="contents/units/GDruid"/>
+
+	<method sig="ondie" vs="data/subai/druid_ondie.vs"/>
+	<method sig="mass_heal" vs="data/subai/druid_massheal.vs"/>
+
+  <sounds command="assets/sounds/entities/VoiceGDruid.xml"/>
+</class>

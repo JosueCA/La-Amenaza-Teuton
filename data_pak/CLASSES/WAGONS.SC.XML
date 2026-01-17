@@ -1,0 +1,14 @@
+<class id="Wagons" cpp_class="CVXWagon" parent="Object" entity="">
+
+  <properties icon="gameres/icons/Wagon.bmp"/>
+  <value2
+	icon="gameres/infobar/common/gold ico.bmp"
+	script="return SelectionGold;" flags="-1"
+	help="/contents/resources"/>
+  <value3
+	icon="gameres/infobar/common/food ico.bmp"
+	script="return SelectionFood;"
+	flags="-1"
+	help="/contents/resources"/>
+
+</class>

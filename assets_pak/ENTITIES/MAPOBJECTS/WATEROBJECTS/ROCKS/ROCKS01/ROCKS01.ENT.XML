@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Rocks01" type="tree" variations="1" pass_file="Rocks01.pass">
+<images>
+<image idx="1" file="Rocks01" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="Rocks01_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="11" x="2" y="-47"/>
+<point idx="2" type="11" x="-30" y="-13"/>
+<point idx="3" type="11" x="-14" y="34"/>
+<point idx="4" type="11" x="41" y="1"/>
+</points>
+<layers>
+<layer idx="1" name="styblo" image="1" z="1000" offsetx="-145" offsety="-111" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-209" offsety="-155" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

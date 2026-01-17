@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Oak_stump" type="tree" variations="1" pass_file="Oak_stump.pass">
+<images>
+<image idx="1" file="Oak_stump" drawmode="normal" remaping="none" rows="7" columns="1"/>
+</images>
+<points>
+<point idx="1" type="11" x="0" y="-3"/>
+</points>
+<layers>
+<layer idx="1" name="styblo" image="1" z="1000" offsetx="-92" offsety="-72" sortoffsetx="0" sortoffsety="-78"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+<anim idx="1" name="Oak_stump" startstate="1" endstate="1" frames="9" duration="1400" default_duration="200" action_time="0" step="0">
+<replace layer="1" image="1" offsetx="-92" offsety="-72"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="200"/>
+<frame idx="3" duration="200"/>
+<frame idx="4" duration="200"/>
+<frame idx="5" duration="200"/>
+<frame idx="6" duration="200"/>
+<frame idx="7" duration="200"/>
+<frame idx="8" duration="200"/>
+<frame idx="9" duration="0"/>
+</anim>
+</anims>
+</entity>

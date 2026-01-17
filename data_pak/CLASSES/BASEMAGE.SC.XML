@@ -1,0 +1,49 @@
+<class id="BaseMage" cpp_class="CVXDruid" parent="Peaceful"
+>
+	<properties minattack="1" maxattack="1" defense_slash="2" defense_pierce="2"/>
+	<properties target_factor="100"/>
+
+	<method sig="help-sacrifice" vs="data/subai/druid_help_sacrifice.vs" verify="data/subai/druid_help_verify.vs" />
+	<method sig="learn" vs="data/subai/druid_learn.vs"/>
+	<method sig="heal" vs="data/subai/druid_heal.vs" verify="data/subai/druid_heal_verify.vs" />
+	<method sig="heal" vs="data/subai/druid_heal_ground.vs"  />
+	<method sig="mist" vs="data/subai/druid_mist.vs"/>
+	<method sig="ghost" vs="data/subai/druid_ghost.vs"/>
+	<method sig="hide" vs="data/subai/druid_hide_unit.vs"/>
+	<method sig="hide" vs="data/subai/druid_hide.vs"/>
+
+	<method sig="advance" vs="data/subai/druid_heal_ground.vs" />
+	<method sig="idle" vs="data/subai/druid_idle.vs" />
+	<method sig="globalspell" vs="data/subai/druid_globalspell.vs" />
+	<method sig="stand_position" vs="data/subai/basemage_stand_position.vs"/>
+	<method sig="train" vs="data/subai/basemage_do_nothing.vs"/>
+	<method sig="beast_control" vs="data/subai/druid_possess.vs"/>
+
+
+  <defaultcmd target="BaseMage">
+    <cmd name="help-sacrifice"/>
+  </defaultcmd>
+
+  <defaultcmd target="Hero">
+    <cmd name="attach"/>
+  </defaultcmd>
+
+
+  <defaultcmd target="Unit">
+    <cmd name="heal"/>
+  </defaultcmd>
+
+<!--
+  <defaultcmd target="Unit">
+    <cmd name="teach"/>
+  </defaultcmd>
+-->
+
+<!--
+  <defaultcmd target="Unit">
+    <cmd name="learn"/>
+  </defaultcmd>
+-->
+
+
+</class>

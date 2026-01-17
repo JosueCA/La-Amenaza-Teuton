@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Trader" type="vx/unit" variations="12" pass_file="">
+<images>
+<image idx="2" file="Trader_Idle" drawmode="player_color" remaping="none" rows="7" columns="12"/>
+<image idx="3" file="Trader_Walk" drawmode="player_color" remaping="none" rows="15" columns="12"/>
+<image idx="4" file="Trader_Death" drawmode="player_color" remaping="none" rows="20" columns="12"/>
+<image idx="5" file="Trader_Idle_shadow" drawmode="shadow" remaping="none" rows="7" columns="12"/>
+<image idx="6" file="Trader_Walk_shadow" drawmode="shadow" remaping="none" rows="15" columns="12"/>
+<image idx="7" file="Trader_Death_shadow" drawmode="shadow" remaping="none" rows="20" columns="12"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="unit" image="2" z="1000" offsetx="-68" offsety="-94" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="5" z="800" offsetx="-68" offsety="-94" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" anim_idx="13" anim_frame="2" offsetx="-68" offsety="-94"/>
+</states>
+<anims>
+<anim idx="1" name="walk" startstate="1" endstate="1" frames="17" duration="825" default_duration="55" action_time="0" step="40">
+<replace layer="1" image="3" offsetx="-68" offsety="-94"/>
+<replace layer="2" image="6" offsetx="-68" offsety="-94"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="55"/>
+<frame idx="3" duration="55"/>
+<frame idx="4" duration="55"/>
+<frame idx="5" duration="55"/>
+<frame idx="6" duration="55"/>
+<frame idx="7" duration="55"/>
+<frame idx="8" duration="55"/>
+<frame idx="9" duration="55"/>
+<frame idx="10" duration="55"/>
+<frame idx="11" duration="55"/>
+<frame idx="12" duration="55"/>
+<frame idx="13" duration="55"/>
+<frame idx="14" duration="55"/>
+<frame idx="15" duration="55"/>
+<frame idx="16" duration="55"/>
+<frame idx="17" duration="0"/>
+</anim>
+<anim idx="9" name="die" startstate="1" endstate="1" frames="22" duration="8800" default_duration="80" action_time="0" step="0">
+<replace layer="1" image="4" offsetx="-68" offsety="-94"/>
+<replace layer="2" image="7" offsetx="-68" offsety="-94"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="80"/>
+<frame idx="3" duration="80"/>
+<frame idx="4" duration="80"/>
+<frame idx="5" duration="80"/>
+<frame idx="6" duration="80"/>
+<frame idx="7" duration="80"/>
+<frame idx="8" duration="80"/>
+<frame idx="9" duration="80"/>
+<frame idx="10" duration="80"/>
+<frame idx="11" duration="80"/>
+<frame idx="12" duration="80"/>
+<frame idx="13" duration="80"/>
+<frame idx="14" duration="80"/>
+<frame idx="15" duration="80"/>
+<frame idx="16" duration="180"/>
+<frame idx="17" duration="500"/>
+<frame idx="18" duration="1000"/>
+<frame idx="19" duration="1000"/>
+<frame idx="20" duration="2000"/>
+<frame idx="21" duration="3000"/>
+<frame idx="22" duration="0"/>
+</anim>
+<anim idx="13" name="Idle" startstate="1" endstate="1" frames="9" duration="1050" default_duration="150" action_time="0" step="0">
+<replace layer="1" image="2" offsetx="-68" offsety="-94"/>
+<replace layer="2" image="5" offsetx="-68" offsety="-94"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="150"/>
+<frame idx="3" duration="150"/>
+<frame idx="4" duration="150"/>
+<frame idx="5" duration="150"/>
+<frame idx="6" duration="150"/>
+<frame idx="7" duration="150"/>
+<frame idx="8" duration="150"/>
+<frame idx="9" duration="0"/>
+</anim>
+</anims>
+</entity>

@@ -1,0 +1,25 @@
+<class id="GArcher" cpp_class="CVXUnit" parent="Ranged" entity="assets/entities/units/GArcher/GArcher.ent.xml">
+
+  <properties minattack="6" maxattack="10" defense_slash="0" defense_pierce="0"/>
+  <properties sight="450" range="450"/>
+  <properties maxhealth="100"/>
+  <properties speed="80"/>
+
+  <properties min_range="2"  damage_type="pierce"/>
+
+  <properties icon     ="gameres/icons/GArcher.bmp"/>
+
+  <properties display_name="Archer" display_name_plural="Archers"/>
+  <properties help="contents/units/GArcher"/>
+  <properties projectile_class="Arrow"/>
+  <properties radius="10" selection_radius="10"/>
+  <properties sound_onselect=""/>
+
+  <properties speciality="spread damage"/>
+
+  <properties edittree_pos="Units/Gaul/Archer"/>
+  <!--sounds select="HorseUnitSwordFight" command="HorseUnitDeath"/-->
+
+  <sounds command="data/sound entities/VoiceGArcher.xml"/>
+
+</class>

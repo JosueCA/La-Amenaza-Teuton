@@ -1,0 +1,14 @@
+<class id="RPriest" cpp_class="CVXDruid" parent="BaseMage" entity="assets/entities/units/RPriest/RPriest.ent.xml">
+
+  <properties maxhealth="120"/>
+  <properties range="200" minrange="0" sight="400"/>
+  <properties speed="60"/>
+  <properties edittree_pos="Units/Roman/Priest"/>
+  <properties icon="gameres/icons/Priest.bmp"/>
+  <properties display_name="Priest" display_name_plural="Priests"/>
+  <properties help="contents/units/RPriest"/>
+
+	<method sig="ondie" vs="data/subai/priest_ondie.vs"/>
+	<method sig="wrath_of_jupiter" vs="data/subai/priest_jupiter_anger.vs"/>
+  <sounds command="data/sound entities/VoiceRPriest.xml"/>
+</class>

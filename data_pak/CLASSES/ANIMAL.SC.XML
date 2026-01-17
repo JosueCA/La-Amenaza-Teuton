@@ -1,0 +1,13 @@
+<class id="Animal" cpp_class="CVXUnit" parent="Object" entity="">
+	<properties feeds="0" max_food="0"/>
+  <properties repair_rate="0"/>
+	<properties damaged_by_ghost="0"/>
+	<properties can_be_invisible="0" sight="500" always_visible_on_minimap="1"/>
+
+  <method sig="move" vs="data/subai/unit_move.vs"/>
+  
+  <defaultcmd target="">
+    <cmd name="move"/>
+  </defaultcmd>
+	
+</class>

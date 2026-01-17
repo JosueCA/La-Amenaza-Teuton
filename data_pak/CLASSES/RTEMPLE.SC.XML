@@ -1,0 +1,17 @@
+<class id="RTemple" cpp_class="CVXBarrack" parent="BaseBarracks"
+entity="assets/entities/buildings/RTemple/RTemple_as.ent.xml"
+entity_autumn="assets/entities/buildings/RTemple/RTemple_as.ent.xml"
+entity_spring="assets/entities/buildings/RTemple/RTemple_as.ent.xml"
+entity_winter="assets/entities/buildings/RTemple/RTemple_w.ent.xml">
+
+	<properties display_name="Temple"/>
+
+	<properties radius="165" selection_radius="170"/>
+	<properties edittree_pos="Structures/Stronghold (Roman)/Temple"/>
+
+	<properties auto_repair="no"/>
+	<properties icon="gameres/icons/RTemple.bmp"/>
+	<properties help="/contents/buildings/RTemple"/>
+
+	<sounds select="assets/sounds/selection/druid house.wav"/>
+</class>

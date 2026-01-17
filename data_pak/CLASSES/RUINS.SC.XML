@@ -1,0 +1,7 @@
+<class id="ruins" cpp_class="CVXDecor" parent="Object"
+entity="assets/entities/MapObjects/ruins/ruins_a.ent.xml"
+entity_autumn="assets/entities/MapObjects/ruins/ruins_a.ent.xml"
+entity_spring="assets/entities/MapObjects/ruins/ruins_s.ent.xml"
+entity_winter="assets/entities/MapObjects/ruins/ruins_w.ent.xml">
+  <properties edittree_pos="Structures/Others/Ruins"/>
+</class>

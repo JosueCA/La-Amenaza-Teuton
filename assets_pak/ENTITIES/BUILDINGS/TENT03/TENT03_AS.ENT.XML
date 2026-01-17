@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Tent03_as" type="" radius="90" selection_radius="92" variations="1" pass_file="Tent03.pass">
+<images>
+<image idx="1" file="Tent03_as" drawmode="player_color" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="Tent03_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="4" x="20" y="-22"/>
+<point idx="2" type="4" x="-36" y="-4"/>
+<point idx="3" type="6" x="84" y="28"/>
+<point idx="4" type="6" x="-79" y="28"/>
+<point idx="5" type="6" x="-33" y="54"/>
+<point idx="6" type="6" x="85" y="-23"/>
+<point idx="7" type="6" x="20" y="-49"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-99" offsety="-112" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-99" offsety="-112" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" sound_id="" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

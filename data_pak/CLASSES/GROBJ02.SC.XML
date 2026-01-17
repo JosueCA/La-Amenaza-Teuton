@@ -1,0 +1,4 @@
+<class id="GrObj02" cpp_class="CVXDecor" parent="Object"
+entity="assets/entities/MapObjects/GroundObjects/GrObj02.ent.xml">
+  <properties edittree_pos="Structures/Others/Cliff (small) 1"/>
+</class>

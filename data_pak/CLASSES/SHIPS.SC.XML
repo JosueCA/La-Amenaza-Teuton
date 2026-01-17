@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="class.xsl"?>
+
+<class id="ShipS" cpp_class="CVXWagon" parent="Wagon" entity="Assets/Entities/Ships/ShipS/ShipS.ent.xml">
+	<properties icon     ="gameres/icons/Boat.bmp"/>
+	<properties water_unit="1"/>
+	<properties display_name="Boat" display_name_plural="Boats"/>
+	<properties defence_slash="0" defence_pierce="5"/>
+	<properties maxhealth="400"/>
+	<properties sight="400"/>
+	<properties radius="90" selection_radius="80" speed="100"/>
+	<properties help="/contents/units/Boat"/>
+
+	<properties edittree_pos="Units/Others/Boat"/>
+
+</class>

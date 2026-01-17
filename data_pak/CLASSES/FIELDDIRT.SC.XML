@@ -1,0 +1,5 @@
+<class id="FieldDirt" cpp_class="CVXDecor" parent="Object"
+entity="assets/decors/nivag1/nivag1_asw.ent.xml">
+
+  <properties edittree_pos="Structures/Others/Field (dirt)"/>
+</class>

@@ -1,0 +1,12 @@
+<class id="GWarehouse" altid="Warehouse" cpp_class="CVXBuilding" parent="Building"
+  entity        = "assets/entities/buildings/warehouse/warehouse 01 as.ent.xml"
+  entity_autumn = "assets/entities/buildings/warehouse/warehouse 01 as.ent.xml"
+  entity_spring = "assets/entities/buildings/warehouse/warehouse 01 as.ent.xml"
+  entity_winter = "assets/entities/buildings/warehouse/warehouse 01 w.ent.xml"
+>
+	<properties icon="gameres/icons/GWarehouse.bmp"/>
+	<properties display_name="Warehouse"/>
+	<properties radius="230" selection_radius="250"/>
+	<properties help="/contents/buildings/Village"/>
+
+</class>

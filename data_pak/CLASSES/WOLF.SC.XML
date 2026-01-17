@@ -1,0 +1,53 @@
+<class id="Wolf" cpp_class="CVXUnit" parent="PossessAnimal" 
+entity="assets/entities/Units/Wolf/Wolf.ent.xml"
+>
+
+  <properties display_name="Wolf" display_name_plural="Wolves"/>
+  <properties help="contents/units/Wolf"/>
+  <properties icon     ="gameres/icons/wolf.bmp"/>
+
+  <properties damage_type="pierce"/>
+  <properties radius="19" selection_radius="20"/>
+  <properties edittree_pos="Units/Animals/Wolf (aggressive)"/>
+  <properties sight="600"/>
+  <properties speed="150"/>
+  <properties minattack="6" maxattack="16" defense_slash="2" defense_pierce="2"/>
+  <properties maxhealth="240" feeds="0"/>
+  <properties healthbaroffset="-30"/>
+
+  <method sig="idle" vs="data/subai/wolf_idle.vs"/>
+  <method sig="attack" vs="data/subai/unit_advance.vs"/>
+  <method sig="attack" vs="data/subai/wolf_attack.vs"/>
+  <method sig="lead" vs="data/subai/wolf_lead.vs"/>
+  <method sig="engage" vs="data/subai/wolf_engage.vs"/>
+  <method sig="move" vs="data/subai/unit_move.vs"/>
+  <method sig="advance" vs="data/subai/unit_advance.vs"/>
+
+	<value0
+		icon="gameres/infobar/common/level ico.bmp"
+		script="return .AsUnit.level;"
+		help="contents/stats/level"/>
+	<value1
+		icon="gameres/infobar/common/piercing ico.bmp"
+		script="return .AsUnit.minattack + '-' + .AsUnit.maxattack;"
+		help="contents/stats/attack"/>
+	<value2
+		icon="gameres/infobar/common/defense ico.bmp"
+		script="return .AsUnit.defense_slash + '/' + .AsUnit.defense_pierce;"
+		help="contents/stats/defense"/>
+
+	<defaultcmd target="">
+		<cmd name="move"/>
+	    <cmd name="advance" ctrl="1"/>
+	</defaultcmd>
+	<defaultcmd target="Unit">
+		<cmd name="attack"/>
+	</defaultcmd>
+	
+
+	<sounds 
+		die="assets/sounds/animals/wolf/wolf_die.wav"
+		attack="WolfAttack"
+		command="assets/sounds/animals/wolf/wolf_command.wav"
+	/>
+</class>

@@ -1,0 +1,6 @@
+<entity description="SoundSeawinter">
+	<files>
+		<sound file="assets/sounds/ambient/waves_1.ogg" frequency="7"/>
+		<sound file="assets/sounds/ambient/waves_2.ogg" frequency="7"/>
+	</files>
+</entity>

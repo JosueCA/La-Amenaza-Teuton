@@ -1,0 +1,3 @@
+[submodule "hmmunpack"]
+	path = hmmunpack
+	url = https://github.com/JosueCA/hmmunpack.git

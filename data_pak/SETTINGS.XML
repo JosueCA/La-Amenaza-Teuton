@@ -1,0 +1,21 @@
+<gamesettings>
+	<game name="Adventures/archtest" type="adventure"/>
+	<settings decoranims="yes" fog="yes" colorize="yes" season="spring" syncseed="111" normseed="3"/>
+	<thisplayer id="1"/>
+	<player id="1"  red="255" green="0"   blue="0"   />
+	<player id="2"  red="0"   green="255" blue="0"   />
+	<player id="3"  red="0"   green="0"   blue="255" />
+	<player id="4"  red="255" green="255" blue="0"   />
+	<player id="5"  red="255" green="0"   blue="255" />
+	<player id="6"  red="0"   green="255" blue="255" />
+	<player id="7"  red="255" green="127" blue="0"   />
+	<player id="8"  red="127" green="255" blue="0"   />
+	<player id="9"  red="0"   green="255" blue="127" />
+	<player id="10" red="0"   green="127" blue="255" />
+	<player id="11" red="127" green="0"   blue="255" />
+	<player id="12" red="255" green="0"   blue="127" />
+	<player id="13" red="50"  green="100" blue="255" />
+	<player id="14" red="255" green="100" blue="50"  />
+	<player id="15" red="100" green="50"  blue="255" />
+	<player id="16" red="255" green="50"  blue="100" />
+</gamesettings>

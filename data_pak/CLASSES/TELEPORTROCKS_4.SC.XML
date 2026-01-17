@@ -1,0 +1,5 @@
+<class id="TeleportRocks_4" cpp_class="CVXScriptObj" parent="Object"
+entity="assets/entities/MapObjects/TeleportRocks_4/TeleportRocks_4.ent.xml">
+<properties health="100" maxhealth="100"/>
+  <properties edittree_pos="Structures/Others/Rocks 5"/>
+</class>

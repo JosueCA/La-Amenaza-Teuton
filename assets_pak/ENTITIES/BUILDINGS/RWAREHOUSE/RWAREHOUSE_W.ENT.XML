@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="RWarehouse_w" type="" variations="1" pass_file="RWarehouse.pass">
+<images>
+<image idx="1" file="RWarehouse_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="RWarehouse_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="RWarehouse_door_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="1" x="-84" y="29"/>
+<point idx="3" type="2" x="-84" y="29"/>
+<point idx="5" type="4" x="-94" y="-148"/>
+<point idx="6" type="4" x="158" y="0"/>
+<point idx="7" type="4" x="59" y="-178"/>
+<point idx="8" type="4" x="-106" y="-80"/>
+<point idx="9" type="4" x="13" y="-44"/>
+<point idx="10" type="10" x="-94" y="37"/>
+<point idx="11" type="12" x="-85" y="30"/>
+<point idx="12" type="13" x="-82" y="29"/>
+<point idx="13" type="14" x="-83" y="28"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-260" offsety="-295" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-260" offsety="-295" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="naves" image="3" z="1000" offsetx="-260" offsety="-295" sortoffsetx="-69" sortoffsety="74"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

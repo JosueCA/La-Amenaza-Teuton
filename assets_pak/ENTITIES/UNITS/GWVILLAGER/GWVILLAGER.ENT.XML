@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="GWVillager" type="vx/unit" variations="8" pass_file="">
+<images>
+<image idx="2" file="GWVillager_Idle" drawmode="player_color" remaping="none" rows="7" columns="8"/>
+<image idx="3" file="GWVillager_NosiKofa" drawmode="player_color" remaping="none" rows="15" columns="8"/>
+<image idx="4" file="GWVillager_NosiKosh" drawmode="player_color" remaping="none" rows="15" columns="8"/>
+<image idx="5" file="GWVillager_Death" drawmode="player_color" remaping="none" rows="20" columns="8"/>
+<image idx="7" file="GWVillager_Defence" drawmode="player_color" remaping="none" rows="10" columns="8"/>
+<image idx="8" file="GWVillager_Walk" drawmode="player_color" remaping="none" rows="15" columns="8"/>
+<image idx="9" file="GWVillager_NosiKofa_shadow" drawmode="shadow" remaping="none" rows="15" columns="8"/>
+<image idx="10" file="GWVillager_NosiKosh_shadow" drawmode="shadow" remaping="none" rows="15" columns="8"/>
+<image idx="11" file="GWVillager_Idle_shadow" drawmode="shadow" remaping="none" rows="7" columns="8"/>
+<image idx="12" file="GWVillager_Death_shadow" drawmode="shadow" remaping="none" rows="20" columns="8"/>
+<image idx="14" file="GWVillager_Defence_shadow" drawmode="shadow" remaping="none" rows="10" columns="8"/>
+<image idx="15" file="GWVillager_Walk_shadow" drawmode="shadow" remaping="none" rows="15" columns="8"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="unit" image="2" z="1000" offsetx="-67" offsety="-96" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="11" z="800" offsetx="-67" offsety="-96" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="idlekofa" image_idx="0" image_row="0" offsetx="-67" offsety="-96"/>
+<state idx="3" name="idlekosh" image_idx="0" image_row="0" offsetx="-67" offsety="-96"/>
+</states>
+<anims>
+<anim idx="1" name="Walk" startstate="1" endstate="1" frames="17" duration="1080" default_duration="72" action_time="0" step="40">
+<replace layer="1" image="8" offsetx="-67" offsety="-96"/>
+<replace layer="2" image="15" offsetx="-67" offsety="-96"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="72"/>
+<frame idx="3" duration="72"/>
+<frame idx="4" duration="72"/>
+<frame idx="5" duration="72"/>
+<frame idx="6" duration="72"/>
+<frame idx="7" duration="72"/>
+<frame idx="8" duration="72"/>
+<frame idx="9" duration="72"/>
+<frame idx="10" duration="72"/>
+<frame idx="11" duration="72"/>
+<frame idx="12" duration="72"/>
+<frame idx="13" duration="72"/>
+<frame idx="14" duration="72"/>
+<frame idx="15" duration="72"/>
+<frame idx="16" duration="72"/>
+<frame idx="17" duration="0"/>
+</anim>
+<anim idx="5" name="Defence" startstate="1" endstate="1" frames="12" duration="720" default_duration="72" action_time="576" step="0">
+<replace layer="1" image="7" offsetx="-67" offsety="-96"/>
+<replace layer="2" image="14" offsetx="-67" offsety="-96"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="72"/>
+<frame idx="3" duration="72"/>
+<frame idx="4" duration="72"/>
+<frame idx="5" duration="72"/>
+<frame idx="6" duration="72"/>
+<frame idx="7" duration="72"/>
+<frame idx="8" duration="72"/>
+<frame idx="9" duration="72"/>
+<frame idx="10" duration="72"/>
+<frame idx="11" duration="72"/>
+<frame idx="12" duration="0"/>
+</anim>
+<anim idx="9" name="die" startstate="1" endstate="1" frames="22" duration="8800" default_duration="80" action_time="0" step="0">
+<replace layer="1" image="5" offsetx="-67" offsety="-96"/>
+<replace layer="2" image="12" offsetx="-82" offsety="-112"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="80"/>
+<frame idx="3" duration="80"/>
+<frame idx="4" duration="80"/>
+<frame idx="5" duration="80"/>
+<frame idx="6" duration="80"/>
+<frame idx="7" duration="80"/>
+<frame idx="8" duration="80"/>
+<frame idx="9" duration="80"/>
+<frame idx="10" duration="80"/>
+<frame idx="11" duration="80"/>
+<frame idx="12" duration="80"/>
+<frame idx="13" duration="80"/>
+<frame idx="14" duration="80"/>
+<frame idx="15" duration="80"/>
+<frame idx="16" duration="180"/>
+<frame idx="17" duration="500"/>
+<frame idx="18" duration="1000"/>
+<frame idx="19" duration="1000"/>
+<frame idx="20" duration="2000"/>
+<frame idx="21" duration="3000"/>
+<frame idx="22" duration="0"/>
+</anim>
+<anim idx="13" name="Idle" startstate="1" endstate="1" frames="9" duration="385" default_duration="55" action_time="0" step="0">
+<replace layer="1" image="2" offsetx="-67" offsety="-96"/>
+<replace layer="2" image="11" offsetx="-67" offsety="-96"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="55"/>
+<frame idx="3" duration="55"/>
+<frame idx="4" duration="55"/>
+<frame idx="5" duration="55"/>
+<frame idx="6" duration="55"/>
+<frame idx="7" duration="55"/>
+<frame idx="8" duration="55"/>
+<frame idx="9" duration="0"/>
+</anim>
+<anim idx="17" name="NosiKofa" startstate="1" endstate="2" frames="17" duration="1065" default_duration="71" action_time="0" step="40">
+<replace layer="1" image="3" offsetx="-67" offsety="-96"/>
+<replace layer="2" image="9" offsetx="-67" offsety="-96"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="71"/>
+<frame idx="3" duration="71"/>
+<frame idx="4" duration="71"/>
+<frame idx="5" duration="71"/>
+<frame idx="6" duration="71"/>
+<frame idx="7" duration="71"/>
+<frame idx="8" duration="71"/>
+<frame idx="9" duration="71"/>
+<frame idx="10" duration="71"/>
+<frame idx="11" duration="71"/>
+<frame idx="12" duration="71"/>
+<frame idx="13" duration="71"/>
+<frame idx="14" duration="71"/>
+<frame idx="15" duration="71"/>
+<frame idx="16" duration="71"/>
+<frame idx="17" duration="0"/>
+</anim>
+<anim idx="18" name="NosiKosh" startstate="1" endstate="3" frames="17" duration="1065" default_duration="71" action_time="0" step="40">
+<replace layer="1" image="4" offsetx="-67" offsety="-96"/>
+<replace layer="2" image="10" offsetx="-67" offsety="-96"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="71"/>
+<frame idx="3" duration="71"/>
+<frame idx="4" duration="71"/>
+<frame idx="5" duration="71"/>
+<frame idx="6" duration="71"/>
+<frame idx="7" duration="71"/>
+<frame idx="8" duration="71"/>
+<frame idx="9" duration="71"/>
+<frame idx="10" duration="71"/>
+<frame idx="11" duration="71"/>
+<frame idx="12" duration="71"/>
+<frame idx="13" duration="71"/>
+<frame idx="14" duration="71"/>
+<frame idx="15" duration="71"/>
+<frame idx="16" duration="71"/>
+<frame idx="17" duration="0"/>
+</anim>
+</anims>
+</entity>

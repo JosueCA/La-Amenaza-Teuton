@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Arena 1 w" type="" variations="1" pass_file="Arena 1.pass">
+<images>
+<image idx="1" file="Arena1_a_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="Arena1_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="Arena1_p_w" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="4" file="Arena1_b_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="4" x="101" y="-215"/>
+<point idx="2" type="10" x="-175" y="115"/>
+<point idx="3" type="4" x="225" y="-105"/>
+<point idx="4" type="2" x="-158" y="113"/>
+<point idx="5" type="12" x="-165" y="112"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-386" offsety="-428" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-386" offsety="-428" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="podlojka" image="3" z="500" offsetx="-386" offsety="-428" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="4" name="base" image="4" z="1000" offsetx="-386" offsety="-428" sortoffsetx="-168" sortoffsety="138"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

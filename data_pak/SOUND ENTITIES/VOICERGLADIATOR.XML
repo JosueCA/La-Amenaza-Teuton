@@ -1,0 +1,9 @@
+<entity description="RGladiator Voice" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/voices/RGladiator/There's no weapon like mine.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RGladiator/We fight to the death.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RGladiator/We live to win.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RGladiator/We mortals salute you.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RGladiator/We win to live.wav" frequency="20"/>
+   </files>
+</entity>

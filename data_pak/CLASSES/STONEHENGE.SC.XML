@@ -1,0 +1,37 @@
+<class id="Stonehenge" cpp_class="CVXTownHall" parent="Building" entity="">  
+	
+	<properties display_name="Stonehenge"/>
+	<properties icon="gameres/icons/wagon.bmp"/>
+	<properties maxhealth="15000" sight="900"/>
+	<properties help="/contents/buildings/Stonehenge"/>
+
+	<properties
+		is_central_building = "1"
+		can_be_captured = "0"
+		can_be_attacked = "0"
+		produces_gold = "0"
+		produces_food = "0"
+		is_single_building = "1"
+		settlement_food = "0"
+		settlement_gold = "0"
+		settlement_maxfood = "0"
+		settlement_maxgold = "0"
+		population = "0"
+		efficiency = "1"
+		max_population = "0"
+		max_units = "0"
+		settlement_icon_name = ""
+	/>
+
+	<properties hides_units="1"/>
+
+<!--
+	<method sig="wind_of_wisdom" vs="data/subai/stonehenge_wind_of_wisdom.vs"/>
+	<method sig="starvation" vs="data/subai/stonehenge_starvation.vs"/>
+	<method sig="golden_rain" vs="data/subai/stonehenge_golden_rain.vs"/>
+	<method sig="final_sacrifice" vs="data/subai/stonehenge_final_sacrifice.vs"/>
+	<method sig="bloodlust" vs="data/subai/stonehenge_bloodlust.vs"/>
+-->
+	<method sig="wait_for_finish_sacrifice" vs="data/subai/stonehenge_wait_for_finish_sacrifice.vs"/>
+
+</class>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="bunar_asw" type="tree" radius="0" selection_radius="0" variations="1" pass_file="bunar_asw.pass">
+<images>
+<image idx="1" file="bunar_asw_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="bunar_asw" drawmode="normal" remaping="none" rows="5" columns="1"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="korona" image="2" z="1000" offsetx="-106" offsety="-114" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="1" z="800" offsetx="-106" offsety="-114" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" sound_id="" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+<anim idx="1" name="bunar_asw" sound_id="" startstate="1" endstate="1" frames="7" duration="1000" default_duration="200" action_time="0" step="0">
+<replace layer="1" image="2" offsetx="-106" offsety="-114"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="200"/>
+<frame idx="3" duration="200"/>
+<frame idx="4" duration="200"/>
+<frame idx="5" duration="200"/>
+<frame idx="6" duration="200"/>
+<frame idx="7" duration="0"/>
+</anim>
+</anims>
+</entity>

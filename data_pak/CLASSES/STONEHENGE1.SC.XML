@@ -1,0 +1,7 @@
+<class id="Stonehenge1" cpp_class="CVXTownHall" parent="Stonehenge"
+entity="assets/entities/MapObjects/stonehenge/stonehenge.ent.xml">
+  
+  <properties edittree_pos="Structures/Interactive/Stonehenge 1"/>
+  <properties icon     ="gameres/icons/Stonehenge.bmp"/>
+  <properties radius="250" selection_radius="255"/>		
+</class>

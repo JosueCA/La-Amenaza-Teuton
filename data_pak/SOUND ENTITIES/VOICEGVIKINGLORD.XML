@@ -1,0 +1,9 @@
+<entity description="GVikingLord Voice" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/voices/GVikingLord/I heal in battle.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GVikingLord/In the name of Odin.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GVikingLord/Lord of the Vikings.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GVikingLord/My home is Valhalla.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GVikingLord/Trust my hammer.wav" frequency="20"/>
+   </files>
+</entity>

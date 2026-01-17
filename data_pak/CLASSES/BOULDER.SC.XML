@@ -1,0 +1,8 @@
+<class id="Boulder" cpp_class="CVXItemHolder" parent="ItemHolder"
+entity="assets/entities/Item_holders/Boulder.ent.xml">
+  <properties edittree_pos="Structures/Item holders/Boulder"/>
+  <properties icon     ="gameres/icons/Boulder.bmp"/>
+  <properties radius="35" selection_radius="37"/>
+  <properties respawn_item="Snake skin" respawn_time="600000"/>
+  <properties display_name="Boulder"/>
+</class>

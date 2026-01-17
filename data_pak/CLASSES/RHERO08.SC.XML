@@ -1,0 +1,7 @@
+<class id="RHero08" cpp_class="CVXHero" parent="RomanHero" entity="assets/entities/Units/RHero08/RHero08.ent.xml">
+
+  <properties display_name="Tuvius" display_name_plural="Heroes"/>
+  <properties edittree_pos="Units/Heroes/Tuvius (Roman)"/>
+	<properties icon="gameres/icons/RHero8.bmp"/>
+  <sounds command="data/sound entities/VoiceRHero.xml"/>
+</class>

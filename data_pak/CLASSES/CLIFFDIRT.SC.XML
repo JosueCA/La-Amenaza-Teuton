@@ -1,0 +1,5 @@
+<class id="CliffDirt" cpp_class="CVXDecor" parent="Object"
+entity="assets/decors/tobj25/tobj25.ent.xml">
+
+  <properties edittree_pos="Structures/Others/Cliff (dirt)"/>
+</class>

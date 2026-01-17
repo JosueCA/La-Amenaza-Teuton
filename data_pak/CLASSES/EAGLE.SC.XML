@@ -1,0 +1,31 @@
+<class id="Eagle" cpp_class="CVXFlyingUnit" parent="PossessAnimal" entity="assets/entities/Units/Eagle/Eagle.ent.xml">
+
+	<properties display_name="Eagle" display_name_plural="Eagles"/>
+   <properties help="contents/units/Eagle"/>
+	<properties damage_type="none"/>
+	<properties radius="25" selection_radius="25"/>
+	<properties edittree_pos="Units/Animals/Eagle"/>
+	<properties sight="900" feeds="0"/>
+	<properties target_factor="-1"/>
+	<properties healthbaroffset="-30"/>
+	<properties maxhealth="30"/>
+	<properties initial_z="200"/>
+	<properties speed="180"/>
+	<properties no_transparent_draw="1"/>
+	<properties icon     ="gameres/icons/eagle.bmp"/>
+
+	<method sig="idle"  vs="data/subai/eagle_idle.vs"/>
+	<method sig="move"  vs="data/subai/eagle_move.vs"/>
+	<method sig="hover" vs="data/subai/eagle_hover.vs"/>
+	<method sig="lesser_hover" vs="data/subai/eagle_lesser_hover.vs"/>
+
+	<sounds 
+		die="data/sound entities/eagle_death.xml"
+		walk="data/sound entities/eagle_idle.xml"
+		command="data/sound entities/eagle_command.xml"
+	/>
+
+	<defaultcmd target="">
+		<cmd name="move"/>
+	</defaultcmd>
+</class>

@@ -1,0 +1,22 @@
+<class id="Deer" cpp_class="CVXUnit" parent="PossessAnimal" entity="assets/entities/Units/Deer/Deer.ent.xml">
+
+  <properties display_name="Deer" display_name_plural="Deer"/>
+  <properties help="contents/units/Deer"/>
+  <properties icon     ="gameres/icons/deer.bmp"/>
+
+  <properties damage_type="none"/>
+  <properties range="17" min_range="2"/>
+  <properties radius="20" selection_radius="20"/>
+  <properties target_factor="-1"/>
+  <properties minattack="0" maxattack="0" defense_slash="0" defense_pierce="0"/>
+  <properties speed="150"/>
+
+  <properties edittree_pos="Units/Animals/Deer"/>
+
+  <method sig="idle" vs="data/subai/deer_idle.vs"/>
+  <method sig="move" vs="data/subai/deer_move.vs"/>
+  <method sig="unitmove" vs="data/subai/unit_move.vs"/>
+
+  <sounds walk="assets/sounds/animals/deer_galop.wav" die="assets/sounds/animals/deer_select.wav" command="assets/sounds/animals/deer_select.wav"/>
+
+</class>

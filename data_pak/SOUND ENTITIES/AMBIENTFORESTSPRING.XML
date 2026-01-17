@@ -1,0 +1,12 @@
+<entity description="AmbientForestspring">
+	<files>
+		<sound file="assets/sounds/ambient/Birds1.wav" frequency="10"/>
+		<sound file="assets/sounds/ambient/Birds2.wav" frequency="10"/>
+		<sound file="assets/sounds/ambient/Birds3.wav" frequency="10"/>
+		<sound file="assets/sounds/ambient/Birds4.wav" frequency="10"/>
+		<sound file="assets/sounds/ambient/Birds5.wav" frequency="10"/>
+		<sound file="assets/sounds/ambient/Birds6.wav" frequency="10"/>
+		<sound file="assets/sounds/ambient/Birds7.wav" frequency="10"/>
+		<sound file="assets/sounds/ambient/Birds8.wav" frequency="10"/>
+	</files>
+</entity>

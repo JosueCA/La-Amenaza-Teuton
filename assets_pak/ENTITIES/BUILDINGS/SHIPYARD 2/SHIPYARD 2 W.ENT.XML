@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Shipyard 2_w" type="" variations="1" pass_file="Shipyard 2.pass">
+<images>
+<image idx="1" file="GShipyard2_a_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="GShipyard2_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="GShipyard2_p_w" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="4" file="GShipyard2_b_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="5" file="GShipyard2_d_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="6" file="GShipyard2_e_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="7" file="GShipyard2_f_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="8" file="GShipyard2_g_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="3" x="-14" y="-132"/>
+<point idx="2" type="3" x="-60" y="-140"/>
+<point idx="3" type="3" x="-79" y="-164"/>
+<point idx="4" type="3" x="-25" y="-182"/>
+<point idx="5" type="4" x="-157" y="133"/>
+<point idx="6" type="4" x="-137" y="-75"/>
+<point idx="7" type="4" x="-119" y="-132"/>
+<point idx="8" type="4" x="57" y="54"/>
+<point idx="9" type="4" x="81" y="-45"/>
+<point idx="10" type="4" x="47" y="-83"/>
+<point idx="11" type="4" x="-32" y="-162"/>
+<point idx="12" type="4" x="-79" y="-32"/>
+<point idx="13" type="2" x="-258" y="108"/>
+<point idx="14" type="1" x="-181" y="23"/>
+<point idx="15" type="11" x="68" y="34"/>
+<point idx="16" type="11" x="-263" y="130"/>
+<point idx="17" type="1" x="-166" y="8"/>
+<point idx="18" type="11" x="124" y="112"/>
+<point idx="19" type="2" x="-248" y="124"/>
+<point idx="20" type="11" x="-171" y="28"/>
+<point idx="21" type="4" x="-65" y="75"/>
+<point idx="22" type="6" x="-297" y="156"/>
+<point idx="23" type="6" x="-419" y="163"/>
+<point idx="24" type="5" x="427" y="46"/>
+<point idx="25" type="5" x="398" y="335"/>
+<point idx="26" type="5" x="223" y="362"/>
+<point idx="27" type="6" x="-218" y="-148"/>
+<point idx="28" type="6" x="-20" y="-349"/>
+<point idx="29" type="6" x="-367" y="-60"/>
+<point idx="30" type="6" x="-41" y="-273"/>
+<point idx="31" type="4" x="-105" y="-181"/>
+<point idx="32" type="11" x="170" y="216"/>
+<point idx="33" type="1" x="41" y="47"/>
+<point idx="34" type="2" x="43" y="49"/>
+<point idx="35" type="11" x="240" y="29"/>
+<point idx="36" type="11" x="15" y="231"/>
+<point idx="37" type="10" x="-98" y="267"/>
+</points>
+<layers>
+<layer idx="1" name="layer1" image="1" z="1000" offsetx="-480" offsety="-437" sortoffsetx="-309" sortoffsety="123"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-480" offsety="-437" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="podlojka" image="3" z="500" offsetx="-480" offsety="-437" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="4" name="layer2" image="4" z="1000" offsetx="-480" offsety="-437" sortoffsetx="-229" sortoffsety="27"/>
+<layer idx="5" name="layer3" image="5" z="1000" offsetx="-480" offsety="-437" sortoffsetx="-159" sortoffsety="180"/>
+<layer idx="6" name="layer4" image="6" z="1000" offsetx="-480" offsety="-437" sortoffsetx="0" sortoffsety="-17"/>
+<layer idx="7" name="layer5" image="7" z="1000" offsetx="-480" offsety="-437" sortoffsetx="0" sortoffsety="-11"/>
+<layer idx="8" name="layer6" image="8" z="1000" offsetx="-480" offsety="-437" sortoffsetx="0" sortoffsety="-30"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

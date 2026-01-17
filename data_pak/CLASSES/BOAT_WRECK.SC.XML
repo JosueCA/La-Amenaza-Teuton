@@ -1,0 +1,5 @@
+<class id="Boat_wreck" cpp_class="CVXDecor" parent="Object"
+entity="assets/entities/MapObjects/WaterObjects/Boat_wreck/Boat_wreck.ent.xml">
+  <properties edittree_pos="Structures/Water/Boat wreck"/>
+  <properties water_unit="1"/>
+</class>

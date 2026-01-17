@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="TreeTrunk" type="tree" variations="1" pass_file="TreeTrunk.pass">
+<images>
+<image idx="1" file="TreeTrunk" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="9" x="-13" y="-9"/>
+<point idx="2" type="9" x="13" y="-9"/>
+</points>
+<layers>
+<layer idx="1" name="styblo" image="1" z="1000" offsetx="-64" offsety="-76" sortoffsetx="0" sortoffsety="-26"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="RBlacksmith_as" type="" variations="1" pass_file="RBlacksmith.pass">
+<images>
+<image idx="1" file="RBlacksmith_as" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="RBlacksmith_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="4" x="-10" y="-169"/>
+<point idx="2" type="4" x="166" y="-60"/>
+<point idx="3" type="4" x="-151" y="-50"/>
+<point idx="4" type="4" x="-117" y="-130"/>
+<point idx="5" type="12" x="-104" y="38"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-260" offsety="-372" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-260" offsety="-372" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

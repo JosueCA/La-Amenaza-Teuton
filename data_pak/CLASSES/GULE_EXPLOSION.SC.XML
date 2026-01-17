@@ -1,0 +1,4 @@
+<class id="Gule_explosion" cpp_class="CVXFeedback" parent="Object"
+entity="assets/entities/visuals/Gule/Gule_explosion.ent.xml">
+  <properties desync_hash="0"/>
+</class>

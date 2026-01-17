@@ -1,0 +1,9 @@
+<entity description="GAxeman Voice" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/voices/GAxeman/I huger for battle.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GAxeman/I've killed many.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GAxeman/Just sharpened my axe.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GAxeman/Let me at them.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GAxeman/The next one is mine.wav" frequency="20"/>
+   </files>
+</entity>

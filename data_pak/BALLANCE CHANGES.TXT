@@ -1,0 +1,110 @@
+Mule speed set to 80 (was 60 before) (June 24th, 2002)
+
+Learning amount set to (inherent level + 3) / 4 (was 4 before) (June 9th, 2002)
+
+Druid and Priest defenses set to 2/2 (were 10/10 before) (June 9th, 2002)
+
+Wind of Winsdom effect limited to 20 level (June 9th, 2002)
+
+Teuton Archer maxhealth is 400 (was 350) and max attack is 16 (was 13) (June 9th, 2002)
+
+Roman Liberatus max attack is 50 (was 60) (June 9th, 2002)
+
+Gaul Swordsman maxhealth is 250 (was 240) (June 9th, 2002)
+
+Roman Hastatus maxhealth is 220 (was 240) (June 9th, 2002)
+
+Viking Lords max count is 4 (was 3) (June 9th, 2002)
+
+Shrine of Thor upgrade changed (June 9th, 2002)
+Upper limit of level is removed (was 20)
+The first Viking after the upgrade comes level 6 (was 4)
+Every Viking then comes with 2 levels more than the previous (was +4)
+
+Liberati Guid upgrade changed (June 9th, 2002)
+The upper limit of the levels is removed (was 20)
+New liberati come with the level equal the level of 
+the most experienced liberati or 
+the level of the previous built plus one, whichever is greater
+
+Gold production changed to 24 per 100 population per 2 seconds (was 30) (May 18th)
+
+Wind of Winsdom limited to 40 level (May 17th, 2002)
+Wind of Wisdom cannot raise the level of the units above 40
+
+Druid healing boost (May 17th, 2002)
+The druids now heal (20 + their level) health points instead of 20 as it was before
+
+Liberati Guild upgrage effect limited to level 20 (May 6th, 2002)
+
+Added Import Horses to Roman Tavern (May 4th, 2002)
+
+Renamed stuff (May 4th, 2002)
+Villagers to Peasants
+Make Villagers to Call peasants
+Ghost to Ghoul
+Magics
+Shrine of Tor to Shrine of Thor
+
+
+Changed Gaul items (May 4th, 2002)
+Bear teeth amulet from +3 to +4 max attack
+Herb amulet of luck from +2 to +4 piercing defense
+Belt of might from +2 to +4 slashing defense 
+
+Renamed "Final Sacrifice" to "Death Wish" (April 8th, 2002)
+
+Liberati experience preservation (April 6th, 2002)
+The next liberati come with the max level of the previous + 1.
+
+Champions renamed to Liberati/Liberatus (April 6th, 2002)
+Championship traditions renamed to Liberati guild
+
+Heroes health per level (April 5th, 2002)
+From 5 to 20
+
+Heroes health (April 5th, 2002)
+From 800 to 1000
+
+
+
+April 2nd, 2002 TDK Beta 2
+
+Tower arrows damage (March 25th, 2002)
+changed from 5-15 to 10-30
+
+Large ship speed (March 25th, 2002)
+changed from 200 to 240
+
+Loyalty changes (March 21, 2002)
+Stronghold units exit on attack regardless of the loyaly (before they exited at below 50%)
+The friendly units add 1 loyalty (was 0.3 before), const.ini: LoyaltyIncreasePerUnit
+
+Gaul Loan (March 21, 2002)
+Loan interest changed from 0% to 10%
+
+Buy maps (March 16, 2002)
+Price of Roman upgrade "Buy maps" changed from 3000 to 2000
+Function chanded from explore all to explore circle area around the tavern with 16000 radius
+
+Initial resources (March 16, 2002)
+Changed stronghold food from 750 to 200
+Changed village food from 0 to 100
+
+Experience gain on kill (March 16, 2002)
+Changed from "max(target_level / 2, 1)" to "target_level / 8 + 1"
+
+Gaul stronghold food tax (March 16, 2002)
+Changed from 20 f/s to 10 f/s (for 100 population)
+
+Population decrease speed (March 16, 2002)
+Changed from 10% every 5 sec to 10% every 4 sec
+
+Roman Hastatus (March 16, 2002)
+Piercing defense set to 0 from 4
+
+Teuton Tent (March 16, 2002)
+Max Teutons 40
+Max Teutons after the tent is captured 20
+Max Teutons outside of the tent 12
+

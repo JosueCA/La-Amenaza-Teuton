@@ -1,0 +1,4 @@
+<class id="hide_feedback" cpp_class="CVXFeedback" parent="Object"
+entity="assets/entities/visuals/Teach/Teach.ent.xml">
+  <properties desync_hash="0"/>
+</class>

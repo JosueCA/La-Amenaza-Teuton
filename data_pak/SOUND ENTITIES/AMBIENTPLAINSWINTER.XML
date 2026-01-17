@@ -1,0 +1,11 @@
+<entity description="AmbientPlainswinter">
+	<files>
+		<sound file="assets/sounds/ambient/wind1.wav" frequency="10"/>
+		<sound file="assets/sounds/ambient/wind2.wav" frequency="10"/>
+		<sound file="assets/sounds/ambient/wind3.wav" frequency="10"/>
+		<sound file="assets/sounds/ambient/wind4.wav" frequency="10"/>
+		<sound file="assets/sounds/ambient/wind5.wav" frequency="10"/>
+		<sound file="assets/sounds/ambient/wind6.wav" frequency="10"/>
+		<sound file="assets/sounds/ambient/wind7.wav" frequency="10"/>
+	</files>
+</entity>

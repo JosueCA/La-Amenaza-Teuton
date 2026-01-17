@@ -1,0 +1,9 @@
+<entity description="GWWarrior Voice" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/voices/GWWarrior/I can face death.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GWWarrior/I'm one with the sword.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GWWarrior/Just watch me do it.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GWWarrior/Skill is the key.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GWWarrior/Use my death blow.wav" frequency="20"/>
+   </files>
+</entity>

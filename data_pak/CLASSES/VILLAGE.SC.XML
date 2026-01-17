@@ -1,0 +1,12 @@
+<class id="GVillage" altid="Village" cpp_class="CVXTownHall" parent="BaseVillage"
+  entity        = "assets/entities/buildings/warehouse/warehouse 01 as.ent.xml"
+  entity_autumn = "assets/entities/buildings/warehouse/warehouse 01 as.ent.xml"
+  entity_spring = "assets/entities/buildings/warehouse/warehouse 01 as.ent.xml"
+  entity_winter = "assets/entities/buildings/warehouse/warehouse 01 w.ent.xml"
+>
+  <properties foodperpop="45"/>
+  <properties icon="gameres/icons/GWarehouse.bmp"/>
+  <properties edittree_pos="Structures/Village (Gaul)/Village hall"/>
+	<properties help="/contents/buildings/Village"/>
+
+</class>

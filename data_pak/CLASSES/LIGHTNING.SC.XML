@@ -1,0 +1,4 @@
+<class id="Lightning" cpp_class="CVXFeedback" parent="Object"
+entity="assets/entities/visuals/Lightning/Lightning.ent.xml">
+  <properties desync_hash="0"/>
+</class>

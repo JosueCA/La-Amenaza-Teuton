@@ -1,0 +1,14 @@
+<entity description="Pikes" priority="UnitFight" type="UnitFight">
+   <files>
+      <sound file="assets/sounds/pike/pike1.wav" frequency="10"/>
+      <sound file="assets/sounds/pike/pike2.wav" frequency="10"/>
+      <sound file="assets/sounds/pike/pike3.wav" frequency="10"/>
+      <sound file="assets/sounds/pike/pike4.wav" frequency="10"/>
+      <sound file="assets/sounds/pike/pike5.wav" frequency="10"/>
+      <sound file="assets/sounds/pike/pike6.wav" frequency="10"/>
+      <sound file="assets/sounds/pike/pike7.wav" frequency="10"/>
+      <sound file="assets/sounds/pike/pike8.wav" frequency="10"/>
+      <sound file="assets/sounds/pike/pike9.wav" frequency="10"/>
+      <sound file="assets/sounds/pike/pike10.wav" frequency="10"/>
+   </files>
+</entity>

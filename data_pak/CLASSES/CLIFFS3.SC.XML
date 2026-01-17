@@ -1,0 +1,4 @@
+<class id="Cliffs3" cpp_class="CVXDecor" parent="Object"
+entity="assets/entities/MapObjects/Cliffs3/Clifs3_as.ent.xml">
+  <properties edittree_pos="Structures/Others/Rocks 3"/>
+</class>

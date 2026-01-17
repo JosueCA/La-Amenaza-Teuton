@@ -1,0 +1,9 @@
+<class id="Caesar" cpp_class="CVXHero" parent="HeroMounted" entity="assets/entities/Units/Caesar/Caesar.ent.xml">
+
+  <properties display_name="Caesar"/>
+
+  <properties edittree_pos="Units/Heroes/Caesar (Roman)"/>
+	<properties icon="gameres/icons/Caesar.bmp"/>
+
+  <sounds command="data/sound entities/VoiceRHero.xml"/>
+</class>

@@ -1,0 +1,5 @@
+<class id="Military" cpp_class="CVXUnit" parent="Unit" entity="">
+
+<method sig="train"	vs="data/subai/unit_train.vs" onfinish="data/subai/unit_train_onfinish.vs"/>
+
+</class>

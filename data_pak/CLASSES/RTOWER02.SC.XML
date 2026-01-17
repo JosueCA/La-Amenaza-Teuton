@@ -1,0 +1,17 @@
+<class id="RTower02" cpp_class="CVXBuilding" parent="Tower"
+entity="assets/entities/buildings/RWalls/RTower02/RTower02_as.ent.xml"
+entity_autumn="assets/entities/buildings/RWalls/RTower02/RTower02_as.ent.xml"
+entity_spring="assets/entities/buildings/RWalls/RTower02/RTower02_as.ent.xml"
+entity_winter="assets/entities/buildings/RWalls/RTower02/RTower02_w.ent.xml">
+
+  <properties icon="gameres/icons/RTower.bmp"/>
+  <properties display_name="Tower"/>
+  <properties wall_set="Stone walls"/>
+
+  <method sig="idle" vs="data/subai/tower_guard.vs"/>
+
+	<properties attack_type="range"/>
+	<properties sight="500" range="500" min_range="250" speed="0"/>
+	<properties radius="45" selection_radius="50"/>
+
+</class>

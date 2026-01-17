@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="ship_wreck2" type="tree" variations="1" pass_file="ship_wreck2.pass">
+<images>
+<image idx="1" file="ship_wreck2" drawmode="normal" remaping="none" rows="5" columns="1"/>
+<image idx="2" file="ship_wreck2_shadow" drawmode="shadow" remaping="none" rows="5" columns="1"/>
+<image idx="3" file="ship_wreck2_reflection" drawmode="normal" remaping="none" rows="5" columns="1"/>
+</images>
+<points>
+<point idx="1" type="11" x="86" y="5"/>
+<point idx="2" type="11" x="71" y="-25"/>
+<point idx="3" type="11" x="-23" y="-10"/>
+<point idx="4" type="11" x="-106" y="13"/>
+<point idx="5" type="11" x="-101" y="55"/>
+<point idx="6" type="11" x="2" y="47"/>
+</points>
+<layers>
+<layer idx="1" name="ship_wreck2" image="1" z="1000" offsetx="-203" offsety="-223" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="ship_wreck2_sha" image="2" z="800" offsetx="-203" offsety="-223" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="ship_wreck2_ref" image="3" z="950" offsetx="-203" offsety="-223" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+<anim idx="1" name="ship_wreck2" startstate="1" endstate="1" frames="7" duration="1000" default_duration="200" action_time="0" step="0">
+<replace layer="1" image="1" offsetx="-203" offsety="-223"/>
+<replace layer="2" image="2" offsetx="-203" offsety="-223"/>
+<replace layer="3" image="3" offsetx="-203" offsety="-223"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="200"/>
+<frame idx="3" duration="200"/>
+<frame idx="4" duration="200"/>
+<frame idx="5" duration="200"/>
+<frame idx="6" duration="200"/>
+<frame idx="7" duration="0"/>
+</anim>
+</anims>
+</entity>

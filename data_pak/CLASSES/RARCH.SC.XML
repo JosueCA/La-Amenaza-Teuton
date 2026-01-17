@@ -1,0 +1,9 @@
+<class id="RArch" cpp_class="CVXBuilding" parent="Building"
+	entity="assets/entities/buildings/RArch/RArch_as.ent.xml"
+	entity_winter="assets/entities/buildings/RArch/RArch_w.ent.xml"
+>
+  <properties display_name="Roman Arch"/>
+  <properties radius="150" selection_radius="170"/>
+	<properties edittree_pos="Structures/Others/Roman Arch"/>
+  <properties icon="gameres/icons/RArch.bmp"/>
+</class>

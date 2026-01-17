@@ -1,0 +1,12 @@
+<class id="GShipyard1" altid="Shipyard 1" cpp_class="CVXTownHall" parent="BaseShipyard"
+  entity        = "assets/entities/buildings/Shipyard 1/Shipyard 1 as.ent.xml"
+  entity_autumn = "assets/entities/buildings/Shipyard 1/Shipyard 1 as.ent.xml"
+  entity_spring = "assets/entities/buildings/Shipyard 1/Shipyard 1 as.ent.xml"
+  entity_winter = "assets/entities/buildings/Shipyard 1/Shipyard 1 w.ent.xml"
+>
+  <properties radius="410" selection_radius="430"/>
+  <properties edittree_pos="Structures/Shipyards/Wooden SW"/>
+  <properties importsettlement="Shipyard 1"/>
+  <properties build_ship_variation="0"/>
+  <properties exit_vector_x="-120" exit_vector_y="100"/>
+</class>

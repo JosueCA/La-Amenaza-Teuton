@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<cursors>
+	<cursor name="default"       id="IDC_DEFAULT"/>
+	<cursor name="attack"        id="IDC_ATTACK"/>
+	<cursor name="wait"          id="IDC_WAIT"/>
+	<cursor name="do_something"  id="IDC_DO_SOMETHING"/>
+	<cursor name="move_in_fight" id="IDC_MOVE_IN_FIGHT"/>
+	<cursor name="select"        id="IDC_SELECT"/>
+</cursors>

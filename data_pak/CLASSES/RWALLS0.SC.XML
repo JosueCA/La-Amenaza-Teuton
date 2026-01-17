@@ -1,0 +1,10 @@
+<class id="Rwalls0" cpp_class="CVXBuilding" parent="Wall"
+entity="assets/entities/buildings/RWalls/Rwalls0/Rwalls0_as.ent.xml"
+entity_autumn="assets/entities/buildings/RWalls/Rwalls0/Rwalls0_as.ent.xml"
+entity_spring="assets/entities/buildings/RWalls/Rwalls0/Rwalls0_as.ent.xml"
+entity_winter="assets/entities/buildings/RWalls/Rwalls0/Rwalls0_w.ent.xml">
+  <properties icon="gameres/icons/RWalls.bmp"/>
+  <properties radius="80" selection_radius="80"/>
+  <properties wall_set="Stone walls"/>
+
+</class>

@@ -1,0 +1,26 @@
+<class id="Teleport" cpp_class="CVXTeleport" parent="Building" entity="">
+  <properties
+  		is_central_building = "1"
+  		can_be_captured = "0"
+  		can_be_attacked = "0"
+  		produces_gold = "0"
+  		produces_food = "0"
+  		is_single_building = "0"
+  		settlement_food = "0"
+  		settlement_gold = "0"
+  		settlement_maxfood = "0"
+  		settlement_maxgold = "0"
+  		population = "0"
+  		efficiency = "1"
+  		max_population = "0"
+  		max_units = "10000"
+  		settlement_icon_name = ""
+  />
+	<properties can_be_cloned="0"/>
+	<properties icon="gameres/icons/Teleport.bmp"/>
+	<properties display_name="Cave"/>
+	<properties minimap_icon_type="black"/>
+	<properties help="/contents/buildings/Caves"/>
+
+  <sounds select="assets/sounds/selection/cave.wav"/>
+</class>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Inn_as" type="" variations="1" pass_file="Inn.pass">
+<images>
+<image idx="1" file="Inn_a_as" drawmode="normal" remaping="none" rows="4" columns="1"/>
+<image idx="2" file="Inn_b_as" drawmode="normal" remaping="none" rows="4" columns="1"/>
+<image idx="3" file="Inn_c_as" drawmode="normal" remaping="none" rows="4" columns="1"/>
+<image idx="4" file="Inn_shadow" drawmode="shadow" remaping="none" rows="4" columns="1"/>
+</images>
+<points>
+<point idx="1" type="1" x="68" y="67"/>
+<point idx="2" type="2" x="70" y="68"/>
+<point idx="3" type="4" x="62" y="-49"/>
+<point idx="4" type="4" x="-11" y="-185"/>
+<point idx="5" type="4" x="-135" y="-153"/>
+<point idx="6" type="4" x="-90" y="-121"/>
+<point idx="7" type="4" x="95" y="-71"/>
+<point idx="8" type="4" x="9" y="-229"/>
+<point idx="9" type="11" x="87" y="73"/>
+<point idx="10" type="10" x="184" y="33"/>
+<point idx="11" type="11" x="-176" y="-21"/>
+<point idx="12" type="11" x="-155" y="31"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-277" offsety="-317" sortoffsetx="0" sortoffsety="67"/>
+<layer idx="2" name="base" image="2" z="1000" offsetx="-277" offsety="-317" sortoffsetx="0" sortoffsety="-75"/>
+<layer idx="3" name="base" image="3" z="1000" offsetx="-277" offsety="-317" sortoffsetx="95" sortoffsety="152"/>
+<layer idx="4" name="shadow" image="4" z="800" offsetx="-277" offsety="-317" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

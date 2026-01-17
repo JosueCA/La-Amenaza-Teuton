@@ -1,0 +1,10 @@
+<class id="GWallS7" altid="Walls7" cpp_class="CVXBuilding" parent="Wall"
+entity="assets/entities/buildings/GWalls/GWalls7/GWalls7_as.ent.xml"
+entity_autumn="assets/entities/buildings/GWalls/GWalls7/GWalls7_as.ent.xml"
+entity_spring="assets/entities/buildings/GWalls/GWalls7/GWalls7_as.ent.xml"
+entity_winter="assets/entities/buildings/GWalls/GWalls7/GWalls7_w.ent.xml">
+  <properties icon="gameres/icons/GWalls.bmp"/>
+  <properties wall_set="Wooden walls"/>
+  <properties radius="110" selection_radius="110"/>
+
+</class>

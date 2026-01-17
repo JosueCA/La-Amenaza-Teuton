@@ -1,0 +1,10 @@
+<class id="WagonFood" cpp_class="CVXWagon" parent="Object" entity="">
+
+  <properties icon="gameres/icons/Wagon.bmp"/>
+  <value3
+	icon="gameres/infobar/common/food ico.bmp"
+	script="return .AsWagon.amount;"
+	flags="-1"
+	help="/contents/resources"/>
+
+</class>

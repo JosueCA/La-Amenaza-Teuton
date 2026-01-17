@@ -1,0 +1,11 @@
+<class id="RArena" cpp_class="CVXBuilding" parent="BaseArena"
+entity="assets/entities/buildings/RArena/RArena_as.ent.xml"
+entity_winter="assets/entities/buildings/RArena/RArena_w.ent.xml">
+
+	<properties icon     ="gameres/icons/rarena.bmp"/>
+	<properties display_name="Arena"/>
+	<properties radius="360" selection_radius="365"/>
+	<properties edittree_pos="Structures/Stronghold (Roman)/Arena"/>
+	<properties help="/contents/buildings/RArena"/>
+
+</class>

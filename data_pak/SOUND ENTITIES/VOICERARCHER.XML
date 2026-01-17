@@ -1,0 +1,9 @@
+<entity description="RArcher Voice" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/voices/RArcher/Archers here.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RArcher/Bows ready.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RArcher/I miss my home.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RArcher/I'm tired of this.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RArcher/What are we doing.wav" frequency="20"/>
+   </files>
+</entity>

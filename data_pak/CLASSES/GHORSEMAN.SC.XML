@@ -1,0 +1,13 @@
+<class id="GHorseman" cpp_class="CVXUnit" parent="Horse" entity="assets/entities/Units/GHorseman/GHorseman.ent.xml">
+  <properties minattack="14" maxattack="32" defense_slash="0" defense_pierce="0"/>
+  <properties maxhealth="440" speed="140"/>
+
+  <properties icon     ="gameres/icons/GHorseman.bmp"/>
+  <properties display_name="Horseman" display_name_plural="Horsemen"/>
+  <properties help="contents/units/GHorseman"/>
+
+  <properties speciality="charge"/>
+  <properties edittree_pos="Units/Gaul/Horseman"/>
+
+  <sounds command="data/sound entities/VoiceGHorseman.xml"/>
+</class>

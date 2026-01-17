@@ -1,0 +1,20 @@
+<class id="RArcher" cpp_class="CVXUnit" parent="Ranged" entity="assets/entities/units/RArcher/RArcher.ent.xml">
+
+  <properties maxhealth="125"/>
+  <properties sight="450" range="450"/>
+  <properties minattack="7" maxattack="14" defense_slash="0" defense_pierce="0"/>
+  <properties speed="80"/>
+  <properties speciality="spread damage"/>
+
+  <properties min_range="2" damage_type="pierce"/>
+  <properties icon     ="gameres/icons/RArcher.bmp"/>
+  <properties display_name="Archer" display_name_plural="Archers"/>
+  <properties help="contents/units/RArcher"/>
+
+  <properties projectile_class="Arrow"/>
+  <properties radius="10" selection_radius="10"/>
+
+  <properties edittree_pos="Units/Roman/Archer"/>
+  <sounds command="data/sound entities/VoiceRArcher.xml"/>
+
+</class>

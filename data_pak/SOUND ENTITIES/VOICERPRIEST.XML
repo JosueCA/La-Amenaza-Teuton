@@ -1,0 +1,9 @@
+<entity description="RPriest Voice" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/voices/RPriest/Fear pluto.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RPriest/I'm too old for this.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RPriest/Starting the ritual.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RPriest/The gods be with you.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RPriest/Worship Jupiter.wav" frequency="20"/>
+   </files>
+</entity>

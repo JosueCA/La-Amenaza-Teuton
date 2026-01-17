@@ -1,0 +1,4 @@
+<class id="kolona2" cpp_class="CVXDecor" parent="Object"
+entity="assets/entities/MapObjects/kolona2/kolona2_as.ent.xml">
+  <properties edittree_pos="Structures/Others/Tilted column"/>
+</class>

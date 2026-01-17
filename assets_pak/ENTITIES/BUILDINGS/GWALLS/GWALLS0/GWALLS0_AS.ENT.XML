@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="GWalls0_as" type="" variations="1" pass_file="GWalls0.pass">
+<images>
+<image idx="1" file="GWalls0_as" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="GWalls0_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="4" x="-1" y="-15"/>
+<point idx="2" type="7" x="0" y="110"/>
+<point idx="3" type="7" x="0" y="-110"/>
+<point idx="4" type="8" x="-72" y="-34"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-160" offsety="-205" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-160" offsety="-205" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

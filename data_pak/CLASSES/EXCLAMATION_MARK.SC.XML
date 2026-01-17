@@ -1,0 +1,4 @@
+<class id="Exclamation_Mark" cpp_class="CVXFeedback" parent="Object"
+entity="assets/entities/visuals/Exclamation_Mark/Exclamation_Mark.ent.xml">
+  <properties desync_hash="0"/>
+</class>

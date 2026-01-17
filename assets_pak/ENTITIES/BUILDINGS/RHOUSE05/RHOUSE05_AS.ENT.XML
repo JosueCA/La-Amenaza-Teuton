@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="RHouse05_as" type="" variations="1" pass_file="RHouse05.pass">
+<images>
+<image idx="1" file="RHouse05_as" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="RHouse05_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="4" x="-36" y="-110"/>
+<point idx="2" type="4" x="-13" y="-78"/>
+<point idx="3" type="4" x="66" y="-75"/>
+<point idx="4" type="4" x="26" y="-62"/>
+<point idx="5" type="12" x="-44" y="-78"/>
+<point idx="6" type="10" x="-44" y="-75"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-206" offsety="-284" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-206" offsety="-284" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

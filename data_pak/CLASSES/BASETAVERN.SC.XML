@@ -1,0 +1,18 @@
+<class id="BaseTavern" cpp_class="CVXTavern" parent="BaseTownBuilding"
+entity="assets/entities/buildings/Tavern/Tavern_as.ent.xml"
+entity_autumn="assets/entities/buildings/Tavern/Tavern_as.ent.xml"
+entity_spring="assets/entities/buildings/Tavern/Tavern_as.ent.xml"
+entity_winter="assets/entities/buildings/Tavern/Tavern_w.ent.xml">
+
+	<properties interface="queue"/>
+	<properties auto_repair="no"/>
+
+	<method sig="addpop" vs="data/subai/townhall_addpop.vs"/>
+	<method sig="invest" vs="data/subai/tavern_investment.vs"/>
+	<method sig="getloan" vs="data/subai/tavern_getloan.vs"/>
+	<method sig="repayloan" vs="data/subai/tavern_repayloan.vs"/>
+	<method sig="trainpeasant" vs="data/subai/village_trainpeasant.vs"/>
+	<!-- <method sig="Scout Area" vs="data/subai/explore_area.vs"/> -->
+
+	<sounds select="assets/sounds/selection/tavern.wav"/>
+</class>

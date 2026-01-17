@@ -1,0 +1,76 @@
+<class id="Wagon" cpp_class="CVXUnit" parent="Peaceful" entity="">
+
+  <method sig="unload" vs="data/subai/wagon_unload.vs"/>
+  <method sig="loadgoldbig" vs="data/subai/wagon_loadgoldbig.vs"/>
+  <method sig="loadfoodbig" vs="data/subai/wagon_loadfoodbig.vs"/>
+  <method sig="loadgoldsmall" vs="data/subai/wagon_loadgoldsmall.vs"/>
+  <method sig="loadfoodsmall" vs="data/subai/wagon_loadfoodsmall.vs"/>
+  <method sig="follow" vs="data/subai/wagon_follow.vs"/>
+  <method sig="transport" vs="data/subai/unit_transport.vs" verify="data/subai/unit_transport_verify.vs"/>
+
+	<method sig="boardship"
+		vs="data/subai/unit_board.vs"
+		verify="data/subai/unit_board_verify.vs"/>
+	<method sig="boardshipcommon"
+		vs="data/subai/unit_board_common.vs"
+		onfinish="data/subai/unit_board_common_onfinish.vs"/>
+
+  <properties defense_slash="0" defense_pierce="0"/>
+  <properties damage_type="none" attack="0"/>
+  <properties max_load="1000" feeds="0"/>
+
+  <value2
+	icon="gameres/infobar/common/gold ico.bmp"
+	script="return SelectionGold;"
+	flags="-1"
+	help="/contents/resources"/>
+  <value3
+	icon="gameres/infobar/common/food ico.bmp"
+	script="return SelectionFood;"
+	flags="-1"										 
+	help="/contents/resources"/>
+
+  <nodefcmdinherit/>
+
+  <defaultcmd target="ShipL">
+	<cmd name="boardship"/>
+  </defaultcmd>
+
+  <defaultcmd target="Inn">
+	<cmd name="transport"/>
+	<cmd name="approach"/>
+  </defaultcmd>
+
+  <defaultcmd target="Catapult">
+    <cmd name="approach"/>
+  </defaultcmd>
+
+  <defaultcmd target="Tower"> 
+    <cmd name="approach"/>
+  </defaultcmd>
+
+  <defaultcmd target="Wall"> 
+    <cmd name="approach"/>
+  </defaultcmd>
+
+  <defaultcmd target="Gate"> 
+    <cmd name="approach"/>
+  </defaultcmd>
+
+  <defaultcmd target="Building">
+    <cmd name="unload"/>
+  </defaultcmd>
+
+  <defaultcmd target="Teleport">
+    <cmd name="teleport"/>
+  </defaultcmd>
+
+  <defaultcmd target="">
+    <cmd name="move"/>
+  </defaultcmd>
+
+  <defaultcmd target="Unit">
+    <cmd name="follow"/>
+  </defaultcmd>
+
+</class>

@@ -1,0 +1,7 @@
+<class id="GVillager" cpp_class="CVXUnit" parent="Peasant" entity="assets/entities/units/GVillager/GVillager.ent.xml">
+
+  <properties icon="gameres/icons/GMan.bmp"/>
+
+  <properties edittree_pos="Units/Gaul/Peasant (male)"/>
+  <sounds command="data/sound entities/VoiceGMaleVillager.xml"/>
+</class>

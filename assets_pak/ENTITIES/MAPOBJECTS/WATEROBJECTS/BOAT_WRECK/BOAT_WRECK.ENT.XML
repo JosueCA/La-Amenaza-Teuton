@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Boat_wreck" type="tree" variations="1" pass_file="Boat_wreck.pass">
+<images>
+<image idx="1" file="Boat_wreck" drawmode="normal" remaping="none" rows="5" columns="1"/>
+<image idx="2" file="Boat_wreck_shadow" drawmode="shadow" remaping="none" rows="5" columns="1"/>
+<image idx="3" file="Boat_wreck_r" drawmode="normal" remaping="none" rows="5" columns="1"/>
+</images>
+<points>
+<point idx="1" type="11" x="-28" y="-21"/>
+<point idx="2" type="11" x="-43" y="16"/>
+<point idx="3" type="11" x="2" y="28"/>
+<point idx="4" type="11" x="28" y="2"/>
+</points>
+<layers>
+<layer idx="1" name="Boat_wreck" image="1" z="1000" offsetx="-104" offsety="-111" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="Boat_wreck_sha" image="2" z="800" offsetx="-104" offsety="-111" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="Boat_wreck_ref" percent="50" image="3" z="950" offsetx="-104" offsety="-111" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+<anim idx="1" name="Boat_wreck" startstate="1" endstate="1" frames="7" duration="1000" default_duration="200" action_time="0" step="0">
+<replace layer="1" image="1" offsetx="-104" offsety="-111"/>
+<replace layer="2" image="2" offsetx="-104" offsety="-111"/>
+<replace layer="3" image="3" offsetx="-104" offsety="-111"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="200"/>
+<frame idx="3" duration="200"/>
+<frame idx="4" duration="200"/>
+<frame idx="5" duration="200"/>
+<frame idx="6" duration="200"/>
+<frame idx="7" duration="0"/>
+</anim>
+</anims>
+</entity>

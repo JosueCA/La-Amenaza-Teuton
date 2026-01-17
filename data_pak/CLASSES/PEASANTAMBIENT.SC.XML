@@ -1,0 +1,25 @@
+<class id="PeasantAmbient" cpp_class="CVXUnit" parent="Peaceful" >
+
+  <properties minattack="0" maxattack="0" defense_slash="0" defense_pierce="0"/>
+  <properties maxhealth="100"/>
+  <properties speed="60" damage_type="none"/>
+  <properties sight="150"/>
+
+  <properties formation_priority="100"/>
+  <properties formation_radius="16"/>
+  <properties radius="10" selection_radius="10"/>
+  <properties select_class="PeasantAmbient"/>
+  <properties no_transparent_draw="1"/>
+
+  <method sig="enter" vs="data/subai/peasant_enter.vs" verify="data/subai/peasant_enter_verify.vs"/>
+  <method sig="transport" vs="data/subai/unit_transport.vs" verify="data/subai/unit_transport_verify.vs"/>
+
+
+  <defaultcmd target="Inn">
+		<cmd name="transport"/>
+  </defaultcmd>
+
+  <defaultcmd target="Building">
+    <cmd name="enter"/>
+  </defaultcmd>
+</class>

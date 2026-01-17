@@ -1,0 +1,3 @@
+<class id="Sacrifice" cpp_class="CVXSacrifice" parent="Object" entity="">
+  <properties radius = "10"/>
+</class>

@@ -1,0 +1,7 @@
+<class id="well1" cpp_class="CVXItemHolder" parent="BaseWell"
+entity="assets/entities/MapObjects/bunar/bunar_asw.ent.xml">
+	<properties edittree_pos="Structures/Item holders/Small well"/>
+	<properties icon     ="gameres/icons/Small well.bmp"/>
+	<properties radius="70" selection_radius="75"/>
+	<properties help="/contents/buildings/Well"/>
+</class>

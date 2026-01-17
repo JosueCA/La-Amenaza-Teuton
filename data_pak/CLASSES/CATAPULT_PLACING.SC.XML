@@ -1,0 +1,11 @@
+<class
+	id="catapult_placing"
+	cpp_class="CVXMapObj"
+	parent="Object"
+	entity="assets/entities/Visuals/Catapult_Placing/Catapult_Placing.ent.xml">
+  <properties desync_hash="0"/>
+  <properties radius="50" selection_radius="90"/>
+  <properties sight="95"/>
+  <properties help="/contents/units/Catapult"/>
+
+</class>

@@ -1,0 +1,16 @@
+<class id="GDruidHouse" altid="DruidHouse" cpp_class="CVXBarrack" parent="BaseBarracks"
+  entity        = "assets/entities/buildings/DruidHouse/DruidHouse_as.ent.xml"
+  entity_autumn = "assets/entities/buildings/DruidHouse/DruidHouse_as.ent.xml"
+  entity_spring = "assets/entities/buildings/DruidHouse/DruidHouse_as.ent.xml"
+  entity_winter = "assets/entities/buildings/DruidHouse/DruidHouse_w.ent.xml"
+>
+	<properties display_name="Gaul Druid House"/>
+	<properties radius="190" selection_radius="220"/>
+	<properties help="/contents/buildings/GDruidHouse"/>
+
+	<properties edittree_pos="Structures/Stronghold (Gaul)/Druid House"/>
+	<properties auto_repair="no"/>
+	<properties icon="gameres/icons/Gdruidhouse.bmp"/>
+
+	<sounds select="assets/sounds/selection/druid house.wav"/>
+</class>									 

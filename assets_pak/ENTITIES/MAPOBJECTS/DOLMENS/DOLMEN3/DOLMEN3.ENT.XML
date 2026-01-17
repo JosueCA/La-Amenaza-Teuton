@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="dolmen3" type="tree" variations="1" pass_file="dolmen3.pass">
+<images>
+<image idx="1" file="dolmen3" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="dolmen3_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="9" x="59" y="-21"/>
+<point idx="2" type="9" x="-50" y="-12"/>
+<point idx="3" type="9" x="70" y="-4"/>
+</points>
+<layers>
+<layer idx="1" name="styblo" image="1" z="1000" offsetx="-86" offsety="-128" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-86" offsety="-128" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

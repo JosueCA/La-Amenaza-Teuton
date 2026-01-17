@@ -1,0 +1,30 @@
+<class id="GGhost" cpp_class="CVXGhost" parent="Peaceful" entity="assets/entities/Units/GGhost/GGhost.ent.xml">
+
+  <properties minattack="1" maxattack="1" defense_slash="4" defense_pierce="4"/>
+  <properties maxhealth="300"/>
+  <properties range="250"/>
+  <properties icon     ="gameres/icons/Ghost.bmp"/>
+  <properties target_factor="200"/>
+  <properties display_name="Ghoul" display_name_plural="Ghouls"/>
+  <properties help="contents/units/Ghost"/>
+  <properties speed="60"/>
+  <properties max_food="0"/>
+
+  <properties feeds           ="0"/>
+  <properties damaged_by_ghost="0"/>
+
+
+  <method sig="advance" vs="data/subai/ghost_move.vs"/>
+  <method sig="attack" vs="data/subai/ghost_attack.vs"/>
+  <method sig="attack" vs="data/subai/ghost_move.vs"/>
+  <method sig="move" vs="data/subai/ghost_move.vs"/>
+  <method sig="idle" vs="data/subai/ghost_idle.vs"/>
+
+  <properties edittree_pos="Units/Others/Ghoul"/>
+	<value1
+		icon="gameres/infobar/common/attack ico.bmp"
+		script="return Translate('None');"
+		help="/contents/stats/attack"/>
+
+  <sounds die="assets/sounds/death/ghost_die.wav"/>
+</class>

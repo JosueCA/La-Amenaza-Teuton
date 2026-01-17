@@ -1,0 +1,9 @@
+<class id="Tent03" cpp_class="CVXScriptObj" parent="Object"
+entity="assets/entities/buildings/Tent03/Tent03_as.ent.xml"
+entity_autumn="assets/entities/buildings/Tent03/Tent03_as.ent.xml"
+entity_spring="assets/entities/buildings/Tent03/Tent03_as.ent.xml"
+entity_winter="assets/entities/buildings/Tent03/Tent03_w.ent.xml">
+  <properties display_name="Teuton tent"/>
+  <properties radius="90" selection_radius="92"/>
+  <properties edittree_pos="Structures/Others/Tent 3"/>
+</class>

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="" type="" variations="1" pass_file="">
+<images>
+<image idx="1" file="smoke1" drawmode="clouds" remaping="none" rows="8" columns="1"/>
+<image idx="2" file="smoke2" drawmode="clouds" remaping="none" rows="8" columns="1"/>
+<image idx="3" file="smoke3" drawmode="clouds" remaping="none" rows="8" columns="1"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="l1" image="1" z="1100" offsetx="-77" offsety="-137" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="1" image_idx="1" image_row="1" offsetx="-72" offsety="-131"/>
+<state idx="2" name="2" image_idx="2" image_row="1" offsetx="-80" offsety="-130"/>
+<state idx="3" name="3" image_idx="3" image_row="1" offsetx="-110" offsety="-170"/>
+</states>
+<anims>
+<anim idx="1" name="Anim1" startstate="1" endstate="1" frames="10" duration="1328" default_duration="166" action_time="664" step="0">
+<replace layer="1" image="1" offsetx="-71" offsety="-132"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="166"/>
+<frame idx="3" duration="166"/>
+<frame idx="4" duration="166"/>
+<frame idx="5" duration="166"/>
+<frame idx="6" duration="166"/>
+<frame idx="7" duration="166"/>
+<frame idx="8" duration="166"/>
+<frame idx="9" duration="166"/>
+<frame idx="10" duration="0"/>
+</anim>
+<anim idx="2" name="Anim2" startstate="2" endstate="2" frames="10" duration="1328" default_duration="166" action_time="500" step="0">
+<replace layer="1" image="2" offsetx="-81" offsety="-133"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="166"/>
+<frame idx="3" duration="166"/>
+<frame idx="4" duration="166"/>
+<frame idx="5" duration="166"/>
+<frame idx="6" duration="166"/>
+<frame idx="7" duration="166"/>
+<frame idx="8" duration="166"/>
+<frame idx="9" duration="166"/>
+<frame idx="10" duration="0"/>
+</anim>
+<anim idx="3" name="Anim3" startstate="3" endstate="3" frames="10" duration="1328" default_duration="166" action_time="0" step="0">
+<replace layer="1" image="3" offsetx="-111" offsety="-168"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="166"/>
+<frame idx="3" duration="166"/>
+<frame idx="4" duration="166"/>
+<frame idx="5" duration="166"/>
+<frame idx="6" duration="166"/>
+<frame idx="7" duration="166"/>
+<frame idx="8" duration="166"/>
+<frame idx="9" duration="166"/>
+<frame idx="10" duration="0"/>
+</anim>
+</anims>
+</entity>

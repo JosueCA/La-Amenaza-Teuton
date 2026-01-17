@@ -1,0 +1,9 @@
+<entity description="GArcher Voice" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/voices/GArcher/I'm the hunter they are the prey.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GArcher/Let me show you my aim.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GArcher/My quiver is full.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GArcher/Practice is over.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GArcher/Ready to shoot.wav" frequency="20"/>
+   </files>
+</entity>

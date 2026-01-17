@@ -1,0 +1,12 @@
+<class id="DLleldoryn" cpp_class="CVXDruid" parent="BaseMage" entity="assets/entities/units/DLleldoryn/DLleldoryn.ent.xml">
+
+  <properties minattack="1" maxattack="1" defense_slash="0" defense_pierce="0"/>
+  <properties range="200" minrange="0" sight="400"/>
+  <properties speed="65"/>
+  <properties edittree_pos="Units/Heroes/Lleldoryn (Druid)"/>
+	<properties icon="gameres/icons/Lleo.bmp"/>
+	<properties display_name="Lleldoryn" display_name_plural="Druids"/>
+  <properties speciality="freedom"/>
+
+  <sounds command="data/sound entities/VoiceGDruid.xml"/>
+</class>

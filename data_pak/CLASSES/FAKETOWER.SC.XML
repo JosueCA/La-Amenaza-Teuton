@@ -1,0 +1,5 @@
+<class id="FakeTower" cpp_class="CVXBuilding" parent="Tower"
+entity="assets/entities/buildings/FakeTower/faketower.ent.xml">
+<properties sight="500" range="500" min_range="100" speed="0"/>
+
+</class>

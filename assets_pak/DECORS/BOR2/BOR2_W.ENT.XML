@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="bor2 w" type="tree" radius="0" selection_radius="0" variations="1" pass_file="pass">
+<images>
+<image idx="1" file="bor2 w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="bor2 shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="styblo" image="1" z="1000" offsetx="-149" offsety="-239"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-149" offsety="-239"/>
+</layers>
+<states>
+<state idx="1" name="idle" sound_id=""/>
+</states>
+<anims>
+</anims>
+</entity>

@@ -1,0 +1,5 @@
+<bonuses>
+
+  <bonus attacker="Catapult" defender="Building" bonus="600"/>
+
+</bonuses>

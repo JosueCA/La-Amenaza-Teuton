@@ -1,0 +1,11 @@
+<class id="Hide" cpp_class="CVXSacrifice" parent="Sacrifice" 
+   entity=""
+>
+
+  <properties radius = "15"/>
+	<properties range =  "300"/>
+	<properties sight =  "400"/>
+
+  <method sig="idle" vs="data/subai/hide_idle.vs"/>
+
+</class>

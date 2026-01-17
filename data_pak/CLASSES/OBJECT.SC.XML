@@ -1,0 +1,21 @@
+<class id="Object" cpp_class="CVXDecor" parent="" entity="">
+  <method sig="idle" vs="data/subai/object_idle.vs"/>
+  <properties maxhealth="1"/>
+  <properties minattack="0" maxattack="0" defense_slash="0" defense_pierce="0"/>
+  <properties maxhealth="100"/>
+  <properties sight="0" range="15" min_range="5" speed="10"/>
+  <properties display_name="Object" display_name_plural="Objects"/>
+  <properties radius="0" selection_radius="0"/>
+  <properties can_be_cloned="1"/>
+  <properties desync_hash="1"/>
+  <properties water_unit="0"/>
+
+  <properties hides_units="0"/>
+  <properties is_central_building="0"/>
+  <properties house_pop_bonus="0"/>
+  <properties target_factor="100"/>
+  <properties healthbaroffset="-70" always_visible_on_minimap="0"/>
+	<properties repair_rate="0"/>
+
+	<sounds select="" command="" />
+</class>

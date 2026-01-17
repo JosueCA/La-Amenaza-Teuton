@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="RArch_as" type="" variations="1" pass_file="RArch.pass">
+<images>
+<image idx="1" file="RArch_a_as" drawmode="normal" remaping="none" rows="4" columns="1"/>
+<image idx="2" file="RArch_shadow" drawmode="shadow" remaping="none" rows="4" columns="1"/>
+<image idx="3" file="RArch_b_as" drawmode="normal" remaping="none" rows="4" columns="1"/>
+</images>
+<points>
+<point idx="1" type="4" x="-12" y="-158"/>
+<point idx="2" type="4" x="56" y="-205"/>
+<point idx="3" type="4" x="-65" y="-138"/>
+<point idx="4" type="10" x="-14" y="-17"/>
+<point idx="5" type="10" x="6" y="24"/>
+<point idx="6" type="9" x="110" y="-66"/>
+<point idx="7" type="9" x="124" y="-31"/>
+</points>
+<layers>
+<layer idx="1" name="styblo" image="1" z="1000" offsetx="-214" offsety="-268" sortoffsetx="-67" sortoffsety="53"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-214" offsety="-268" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="styblo" image="3" z="1000" offsetx="-214" offsety="-268" sortoffsetx="44" sortoffsety="-20"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

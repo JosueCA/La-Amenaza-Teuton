@@ -1,0 +1,5 @@
+<class id="RWVillagerAmbient" cpp_class="CVXUnit" parent="PeasantAmbient" entity="assets/entities/Units/RWVillager/RWVillager.ent.xml">
+
+  <properties icon="gameres/icons/RWoman.bmp"/>
+  <sounds command="data/sound entities/VoiceRFemaleVillager.xml"/>
+</class>

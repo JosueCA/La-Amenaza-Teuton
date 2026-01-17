@@ -1,0 +1,9 @@
+<class id="GGate6" altid="WallL06" cpp_class="CVXGate" parent="Gate" entity="assets/entities/buildings/GWalls/GWallL06/GWallL06_as.ent.xml"
+entity_spring="assets/entities/buildings/GWalls/GWallL06/GWallL06_as.ent.xml"
+entity_autumn="assets/entities/buildings/GWalls/GWallL06/GWallL06_as.ent.xml"
+entity_winter="assets/entities/buildings/GWalls/GWallL06/GWallL06_w.ent.xml">
+  <properties icon="gameres/icons/GGates.bmp"/>
+  <properties radius="170" selection_radius="170"/>
+  <properties wall_set="Wooden walls"/>
+
+</class>

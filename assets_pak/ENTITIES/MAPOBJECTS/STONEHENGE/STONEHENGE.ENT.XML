@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="o" type="tree" radius="0" selection_radius="0" variations="1" pass_file="stonehenge.pass">
+<images>
+<image idx="1" file="stone1" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="stone2" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="stone3" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="4" file="stone4" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="5" file="stone5" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="6" file="stone6" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="7" file="stone7" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="8" file="stone8" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="9" file="stone9" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="10" file="stone10" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="11" file="stone11" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="12" file="stone12" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="13" file="stone13" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="14" file="stone14" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="15" file="stone15" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="16" file="stone16" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="17" file="stone17" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="18" file="stone18" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="19" file="stone19" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="20" file="stone20" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="21" file="stone21" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="22" file="stone22" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="23" file="stonehenge shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="1" image="1" z="1000" offsetx="-300" offsety="-300" sortoffsetx="-119" sortoffsety="-121"/>
+<layer idx="2" name="2" image="2" z="1000" offsetx="-300" offsety="-300" sortoffsetx="-182" sortoffsety="-51"/>
+<layer idx="3" name="3" image="3" z="1000" offsetx="-300" offsety="-300" sortoffsetx="-232" sortoffsety="48"/>
+<layer idx="4" name="4" image="4" z="1000" offsetx="-300" offsety="-300" sortoffsetx="-181" sortoffsety="151"/>
+<layer idx="5" name="5" image="5" z="1000" offsetx="-300" offsety="-300" sortoffsetx="-109" sortoffsety="193"/>
+<layer idx="6" name="6" image="6" z="1000" offsetx="-300" offsety="-300" sortoffsetx="7" sortoffsety="208"/>
+<layer idx="7" name="7" image="7" z="1000" offsetx="-300" offsety="-300" sortoffsetx="129" sortoffsety="199"/>
+<layer idx="8" name="8" image="8" z="1000" offsetx="-300" offsety="-300" sortoffsetx="216" sortoffsety="161"/>
+<layer idx="9" name="9" image="9" z="1000" offsetx="-300" offsety="-300" sortoffsetx="265" sortoffsety="78"/>
+<layer idx="10" name="10" image="10" z="1000" offsetx="-300" offsety="-300" sortoffsetx="266" sortoffsety="-1"/>
+<layer idx="11" name="11" image="11" z="1000" offsetx="-300" offsety="-300" sortoffsetx="201" sortoffsety="-63"/>
+<layer idx="12" name="12" image="12" z="1000" offsetx="-300" offsety="-300" sortoffsetx="121" sortoffsety="-103"/>
+<layer idx="13" name="13" image="13" z="1000" offsetx="-300" offsety="-300" sortoffsetx="-5" sortoffsety="-163"/>
+<layer idx="14" name="14" image="14" z="1000" offsetx="-300" offsety="-300" sortoffsetx="5" sortoffsety="8"/>
+<layer idx="15" name="15" image="15" z="1000" offsetx="-300" offsety="-300" sortoffsetx="-48" sortoffsety="-31"/>
+<layer idx="16" name="16" image="16" z="1000" offsetx="-300" offsety="-300" sortoffsetx="138" sortoffsety="120"/>
+<layer idx="17" name="17" image="17" z="1000" offsetx="-300" offsety="-300" sortoffsetx="-108" sortoffsety="110"/>
+<layer idx="18" name="18" image="18" z="1000" offsetx="-300" offsety="-300" sortoffsetx="-122" sortoffsety="66"/>
+<layer idx="19" name="19" image="19" z="1000" offsetx="-300" offsety="-300" sortoffsetx="-55" sortoffsety="128"/>
+<layer idx="20" name="20" image="20" z="1000" offsetx="-300" offsety="-300" sortoffsetx="92" sortoffsety="136"/>
+<layer idx="21" name="21" image="21" z="1000" offsetx="-300" offsety="-300" sortoffsetx="150" sortoffsety="65"/>
+<layer idx="22" name="22" image="22" z="1000" offsetx="-300" offsety="-300" sortoffsetx="64" sortoffsety="-19"/>
+<layer idx="23" name="shadow" image="23" z="800" offsetx="-300" offsety="-300" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" sound_id="" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

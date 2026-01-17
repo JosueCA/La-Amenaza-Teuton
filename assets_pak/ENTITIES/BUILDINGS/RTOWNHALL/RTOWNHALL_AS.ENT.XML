@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="RTownhall_as" type="" variations="1" pass_file="RTownhall.pass">
+<images>
+<image idx="1" file="RTownhall_as" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="RTownhall_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="RTownhall_pod_as" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="1" x="27" y="7"/>
+<point idx="2" type="1" x="64" y="-14"/>
+<point idx="3" type="1" x="80" y="-79"/>
+<point idx="4" type="1" x="96" y="-65"/>
+<point idx="5" type="1" x="-64" y="-75"/>
+<point idx="6" type="1" x="-94" y="-53"/>
+<point idx="7" type="1" x="-52" y="-21"/>
+<point idx="8" type="1" x="-27" y="0"/>
+<point idx="9" type="2" x="35" y="4"/>
+<point idx="10" type="2" x="75" y="-19"/>
+<point idx="11" type="2" x="121" y="-73"/>
+<point idx="12" type="2" x="93" y="-101"/>
+<point idx="13" type="2" x="-75" y="-93"/>
+<point idx="14" type="2" x="-109" y="-66"/>
+<point idx="15" type="2" x="-51" y="-20"/>
+<point idx="16" type="2" x="-27" y="-2"/>
+<point idx="17" type="6" x="2" y="114"/>
+<point idx="18" type="6" x="153" y="-9"/>
+<point idx="19" type="6" x="0" y="-125"/>
+<point idx="20" type="6" x="-161" y="-16"/>
+<point idx="21" type="4" x="19" y="-228"/>
+<point idx="22" type="4" x="52" y="-170"/>
+<point idx="23" type="4" x="93" y="-219"/>
+<point idx="24" type="4" x="-29" y="-267"/>
+<point idx="25" type="11" x="-87" y="40"/>
+<point idx="26" type="11" x="0" y="-13"/>
+<point idx="27" type="11" x="78" y="36"/>
+<point idx="28" type="11" x="91" y="-77"/>
+<point idx="29" type="11" x="-93" y="-72"/>
+<point idx="30" type="11" x="4" y="-196"/>
+<point idx="31" type="12" x="-56" y="14"/>
+<point idx="32" type="12" x="58" y="-2"/>
+<point idx="33" type="13" x="-64" y="8"/>
+<point idx="34" type="13" x="98" y="-78"/>
+<point idx="35" type="14" x="70" y="10"/>
+<point idx="36" type="12" x="-80" y="-70"/>
+<point idx="37" type="14" x="110" y="-68"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-260" offsety="-347" sortoffsetx="1" sortoffsety="99"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-260" offsety="-347" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="pod" image="3" z="1000" offsetx="-260" offsety="-347" sortoffsetx="-1" sortoffsety="6"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

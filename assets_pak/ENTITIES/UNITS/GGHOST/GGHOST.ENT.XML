@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="GGhost" type="vx/unit" variations="8" pass_file="">
+<images>
+<image idx="2" file="GGhost_Scare" drawmode="player_color" remaping="none" rows="10" columns="8"/>
+<image idx="3" file="GGhost_Scare" drawmode="player_color" remaping="none" rows="10" columns="8"/>
+<image idx="4" file="GGhost_Ressurrect" drawmode="player_color" remaping="none" rows="32" columns="8"/>
+<image idx="5" file="GGhost_Death" drawmode="player_color" remaping="none" rows="15" columns="8"/>
+<image idx="9" file="GGhost_Scare_shadow" drawmode="shadow" remaping="none" rows="10" columns="8"/>
+<image idx="10" file="GGhost_Scare_shadow" drawmode="shadow" remaping="none" rows="10" columns="8"/>
+<image idx="11" file="GGhost_Ressurrect" drawmode="shadow" remaping="none" rows="32" columns="8"/>
+<image idx="12" file="GGhost_Death_shadow" drawmode="shadow" remaping="none" rows="15" columns="8"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="unit" image="2" z="1000" offsetx="-75" offsety="-100" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="9" z="800" offsetx="-75" offsety="-100" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="fight" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+<anim idx="1" name="walk" startstate="1" endstate="1" frames="12" duration="2220" default_duration="222" action_time="0" step="42">
+<replace layer="1" image="2" offsetx="-75" offsety="-100"/>
+<replace layer="2" image="9" offsetx="-75" offsety="-100"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="222"/>
+<frame idx="3" duration="222"/>
+<frame idx="4" duration="222"/>
+<frame idx="5" duration="222"/>
+<frame idx="6" duration="222"/>
+<frame idx="7" duration="222"/>
+<frame idx="8" duration="222"/>
+<frame idx="9" duration="222"/>
+<frame idx="10" duration="222"/>
+<frame idx="11" duration="222"/>
+<frame idx="12" duration="0"/>
+</anim>
+<anim idx="9" name="die" startstate="1" endstate="1" frames="17" duration="5100" default_duration="150" action_time="0" step="0">
+<replace layer="1" image="5" offsetx="-75" offsety="-100"/>
+<replace layer="2" image="12" offsetx="-75" offsety="-100"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="150"/>
+<frame idx="3" duration="150"/>
+<frame idx="4" duration="150"/>
+<frame idx="5" duration="150"/>
+<frame idx="6" duration="150"/>
+<frame idx="7" duration="150"/>
+<frame idx="8" duration="150"/>
+<frame idx="9" duration="150"/>
+<frame idx="10" duration="150"/>
+<frame idx="11" duration="150"/>
+<frame idx="12" duration="300"/>
+<frame idx="13" duration="500"/>
+<frame idx="14" duration="800"/>
+<frame idx="15" duration="1000"/>
+<frame idx="16" duration="1000"/>
+<frame idx="17" duration="0"/>
+</anim>
+<anim idx="13" name="idle" startstate="1" endstate="1" frames="12" duration="2220" default_duration="222" action_time="0" step="0">
+<replace layer="1" image="2" offsetx="-75" offsety="-100"/>
+<replace layer="2" image="9" offsetx="-75" offsety="-100"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="222"/>
+<frame idx="3" duration="222"/>
+<frame idx="4" duration="222"/>
+<frame idx="5" duration="222"/>
+<frame idx="6" duration="222"/>
+<frame idx="7" duration="222"/>
+<frame idx="8" duration="222"/>
+<frame idx="9" duration="222"/>
+<frame idx="10" duration="222"/>
+<frame idx="11" duration="222"/>
+<frame idx="12" duration="0"/>
+</anim>
+<anim idx="17" name="resurrect" startstate="1" endstate="1" frames="34" duration="992" default_duration="31" action_time="248" step="0">
+<replace layer="1" image="4" offsetx="-75" offsety="-100"/>
+<replace layer="2" image="11" offsetx="-75" offsety="-100"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="31"/>
+<frame idx="3" duration="31"/>
+<frame idx="4" duration="31"/>
+<frame idx="5" duration="31"/>
+<frame idx="6" duration="31"/>
+<frame idx="7" duration="31"/>
+<frame idx="8" duration="31"/>
+<frame idx="9" duration="31"/>
+<frame idx="10" duration="31"/>
+<frame idx="11" duration="31"/>
+<frame idx="12" duration="31"/>
+<frame idx="13" duration="31"/>
+<frame idx="14" duration="31"/>
+<frame idx="15" duration="31"/>
+<frame idx="16" duration="31"/>
+<frame idx="17" duration="31"/>
+<frame idx="18" duration="31"/>
+<frame idx="19" duration="31"/>
+<frame idx="20" duration="31"/>
+<frame idx="21" duration="31"/>
+<frame idx="22" duration="31"/>
+<frame idx="23" duration="31"/>
+<frame idx="24" duration="31"/>
+<frame idx="25" duration="31"/>
+<frame idx="26" duration="31"/>
+<frame idx="27" duration="31"/>
+<frame idx="28" duration="31"/>
+<frame idx="29" duration="31"/>
+<frame idx="30" duration="31"/>
+<frame idx="31" duration="31"/>
+<frame idx="32" duration="31"/>
+<frame idx="33" duration="31"/>
+<frame idx="34" duration="0"/>
+</anim>
+</anims>
+</entity>

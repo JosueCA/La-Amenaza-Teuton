@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Catapult" type="vx/unit" variations="8" pass_file="Catapult.pass">
+<images>
+<image idx="4" file="Catapult_Building" drawmode="index" remaping="none" rows="7" columns="1"/>
+<image idx="3" file="Catapult_Destroying" drawmode="index" remaping="none" rows="7" columns="1"/>
+<image idx="2" file="Catapult_Fire" drawmode="index" remaping="none" rows="14" columns="8"/>
+<image idx="6" file="Catapult_Rotation" drawmode="index" remaping="none" rows="7" columns="8"/>
+<image idx="7" file="Catapult_Rotation" drawmode="index" remaping="reverse" rows="7" columns="8"/>
+<image idx="8" file="Catapult_Building_shadow" drawmode="shadow" remaping="none" rows="7" columns="1"/>
+<image idx="9" file="Catapult_Destroying_shadow" drawmode="shadow" remaping="none" rows="7" columns="1"/>
+<image idx="10" file="Catapult_Fire_shadow" drawmode="shadow" remaping="none" rows="14" columns="8"/>
+<image idx="11" file="Catapult_Rotation_shadow" drawmode="shadow" remaping="none" rows="7" columns="8"/>
+<image idx="12" file="Catapult_Rotation_shadow" drawmode="shadow" remaping="reverse" rows="7" columns="8"/>
+</images>
+<points>
+<point idx="1" type="3" x="0" y="-159"/>
+<point idx="2" type="3" x="47" y="-149"/>
+<point idx="3" type="3" x="65" y="-119"/>
+<point idx="4" type="3" x="53" y="-85"/>
+<point idx="5" type="3" x="2" y="-75"/>
+<point idx="6" type="3" x="-43" y="-83"/>
+<point idx="7" type="3" x="-64" y="-115"/>
+<point idx="8" type="3" x="-47" y="-150"/>
+<point idx="9" type="1" x="70" y="-54"/>
+<point idx="10" type="1" x="-75" y="61"/>
+<point idx="11" type="2" x="72" y="65"/>
+<point idx="12" type="2" x="-72" y="-48"/>
+</points>
+<layers>
+<layer idx="1" name="unit" image="2" z="1000" offsetx="-173" offsety="-175" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="10" z="800" offsetx="-173" offsety="-175" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="-173" offsety="-175"/>
+<state idx="2" name="fight" image_idx="0" image_row="0" offsetx="-173" offsety="-175"/>
+</states>
+<anims>
+<anim idx="1" name="build" startstate="1" endstate="1" frames="9" duration="385" default_duration="55" action_time="0" step="38">
+<replace layer="1" image="4" offsetx="-173" offsety="-175"/>
+<replace layer="2" image="8" offsetx="-173" offsety="-175"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="55"/>
+<frame idx="3" duration="55"/>
+<frame idx="4" duration="55"/>
+<frame idx="5" duration="55"/>
+<frame idx="6" duration="55"/>
+<frame idx="7" duration="55"/>
+<frame idx="8" duration="55"/>
+<frame idx="9" duration="0"/>
+</anim>
+<anim idx="5" name="attack" startstate="2" endstate="2" frames="16" duration="2234" default_duration="71" action_time="300" step="0">
+<replace layer="1" image="2" offsetx="-173" offsety="-175"/>
+<replace layer="2" image="10" offsetx="-173" offsety="-175"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="111"/>
+<frame idx="3" duration="111"/>
+<frame idx="4" duration="111"/>
+<frame idx="5" duration="111"/>
+<frame idx="6" duration="101"/>
+<frame idx="7" duration="101"/>
+<frame idx="8" duration="101"/>
+<frame idx="9" duration="101"/>
+<frame idx="10" duration="111"/>
+<frame idx="11" duration="121"/>
+<frame idx="12" duration="151"/>
+<frame idx="13" duration="171"/>
+<frame idx="14" duration="191"/>
+<frame idx="15" duration="191"/>
+<frame idx="16" duration="450"/>
+</anim>
+<anim idx="9" name="destroy" startstate="1" endstate="1" frames="9" duration="385" default_duration="55" action_time="0" step="38">
+<replace layer="1" image="3" offsetx="-173" offsety="-175"/>
+<replace layer="2" image="9" offsetx="-173" offsety="-175"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="55"/>
+<frame idx="3" duration="55"/>
+<frame idx="4" duration="55"/>
+<frame idx="5" duration="55"/>
+<frame idx="6" duration="55"/>
+<frame idx="7" duration="55"/>
+<frame idx="8" duration="55"/>
+<frame idx="9" duration="0"/>
+</anim>
+<anim idx="18" name="ToLeft" startstate="1" endstate="1" frames="9" duration="504" default_duration="72" action_time="0" step="0">
+<replace layer="1" image="6" offsetx="-173" offsety="-175"/>
+<replace layer="2" image="11" offsetx="-173" offsety="-175"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="72"/>
+<frame idx="3" duration="72"/>
+<frame idx="4" duration="72"/>
+<frame idx="5" duration="72"/>
+<frame idx="6" duration="72"/>
+<frame idx="7" duration="72"/>
+<frame idx="8" duration="72"/>
+<frame idx="9" duration="0"/>
+</anim>
+<anim idx="19" name="ToRight" startstate="1" endstate="1" frames="9" duration="504" default_duration="72" action_time="0" step="0">
+<replace layer="1" image="7" offsetx="-173" offsety="-175"/>
+<replace layer="2" image="12" offsetx="-173" offsety="-175"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="72"/>
+<frame idx="3" duration="72"/>
+<frame idx="4" duration="72"/>
+<frame idx="5" duration="72"/>
+<frame idx="6" duration="72"/>
+<frame idx="7" duration="72"/>
+<frame idx="8" duration="72"/>
+<frame idx="9" duration="0"/>
+</anim>
+</anims>
+</entity>

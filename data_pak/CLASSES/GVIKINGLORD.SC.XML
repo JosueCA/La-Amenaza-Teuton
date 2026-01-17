@@ -1,0 +1,13 @@
+<class id="GVikingLord" altid="Thoric" cpp_class="CVXUnit" parent="Melee" entity="assets/entities/units/Viking/Viking.ent.xml">
+
+  <properties minattack="42" maxattack="64" defense_slash="6" defense_pierce="6"/>
+  <properties maxhealth="2600"/>
+  <properties speed="80"/>
+  <properties display_name="Viking Lord" display_name_plural="Viking Lords"/>
+  <properties help="contents/units/GVikingLord"/>
+  <properties edittree_pos="Units/Gaul/Viking Lord"/>
+  <properties speciality="freedom,charge"/>
+  <properties icon="gameres/icons/Viking lord.bmp"/>
+
+  <sounds command="data/sound entities/VoiceGVikingLord.xml" attack="UnitHammerFight"/>
+</class>

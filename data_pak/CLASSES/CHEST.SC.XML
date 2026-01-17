@@ -1,0 +1,7 @@
+<class id="Chest" cpp_class="CVXItemHolder" parent="ItemHolder"
+entity="assets/entities/Item_holders/Chest.ent.xml">
+  <properties edittree_pos="Structures/Item holders/Chest"/>
+  <properties icon     ="gameres/icons/Chest.bmp"/>
+  <properties radius="28" selection_radius="30"/>
+  <properties display_name="Chest"/>
+</class>

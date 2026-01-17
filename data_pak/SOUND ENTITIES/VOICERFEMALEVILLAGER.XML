@@ -1,0 +1,7 @@
+<entity description="RFemaleVillager Voice" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/voices/RFemaleVillager/aha.wav" frequency="33"/>
+      <sound file="assets/sounds/voices/RFemaleVillager/yes1.wav" frequency="33"/>
+      <sound file="assets/sounds/voices/RFemaleVillager/yes2.wav" frequency="33"/>
+   </files>
+</entity>

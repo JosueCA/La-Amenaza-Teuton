@@ -1,0 +1,8 @@
+<class id="StonePile" cpp_class="CVXItemHolder" parent="ItemHolder"
+entity="assets/entities/Item_holders/Stone_pile.ent.xml">
+  <properties edittree_pos="Structures/Item holders/Stone pile"/>
+  <properties icon     ="gameres/icons/Stone pile.bmp"/>
+  <properties radius="35" selection_radius="37"/>
+  <properties respawn_item="Poison Mushroom" respawn_time="300000"/>
+  <properties display_name="Stone Pile"/>
+</class>

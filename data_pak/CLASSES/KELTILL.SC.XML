@@ -1,0 +1,11 @@
+<class id="Keltill" cpp_class="CVXHero" parent="HeroMounted" entity="assets/entities/Units/Keltill/Keltill.ent.xml">
+
+  <properties damage_type="slash"/>
+  <properties sight="500" display_name="Keltill" display_name_plural="Heroes"/>
+
+	<properties icon="gameres/icons/Keltil.bmp"/>
+
+  <properties edittree_pos="Units/Heroes/Keltill (Gaul)"/>
+
+  <sounds command="data/sound entities/VoiceGHero.xml"/>
+</class>

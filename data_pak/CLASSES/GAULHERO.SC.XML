@@ -1,0 +1,4 @@
+<class id="GaulHero" cpp_class="CVXHero" parent="HeroMounted" entity="">
+	<properties heroarmyexpgain="25"/>
+	<properties help="/contents/units/GHero"/>
+</class>

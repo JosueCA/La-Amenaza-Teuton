@@ -1,0 +1,7 @@
+<class id="FacePillar" altid="artefakt1" cpp_class="CVXItemHolder" parent="ItemHolder"
+entity="assets/entities/Item_Holders/Face_pillar.ent.xml">
+  <properties edittree_pos="Structures/Item holders/Face pillar"/>
+  <properties icon     ="gameres/icons/Face pillar.bmp"/>
+  <properties radius="57" selection_radius="58"/>
+  <properties display_name="Face Pillar"/>
+</class>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="bag" type="tree" variations="1" pass_file="">
+<images>
+<image idx="1" file="bag" drawmode="normal" remaping="none" rows="7" columns="1"/>
+<image idx="2" file="bag" drawmode="normal" remaping="reverse" rows="7" columns="1"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="korona" image="1" z="800" offsetx="-43" offsety="-38" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="closed" image_idx="0" image_row="0" offsetx="-43" offsety="-38"/>
+<state idx="2" name="opened" image_idx="1" image_row="7" offsetx="-43" offsety="-38"/>
+</states>
+<anims>
+<anim idx="1" name="bag_open" startstate="1" endstate="2" frames="9" duration="1400" default_duration="200" action_time="0" step="0">
+<replace layer="1" image="1" offsetx="-43" offsety="-38"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="200"/>
+<frame idx="3" duration="200"/>
+<frame idx="4" duration="200"/>
+<frame idx="5" duration="200"/>
+<frame idx="6" duration="200"/>
+<frame idx="7" duration="200"/>
+<frame idx="8" duration="200"/>
+<frame idx="9" duration="0"/>
+</anim>
+<anim idx="2" name="bag_close" startstate="2" endstate="1" frames="9" duration="1400" default_duration="200" action_time="0" step="0">
+<replace layer="1" image="2" offsetx="-43" offsety="-38"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="200"/>
+<frame idx="3" duration="200"/>
+<frame idx="4" duration="200"/>
+<frame idx="5" duration="200"/>
+<frame idx="6" duration="200"/>
+<frame idx="7" duration="200"/>
+<frame idx="8" duration="200"/>
+<frame idx="9" duration="0"/>
+</anim>
+</anims>
+</entity>

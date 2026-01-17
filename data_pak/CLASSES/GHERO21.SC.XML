@@ -1,0 +1,8 @@
+<class id="GHero21" cpp_class="CVXHero" parent="GaulHero" entity="assets/entities/Units/GHero02/GHero02.ent.xml">
+
+  <properties display_name="Unferth" display_name_plural="Heroes"/>
+
+	<properties icon="gameres/icons/GHero2.bmp"/>
+
+  <sounds command="data/sound entities/VoiceGHero.xml"/>
+</class>

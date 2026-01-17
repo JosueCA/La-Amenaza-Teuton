@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="" type="" variations="1" pass_file="">
+<images>
+</images>
+<points>
+<point idx="1" type="3" x="-17" y="-112"/>
+<point idx="2" type="3" x="15" y="-112"/>
+<point idx="3" type="3" x="-19" y="-88"/>
+<point idx="4" type="3" x="12" y="-88"/>
+</points>
+<layers>
+</layers>
+<states>
+<state idx="1" name="1" image_idx="0" image_row="1" offsetx="-842150451" offsety="-842150451"/>
+</states>
+<anims>
+</anims>
+</entity>

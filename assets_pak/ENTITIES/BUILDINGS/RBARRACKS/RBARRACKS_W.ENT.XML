@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="RBarracks_w" type="" variations="1" pass_file="RBarracks.pass">
+<images>
+<image idx="1" file="RBarracks_a_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="RBarracks_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="RBarracks_b_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="4" file="RBarracks_c_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="5" file="RBarracks_plashilo_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="6" file="RBarracks_d_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="1" x="-36" y="2"/>
+<point idx="2" type="1" x="-51" y="-22"/>
+<point idx="3" type="1" x="-27" y="-25"/>
+<point idx="4" type="2" x="-20" y="-13"/>
+<point idx="5" type="2" x="-28" y="10"/>
+<point idx="6" type="2" x="35" y="-40"/>
+<point idx="7" type="4" x="145" y="-59"/>
+<point idx="8" type="4" x="-42" y="-4"/>
+<point idx="9" type="4" x="-112" y="-34"/>
+<point idx="10" type="4" x="-145" y="-150"/>
+<point idx="11" type="4" x="-63" y="-156"/>
+<point idx="12" type="4" x="-16" y="-180"/>
+<point idx="13" type="4" x="78" y="-162"/>
+<point idx="14" type="11" x="-27" y="-12"/>
+<point idx="15" type="10" x="47" y="-58"/>
+<point idx="16" type="12" x="24" y="-48"/>
+<point idx="17" type="12" x="-30" y="-10"/>
+<point idx="18" type="11" x="-19" y="72"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-354" offsety="-350" sortoffsetx="-41" sortoffsety="90"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-354" offsety="-350" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="base" image="3" z="1000" offsetx="-354" offsety="-350" sortoffsetx="-76" sortoffsety="40"/>
+<layer idx="4" name="base" image="4" z="1000" offsetx="-354" offsety="-350" sortoffsetx="180" sortoffsety="5"/>
+<layer idx="5" name="base" image="5" z="1000" offsetx="-354" offsety="-350" sortoffsetx="100" sortoffsety="91"/>
+<layer idx="6" name="base" image="6" z="500" offsetx="-354" offsety="-350" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

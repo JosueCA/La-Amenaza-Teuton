@@ -1,0 +1,13 @@
+<class id="RTavern2" cpp_class="CVXTavern" parent="BaseTavern"
+entity_autumn="assets/entities/buildings/Rhouse02/Rhouse02_as.ent.xml"
+entity_spring="assets/entities/buildings/Rhouse02/Rhouse02_as.ent.xml"
+entity_winter="assets/entities/buildings/Rhouse02/Rhouse02_w.ent.xml">
+
+	<properties display_name="Tavern" icon="gameres/icons/RTavern.bmp"/>
+	<properties radius="190" selection_radius="195"/>
+	<properties edittree_pos="Structures/Stronghold (Roman)/Tavern SE"/>
+	<properties help="/contents/buildings/RTavern"/>
+
+	<method sig="buyfoodforgold" vs="data/subai/tavern_buyfood.vs"/>
+
+</class>

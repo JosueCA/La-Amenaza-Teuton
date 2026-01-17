@@ -1,0 +1,16 @@
+<entity description="Arrows" priority="UnitFight" type="UnitFight">
+   <files>
+      <sound file="assets/sounds/fight/arrow 1.wav" frequency="7"/>
+      <sound file="assets/sounds/fight/arrow 2.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/arrow 3.wav" frequency="7"/>
+      <sound file="assets/sounds/fight/arrow 4.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/arrow 5.wav" frequency="7"/>
+      <sound file="assets/sounds/fight/arrow 6.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/arrow 7.wav" frequency="7"/>
+      <sound file="assets/sounds/fight/arrow 8.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/arrow v1.wav" frequency="7"/>
+      <sound file="assets/sounds/fight/arrow v2.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/arrow v3.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/arrow v4.wav" frequency="6"/>
+   </files>
+</entity>

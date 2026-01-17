@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Caesar" type="vx/unit" variations="12" pass_file="">
+<images>
+<image idx="2" file="Caesar_Idle" drawmode="player_color" remaping="none" rows="13" columns="12"/>
+<image idx="3" file="Caesar_Walk" drawmode="player_color" remaping="none" rows="12" columns="12"/>
+<image idx="4" file="Caesar_Fight" drawmode="player_color" remaping="none" rows="10" columns="12"/>
+<image idx="5" file="Caesar_Death" drawmode="player_color" remaping="none" rows="20" columns="12"/>
+<image idx="6" file="Caesar_Transition" drawmode="player_color" remaping="none" rows="6" columns="12"/>
+<image idx="7" file="Caesar_Transition" drawmode="player_color" remaping="reverse" rows="6" columns="12"/>
+<image idx="8" file="Caesar_Taunt" drawmode="player_color" remaping="none" rows="14" columns="12"/>
+<image idx="9" file="Caesar_Idle_shadow" drawmode="shadow" remaping="none" rows="13" columns="12"/>
+<image idx="10" file="Caesar_Walk_shadow" drawmode="shadow" remaping="none" rows="12" columns="12"/>
+<image idx="11" file="Caesar_Fight_shadow" drawmode="shadow" remaping="none" rows="10" columns="12"/>
+<image idx="12" file="Caesar_Death_shadow" drawmode="shadow" remaping="none" rows="20" columns="12"/>
+<image idx="13" file="Caesar_Transition_shadow" drawmode="shadow" remaping="none" rows="6" columns="12"/>
+<image idx="14" file="Caesar_Transition_shadow" drawmode="shadow" remaping="reverse" rows="6" columns="12"/>
+<image idx="15" file="Caesar_Taunt_shadow" drawmode="shadow" remaping="none" rows="14" columns="12"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="unit" image="2" z="1000" offsetx="-92" offsety="-112" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="9" z="800" offsetx="-92" offsety="-112" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0" anim_idx="65536" anim_frame="1"/>
+<state idx="2" name="fight" image_idx="0" image_row="0" offsetx="0" offsety="0" anim_idx="65536" anim_frame="1"/>
+</states>
+<anims>
+<anim idx="1" name="walk" startstate="1" endstate="1" frames="14" duration="695" default_duration="55" action_time="0" step="75">
+<replace layer="1" image="3" offsetx="-92" offsety="-112"/>
+<replace layer="2" image="10" offsetx="-92" offsety="-112"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="57"/>
+<frame idx="3" duration="57"/>
+<frame idx="4" duration="57"/>
+<frame idx="5" duration="57"/>
+<frame idx="6" duration="57"/>
+<frame idx="7" duration="57"/>
+<frame idx="8" duration="57"/>
+<frame idx="9" duration="57"/>
+<frame idx="10" duration="57"/>
+<frame idx="11" duration="57"/>
+<frame idx="12" duration="57"/>
+<frame idx="13" duration="68"/>
+<frame idx="14" duration="0"/>
+</anim>
+<anim idx="5" name="attack" startstate="2" endstate="2" frames="12" duration="892" default_duration="71" action_time="375" step="0">
+<replace layer="1" image="4" offsetx="-92" offsety="-112"/>
+<replace layer="2" image="11" offsetx="-92" offsety="-112"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="89"/>
+<frame idx="3" duration="89"/>
+<frame idx="4" duration="89"/>
+<frame idx="5" duration="89"/>
+<frame idx="6" duration="89"/>
+<frame idx="7" duration="89"/>
+<frame idx="8" duration="89"/>
+<frame idx="9" duration="89"/>
+<frame idx="10" duration="89"/>
+<frame idx="11" duration="91"/>
+<frame idx="12" duration="0"/>
+</anim>
+<anim idx="9" name="die" startstate="1" endstate="1" frames="22" duration="14234" default_duration="80" action_time="0" step="0">
+<replace layer="1" image="5" offsetx="-155" offsety="-180"/>
+<replace layer="2" image="12" offsetx="-155" offsety="-180"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="75"/>
+<frame idx="3" duration="75"/>
+<frame idx="4" duration="75"/>
+<frame idx="5" duration="75"/>
+<frame idx="6" duration="75"/>
+<frame idx="7" duration="75"/>
+<frame idx="8" duration="75"/>
+<frame idx="9" duration="94"/>
+<frame idx="10" duration="94"/>
+<frame idx="11" duration="94"/>
+<frame idx="12" duration="169"/>
+<frame idx="13" duration="188"/>
+<frame idx="14" duration="470"/>
+<frame idx="15" duration="752"/>
+<frame idx="16" duration="940"/>
+<frame idx="17" duration="1222"/>
+<frame idx="18" duration="1880"/>
+<frame idx="19" duration="2350"/>
+<frame idx="20" duration="2632"/>
+<frame idx="21" duration="2824"/>
+<frame idx="22" duration="0"/>
+</anim>
+<anim idx="13" name="Idle" startstate="1" endstate="1" frames="15" duration="1361" default_duration="150" action_time="0" step="0">
+<replace layer="1" image="2" offsetx="-92" offsety="-112"/>
+<replace layer="2" image="9" offsetx="-92" offsety="-112"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="104"/>
+<frame idx="3" duration="104"/>
+<frame idx="4" duration="104"/>
+<frame idx="5" duration="104"/>
+<frame idx="6" duration="104"/>
+<frame idx="7" duration="104"/>
+<frame idx="8" duration="104"/>
+<frame idx="9" duration="104"/>
+<frame idx="10" duration="104"/>
+<frame idx="11" duration="104"/>
+<frame idx="12" duration="104"/>
+<frame idx="13" duration="104"/>
+<frame idx="14" duration="113"/>
+<frame idx="15" duration="0"/>
+</anim>
+<anim idx="18" name="ToIdle" startstate="2" endstate="1" frames="8" duration="406" default_duration="72" action_time="0" step="0">
+<replace layer="1" image="7" offsetx="-92" offsety="-112"/>
+<replace layer="2" image="14" offsetx="-92" offsety="-112"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="67"/>
+<frame idx="3" duration="67"/>
+<frame idx="4" duration="67"/>
+<frame idx="5" duration="67"/>
+<frame idx="6" duration="67"/>
+<frame idx="7" duration="71"/>
+<frame idx="8" duration="0"/>
+</anim>
+<anim idx="19" name="ToAttack" startstate="1" endstate="2" frames="8" duration="380" default_duration="72" action_time="0" step="0">
+<replace layer="1" image="6" offsetx="-92" offsety="-112"/>
+<replace layer="2" image="13" offsetx="-92" offsety="-112"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="63"/>
+<frame idx="3" duration="63"/>
+<frame idx="4" duration="63"/>
+<frame idx="5" duration="63"/>
+<frame idx="6" duration="63"/>
+<frame idx="7" duration="65"/>
+<frame idx="8" duration="0"/>
+</anim>
+<anim idx="20" name="Taunt" startstate="1" endstate="1" frames="16" duration="1716" default_duration="150" action_time="705" step="0">
+<replace layer="1" image="8" offsetx="-92" offsety="-112"/>
+<replace layer="2" image="15" offsetx="-92" offsety="-112"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="122"/>
+<frame idx="3" duration="122"/>
+<frame idx="4" duration="122"/>
+<frame idx="5" duration="122"/>
+<frame idx="6" duration="122"/>
+<frame idx="7" duration="122"/>
+<frame idx="8" duration="122"/>
+<frame idx="9" duration="122"/>
+<frame idx="10" duration="122"/>
+<frame idx="11" duration="122"/>
+<frame idx="12" duration="122"/>
+<frame idx="13" duration="122"/>
+<frame idx="14" duration="122"/>
+<frame idx="15" duration="130"/>
+<frame idx="16" duration="0"/>
+</anim>
+</anims>
+</entity>

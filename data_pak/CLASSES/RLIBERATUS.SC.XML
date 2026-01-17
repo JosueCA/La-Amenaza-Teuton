@@ -1,0 +1,12 @@
+<class id="RLiberatus" altid="RChampion" cpp_class="CVXUnit" parent="Melee" entity="assets/entities/Units/GHero5/GHero5.ent.xml">
+  <properties minattack="20" maxattack="30" defense_slash="0" defense_pierce="0"/>
+  <properties maxhealth="330"/>
+  <properties speed="100"/>
+  <properties display_name="Liberatus" display_name_plural="Liberati"/>
+  <properties help="contents/units/RLiberatus"/>
+  <properties edittree_pos="Units/Roman/Liberatus"/>
+  <properties speciality=""/>
+  <properties icon="gameres/icons/Liberatus.bmp"/>
+
+  <sounds command="data/sound entities/VoiceRChampion.xml"/>
+</class>

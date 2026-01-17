@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Fish" type="vx/unit" variations="8" pass_file="">
+<images>
+<image idx="1" file="Fish_Swimming" drawmode="player_color" remaping="none" rows="10" columns="8"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="unit" image="1" percent="50" z="1000" offsetx="-58" offsety="-52" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+<anim idx="1" name="Fish_Swimming" startstate="1" endstate="1" frames="12" duration="720" default_duration="72" action_time="576" step="150">
+<replace layer="1" image="1" offsetx="-58" offsety="-52"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="72"/>
+<frame idx="3" duration="72"/>
+<frame idx="4" duration="72"/>
+<frame idx="5" duration="72"/>
+<frame idx="6" duration="72"/>
+<frame idx="7" duration="72"/>
+<frame idx="8" duration="72"/>
+<frame idx="9" duration="72"/>
+<frame idx="10" duration="72"/>
+<frame idx="11" duration="72"/>
+<frame idx="12" duration="0"/>
+</anim>
+</anims>
+</entity>

@@ -1,0 +1,27 @@
+<class id="Crow" cpp_class="CVXFlyingUnit" parent="PossessAnimal" entity="assets/entities/Units/Crow/Crow.ent.xml">
+
+  <properties display_name="Crow" display_name_plural="Crows"/>
+  <properties help="contents/units/Crow"/>
+  <properties icon     ="gameres/icons/crow.bmp"/>
+
+  <properties damage_type="none"/>
+  <properties radius="9" selection_radius="20"/>
+  <properties edittree_pos="Units/Animals/Crow"/>
+	<properties sight="900" feeds="0"/>
+	<properties target_factor="-1"/>
+	<properties healthbaroffset="-30"/>
+	<properties maxhealth="30"/>
+	<properties no_transparent_draw="1"/>
+	<properties speed="160"/>
+
+	<sounds 
+		die="data/sound entities/crow_death.xml"
+		walk="data/sound entities/crow_idle.xml"
+		idle="data/sound entities/crow_idle.xml"
+		command="data/sound entities/crow_command.xml"
+	/>
+
+  <method sig="idle" vs="data/subai/crow_idle.vs"/>
+  <method sig="move" vs="data/subai/crow_move.vs"/>
+
+</class>

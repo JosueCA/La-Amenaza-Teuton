@@ -1,0 +1,14 @@
+<class id="GArena2" altid="Arena 2" cpp_class="CVXBuilding" parent="BaseArena"
+  entity        = "assets/entities/buildings/Arena 2/Arena 2 as.ent.xml"
+  entity_autumn = "assets/entities/buildings/Arena 2/Arena 2 as.ent.xml"
+  entity_spring = "assets/entities/buildings/Arena 2/Arena 2 as.ent.xml"
+  entity_winter = "assets/entities/buildings/Arena 2/Arena 2 w.ent.xml"
+>
+	<properties display_name="Arena"/>
+	<properties radius="240" selection_radius="300"/>
+	<properties edittree_pos="Structures/Stronghold (Gaul)/Arena SE"/>
+	<properties help="/contents/buildings/GArena"/>
+
+	<properties icon="gameres/icons/GArena.bmp"/>
+
+</class>

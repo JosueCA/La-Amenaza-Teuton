@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Crow" type="vx/unit" variations="12" pass_file="">
+<images>
+<image idx="1" file="Crow_Idle_01" drawmode="player_color" remaping="none" rows="11" columns="12"/>
+<image idx="2" file="Crow_Idle_02" drawmode="player_color" remaping="none" rows="9" columns="12"/>
+<image idx="3" file="Crow_FlightOut" drawmode="player_color" remaping="none" rows="19" columns="12"/>
+<image idx="4" file="Crow_Flight" drawmode="player_color" remaping="none" rows="10" columns="12"/>
+<image idx="5" file="Crow_Alighting" drawmode="player_color" remaping="none" rows="21" columns="12"/>
+<image idx="6" file="Crow_Death" drawmode="player_color" remaping="none" rows="11" columns="12"/>
+<image idx="7" file="Crow_Transition_to_Alighting" drawmode="player_color" remaping="none" rows="11" columns="12"/>
+<image idx="8" file="Crow_Transition_to_FlightOut" drawmode="player_color" remaping="none" rows="10" columns="12"/>
+<image idx="9" file="Crow_Idle_01_shadow" drawmode="shadow" remaping="none" rows="11" columns="12"/>
+<image idx="10" file="Crow_Idle_02_shadow" drawmode="shadow" remaping="none" rows="9" columns="12"/>
+<image idx="11" file="Crow_FlightOut_shadow" drawmode="shadow" remaping="none" rows="19" columns="12"/>
+<image idx="12" file="Crow_Flight_shadow" drawmode="shadow" remaping="none" rows="10" columns="12"/>
+<image idx="13" file="Crow_Alighting_shadow" drawmode="shadow" remaping="none" rows="21" columns="12"/>
+<image idx="14" file="Crow_Death_shadow" drawmode="shadow" remaping="none" rows="11" columns="12"/>
+<image idx="15" file="Crow_Transition_to_Alighting_shadow" drawmode="shadow" remaping="none" rows="11" columns="12"/>
+<image idx="16" file="Crow_Transition_to_FlightOut_shadow" drawmode="shadow" remaping="none" rows="10" columns="12"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="unit" image="1" z="1000" offsetx="-35" offsety="-40" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="7" z="800" offsetx="-35" offsety="-40" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+	<state idx="1" name="idle" anim_idx="13" anim_frame="2" offsetx="-35" offsety="-40"/>
+	<state idx="2" name="fly" anim_idx="13" anim_frame="2" offsetx="-35" offsety="-40"/>
+</states>
+<anims>
+<anim idx="1" name="Crow_Flight" startstate="2" endstate="2" frames="12" duration="600" default_duration="150" action_time="600" step="60">
+<replace layer="1" image="4" offsetx="-35" offsety="-40"/>
+<replace layer="2" image="12" offsetx="-33" offsety="-35"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="60"/>
+<frame idx="3" duration="60"/>
+<frame idx="4" duration="60"/>
+<frame idx="5" duration="60"/>
+<frame idx="6" duration="60"/>
+<frame idx="7" duration="60"/>
+<frame idx="8" duration="60"/>
+<frame idx="9" duration="60"/>
+<frame idx="10" duration="60"/>
+<frame idx="11" duration="60"/>
+<frame idx="12" duration="0"/>
+</anim>
+<anim idx="9" name="Death" startstate="1" endstate="1" frames="13" duration="1100" default_duration="100" action_time="0" step="0">
+<replace layer="1" image="6" offsetx="-68" offsety="-70"/>
+<replace layer="2" image="14" offsetx="-68" offsety="-70"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="100"/>
+<frame idx="3" duration="100"/>
+<frame idx="4" duration="100"/>
+<frame idx="5" duration="100"/>
+<frame idx="6" duration="100"/>
+<frame idx="7" duration="100"/>
+<frame idx="8" duration="100"/>
+<frame idx="9" duration="100"/>
+<frame idx="10" duration="100"/>
+<frame idx="11" duration="100"/>
+<frame idx="12" duration="100"/>
+<frame idx="13" duration="0"/>
+</anim>
+<anim idx="13" name="Crow_Idle_01" startstate="1" endstate="1" frames="13" duration="1199" default_duration="150" action_time="350" step="0">
+<replace layer="1" image="1" offsetx="-35" offsety="-40"/>
+<replace layer="2" image="9" offsetx="-35" offsety="-40"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="109"/>
+<frame idx="3" duration="109"/>
+<frame idx="4" duration="109"/>
+<frame idx="5" duration="109"/>
+<frame idx="6" duration="109"/>
+<frame idx="7" duration="109"/>
+<frame idx="8" duration="109"/>
+<frame idx="9" duration="109"/>
+<frame idx="10" duration="109"/>
+<frame idx="11" duration="109"/>
+<frame idx="12" duration="109"/>
+<frame idx="13" duration="0"/>
+</anim>
+<anim idx="14" name="Crow_Idle_02" startstate="1" endstate="1" frames="11" duration="1098" default_duration="230" action_time="280" step="0">
+<replace layer="1" image="2" offsetx="-35" offsety="-40"/>
+<replace layer="2" image="10" offsetx="-35" offsety="-40"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="122"/>
+<frame idx="3" duration="122"/>
+<frame idx="4" duration="122"/>
+<frame idx="5" duration="122"/>
+<frame idx="6" duration="122"/>
+<frame idx="7" duration="122"/>
+<frame idx="8" duration="122"/>
+<frame idx="9" duration="122"/>
+<frame idx="10" duration="122"/>
+<frame idx="11" duration="0"/>
+</anim>
+<anim idx="17" name="Crow_FlightOut" startstate="2" endstate="2" frames="21" duration="1900" default_duration="100" action_time="0" step="0">
+<replace layer="1" image="3" offsetx="-35" offsety="-40"/>
+<replace layer="2" image="11" offsetx="-34" offsety="-34"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="100"/>
+<frame idx="3" duration="100"/>
+<frame idx="4" duration="100"/>
+<frame idx="5" duration="100"/>
+<frame idx="6" duration="100"/>
+<frame idx="7" duration="100"/>
+<frame idx="8" duration="100"/>
+<frame idx="9" duration="100"/>
+<frame idx="10" duration="100"/>
+<frame idx="11" duration="100"/>
+<frame idx="12" duration="100"/>
+<frame idx="13" duration="100"/>
+<frame idx="14" duration="100"/>
+<frame idx="15" duration="100"/>
+<frame idx="16" duration="100"/>
+<frame idx="17" duration="100"/>
+<frame idx="18" duration="100"/>
+<frame idx="19" duration="100"/>
+<frame idx="20" duration="100"/>
+<frame idx="21" duration="0"/>
+</anim>
+<anim idx="18" name="Crow_Alighting" startstate="2" endstate="2" frames="23" duration="1050" default_duration="100" action_time="0" step="0">
+<replace layer="1" image="5" offsetx="-35" offsety="-40"/>
+<replace layer="2" image="13" offsetx="-34" offsety="-33"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="50"/>
+<frame idx="3" duration="50"/>
+<frame idx="4" duration="50"/>
+<frame idx="5" duration="50"/>
+<frame idx="6" duration="50"/>
+<frame idx="7" duration="50"/>
+<frame idx="8" duration="50"/>
+<frame idx="9" duration="50"/>
+<frame idx="10" duration="50"/>
+<frame idx="11" duration="50"/>
+<frame idx="12" duration="50"/>
+<frame idx="13" duration="50"/>
+<frame idx="14" duration="50"/>
+<frame idx="15" duration="50"/>
+<frame idx="16" duration="50"/>
+<frame idx="17" duration="50"/>
+<frame idx="18" duration="50"/>
+<frame idx="19" duration="50"/>
+<frame idx="20" duration="50"/>
+<frame idx="21" duration="50"/>
+<frame idx="22" duration="50"/>
+<frame idx="23" duration="0"/>
+</anim>
+<anim idx="19" name="Crow_Transition_to_Alighting" startstate="2" endstate="1" frames="13" duration="550" default_duration="150" action_time="350" step="0">
+<replace layer="1" image="7" offsetx="-35" offsety="-40"/>
+<replace layer="2" image="15" offsetx="-35" offsety="-40"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="50"/>
+<frame idx="3" duration="50"/>
+<frame idx="4" duration="50"/>
+<frame idx="5" duration="50"/>
+<frame idx="6" duration="50"/>
+<frame idx="7" duration="50"/>
+<frame idx="8" duration="50"/>
+<frame idx="9" duration="50"/>
+<frame idx="10" duration="50"/>
+<frame idx="11" duration="50"/>
+<frame idx="12" duration="50"/>
+<frame idx="13" duration="0"/>
+</anim>
+<anim idx="20" name="Crow_Transition_to_FlightOut" startstate="1" endstate="2" frames="12" duration="500" default_duration="150" action_time="600" step="0">
+<replace layer="1" image="8" offsetx="-35" offsety="-40"/>
+<replace layer="2" image="16" offsetx="-35" offsety="-40"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="50"/>
+<frame idx="3" duration="50"/>
+<frame idx="4" duration="50"/>
+<frame idx="5" duration="50"/>
+<frame idx="6" duration="50"/>
+<frame idx="7" duration="50"/>
+<frame idx="8" duration="50"/>
+<frame idx="9" duration="50"/>
+<frame idx="10" duration="50"/>
+<frame idx="11" duration="50"/>
+<frame idx="12" duration="0"/>
+</anim>
+</anims>
+</entity>

@@ -1,0 +1,14 @@
+<class id="GBlacksmith" altid="Blacksmith" cpp_class="CVXBuilding" parent="BaseBlacksmith"
+  entity        = "assets/entities/buildings/Blacksmith/Blacksmith as.ent.xml"
+  entity_autumn = "assets/entities/buildings/Blacksmith/Blacksmith as.ent.xml"
+  entity_spring = "assets/entities/buildings/Blacksmith/Blacksmith as.ent.xml"
+  entity_winter = "assets/entities/buildings/Blacksmith/Blacksmith w.ent.xml"
+>
+	<properties icon="gameres/icons/GBlacksmith.bmp"/>
+  <properties display_name="Gaul Blacksmith"/>
+  <properties radius="220" selection_radius="230"/>
+  <properties edittree_pos="Structures/Stronghold (Gaul)/Blacksmith"/>
+  <properties help="/contents/buildings/GBlacksmith"/>
+  <properties auto_repair="no"/>
+
+</class>

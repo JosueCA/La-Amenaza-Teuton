@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="RWallL03_w" type="" variations="1" pass_file="RWallL03.pass">
+<images>
+<image idx="1" file="RWallL03_w_1" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="RWallL03_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="RWallL03_w_2" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="4" file="RWallL03_w_3" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="5" file="RWallL03_w_bars" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="7" x="110" y="-220"/>
+<point idx="2" type="7" x="-110" y="220"/>
+<point idx="3" type="4" x="-16" y="-47"/>
+<point idx="4" type="4" x="51" y="-122"/>
+<point idx="5" type="4" x="60" y="-209"/>
+<point idx="6" type="4" x="-71" y="-24"/>
+<point idx="7" type="8" x="95" y="30"/>
+<point idx="8" type="10" x="9" y="41"/>
+<point idx="9" type="10" x="35" y="8"/>
+<point idx="10" type="10" x="52" y="-19"/>
+</points>
+<layers>
+<layer idx="1" name="tower_1" image="1" z="1000" offsetx="-228" offsety="-281" sortoffsetx="-69" sortoffsety="89"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-228" offsety="-281" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="bars" image="5" z="1000" offsetx="-228" offsety="-281" sortoffsetx="36" sortoffsety="-9"/>
+<layer idx="4" name="tower_2" image="4" z="1000" offsetx="-228" offsety="-281" sortoffsetx="43" sortoffsety="-123"/>
+<layer idx="5" name="bridge" image="3" z="1000" offsetx="-228" offsety="-281" sortoffsetx="0" sortoffsety="57"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

@@ -1,0 +1,14 @@
+<class id="RHastatus" altid="RSwordsman" cpp_class="CVXUnit" parent="Melee" entity="assets/entities/Units/RSwordsman/RSwordsman.ent.xml">
+  <properties maxhealth="240"/>
+  <properties minattack="10" maxattack="20" defense_slash="0" defense_pierce="7"/>
+  <properties speed="80"/>
+  <properties speciality="defensive stand"/>
+
+  <properties icon     ="gameres/icons/RSwordsman.bmp"/>
+  <properties display_name="Hastatus" display_name_plural="Hastati"/>
+  <properties help="contents/units/RHastatus"/>
+
+
+  <properties edittree_pos="Units/Roman/Hastatus"/>
+  <sounds command="data/sound entities/VoiceRHastatus.xml"/>
+</class>

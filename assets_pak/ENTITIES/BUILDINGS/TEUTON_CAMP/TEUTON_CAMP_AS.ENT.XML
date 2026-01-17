@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Teuton_camp_as" type="" variations="1" pass_file="Teuton_camp.pass">
+<images>
+<image idx="1" file="Teuton_camp_up_as" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="Teuton_camp_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="Teuton_camp_down_as" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="4" file="Teuton_camp_p_as" drawmode="index" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="1" x="82" y="48"/>
+<point idx="2" type="1" x="100" y="39"/>
+<point idx="3" type="1" x="92" y="-96"/>
+<point idx="4" type="1" x="64" y="-108"/>
+<point idx="5" type="1" x="-94" y="-106"/>
+<point idx="6" type="1" x="-107" y="-70"/>
+<point idx="7" type="1" x="-66" y="54"/>
+<point idx="8" type="1" x="-87" y="44"/>
+<point idx="9" type="2" x="95" y="65"/>
+<point idx="10" type="2" x="108" y="46"/>
+<point idx="11" type="2" x="100" y="-110"/>
+<point idx="12" type="2" x="72" y="-128"/>
+<point idx="13" type="2" x="-108" y="-108"/>
+<point idx="14" type="2" x="-136" y="-90"/>
+<point idx="15" type="2" x="-77" y="83"/>
+<point idx="16" type="2" x="-96" y="67"/>
+<point idx="17" type="4" x="-50" y="18"/>
+<point idx="18" type="4" x="24" y="-45"/>
+<point idx="19" type="4" x="-52" y="-57"/>
+<point idx="20" type="4" x="-8" y="-144"/>
+<point idx="21" type="4" x="53" y="24"/>
+<point idx="22" type="4" x="-99" y="-61"/>
+<point idx="23" type="6" x="11" y="127"/>
+<point idx="24" type="6" x="157" y="-1"/>
+<point idx="25" type="6" x="-7" y="-132"/>
+<point idx="26" type="6" x="-194" y="15"/>
+<point idx="27" type="11" x="-71" y="38"/>
+<point idx="28" type="11" x="-5" y="-32"/>
+<point idx="29" type="11" x="74" y="22"/>
+<point idx="30" type="11" x="71" y="-86"/>
+<point idx="31" type="11" x="-85" y="-74"/>
+<point idx="32" type="9" x="-66" y="100"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-281" offsety="-276" sortoffsetx="19" sortoffsety="110"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-281" offsety="-276" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="base" image="3" z="1000" offsetx="-281" offsety="-276" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="4" name="podlojka" image="4" z="500" offsetx="-281" offsety="-276" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

@@ -1,0 +1,9 @@
+<entity description="TeutonHorseman Voice" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/voices/TeutonHorseman/Fast like the wind.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/TeutonHorseman/Hit and run.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/TeutonHorseman/I smell danger.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/TeutonHorseman/Show no mercy.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/TeutonHorseman/Yah, yah, yah.wav" frequency="20"/>
+   </files>
+</entity>

@@ -1,0 +1,8 @@
+<class id="TreeTrunk" cpp_class="CVXItemHolder" parent="ItemHolder" entity = "assets/entities/Item_Holders/TreeTrunk.ent.xml">
+  <properties delete_empty="0"/>
+  <properties edittree_pos="Structures/Item holders/Tree trunk"/>
+  <properties icon     ="gameres/icons/Tree trunk.bmp"/>
+  <properties radius="30" selection_radius="40"/>
+  <properties display_name="Tree trunk"/>
+  <properties respawn_item="Healing herbs" respawn_time="60000"/>
+</class>

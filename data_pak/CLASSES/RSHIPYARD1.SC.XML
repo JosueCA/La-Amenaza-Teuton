@@ -1,0 +1,13 @@
+<class id="RShipyard1" cpp_class="CVXTownHall" parent="BaseShipyard"
+  entity        = "assets/entities/buildings/RShipyard1/RShipyard1_as.ent.xml"
+  entity_autumn = "assets/entities/buildings/RShipyard1/RShipyard1_as.ent.xml"
+  entity_spring = "assets/entities/buildings/RShipyard1/RShipyard1_as.ent.xml"
+  entity_winter = "assets/entities/buildings/RShipyard1/RShipyard1_w.ent.xml">
+
+  <properties edittree_pos="Structures/Shipyards/Stone SW"/>
+  <properties icon="gameres/icons/RShipyard.bmp"/>
+  <properties radius="410" selection_radius="415"/>
+  <properties importsettlement="RShipyard 1"/>
+  <properties build_ship_variation="0"/>
+  <properties exit_vector_x="-120" exit_vector_y="80"/>
+</class>

@@ -1,0 +1,5 @@
+<entity description="ItemDrop" priority="UnitOrder" type="UnitOrder">
+	<files>
+		<sound file="assets/sounds/effects/holder use.wav" frequency="100"/>
+	</files>
+</entity>

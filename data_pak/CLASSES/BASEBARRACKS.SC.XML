@@ -1,0 +1,15 @@
+<class id="BaseBarracks" cpp_class="CVXBarrack" parent="BaseTownBuilding"
+  entity        = "assets/entities/buildings/RBarracks/RBarracks_as.ent.xml"
+  entity_winter = "assets/entities/buildings/RBarracks/RBarracks_w.ent.xml">
+
+  <properties radius="245" selection_radius="250"/>
+
+	<method sig="idle"            vs="data/subai/barrack_idle.vs"/>
+	<method sig="train"			vs="data/subai/barrack_train.vs"/>
+	
+	<properties interface="queue"/>
+
+	<properties auto_repair="no"/>
+
+	<sounds select="assets/sounds/selection/barracks.wav"/>
+</class>

@@ -1,0 +1,21 @@
+<class id="Peaceful" cpp_class="CVXUnit" parent="Unit" entity="">
+
+  <properties damage_type="none"/>
+  <properties range="17" min_range="2"/>
+  <properties radius="10" selection_radius="10"/>
+  <properties formation_priority="100"/>
+  <properties formation_radius="16"/>
+  <properties target_factor="1000"/>
+  <properties minattack="0" maxattack="0"/>
+
+	<method sig="advance" vs="data/subai/peaceful_move.vs"/>
+	<method sig="attack" vs="data/subai/peaceful_attack.vs"/>
+	<method sig="attack" vs="data/subai/peaceful_move.vs"/>
+	<method sig="move" vs="data/subai/peaceful_move.vs"/>
+	<method sig="idle" vs="data/subai/peaceful_idle.vs"/>
+
+	<value1
+		icon="gameres/infobar/common/attack ico.bmp"
+		script="return Translate('None');"
+		help="contents/stats/attack"/>
+</class>

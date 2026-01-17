@@ -1,0 +1,203 @@
+<placeobjects>
+<!--
+	Notes:
+	- mindist is in pixels
+	the "Village" and "Town" id's are hardcoded in the source
+-->
+<PlaceGameObjects perlin-id="height" mapsize="8192">
+  <ifdef id="villages">    <GameObj SetName="Village"     min="1" max="3" inf-max="14" inf="30" benefit="40" rescue="1" mindist="1500"/> </ifdef>
+  <ifdef id="outposts">    <GameObj class="ROutpost"      min="1" max="3" inf-max="12" inf="30" benefit="20" rescue="1" mindist="1500"/> </ifdef>
+  <ifdef id="outposts">    <GameObj class="GOutpost"      min="1" max="3" inf-max="12" inf="30" benefit="20" rescue="1" mindist="1500"/> </ifdef>
+  <ifdef id="stonehenge">  <GameObj class="stonehenge"    min="0" max="0" inf-max="14" inf="30" mindist="4000"/> </ifdef>
+  <ifdef id="teutontents"> <GameObj class="TTent"         min="1" max="1" inf-max="13" inf="30" benefit="30" mindist="4000"/> </ifdef>
+  <ifdef id="ruins">       <GameObj class="Ruins1"        min="0" max="1" inf-max="15" inf="26" benefit="20" fade="2" mindist="3000"/> </ifdef>
+
+  <ifdef id="itemholders"> <GameObj class="OakStump"      min="0" max="1" inf-max="20" inf="22" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="DeadTree"      min="0" max="1" inf-max="20" inf="22" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="TreeTrunk"     min="0" max="1" inf-max="20" inf="22" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="Boulder"       min="0" max="1" inf-max="20" inf="22" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="StonePile"     min="0" max="1" inf-max="20" inf="22" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="Witch hut"     min="0" max="1" inf-max="20" inf="22" fade="2"/> </ifdef>
+<ifdef id="wildlife">    
+  <GameObj class="Crow" 
+	min="1" max="2" 
+	mindist="2000" inf-max="20" inf="0"
+	mingroup="3" maxgroup="6" groupdist="50"
+	/>
+</ifdef>
+<ifdef id="wildlife">    
+  <GameObj class="Wolf" 
+	min="1" max="3" 
+	mindist="2000" inf-max="20" inf="0"
+	mingroup="2" maxgroup="5" groupdist="100"
+	/>
+</ifdef>
+<ifdef id="wildlife">    
+  <GameObj class="Eagle" 
+	min="1" max="3" 
+	mindist="1500" inf-max="20" inf="0"
+	mingroup="1" maxgroup="2" groupdist="300"
+	/>
+</ifdef>
+<ifdef id="wildlife">    
+  <GameObj class="Deer" 
+	min="3" max="5" 
+	mindist="1500" inf-max="20" inf="0"
+	mingroup="2" maxgroup="4" groupdist="100"
+	/>
+</ifdef>
+</PlaceGameObjects>
+
+<PlaceGameObjects perlin-id="height" mapsize="16384">
+  <ifdef id="villages">    
+	<GameObj SetName="Village"     
+	  mindist="2500"
+		minperplayer="1" maxperplayer="2"
+		inf-max="10" inf="27" benefit="100" rescue="1"/> 
+  </ifdef>
+  <ifdef id="outposts">    <GameObj class="ROutpost"      min="5" max="13" inf-max="12" inf="27" benefit="20" rescue="1" mindist="3000"/> </ifdef>
+  <ifdef id="outposts">    <GameObj class="GOutpost"      min="5" max="13" inf-max="12" inf="27" benefit="20" rescue="1" mindist="3000"/> </ifdef>
+  <ifdef id="stonehenge">  <GameObj class="Stonehenge2"   min="1" max="1" inf-max="17" inf="30"/> </ifdef>
+  <ifdef id="stonehenge">  <GameObj class="Stonehenge1"   min="0" max="1" inf-max="17" inf="30"/> </ifdef>
+  <ifdef id="teutontents"> <GameObj class="TTent"         min="3" max="7" inf-max="12" inf="30" benefit="30" mindist="4000"/> </ifdef>
+  <ifdef id="ruins">       <GameObj class="Ruins1"        min="2" max="3" inf-max="15" inf="26" benefit="20" fade="2" mindist="4000"/> </ifdef>
+  <ifdef id="teleports">   <GameObj class="Teleport_1"    min="1" max="2" inf-max="17" inf="26" fade="2"/> </ifdef>
+  <ifdef id="teleports">   <GameObj class="Teleport_2"    min="0" max="1" inf-max="17" inf="26" fade="2"/> </ifdef>
+
+  <ifdef id="itemholders"> <GameObj class="OakStump"      min="1" max="3" inf-max="20" inf="22" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="DeadTree"      min="1" max="3" inf-max="20" inf="22" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="TreeTrunk"     min="1" max="3" inf-max="20" inf="22" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="Boulder"       min="1" max="3" inf-max="20" inf="22" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="StonePile"     min="1" max="3" inf-max="20" inf="22" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="Witch hut"     min="1" max="3" inf-max="20" inf="22" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="well1"         min="1" max="3" inf-max="17" inf="27" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="well2"         min="1" max="3" inf-max="17" inf="27" fade="2"/> </ifdef>
+
+<ifdef id="wildlife">    
+  <GameObj class="Fish" 
+	min="15" max="30" 
+	mindist="1000" inf-max="16" inf="0"
+	mingroup="3" maxgroup="5" groupdist="100"
+	/>
+</ifdef>
+
+<ifdef id="wildlife">    
+  <GameObj class="Crow" 
+	min="3" max="5"
+	mindist="3000" inf-max="16" inf="0"
+	mingroup="3" maxgroup="6" groupdist="50"
+	/>
+</ifdef>
+
+<ifdef id="wildlife">    
+  <GameObj class="Wolf" 
+	min="5" max="10" 
+	mindist="2000" inf-max="16" inf="0"
+	mingroup="2" maxgroup="5" groupdist="100"
+	/>
+</ifdef>
+<ifdef id="wildlife">    
+  <GameObj class="Eagle" 
+	min="2" max="5" 
+	mindist="1500" inf-max="16" inf="0"
+	mingroup="1" maxgroup="2" groupdist="300"
+	/>
+</ifdef>
+<ifdef id="wildlife">    
+  <GameObj class="Deer" 
+	min="4" max="10" 
+	mindist="1500" inf-max="16" inf="0"
+	mingroup="3" maxgroup="5" groupdist="100"
+	/>
+</ifdef>
+
+</PlaceGameObjects>
+<PlaceGameObjects perlin-id="height" mapsize="32768">
+  <ifdef id="strongholds"> 
+  <GameObj SetName="Town" minperplayer="1" maxperplayer="2" 
+  mindist="7000" inf-max="4" inf="38" benefit="300"/> 
+  </ifdef>
+  <ifdef id="villages">    
+  <GameObj SetName="Village"     
+  minperplayer="2" maxperplayer="5" 
+  mindist="3000"
+  inf-max="11" inf="28" benefit="100" rescue="1"/> 
+  </ifdef>
+  <ifdef id="outposts">    <GameObj class="ROutpost"      min="8" max="30" inf-max="12" inf="28" benefit="20" rescue="1"/> </ifdef>
+  <ifdef id="outposts">    <GameObj class="GOutpost"      min="8" max="40" inf-max="12" inf="28" benefit="20" rescue="1"/> </ifdef>
+  <ifdef id="stonehenge">  <GameObj class="Stonehenge2"   min="1" max= "2" inf-max="15" inf="30"/> </ifdef>
+  <ifdef id="stonehenge">  <GameObj class="Stonehenge1"   min="0" max= "2" inf-max="15" inf="30"/> </ifdef>
+  <ifdef id="teutontents"> <GameObj class="TTent"         maxperplayer="3" inf-max="13" inf="30" benefit="30" mindist="4000"/> </ifdef>
+  <ifdef id="ruins">       <GameObj class="Ruins1"        maxperplayer="2" inf-max="15" inf="30" benefit="20" fade="2" mindist="4000"/> </ifdef>
+  <ifdef id="teleports">   <GameObj class="Teleport_1"    min="1" max= "4" inf-max="18" inf="30" fade="2"/> </ifdef>
+  <ifdef id="teleports">   <GameObj class="Teleport_2"    min="2" max= "4" inf-max="18" inf="30" fade="2"/> </ifdef>
+
+  <ifdef id="itemholders"> <GameObj class="OakStump"      min="3" max="9" inf-max="20" inf="22" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="DeadTree"      min="3" max="9" inf-max="20" inf="22" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="TreeTrunk"     min="3" max="9" inf-max="20" inf="22" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="Boulder"       min="3" max="9" inf-max="20" inf="22" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="StonePile"     min="3" max="9" inf-max="20" inf="22" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="Witch hut"     min="3" max="9" inf-max="20" inf="22" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="well1"         min="3" max="9" inf-max="17" inf="27" fade="2"/> </ifdef>
+  <ifdef id="itemholders"> <GameObj class="well2"         min="3" max="9" inf-max="17" inf="27" fade="2"/> </ifdef>
+
+<ifdef id="wildlife">    
+  <GameObj class="Crow" 
+	min="8" max="20" 
+	mindist="3000" inf-max="19" inf="0"
+	mingroup="3" maxgroup="6" groupdist="50"
+	/>
+</ifdef>
+<ifdef id="wildlife">    
+  <GameObj class="Fish" 
+	min="20" max="50" 
+	mindist="1500" inf-max="20" inf="0"
+	mingroup="3" maxgroup="5" groupdist="100"
+	/>
+</ifdef>
+<ifdef id="wildlife">    
+  <GameObj class="Wolf" 
+	min="5" max="20" 
+	mindist="2000" inf-max="20" inf="0"
+	mingroup="2" maxgroup="5" groupdist="100"
+	/>
+</ifdef>
+<ifdef id="wildlife">    
+  <GameObj class="Eagle" 
+	min="5" max="15" 
+	mindist="1500" inf-max="20" inf="0"
+	mingroup="1" maxgroup="2" groupdist="300"
+	/>
+</ifdef>
+<ifdef id="wildlife">    
+  <GameObj class="Deer" 
+	min="10" max="20" 
+	mindist="1500" inf-max="20" inf="0"
+	mingroup="3" maxgroup="5" groupdist="100"
+	/>
+</ifdef>
+</PlaceGameObjects>
+
+<ifdef id="decorations">
+	<PlaceDecors group="Terrain patches" max="100" tries="1000" inf-max="17"/>
+</ifdef>
+
+<ifdef id="trees">
+	<TreeGroup name="Trees" weight="100">
+	  <TreeSubGrp name="Broad-leaved" weight="100"/>
+	  <TreeSubGrp name="Pine trees" weight="100"/>
+	  <TreeSubGrp name="Dead trees" weight="30"/>
+	</TreeGroup>
+	<TreeGroup name="Bushes" weight="50">
+	  <TreeSubGrp name="Green bushes" weight="100"/>
+	  <TreeSubGrp name="Dead bushes" weight="30"/>
+	</TreeGroup>
+
+	<new-perlin id="trees" first-minor-oct="2" oct-count="3" persistence="0.3" cell-bits="6"/>
+
+		<PlaceTrees perlin-id="trees" thres="0.35" dens="0.15" inf-max="20" r1="3" r2="10"/>
+
+	<del-perlin id="trees"/>
+</ifdef>
+
+</placeobjects>

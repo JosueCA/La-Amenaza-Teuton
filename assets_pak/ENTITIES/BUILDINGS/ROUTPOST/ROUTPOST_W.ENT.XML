@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="ROutpost_w" type="" variations="1" pass_file="ROutpost.pass">
+<images>
+<image idx="1" file="ROutpost_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="ROutpost_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="ROutpost_n_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="1" x="178" y="99"/>
+<point idx="2" type="1" x="189" y="91"/>
+<point idx="3" type="1" x="-153" y="-201"/>
+<point idx="4" type="1" x="-180" y="-183"/>
+<point idx="5" type="2" x="188" y="115"/>
+<point idx="6" type="2" x="201" y="102"/>
+<point idx="7" type="2" x="-202" y="-196"/>
+<point idx="8" type="2" x="-175" y="-231"/>
+<point idx="9" type="4" x="78" y="83"/>
+<point idx="10" type="4" x="302" y="-57"/>
+<point idx="11" type="4" x="-81" y="-312"/>
+<point idx="12" type="4" x="-285" y="-156"/>
+<point idx="13" type="4" x="169" y="-48"/>
+<point idx="14" type="4" x="-146" y="12"/>
+<point idx="15" type="3" x="67" y="125"/>
+<point idx="16" type="3" x="105" y="124"/>
+<point idx="17" type="3" x="302" y="-29"/>
+<point idx="18" type="3" x="324" y="-72"/>
+<point idx="19" type="3" x="-32" y="-314"/>
+<point idx="20" type="3" x="-67" y="-359"/>
+<point idx="21" type="3" x="-120" y="-323"/>
+<point idx="22" type="3" x="-309" y="-142"/>
+<point idx="23" type="3" x="-308" y="-197"/>
+<point idx="24" type="3" x="-291" y="-125"/>
+<point idx="25" type="3" x="302" y="-104"/>
+<point idx="26" type="7" x="56" y="205"/>
+<point idx="27" type="7" x="249" y="-3"/>
+<point idx="28" type="7" x="-69" y="-202"/>
+<point idx="29" type="7" x="-260" y="-46"/>
+<point idx="30" type="4" x="-150" y="-215"/>
+<point idx="31" type="4" x="73" y="17"/>
+<point idx="32" type="4" x="115" y="-152"/>
+<point idx="33" type="4" x="-74" y="-97"/>
+<point idx="34" type="11" x="197" y="110"/>
+<point idx="35" type="11" x="-181" y="-197"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-379" offsety="-412" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-379" offsety="-412" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="naves" image="3" z="1000" offsetx="-379" offsety="-412" sortoffsetx="149" sortoffsety="188"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

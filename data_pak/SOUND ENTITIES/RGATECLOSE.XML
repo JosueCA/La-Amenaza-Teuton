@@ -1,0 +1,6 @@
+<!-- edited with XML Spy v4.2 U (http://www.xmlspy.com) by Gabriel Dobrev (Haemimont Games) -->
+<entity description="RGateClose" priority="Event" type="UnitOrder">
+	<files>
+		<sound file="assets/sounds/gates/gate_close.wav" frequency="100"/>
+	</files>
+</entity>

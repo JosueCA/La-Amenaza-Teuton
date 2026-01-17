@@ -1,0 +1,29 @@
+<class id="BaseHouse" cpp_class="CVXBuilding" parent="Building">
+
+	<properties house_pop_bonus="10"/>
+	<value0
+		icon="gameres/infobar/common/pop ico.bmp"
+		script="Settlement set; set = .AsBuilding.settlement; return set.population + ' / ' + set.max_population;"
+		flags="-1"
+		help="/contents/resources"/>
+	<value1
+		icon="gameres/infobar/common/gold ico.bmp"
+		script="return .AsBuilding.settlement.gold;"
+		flags="5"
+		help="/contents/resources"/>
+	<value2
+		icon="gameres/infobar/common/food ico.bmp"
+		script="return .AsBuilding.settlement.food;"
+		flags="5"
+		help="/contents/resources"/>
+	<value3
+		icon="gameres/infobar/common/Loyality.bmp"
+		script="return .AsBuilding.settlement.loyalty;"
+		flags="-1"
+		help="/contents/capturing"/>
+	<properties auto_repair="yes"/>
+	<properties maxhealth="1000"/>
+	<properties help="/contents/buildings/House"/>
+
+	<sounds select="assets/sounds/selection/house.wav"/>
+</class>

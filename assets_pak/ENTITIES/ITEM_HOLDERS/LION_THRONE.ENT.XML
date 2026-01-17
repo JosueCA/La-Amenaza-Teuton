@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="LionThrone" type="tree" variations="1" pass_file="Lion_throne.pass">
+<images>
+<image idx="1" file="Lion_throne" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="10" x="-27" y="-20"/>
+<point idx="2" type="10" x="27" y="-20"/>
+</points>
+<layers>
+<layer idx="1" name="styblo" image="1" z="1000" offsetx="-81" offsety="-96" sortoffsetx="0" sortoffsety="-36"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

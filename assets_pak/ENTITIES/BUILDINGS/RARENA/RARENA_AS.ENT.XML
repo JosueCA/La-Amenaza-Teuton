@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="RArena_as" type="" variations="1" pass_file="RArena.pass">
+<images>
+<image idx="1" file="RArena_as" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="RArena_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="RArena_n_as" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="1" x="-168" y="152"/>
+<point idx="2" type="2" x="-171" y="150"/>
+<point idx="5" type="4" x="-111" y="-202"/>
+<point idx="6" type="4" x="146" y="2"/>
+<point idx="7" type="4" x="-81" y="-227"/>
+<point idx="8" type="4" x="126" y="-207"/>
+<point idx="9" type="4" x="-18" y="-225"/>
+<point idx="10" type="4" x="191" y="-73"/>
+<point idx="11" type="4" x="178" y="-28"/>
+<point idx="12" type="4" x="192" y="-111"/>
+<point idx="13" type="4" x="171" y="-190"/>
+<point idx="14" type="4" x="32" y="-230"/>
+<point idx="15" type="4" x="69" y="-225"/>
+<point idx="16" type="4" x="235" y="-159"/>
+<point idx="17" type="11" x="-193" y="205"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-356" offsety="-437" sortoffsetx="10" sortoffsety="-9"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-356" offsety="-437" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="naves" image="3" z="1000" offsetx="-356" offsety="-437" sortoffsetx="-157" sortoffsety="217"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

@@ -1,0 +1,27 @@
+<entity description="Swords" priority="UnitFight" type="UnitFight">
+   <files>
+      <sound file="assets/sounds/fight/sword 1.wav" frequency="7"/>
+      <sound file="assets/sounds/fight/sword 2.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/sword 3.wav" frequency="7"/>
+      <sound file="assets/sounds/fight/sword 4.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/sword 5.wav" frequency="7"/>
+      <sound file="assets/sounds/fight/sword 6.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/sword 7.wav" frequency="7"/>
+      <sound file="assets/sounds/fight/sword 8.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/sword 9.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/sword 10.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/sword 11.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/sword 12.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/sword 13.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/sword 14.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/sword 15.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/sword 16.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/v sword 1.wav" frequency="7"/>
+      <sound file="assets/sounds/fight/v sword 2.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/v sword 3.wav" frequency="7"/>
+      <sound file="assets/sounds/fight/v sword 4.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/v sword 5.wav" frequency="7"/>
+      <sound file="assets/sounds/fight/v sword 6.wav" frequency="6"/>
+      <sound file="assets/sounds/fight/v sword 7.wav" frequency="7"/>
+   </files>
+</entity>

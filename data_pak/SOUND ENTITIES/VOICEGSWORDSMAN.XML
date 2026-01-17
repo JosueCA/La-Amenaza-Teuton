@@ -1,0 +1,9 @@
+<entity description="GSwordsman Voice" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/voices/GSwordsman/If you say so.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GSwordsman/My blade is thursty.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GSwordsman/Ready to fight.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GSwordsman/Sharp sword, clean shield.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GSwordsman/You command.wav" frequency="20"/>
+   </files>
+</entity>

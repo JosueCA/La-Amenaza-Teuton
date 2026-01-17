@@ -1,0 +1,9 @@
+<entity description="RHastatus Voice" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/voices/RHastatus/Following your orders.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RHastatus/Look out for danger.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RHastatus/Ready as always.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RHastatus/Shields in front.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RHastatus/Swords ready.wav" frequency="20"/>
+   </files>
+</entity>

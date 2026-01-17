@@ -1,0 +1,7 @@
+<class id="NHero02" cpp_class="CVXHero" parent="HeroMounted" entity="assets/entities/Units/NHero02/NHero02.ent.xml">
+
+  <properties display_name="Heardred" display_name_plural="Heroes"/>
+  <properties icon="gameres/icons/NHero02.bmp"/>
+  <properties edittree_pos="Units/Heroes/Hero 2"/>
+  <sounds command="data/sound entities/VoiceGHero.xml"/>
+</class>

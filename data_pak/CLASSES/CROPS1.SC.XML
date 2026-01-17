@@ -1,0 +1,7 @@
+<class id="Crops1" cpp_class="CVXDecor" parent="Object"
+entity_autumn="assets/decors/CornSmall/Corn_Small_s1.ent.xml"
+entity_spring="assets/decors/CornSmall/Corn_Small_s1.ent.xml"
+entity_winter="assets/decors/CornSmall/Corn_Small_s1.ent.xml">
+
+  <properties edittree_pos="Structures/Others/Crops 1"/>
+</class>

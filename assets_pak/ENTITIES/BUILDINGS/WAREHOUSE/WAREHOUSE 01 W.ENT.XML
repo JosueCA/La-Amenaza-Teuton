@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Warehouse_w" type="" variations="1" pass_file="Warehouse.pass">
+<images>
+<image idx="1" file="Warehouse_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="Warehouse_shadow" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="Warehouse_w_p" drawmode="index" remaping="none" rows="1" columns="1"/>
+<image idx="4" file="Warehouse_naves_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+<image idx="5" file="Warehouse_kol_w" drawmode="normal" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="1" x="109" y="110"/>
+<point idx="2" type="1" x="137" y="86"/>
+<point idx="3" type="1" x="168" y="44"/>
+<point idx="4" type="2" x="93" y="115"/>
+<point idx="5" type="2" x="136" y="100"/>
+<point idx="6" type="2" x="167" y="59"/>
+<point idx="7" type="4" x="-43" y="-135"/>
+<point idx="8" type="4" x="-70" y="-78"/>
+<point idx="9" type="4" x="3" y="-87"/>
+<point idx="10" type="4" x="-27" y="-3"/>
+<point idx="11" type="4" x="105" y="-71"/>
+<point idx="12" type="4" x="34" y="28"/>
+<point idx="13" type="4" x="-81" y="-32"/>
+<point idx="14" type="10" x="104" y="120"/>
+<point idx="15" type="10" x="170" y="59"/>
+<point idx="16" type="9" x="134" y="88"/>
+<point idx="18" type="12" x="98" y="112"/>
+<point idx="19" type="12" x="135" y="88"/>
+<point idx="20" type="14" x="104" y="112"/>
+<point idx="21" type="14" x="136" y="86"/>
+<point idx="22" type="13" x="102" y="112"/>
+<point idx="23" type="14" x="107" y="111"/>
+<point idx="24" type="13" x="103" y="113"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-263" offsety="-283" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-261" offsety="-281" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="3" name="podlojka" image="3" z="500" offsetx="-263" offsety="-283" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="4" name="base" image="4" z="1000" offsetx="-263" offsety="-283" sortoffsetx="147" sortoffsety="160"/>
+<layer idx="5" name="base" image="5" z="1000" offsetx="-263" offsety="-283" sortoffsetx="194" sortoffsety="101"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

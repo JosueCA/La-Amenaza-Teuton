@@ -1,0 +1,5 @@
+<entity description="Eagle command" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/animals/eagle/eagle_command.wav" frequency="100"/>
+   </files>
+</entity>

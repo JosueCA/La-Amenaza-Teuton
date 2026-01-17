@@ -1,0 +1,6 @@
+<entity description="SoundPlainswinter">
+	<files>
+		<sound file="assets/sounds/zimenv~1.ogg" frequency="7"/>
+		<sound file="assets/sounds/wind2.ogg" frequency="7"/>
+	</files>
+</entity>

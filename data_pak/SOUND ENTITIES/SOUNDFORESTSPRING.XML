@@ -1,0 +1,9 @@
+<entity description="SoundForestspring">
+	<files>
+		<sound file="assets/sounds/ambient/prolet~1.ogg"   frequency="65"/>
+		<sound file="assets/sounds/ambient/forest02.ogg"   frequency="5"/>
+		<sound file="assets/sounds/ambient/try/eagle2.ogg" frequency ="10"/>
+		<sound file="assets/sounds/ambient/try/eagle.ogg"  frequency ="10"/>
+		<sound file="assets/sounds/ambient/try/wolf.ogg"   frequency ="10"/>
+	</files>
+</entity>

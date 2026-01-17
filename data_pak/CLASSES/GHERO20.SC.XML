@@ -1,0 +1,7 @@
+<class id="GHero20" cpp_class="CVXHero" parent="GaulHero" entity="assets/entities/Units/NHero01/NHero01.ent.xml">
+
+  <properties display_name="Ercenberht" display_name_plural="Heroes"/>
+  <properties icon="gameres/icons/NHero01.bmp"/>
+
+  <sounds command="data/sound entities/VoiceGHero.xml"/>
+</class>

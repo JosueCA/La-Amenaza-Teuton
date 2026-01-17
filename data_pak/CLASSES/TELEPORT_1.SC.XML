@@ -1,0 +1,10 @@
+<class id="Teleport_1" cpp_class="CVXTeleport" parent="Teleport"
+entity="assets/entities/MapObjects/Teleport_1/Teleport_1.ent.xml">
+	<properties radius="200" selection_radius="210"/>
+	<properties health="100" maxhealth="100"/>
+	<properties edittree_pos="Structures/Interactive/Cave SW"/>
+	<properties exit_vector_x="-250"
+				exit_vector_y="250"
+	/>
+
+</class>

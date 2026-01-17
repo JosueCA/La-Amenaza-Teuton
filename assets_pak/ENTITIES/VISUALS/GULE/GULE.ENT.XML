@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Gule" type="" variations="1" pass_file="">
+<images>
+<image idx="1" file="Gule" drawmode="normal" remaping="none" rows="6" columns="1"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="Gule" image="1" z="1500" offsetx="-14" offsety="-15" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="Gule" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+<anim idx="1" name="Gule" startstate="1" endstate="1" frames="8" duration="1200" default_duration="200" action_time="0" step="0">
+<replace layer="1" image="1" offsetx="-14" offsety="-15"/>
+<frame idx="1" duration="0"/>
+<frame idx="2" duration="200"/>
+<frame idx="3" duration="200"/>
+<frame idx="4" duration="200"/>
+<frame idx="5" duration="200"/>
+<frame idx="6" duration="200"/>
+<frame idx="7" duration="200"/>
+<frame idx="8" duration="0"/>
+</anim>
+</anims>
+</entity>

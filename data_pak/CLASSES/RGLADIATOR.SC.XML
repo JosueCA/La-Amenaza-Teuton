@@ -1,0 +1,21 @@
+<class id="RGladiator" cpp_class="CVXUnit" parent="Melee" entity="assets/entities/units/RGladiator/RGladiator.ent.xml">
+
+  <properties minattack="17" maxattack="23" defense_slash="7" defense_pierce="7"/>
+  <properties maxhealth="330"/>
+  <properties speed="100"/>
+  <properties speciality="spread damage"/>
+
+  <properties icon     ="gameres/icons/gladiator.bmp"/>
+  <properties display_name="Gladiator" display_name_plural="Gladiators"/>
+  <properties help="contents/units/RGladiator"/>
+  <properties damage_type="pierce"/>
+
+  <properties edittree_pos="Units/Roman/Gladiator"/>
+
+  <sounds attack="UnitPikeFight" command="data/sound entities/VoiceRGladiator.xml"/>
+
+	<value1
+		icon="gameres/infobar/common/piercing ico.bmp"
+		script="return .AsUnit.minattack + '-' + .AsUnit.maxattack;"
+		help="contents/stats/attack"/>
+</class>

@@ -1,0 +1,85 @@
+<class id="BaseShipyard" cpp_class="CVXTownHall" parent="Building"
+  entity        = "assets/entities/buildings/Shipyard 1/Shipyard 1 as.ent.xml"
+  entity_autumn = "assets/entities/buildings/Shipyard 1/Shipyard 1 as.ent.xml"
+  entity_spring = "assets/entities/buildings/Shipyard 1/Shipyard 1 as.ent.xml"
+  entity_winter = "assets/entities/buildings/Shipyard 1/Shipyard 1 w.ent.xml"
+>
+	<properties display_name="Shipyard"/>
+	<properties icon="gameres/icons/GShipyard.bmp"/>
+	<properties radius="410" selection_radius="430"/>
+	<properties interface="queue"/>
+	<properties maxhealth="5000" sight="900"/>
+	<properties auto_repair="yes" repair_rate="250"/>
+	<properties help="/contents/buildings/Shipyard"/>
+
+  	<properties
+  		is_central_building = "1"
+  		can_be_captured = "1"
+  		can_be_attacked = "1"
+  		produces_gold = "0"
+  		produces_food = "0"
+  		is_single_building = "1"
+  		settlement_food = "150"
+  		settlement_gold = "0"
+  		settlement_maxfood = "10000"
+  		settlement_maxgold = "10000"
+  		population = "0"
+  		efficiency = "0"
+  		max_population = "0"
+  		max_units = "0"
+  		settlement_icon_name = "assets/interface/settlement icon"
+		snapdistance="64"
+	/>
+	<properties minimap_icon_type="color"/>
+
+	<!--value0 icon="gameres/infobar/common/pop ico.bmp" script="Settlement set; set = .AsBuilding.settlement; return set.population + ' / ' + set.max_population;" flags="-1"/-->
+	<value1
+		icon="gameres/infobar/common/gold ico.bmp"
+		script="return .AsBuilding.settlement.gold;"
+		flags="5"
+		help="/contents/resources"/>
+	<value2
+		icon="gameres/infobar/common/food ico.bmp"
+		script="return .AsBuilding.settlement.food;"
+		flags="5"
+		help="/contents/resources"/>
+	<value3
+		icon="gameres/infobar/common/Loyality.bmp"
+		script="return .AsBuilding.settlement.loyalty;"
+		flags="-1"
+		help="/contents/capturing"/>
+	
+	<method sig="idle"					vs="data/subai/shipyard_idle.vs"/>
+	<method sig="tribute"            vs="data/subai/village_tributefood.vs"/>
+	<method sig="tribute_default"    vs="data/subai/village_tributefood.vs"/>
+	<method sig="stoptribute"        vs="data/subai/village_stoptribute.vs"/>
+
+	<method sig="build_ship"			vs="data/subai/shipyard_build_ship.vs"/>
+
+	<method sig="createfoodmulesmall"  vs="data/subai/create_food_mule_small.vs"/>
+	<method sig="createfoodmulebig"    vs="data/subai/create_food_mule_big.vs"/>
+	<method sig="creategoldmulesmall"  vs="data/subai/create_gold_mule_small.vs"/>
+	<method sig="creategoldmulebig"    vs="data/subai/create_gold_mule_big.vs"/>
+
+	<method sig="createfoodboatsmall"  vs="data/subai/create_food_boat_small.vs"/>
+	<method sig="createfoodboatbig"    vs="data/subai/create_food_boat_big.vs"/>
+	<method sig="creategoldboatsmall"  vs="data/subai/create_gold_boat_small.vs"/>
+	<method sig="creategoldboatbig"    vs="data/subai/create_gold_boat_big.vs"/>
+
+	<defaultcmd target="BaseTownhall">
+		<cmd name="tribute_default"/>
+	</defaultcmd>
+
+	<defaultcmd target="BaseVillage">
+		<cmd name="tribute_default"/>
+	</defaultcmd>
+
+	<defaultcmd target="Outpost">
+		<cmd name="tribute_default"/>
+	</defaultcmd>
+
+	<defaultcmd target="BaseShipyard">
+		<cmd name="tribute_default"/>
+	</defaultcmd>
+
+</class>

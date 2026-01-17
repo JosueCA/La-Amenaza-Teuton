@@ -1,0 +1,43 @@
+<class id="BaseTownhall" cpp_class="CVXTownHall" parent="BaseTownBuilding"
+>
+  <properties radius="160" selection_radius="165"/>
+	<properties auto_repair="no"/>
+
+  <method sig="unitsout"                vs="data/subai/townhall_unitsout.vs"/>
+  <method sig="createfoodmulesmall"       vs="data/subai/create_food_mule_small.vs"/>
+  <method sig="createfoodmulebig"       vs="data/subai/create_food_mule_big.vs"/>
+  <method sig="creategoldmulesmall"       vs="data/subai/create_gold_mule_small.vs"/>
+  <method sig="creategoldmulebig"       vs="data/subai/create_gold_mule_big.vs"/>
+
+  <behavior script="data/subai/townhall_behavior_guard.vs"/>
+  <behavior script="data/subai/settlement_behavior_ambient.vs"/>
+
+  <properties
+  		is_central_building = "1"
+  		can_be_captured = "1"
+  		can_be_attacked = "1"
+  		produces_gold = "1"
+  		produces_food = "0"
+  		is_single_building = "0"
+  		settlement_food = "200"
+  		settlement_gold = "2500"
+  		settlement_maxfood = "100000"
+  		settlement_maxgold = "100000"
+  		population = "40"
+  		efficiency = "1"
+  		max_population = "100"
+  		max_units = "10000"
+  		settlement_icon_name = "assets/interface/settlement icon"
+  />
+
+
+	<properties interface="holder"/>
+
+	<properties minimap_icon_type="color"/>
+
+  <defaultcmd target="">
+	<cmd name="unitsout"/>
+  </defaultcmd>
+
+	<sounds select="assets/sounds/selection/townhall.wav"/>
+</class>

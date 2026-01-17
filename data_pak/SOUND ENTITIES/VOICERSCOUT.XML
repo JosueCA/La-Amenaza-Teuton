@@ -1,0 +1,9 @@
+<entity description="RScout Voice" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/voices/RScout/Let's ride.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RScout/Riding on horseback.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RScout/Scouting the area.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RScout/Scouts Here.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RScout/Speed is of essence.wav" frequency="20"/>
+   </files>
+</entity>

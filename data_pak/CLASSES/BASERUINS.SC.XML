@@ -1,0 +1,40 @@
+<class id="BaseRuins" cpp_class="CVXBuilding" parent="Building"
+  entity        = ""
+  entity_winter = ""
+>
+	<properties
+  		is_central_building = "1"
+  		can_be_captured = "0"
+  		can_be_attacked = "0"
+  		produces_gold = "0"
+  		produces_food = "0"
+  		is_single_building = "1"
+  		settlement_food = "0"
+  		settlement_gold = "0"
+  		settlement_maxfood = "0"
+  		settlement_maxgold = "0"
+  		population = "0"
+  		efficiency = "0"
+  		max_population = "0"
+  		max_units = "1"
+		settlement_icon_name = ""
+	/>
+
+	<behavior script="data/subai/ruin_behavior.vs"/>
+	<properties interface="items"/>
+	<properties 
+		itemmanage = "0"
+		itemtypes = "Boar tooth, Boar teeth, Horn of victory, Ash of druid heart, Finger of death, Fur gloves of health, Concentration stone"
+		minlevel = "4"
+		levelperitem = "4"
+		/>
+	<properties icon="gameres/icons/Oracul.bmp"/>
+
+	<value0
+		icon="gameres/infobar/common/level ico.bmp"
+		script="return EnvReadInt(.AsBuilding, 'minlevel');"
+		help="/contents/stats/level"/>
+	<properties inventory_size="1"/>
+	<properties help="/contents/buildings/Ruins"/>
+
+</class>

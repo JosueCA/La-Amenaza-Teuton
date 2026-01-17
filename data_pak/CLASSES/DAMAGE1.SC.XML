@@ -1,0 +1,4 @@
+<class id="Damage1" cpp_class="CVXFeedback" parent="Object"
+entity="assets/entities/visuals/Damage/Damage1.ent.xml">
+  <properties desync_hash="0"/>
+</class>

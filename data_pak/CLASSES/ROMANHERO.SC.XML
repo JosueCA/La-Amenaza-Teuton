@@ -1,0 +1,5 @@
+<class id="RomanHero" cpp_class="CVXHero" parent="HeroMounted" entity="">
+	<properties heroarmyexpgain="37"/>
+	<properties help="/contents/units/RHero"/>
+  <sounds command="data/sound entities/VoiceRHero.xml"/>
+</class>

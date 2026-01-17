@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="GBarracks_w" type="" variations="1" pass_file="GBarracks.pass">
+<images>
+<image idx="1" file="GBarracks_w" drawmode="player_color" remaping="none" rows="4" columns="1"/>
+<image idx="2" file="GBarracks_w_n" drawmode="index" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+<point idx="1" type="1" x="98" y="102"/>
+<point idx="2" type="2" x="98" y="102"/>
+<point idx="3" type="11" x="81" y="125"/>
+<point idx="4" type="12" x="99" y="103"/>
+<point idx="5" type="4" x="120" y="-9"/>
+<point idx="6" type="4" x="-119" y="-138"/>
+<point idx="7" type="4" x="44" y="30"/>
+<point idx="8" type="4" x="-141" y="-74"/>
+<point idx="9" type="4" x="32" y="-89"/>
+</points>
+<layers>
+<layer idx="1" name="base" image="1" z="1000" offsetx="-289" offsety="-208" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="naves" image="2" z="1000" offsetx="-289" offsety="-208" sortoffsetx="95" sortoffsety="168"/>
+</layers>
+<states>
+<state idx="1" name="idle" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="2" name="2" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="3" name="3" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+<state idx="4" name="4" image_idx="0" image_row="0" offsetx="0" offsety="0"/>
+</states>
+<anims>
+</anims>
+</entity>

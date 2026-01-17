@@ -1,0 +1,10 @@
+<class id="Larax" cpp_class="CVXHero" parent="HeroMounted" entity="assets/entities/Units/Larax/Larax.ent.xml">
+
+  <properties damage_type="slash"/>
+  <properties sight="500" display_name="Larax" display_name_plural="Heroes"/>
+
+  <properties edittree_pos="Units/Heroes/Larax (Gaul)"/>
+	<properties icon="gameres/icons/Larax.bmp"/>
+
+  <sounds command="data/sound entities/VoiceLarax.xml"/>
+</class>

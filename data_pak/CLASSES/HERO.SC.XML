@@ -1,0 +1,138 @@
+<class id="Hero" cpp_class="CVXHero" parent="Melee" entity="">
+
+	<properties heroarmyexpgain="25"/>
+	<properties maxhealth="1500"/>
+	<properties sight="300" speed="160"/>
+	<properties max_army="50"/>
+	<properties formation_radius="15"/>
+	<properties radius="30" selection_radius="32"/>
+	<properties minattack="30" maxattack="30" defense_slash="80" defense_pierce="80"/>
+	<properties target_factor="200"/>
+
+<method sig="sleep" vs="data/subai/object_idle.vs"/>
+<method sig="idle" vs="data/subai/hero_idle.vs"/>
+<method sig="uiadvance" vs="data/subai/hero_advance.vs"/>
+<method sig="uipatrol" vs="data/subai/hero_patrol.vs"/>
+<method sig="uimove" vs="data/subai/hero_smartmove.vs"/>
+<method sig="patrol" vs="data/subai/hero_patrol.vs"/>
+<method sig="advance" vs="data/subai/hero_advance.vs"/>
+<method sig="attack" vs="data/subai/hero_attack.vs" verify="data/subai/unit_attack_verify.vs"/>
+<method sig="attack" vs="data/subai/hero_advance.vs"/>
+<method sig="smartmove" vs="data/subai/hero_smartmove.vs"/>
+<method sig="move" vs="data/subai/hero_move.vs"/>
+<method sig="enter" vs="data/subai/hero_enter.vs" verify="data/subai/unit_enter_verify.vs" />
+<method sig="form-line" vs="data/subai/hero_form_line.vs"/>
+<method sig="form-block" vs="data/subai/hero_form_block.vs"/>
+<method sig="form-horse-wings" vs="data/subai/hero_form_horse_wings.vs"/>
+<method sig="form-ranged-wings" vs="data/subai/hero_form_ranged_wings.vs"/>
+<method sig="approach" vs="data/subai/hero_approach.vs"/>
+
+<!-- <method sig="unittrain"	vs="data/subai/unit_train.vs" onfinish="data/subai/unit_train_onfinish.vs"/> -->
+<!-- <method sig="train"	vs="data/subai/hero_train.vs"/> -->
+
+<method sig="explore" vs="data/subai/unit_explore.vs"/>
+
+<method sig="teleport" vs="data/subai/hero_teleport.vs"/>
+
+
+<method sig="sneak"		vs="data/subai/hero_sneak.vs"	verify="data/subai/hero_sneak_verify.vs"/>
+<method sig="retreat"	vs="data/subai/hero_retreat.vs" verify="data/subai/hero_retreat_verify.vs"/>
+<method sig="moveinfight" vs="data/subai/hero_moveinfight.vs"	verify="data/subai/hero_moveinfight_verify.vs"/>
+<method sig="engage"	vs="data/subai/hero_engage.vs"/>
+
+<method sig="giveitem" vs="data/subai/hero_giveitem.vs"/>
+<method sig="putitem"  vs="data/subai/hero_putitem.vs"/>
+<method sig="getitems" vs="data/subai/hero_getitems.vs"/>
+<method sig="dropitem" vs="data/subai/hero_dropitem.vs"/>
+
+<method sig="leavearmy" vs="data/subai/hero_leave_army.vs"/>
+<method sig="stay_hidden" vs="data/subai/hero_stay_hidden.vs" verify="data/subai/unit_stay_verify.vs"/>
+<method sig="unit_stay_hidden" vs="data/subai/unit_stay_hidden.vs"/>
+<method sig="hold_position" vs="data/subai/hero_hold_position.vs"/>
+<method sig="stand_ground" vs="data/subai/hero_stand_ground.vs"/>
+<method sig="ai_attack_gate" vs="data/subai/hero_ai_attack_gate.vs"/>
+<method sig="ai_killall" vs="data/subai/hero_ai_killall.vs"/>
+<method sig="boardshiphero"
+	vs="data/subai/hero_board.vs"
+	verify="data/subai/unit_board_verify.vs"
+	onfinish="data/subai/hero_board_onfinish.vs"/>
+<method sig="transport" vs="data/subai/hero_transport.vs" verify="data/subai/unit_transport_verify.vs"/>
+
+
+<method sig="capture" vs="data/subai/hero_capture.vs" verify="data/subai/unit_capture_verify.vs"/>
+<method sig="attack_unit_type" vs="data/subai/hero_attack_unit_type.vs"/>
+<method sig="engage_unit_type" vs="data/subai/hero_engage_unit_type.vs"/>
+
+	<value3
+		icon="gameres/infobar/common/food ico.bmp"
+		script="return SelAvgFood() + ' / 20';"
+		help="/contents/feeding"/>
+
+	<properties interface="items, holder, armyhealth"/>
+
+  <defaultcmd target="">
+	<cmd name="moveinfight"/>
+   <cmd name="move"/>
+   <cmd name="advance" ctrl="1"/>
+  </defaultcmd>
+
+  <defaultcmd target="Inn">
+	<cmd name="transport"/>
+	<cmd name="approach"/>
+  </defaultcmd>
+
+  <defaultcmd target="ShipL">
+	<cmd name="boardshiphero"/>
+	<cmd name="approach"/>
+  </defaultcmd>
+
+
+	<!-- no capture for towers, gates and walls -->
+	<defaultcmd target="Tower">
+		<cmd name="attack"/>
+		<cmd name="enter"/>
+		<cmd name="approach"/>
+	</defaultcmd>
+	<defaultcmd target="Gate">
+		<cmd name="attack"/>
+		<cmd name="enter"/>
+		<cmd name="approach"/>
+	</defaultcmd>
+	<defaultcmd target="Wall">
+		<cmd name="attack"/>
+		<cmd name="enter"/>
+		<cmd name="approach"/>
+	</defaultcmd>
+
+	<defaultcmd target="Building">
+		<cmd name="capture"/>
+		<cmd name="attack"/>
+		<cmd name="enter"/>
+		<cmd name="approach"/>
+	</defaultcmd>
+
+  <defaultcmd target="Teleport">
+	<cmd name="teleport"/>
+	<cmd name="approach"/>
+  </defaultcmd>
+
+  <defaultcmd target="Unit">
+    <cmd name="attack"/>
+	<cmd name="attack_unit_type" ctrl="1"/>
+  </defaultcmd>
+
+  <defaultcmd target="Hero">
+    <cmd name="attack"/>
+  </defaultcmd>
+
+  <defaultcmd target="Unit">
+    <cmd name="stay_hidden"/>
+  </defaultcmd>
+
+
+  <defaultcmd target="ItemHolder">
+    <cmd name="getitems"/>
+	<cmd name="approach"/>
+  </defaultcmd>
+
+</class>

@@ -1,0 +1,9 @@
+<entity description="GHero Voice" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/voices/GHero/Follow my lead.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GHero/I know these lands.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GHero/I lead armies.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GHero/I need more men.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/GHero/True leaders are rare.wav" frequency="20"/>
+   </files>
+</entity>

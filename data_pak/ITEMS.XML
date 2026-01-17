@@ -1,0 +1,73 @@
+<!-- edited with XML Spy v4.2 U (http://www.xmlspy.com) by Gabriel Dobrev (Haemimont Games) -->
+<items>
+	<item id="Bear teeth amulet" image="assets/items/Bear Teeth.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="0" usescript="" scripttarget="None" description="Adds 4 to max attack." important="no">
+		<bonus health="0" attack="0" maxattack="4" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="Herb amulet of luck" image="assets/items/Herbs amolet of luck.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="0" usescript="" description="Adds 4 to piercing defence." scripttarget="None" important="no">
+		<bonus health="0" attack="0" maxattack="0" defense_slash="0" defense_pierce="4" level="0" experience="0"/>
+	</item>
+	<item id="Belt of might" image="assets/items/Belt of might.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="0" usescript="" description="Adds 4 to slashing defence." scripttarget="None" important="no">
+		<bonus health="0" attack="0" maxattack="0" defense_slash="4" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="Rye spikes" image="assets/items/Rye Spikes.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="200" description="Distributes up to 200 food among nearby friendly units." usescript="" vs_file="data/ItemScripts/rye spikes.vs" scripttarget="None" important="yes">
+		<bonus health="0" attack="0" maxattack="0" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="Snake skin" image="assets/items/Snake skin.bmp" sound="assets/sounds/effects/item use.wav" level="0" description="Adds 10 to attack." usecount="0" usescript="" scripttarget="None" important="yes">
+		<bonus health="0" attack="10" maxattack="0" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="Belt of snakes" image="assets/items/Belt of snakes.bmp" sound="assets/sounds/effects/item use.wav" level="0" description="Adds 30 to attack." usecount="0" usescript="" scripttarget="None" important="yes">
+		<bonus health="0" attack="30" maxattack="0" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="Eagle feather" image="assets/items/Eagle feather.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="0" usescript="" description="Adds 200 max health." scripttarget="None" important="yes">
+		<bonus health="200" attack="0" maxattack="0" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="Feather amulet" image="assets/items/Feather amulet.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="0" usescript="" description="Adds 400 max health." scripttarget="None" important="yes">
+		<bonus health="400" attack="0" maxattack="0" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="King's Belt" image="assets/items/King's belt.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="0" usescript="" description="Adds 600 max health and 10 slashing and piercing defense." scripttarget="None" important="yes">
+		<bonus health="600" attack="0" maxattack="0" defense_slash="10" defense_pierce="10" level="0" experience="0"/>
+	</item>
+	<item id="Poison Mushroom" image="assets/items/Poison Mushrooms.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="1" description="When used adds 1 level permanently. The bearer must have at least 90% health." usescript="" vs_file="data/ItemScripts/mushroom.vs" scripttarget="None" important="yes">
+		<bonus health="0" attack="0" maxattack="0" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="Healing herbs" image="assets/items/Healing Herbs.bmp" sound="assets/sounds/effects/item use.wav" description="Restores the health of the bearer." level="0" usecount="1" vs_file="data/ItemScripts/healing herbs.vs" usescript="" scripttarget="None" important="yes">
+		<bonus health="0" attack="0" maxattack="0" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="Healing water" image="assets/items/Healing water.bmp" sound="assets/sounds/effects/item use.wav" description="Distributes up to 1000 health among nearby friendly units." level="0" usecount="1000" vs_file="data/ItemScripts/healing water.vs" usescript="" scripttarget="None" important="yes">
+		<bonus health="0" attack="0" maxattack="0" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="Boar tooth" image="assets/items/Boar tooth.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="" description="Adds 25 experience. When used damages the target unit taking health from the bearer." vs_file="data/ItemScripts/boar tooth.vs" usescript="" scripttarget="Object" important="yes">
+		<bonus health="0" attack="0" maxattack="0" defense_slash="0" defense_pierce="0" level="0" experience="16"/>
+	</item>
+	<item id="Boar teeth" image="assets/items/Boar teeth.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="" description="Adds 5 levels." vs_file="" usescript="" scripttarget="None" important="yes">
+		<bonus health="0" attack="0" maxattack="0" defense_slash="0" defense_pierce="0" level="5" experience="0"/>
+	</item>
+	<item id="Horn of victory" image="assets/items/Horn of victory.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="10" description="Damages 12 nearby enemy units with 60 points." vs_file="data/ItemScripts/horn of victory.vs" usescript="" scripttarget="None" important="yes">
+		<bonus health="0" attack="0" maxattack="0" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="Ash of druid heart" image="assets/items/Ash of Druid Hearth.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="10" description="Restores the health of the bearer and 8 nearby friendly units." vs_file="data/ItemScripts/ash of druid heart.vs" usescript="" scripttarget="None" important="yes">
+		<bonus health="0" attack="0" maxattack="0" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="Finger of death" image="assets/items/Finger of death.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="6" description="Kills 3 nearby enemy units. Does not affect heroes." vs_file="data/ItemScripts/finger of death.vs" usescript="" scripttarget="None" important="yes">
+		<bonus health="0" attack="0" maxattack="0" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="Fur gloves of health" image="assets/items/Fur Gloves of madness.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="0" description="Adds 1200 health. When used heals one friendly unit taking health from the bearer." vs_file="data/ItemScripts/fur gloves of health.vs" usescript="" scripttarget="None" important="yes">
+		<bonus health="1200" attack="0" maxattack="0" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="Concentration stone" image="assets/items/Concentration stone.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="0" description="Adds 60 max attack. When used heals the bearer taking the health of a friendly unit." vs_file="data/ItemScripts/concentration stone.vs" usescript="" scripttarget="Object" important="yes">
+		<bonus health="0" attack="0" maxattack="60" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="Bloodstone" image="assets/items/Blood Stone.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="0" description="" vs_file="" usescript="" scripttarget="None" important="yes">
+		<bonus health="0" attack="0" maxattack="0" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="Faded gem" image="assets/items/Green Diamond.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="0" description="The gem is still too weak to channel the Power of the Goddess." vs_file="" usescript="" scripttarget="None" cursed="1" important="yes">
+		<bonus health="0" attack="0" maxattack="0" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="Glowing gem" image="assets/items/Red Diamond.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="0" description="The gem now can channel the Power of the Goddess." vs_file="" usescript="" scripttarget="None" cursed="1" important="yes">
+		<bonus health="0" attack="0" maxattack="0" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+	<item id="Gem of Power" image="assets/items/Glowing Diamond.bmp" sound="assets/sounds/effects/item use.wav" level="0" usecount="0" description="The gem makes the Power of the Goddess flow through your veins." vs_file="" usescript="" scripttarget="None" cursed="1" important="yes">
+		<bonus health="0" attack="0" maxattack="0" defense_slash="0" defense_pierce="0" level="0" experience="0"/>
+	</item>
+</items>
+<!-- Items to appear in ruins -->

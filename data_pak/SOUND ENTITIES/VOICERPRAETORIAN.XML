@@ -1,0 +1,9 @@
+<entity description="RPraetorian Voice" priority="UnitOrder" type="UnitOrder">
+   <files>
+      <sound file="assets/sounds/voices/RPraetorian/Elite guards here.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RPraetorian/I am pretorian.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RPraetorian/It's safe around me.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RPraetorian/Remember you're mortal.wav" frequency="20"/>
+      <sound file="assets/sounds/voices/RPraetorian/We rule the world.wav" frequency="20"/>
+   </files>
+</entity>

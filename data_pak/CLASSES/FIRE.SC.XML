@@ -1,0 +1,4 @@
+<class id="Fire" cpp_class="CVXDecor" parent="Object"
+entity="assets/entities/visuals/fire/fire.ent.xml">
+	<sounds walk="Fire"/>
+</class>
