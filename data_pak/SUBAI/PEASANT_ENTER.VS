@@ -30,8 +30,9 @@ if (!set.Units().Contains(this))
     if (set.max_population==0) {
     	if (set.max_units != 0)
     		set.AddUnit(this);
-    	else
-    		pr("peasant_enter: both max_population and max_units are 0 for this settlement");
+      // FIX: If cannot enter do nothing
+    	//else
+    		// pr("peasant_enter: both max_population and max_units are 0 for this settlement");
     } else {
     	set.AddToPopulation(1);
 		.Erase();

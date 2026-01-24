@@ -33,8 +33,9 @@ while (1) {
 		wagon.SetCommand("unload", .supplied.GetCentralBuilding());
 
 		// Enviar 2 campesinos junto con la mula de comida (cooldown de 1 minuto)
+		// Solo si el edificio destino tiene capacidad de población
 		currentTime = GetTime();
-		if (currentTime - lastPeasantTime >= peasantCooldown) {
+		if (currentTime - lastPeasantTime >= peasantCooldown && .supplied.GetCentralBuilding().settlement.max_population > 0) {
 			lastPeasantTime = currentTime;
 
 			for (i = 0; i < 2; i += 1) {
