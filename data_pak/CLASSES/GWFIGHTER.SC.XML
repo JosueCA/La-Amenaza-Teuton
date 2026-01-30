@@ -5,7 +5,7 @@
   <properties speed="80"/>
   <properties speciality="vampire blow"/>
 
-  <properties formation_priority="1000"/>
+  <properties formation_priority="1200"/>
   <properties formation_radius="16"/>
   <properties radius="10" selection_radius="10"/>
 

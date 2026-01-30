@@ -1,7 +1,12 @@
 <class id="RLiberatus" altid="RChampion" cpp_class="CVXUnit" parent="Melee" entity="assets/entities/Units/GHero5/GHero5.ent.xml">
   <properties minattack="20" maxattack="30" defense_slash="0" defense_pierce="0"/>
-  <properties maxhealth="330"/>
+  <properties maxhealth="360"/>
   <properties speed="100"/>
+
+  <properties formation_priority="1000"/>
+  <properties formation_radius="16"/>
+  <properties radius="10" selection_radius="10"/>
+
   <properties display_name="Liberatus" display_name_plural="Liberati"/>
   <properties help="contents/units/RLiberatus"/>
   <properties edittree_pos="Units/Roman/Liberatus"/>

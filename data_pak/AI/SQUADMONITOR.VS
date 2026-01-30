@@ -12,8 +12,12 @@ bool bLog;
 AIPlayer = AIGetPlayer();
 bLog = (AIVar(AIPlayer, AIV_LogFlee) != 0);
 time = GetTime / 60000;
-if (time < 10) min = 30;
-else min = 40;
+
+if (time < 5) {
+  min = 10;
+} else  {
+  min = 20;
+}
 
 for (i = 1; i < NumSquads(AIPlayer); i += 1) [
   Squad sq; sq = GetSquad(AIPlayer, i);
@@ -86,7 +90,7 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
 			}
 
   // use ruins
-	if (rand(3)==3) if (AIVar(AIPlayer, AIV_UseRuins) != 0) if (sq.InHolder) if (sq.Leader.AsHero) if (sq.GAIKAIn.settlement.IsStronghold)
+	if (rand(2)==2) if (AIVar(AIPlayer, AIV_UseRuins) != 0) if (sq.InHolder) if (sq.Leader.AsHero) if (sq.GAIKAIn.settlement.IsStronghold)
 		{
 			Obj ruins;
 			if (sq.State == SS_Ruins)
@@ -119,7 +123,7 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
     if (sq.Leader.HasItem("Rye spikes")) if (sq.food < sq.Size * 3 / 2)
       sq.Leader.UseItem("Rye spikes");
 
-		if (rand(3)==1) // Don't use too often
+		if (rand(2)==1) // Don't use too often
 			if (sq.Leader.HasItem("Horn of victory") || sq.Leader.HasItem("Finger of death"))
 				{
 					int own, ally, enemy, nMinNeed;
@@ -170,12 +174,18 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
 				if (sq.Leader.BestTargetInSquadSight.IsAlive) nFlee += 2; // hero badly hurt in battle
       if (AIVar(AIPlayer, AIV_Coward) != 0) {
         if (sq.health < sq.maxhealth / 2) nFlee += 4; // army sick
-        if (sq.GAIKAIn.settlement.IsTeutonTent || (sq.AIDest == sq.GAIKAIn)) {
+        // MODIFIED: Also check when in combat (visible enemies), not just at destination
+        if (sq.GAIKAIn.settlement.IsTeutonTent || (sq.AIDest == sq.GAIKAIn) || sq.Leader.BestTargetInSquadSight.IsAlive) {
           int own, ally, enemy, nMinNeed;
           sq.GAIKAIn.Eval(AI_ALL, AIPlayer, own, ally, enemy);
           nMinNeed = sq.GAIKAIn.MinNeed(AIPlayer, own, ally, enemy);
-          if (own + ally < nMinNeed / 2) // we are losing here
+          if (own + ally < nMinNeed / 2)
             nFlee += 8;
+          // NEW: Flee if outnumbered 4:1 in combat
+          if (sq.Leader.BestTargetInSquadSight.IsAlive) if (enemy * 10 > (own + ally) * 40) {
+            // pr("FLEE RATIO: own=" + own + " ally=" + ally + " enemy=" + enemy);
+            if (nFlee == 0) nFlee += 8;
+          }
         }
       }
 
@@ -230,6 +240,7 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
             else if (sq.State == SS_Enter) nFlee = 0;
 
           if (nFlee != 0) {
+            // pr("FLEE ACTIVATED: Player" + AIPlayer + " nFlee=" + nFlee);
             if (bLog) {
               str dbg = "";
               if (UEnabled(nFlee, 0)) dbg = dbg + " (reequip)";

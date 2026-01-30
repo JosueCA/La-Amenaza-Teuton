@@ -4,7 +4,8 @@ int i, nMagesRequired, nEnemyPlayers;
 int nEnemyUnits, nEnemyMages, nOwnUnits, nAllMages;
 int nSpellId, nSkipChance;
 Building stonehenge;
-Query qStonehenge, qStrongholds, qAllMages;
+Query qStonehenge, qStrongholds, qAllMages, qVillages, qOutposts, qTownhalls;
+int nVillagesAndOutposts;
 ObjList olMages;
 Obj mage;
 Druid d;
@@ -35,7 +36,7 @@ while( true )
 	// Find Stonehenge
 	qStonehenge = ClassPlayerObjs("Stonehenge", 15);
 	if (qStonehenge.count > 0) {
-		stonehenge = qStonehenge.GetObjList()[0].AsBuilding();
+		stonehenge = qStonehenge.GetObjList()[rand(qStonehenge.count)].AsBuilding();
 		if (stonehenge.IsValid) {
 			if (!stonehenge.IsSpellCasted()) {
 				ptStone = stonehenge.pos;
@@ -75,7 +76,7 @@ while( true )
 				// Priority 2: Bloodlust - army advantage
 				if (nSpellId == 0) {
 					if (nOwnUnits >= 100) {
-						if (nEnemyUnits < 450) {
+						if (nEnemyUnits >= 50 && nEnemyUnits < nOwnUnits) {
 							nMagesRequired = GetConst("StonehengeBloodlust");
 							nSpellId = 5;
 						}
@@ -100,7 +101,7 @@ while( true )
 						if (qStrongholds.count > 0) {
 							s = qStrongholds.GetObjList()[0].AsBuilding().settlement;
 							if (s.IsValid) {
-								if (s.food > 4000) {
+								if (s.food > 2000) {
 									bEnoughFood = true;
 								}
 							}
@@ -113,15 +114,20 @@ while( true )
 					}
 				}
 
-				// Priority 5: Golden Rain - low gold
+				// Priority 5: Golden Rain - low gold, has 1+ townhall and 4+ villages/outposts
 				if (nSpellId == 0) {
 					bNeedGold = false;
-					qStrongholds = ClassPlayerObjs("BaseStronghold", AIPlayer);
-					if (qStrongholds.count > 0) {
-						s = qStrongholds.GetObjList()[0].AsBuilding().settlement;
-						if (s.IsValid) {
-							if (s.gold < 4000) {
-								bNeedGold = true;
+					qTownhalls = ClassPlayerObjs("BaseTownhall", AIPlayer);
+					if (qTownhalls.count >= 1) {
+						qVillages = ClassPlayerObjs("BaseVillage", AIPlayer);
+						qOutposts = ClassPlayerObjs("Outpost", AIPlayer);
+						nVillagesAndOutposts = qVillages.count + qOutposts.count;
+						if (nVillagesAndOutposts > 4) {
+							s = qTownhalls.GetObjList()[0].AsBuilding().settlement;
+							if (s.IsValid) {
+								if (s.gold < 4000) {
+									bNeedGold = true;
+								}
 							}
 						}
 					}
@@ -131,10 +137,10 @@ while( true )
 					}
 				}
 
-				// Fallback: Golden Rain - low gold
+				// Fallback: No spell - skip this cycle
 				if (nSpellId == 0) {
-					nMagesRequired = GetConst("StonehengeGoldenRain");
-					nSpellId = 3;
+					Sleep(120000);
+					continue;
 				}
 
 				if (nMagesRequired <= 0) {

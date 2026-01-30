@@ -15,7 +15,6 @@ int  nLastResearched;
 int  nLRCounter;
 int  nLastBuilt;
 int  nEnabled = 0;
-int  nEarlyResearch;
 int  nLastResearchTime;
 bool bRome;
 bool bNoArchers;
@@ -26,6 +25,8 @@ bool bAllowNewResearch;
 int nDbg = 0;
 int nRandSelect;
 int nTryType;
+int nInitialGold;
+int nArmyDelay;
 
 AIPlayer = set.player;
 nAssUnderFire = EnvReadInt(set, "nAssUnderFire");
@@ -33,7 +34,6 @@ nArmyBuilds = EnvReadInt(set, "nArmyBuilds");
 nLastResearched = EnvReadInt(set, "nLastResearched");
 nLRCounter = EnvReadInt(set, "nLRCounter");
 nLastBuilt = EnvReadInt(set, "nLastBuilt");
-nEarlyResearch = EnvReadInt(set, "nEarlyResearch");
 nLastResearchTime = EnvReadInt(set, "nLastResearchTime");
 bNeedTraining = EnvReadInt(AIPlayer, "NeedTraining")==1;
 bRome = set.IsRomeStronghold;
@@ -55,18 +55,25 @@ if (bRome) {
   CheckUEnabled(nEnabled, AIPlayer, AIVar(AIPlayer, AIV_MaxGWFighter),  5, bRome);
 }
 
+// Save initial gold on first run (to adjust army build delay for low-gold starts)
+if (EnvReadInt(set, "InitialGoldSaved") == 0) {
+  EnvWriteInt(set, "InitialGold", set.gold);
+  EnvWriteInt(set, "InitialGoldSaved", 1);
+}
+
 // Early exploration: recruit 3 basic units before researching technologies
 if (EnvReadInt(set, "EarlyExploreDone") == 0) {
   if (MilUnits(AIPlayer) < 3) {
     nType = 0;
     if (UEnabled(nEnabled, nType)) {
-      EnvWriteInt(set, "nBuildCount", 3);
       EnvWriteInt(set, "nBuildType", nType);
-      return;
+      EnvWriteInt(set, "nBuildCount", 5);
     }
   }
   EnvWriteInt(set, "EarlyExploreDone", 1);
+  return;
 }
+
 
 // decide "research sequence"
 if (EnvReadInt(set, "TechSeq" + AIPlayer + "_Initted") == 0) {
@@ -118,13 +125,6 @@ if (EnvReadInt(set, "TechSeq" + AIPlayer + "_Initted") == 0) {
   }
 }
 
-// decide "early research"
-if (nEarlyResearch == 0) {
-  if (rand(5) == 0) nEarlyResearch = 1;
-  else nEarlyResearch = 2;
-  EnvWriteInt(set, "nEarlyResearch", nEarlyResearch);
-}
-
 // === PROACTIVE RESEARCH ===
 // Try to research next technology if we have 20+ units and enough gold
 // This runs BEFORE recruitment decisions to ensure research gets priority
@@ -133,7 +133,37 @@ if (MilUnits(AIPlayer) >= 20) if (!bNeedTraining || set.gold >= AIVar(AIPlayer, 
   str rTech;
   bool bFoundPending = false;
 
-  // Find next unresearched technology
+  // PRIORITY 1: Research all Training levels before unit upgrades
+  if(AIVar(AIPlayer, AIV_ResearchTrainingPriority) == 1) {
+    // Check prerequisite: Gladiator Shows (Rome) or Fights (Gaul)
+    if (set.IsRomeStronghold) strTech = "Gladiator Shows"; else strTech = "Fights";
+    if (!IsResearched(set, strTech)) {
+      EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
+      return;
+    }
+    // Check Training 1
+    if (set.IsRomeStronghold) strTech = "Rome Training 1"; else strTech = "Gaul Training 1";
+    if (!IsResearched(set, strTech)) {
+      EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
+      return;
+    }
+    // Check Training 2
+    if (set.IsRomeStronghold) strTech = "Rome Training 2"; else strTech = "Gaul Training 2";
+    if (!IsResearched(set, strTech)) {
+      EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
+      return;
+    }
+    // Check Training 3 (Gaul only)
+    if (!set.IsRomeStronghold) {
+      strTech = "Gaul Training 3";
+      if (!IsResearched(set, strTech)) {
+        EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
+        return;
+      }
+    }
+  }
+
+  // PRIORITY 2: Find next unresearched unit technology
   for (rIdx = 1; rIdx < 6; rIdx += 1) {
     int rType;
     if (rIdx == 1) if (!bRome) continue;
@@ -171,6 +201,8 @@ if (!set.BestBarrack(10).IsValid)
   bBuildArmy = false;
 else if (set.population <= 5)
   bBuildArmy = false;
+else if (EnvReadInt(set, "FreezeArmyBuild") != 0)
+  bBuildArmy = false;
 else
   bBuildArmy = true;
 
@@ -188,14 +220,6 @@ else
 //   bBuildArmy = (set.population >= set.max_population * nPop / 100);
 // }
 
-if (bBuildArmy) if (MilUnits(AIPlayer) == 0) { // build 3 hastati / swordsmen if no military units
-  nType = 0;
-  if (UEnabled(nEnabled, nType)) {
-    EnvWriteInt(set, "nBuildCount", 3);
-    EnvWriteInt(set, "nBuildType", nType);
-    return;
-  }
-}
 
 // build counter units
 
@@ -207,21 +231,20 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
   int ec, eg, og;
 
   if (bRome) {
-    // MOD: boost gladiators, no pop cost
-    if (IsResearched(set, UTech(2, bRome))) {
-      w2 = 1500;
+    // MOD: boost princeps
+    if (IsResearched(set, UTech(3, bRome))) {
+      w3 = 2500;
     }
   } else {
     // MOD: boost ghorseman, strong
     if (IsResearched(set, UTech(4, bRome))) {
-      w4 = 1500;
+      w4 = 2500;
     }
   }
 
   if (IsResearched(set, UTech(5, bRome))) // more boost for heavy units when researched
-    w2 = 500;
-    w5 = 2500;
-
+    w5 = 4000;
+  
   // RHastatus counters
   ec = EnemyCount(AIPlayer, UType(0, true));
   if (ec >= 8) if (GetCmdCost(UTrainCmd(0, true), eg, dummy)) {
@@ -285,10 +308,10 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
   if (ec >= 5) if (GetCmdCost(UTrainCmd(3, true), eg, dummy)) {
     eg = eg * ec;
     if (bRome) {
-      // RGladiator
-      if (GetCmdCost(UTrainCmd(2, bRome), og, dummy)) {
-        og = og * Count(AIPlayer, UType(2, bRome));
-        if (og < eg) w2 += (eg - og);
+      // RSpearman
+      if (GetCmdCost(UTrainCmd(3, bRome), og, dummy)) {
+        og = og * Count(AIPlayer, UType(3, bRome));
+        if (og < eg) w3 += (eg - og);
       }
       // RPraetorian - heavy infantry effective vs spearmen
       if (GetCmdCost(UTrainCmd(5, bRome), og, dummy)) {
@@ -301,10 +324,10 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
         og = og * Count(AIPlayer, UType(2, bRome));
         if (og < eg) w2 += (eg - og);
       }
-      // GSpearman
-      if (GetCmdCost(UTrainCmd(3, bRome), og, dummy)) {
-        og = og * Count(AIPlayer, UType(3, bRome));
-        if (og < eg) w3 += (eg - og);
+      // GWFighter
+      if (GetCmdCost(UTrainCmd(5, bRome), og, dummy)) {
+        og = og * Count(AIPlayer, UType(5, bRome));
+        if (og < eg) w5 += (eg - og);
       }
     }
   }
@@ -325,11 +348,6 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
         if (og < eg) w5 += (eg - og);
       }
     } else {
-      // GHorseman
-      if (GetCmdCost(UTrainCmd(4, bRome), og, dummy)) {
-        og = og * Count(AIPlayer, UType(4, bRome));
-        if (og < eg) w4 += (eg - og);
-      }
       // GAxeman
       if (GetCmdCost(UTrainCmd(2, bRome), og, dummy)) {
         og = og * Count(AIPlayer, UType(2, bRome));
@@ -435,22 +453,12 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
   if (ec >= 8) if (GetCmdCost(UTrainCmd(1, true), eg, dummy)) {
     eg = eg * ec;
     if (bRome) {
-      // RSpearman (Princeps)
-      if (GetCmdCost(UTrainCmd(3, bRome), og, dummy)) {
-        og = og * Count(AIPlayer, UType(3, bRome));
-        if (og < eg) w3 += (eg - og);
-      }
       // RScout - cavalry vs archers
       if (GetCmdCost(UTrainCmd(4, bRome), og, dummy)) {
         og = og * Count(AIPlayer, UType(4, bRome));
         if (og < eg) w4 += (eg - og);
       }
     } else {
-      // GSpearman
-      if (GetCmdCost(UTrainCmd(3, bRome), og, dummy)) {
-        og = og * Count(AIPlayer, UType(3, bRome));
-        if (og < eg) w3 += (eg - og);
-      }
       // GHorseman - cavalry vs archers
       if (GetCmdCost(UTrainCmd(4, bRome), og, dummy)) {
         og = og * Count(AIPlayer, UType(4, bRome));
@@ -469,21 +477,11 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
         og = og * Count(AIPlayer, UType(4, bRome));
         if (og < eg) w4 += (eg - og);
       }
-      // RSpearman - infantry vs archers
-      if (GetCmdCost(UTrainCmd(3, bRome), og, dummy)) {
-        og = og * Count(AIPlayer, UType(3, bRome));
-        if (og < eg) w3 += (eg - og);
-      }
     } else {
       // GHorseman - cavalry vs archers
       if (GetCmdCost(UTrainCmd(4, bRome), og, dummy)) {
         og = og * Count(AIPlayer, UType(4, bRome));
         if (og < eg) w4 += (eg - og);
-      }
-      // GSpearman - infantry vs archers
-      if (GetCmdCost(UTrainCmd(3, bRome), og, dummy)) {
-        og = og * Count(AIPlayer, UType(3, bRome));
-        if (og < eg) w3 += (eg - og);
       }
     }
   }
@@ -493,10 +491,10 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
   if (ec >= 5) if (GetCmdCost(UTrainCmd(2, true), eg, dummy)) {
     eg = eg * ec;
     if (bRome) {
-      // RGladiator
-      if (GetCmdCost(UTrainCmd(2, bRome), og, dummy)) {
-        og = og * Count(AIPlayer, UType(2, bRome));
-        if (og < eg) w2 += (eg - og);
+      // RPraetorian - heavy infantry effective vs spearmen
+      if (GetCmdCost(UTrainCmd(5, bRome), og, dummy)) {
+        og = og * Count(AIPlayer, UType(5, bRome));
+        if (og < eg) w5 += (eg - og);
       }
       // RArcher
       if (GetCmdCost(UTrainCmd(1, bRome), og, dummy)) {
@@ -504,15 +502,10 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
         if (og < eg) w1 += (eg - og);
       }
     } else {
-      // GSpearman
-      if (GetCmdCost(UTrainCmd(3, bRome), og, dummy)) {
-        og = og * Count(AIPlayer, UType(3, bRome));
-        if (og < eg) w3 += (eg - og);
-      }
-      // GHorseman - cavalry vs archers
-      if (GetCmdCost(UTrainCmd(4, bRome), og, dummy)) {
-        og = og * Count(AIPlayer, UType(4, bRome));
-        if (og < eg) w4 += (eg - og);
+      // GWFighter
+      if (GetCmdCost(UTrainCmd(5, bRome), og, dummy)) {
+        og = og * Count(AIPlayer, UType(5, bRome));
+        if (og < eg) w5 += (eg - og);
       }
     }
   }
@@ -556,11 +549,6 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
         og = og * Count(AIPlayer, UType(3, bRome));
         if (og < eg) w3 += (eg - og);
       }
-      // RPraetorian - heavy infantry vs cavalry
-      if (GetCmdCost(UTrainCmd(5, bRome), og, dummy)) {
-        og = og * Count(AIPlayer, UType(5, bRome));
-        if (og < eg) w5 += (eg - og);
-      }
     } else {
       // GSpearman
       if (GetCmdCost(UTrainCmd(3, bRome), og, dummy)) {
@@ -580,10 +568,10 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
   if (ec >= 5) if (GetCmdCost(UTrainCmd(5, true), eg, dummy)) {
     eg = eg * ec;
     if (bRome) {
-      // RSpearman (Princeps) - effective vs heavy infantry
-      if (GetCmdCost(UTrainCmd(3, bRome), og, dummy)) {
-        og = og * Count(AIPlayer, UType(3, bRome));
-        if (og < eg) w3 += (eg - og);
+      // RArcher
+      if (GetCmdCost(UTrainCmd(1, bRome), og, dummy)) {
+        og = og * Count(AIPlayer, UType(1, bRome));
+        if (og < eg) w1 += (eg - og);
       }
       // RPraetorian
       if (GetCmdCost(UTrainCmd(5, bRome), og, dummy)) {
@@ -591,15 +579,15 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
         if (og < eg) w5 += (eg - og) * 2; //!!!
       }
     } else {
-      // GAxeman
-      if (GetCmdCost(UTrainCmd(2, bRome), og, dummy)) {
-        og = og * Count(AIPlayer, UType(2, bRome));
-        if (og < eg) w2 += (eg - og);
+      // GWFighter - heavy infantry vs cavalry
+      if (GetCmdCost(UTrainCmd(5, bRome), og, dummy)) {
+        og = og * Count(AIPlayer, UType(5, bRome));
+        if (og < eg) w5 += (eg - og);
       }
-      // GHorseman - cavalry effective vs heavy infantry
-      if (GetCmdCost(UTrainCmd(4, bRome), og, dummy)) {
-        og = og * Count(AIPlayer, UType(4, bRome));
-        if (og < eg) w4 += (eg - og);
+      // GArcher - ranged effective vs basic infantry
+      if (GetCmdCost(UTrainCmd(1, bRome), og, dummy)) {
+        og = og * Count(AIPlayer, UType(1, bRome));
+        if (og < eg) w1 += (eg - og);
       }
     }
   }
@@ -682,44 +670,64 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
     if (AIVar(AIPlayer, AIV_LogArmy) > 1)
       pr("Result: " + UType(nType, bRome));
 
-    // check research
-    strTech = UTech(nType, bRome);
-    // Allow research even during NeedTraining if we have enough gold or time has passed
-    bAllowResearch = !bNeedTraining;
-    if (bNeedTraining) {
-      // Allow unit research during NeedTraining if: have excess gold OR 5+ minutes passed OR have 20+ units
-      if (set.gold >= AIVar(AIPlayer, AIV_ExcessGold)) bAllowResearch = true;
-      if (GetTime() > 30000) bAllowResearch = true;  // 5 minutes into game
-      if (MilUnits(AIPlayer) >= 20) bAllowResearch = true;
-    }
-    if (strTech != "") if (!IsResearched(set, strTech)) if (bAllowResearch)
-		if (nLastResearchTime==0 || GetTime()>nLastResearchTime+60000) { // Reduced from 10 to 5 minutes between different unit types
-      EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
-      if (IsResearching(set, strTech)) {
-        EnvWriteInt(set, "nEarlyResearch", 3);
-        EnvWriteInt(set, "nLastResearched", nType);
-        EnvWriteInt(set, "nLRCounter", 20);
-				EnvWriteInt(set, "nLastResearchTime", GetTime());
-        return;
-      }
-      nType = -1;
-    }
   }
 }
 
 // research new types
 // Allow research even during NeedTraining after some conditions are met
-bAllowNewResearch = !bNeedTraining;
+bAllowNewResearch = false;
 if (bNeedTraining) {
   if (set.gold >= AIVar(AIPlayer, AIV_ExcessGold)) bAllowNewResearch = true;
-  if (GetTime() > 300000) bAllowNewResearch = true;
-  if (MilUnits(AIPlayer) >= 20) bAllowNewResearch = true;
 }
 
-if (nType < -1) if (nLastResearched == 0) if ((MilUnits(AIPlayer) >= 20) || (nEarlyResearch == 1)) if (bAllowNewResearch)
+if (nType < -1) if (nLastResearched == 0) if (MilUnits(AIPlayer) >= 20) if (bAllowNewResearch)
 if (nLastResearchTime==0 || GetTime()>nLastResearchTime+60000) { // Reduced from 10 to 5 minutes between different unit types
+
+  // PRIORITY 1: Research all Training levels before researching new unit types
+  if(AIVar(AIPlayer, AIV_ResearchTrainingPriority) == 1) {
+    // Check prerequisite: Gladiator Shows (Rome) or Fights (Gaul)
+    if (set.IsRomeStronghold) strTech = "Gladiator Shows"; else strTech = "Fights";
+    if (!IsResearched(set, strTech)) {
+      EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
+      if (IsResearching(set, strTech)) {
+        EnvWriteInt(set, "nLastResearchTime", GetTime());
+        return;
+      }
+    }
+    // Check Training 1
+    if (set.IsRomeStronghold) strTech = "Rome Training 1"; else strTech = "Gaul Training 1";
+    if (!IsResearched(set, strTech)) {
+      EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
+      if (IsResearching(set, strTech)) {
+        EnvWriteInt(set, "nLastResearchTime", GetTime());
+        return;
+      }
+    }
+    // Check Training 2
+    if (set.IsRomeStronghold) strTech = "Rome Training 2"; else strTech = "Gaul Training 2";
+    if (!IsResearched(set, strTech)) {
+      EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
+      if (IsResearching(set, strTech)) {
+        EnvWriteInt(set, "nLastResearchTime", GetTime());
+        return;
+      }
+    }
+    // Check Training 3 (Gaul only)
+    if (!set.IsRomeStronghold) {
+      strTech = "Gaul Training 3";
+      if (!IsResearched(set, strTech)) {
+        EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
+        if (IsResearching(set, strTech)) {
+          EnvWriteInt(set, "nLastResearchTime", GetTime());
+          return;
+        }
+      }
+    }
+  }
+
+  // PRIORITY 2: Research new unit types
   for (nType = 1; nType < 6; nType += 1) {
-    int i; 
+    int i;
     if (nType == 1) if (!bRome) continue;
     i = EnvReadInt(set, "TechSeq" + AIPlayer + "_" + nType);
     if (!UEnabled(nEnabled, i)) continue;
@@ -728,11 +736,10 @@ if (nLastResearchTime==0 || GetTime()>nLastResearchTime+60000) { // Reduced from
     if (!IsResearched(set, strTech)) {
       EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
       if (IsResearching(set, strTech)) {
-        EnvWriteInt(set, "nEarlyResearch", 3);
         EnvWriteInt(set, "nLastResearched", i);
         EnvWriteInt(set, "nLRCounter", 20);
 				EnvWriteInt(set, "nLastResearchTime", GetTime());
-        return; 
+        return;
       }
       break;
     }
@@ -740,6 +747,16 @@ if (nLastResearchTime==0 || GetTime()>nLastResearchTime+60000) { // Reduced from
   nType = -2;
 }
 
+// Reduce army build delay for low-gold starts (less than 5000 gold)
+nInitialGold = EnvReadInt(set, "InitialGold");
+if (nInitialGold >= 5000) {
+  nArmyDelay = 30000;
+} else {
+  nArmyDelay = 90000;
+}
+if (GetTime() < nArmyDelay) {
+  return;
+}
 if (!bBuildArmy) return;
 
 
@@ -765,7 +782,7 @@ else
 		else if (nRandSelect < 16) nType = 4; // 20% cavalry
 		else nType = 5;                       // 20% heavy infantry (increased from 10%)
 
-		if (nType!=5) if (GetTime()>900000) if (rand(2)==1) nType+=1;
+		// if (nType!=5) if (GetTime()>900000) if (rand(2)==1) nType+=1;
 		if (nType!=5) if (set.gold >= AIVar(AIPlayer, AIV_ExcessGold)) nType+=1;
 		if (!bNoArchers) if (rand(5)==1) nType = 1;
 	}
@@ -818,11 +835,9 @@ if (strTech != "") if (!IsResearched(set, strTech))
 
 EnvWriteInt(set, "nBuildType", nType);
 strCmd = UTrainCmd(nType, bRome);
-if (set.CanAfford(strCmd, 15)) nCount = 15;
-else if (set.CanAfford(strCmd, 10)) nCount = 10;
-else if (set.CanAfford(strCmd, 8)) nCount = 8;
+if (set.CanAfford(strCmd, 8)) nCount = 8;
 else if (set.CanAfford(strCmd, 5)) nCount = 5;
-else if (set.CanAfford(strCmd, 1)) nCount = 1;
+else if (set.CanAfford(strCmd, 3)) nCount = 3;
 else if (nAssUnderFire <= 0) nCount = 1;
 else {
   // Can't afford chosen unit - find affordable unit, prefer advanced (search 5 to 0)

@@ -13,7 +13,7 @@ while(.HasPath())
 	if(attacker.IsAlive())
 	{
 		//.pr("hero::move:attacker!!!");
-		.AddCommand(true, "sneak", pt);
+		.AddCommand(true, "advance", pt);
 		.AddCommand(true, "engage");
 		return;
 	}
@@ -25,7 +25,7 @@ while(.HasPath())
 		.AddCommand(true, "advance", pt);
 		return;
 	} else if (.AI) if (target.player < 9) if (.IsValidTarget(target)) if (target.maxattack > 0) {
-		.AddCommand(true, "sneak", pt);
+		.AddCommand(true, "advance", pt);
 		.AddCommand(true, "engage");
 		return;
   }

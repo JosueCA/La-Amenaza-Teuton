@@ -46,6 +46,7 @@ while (.IsSpellCasted()) {
 
 //when the time is over
 if (nSpell == 6) { //teuton disaster
+	PlayMusic("music/teuton/game6.ogg");
 	.TeutonDisaster();
 }
 

@@ -7,6 +7,9 @@ bool bSuddenDeath;
 int nMaxEnemyTimeout;
 bool bEnemiesLosing;
 
+// Reproducir música al inicio (solo jugador humano, según facción)
+EnvWriteInt("musicPlayer", player);
+Run("data/Z_GAME_MUSIC/GAME_START.VS");
 
 q = ClassPlayerObjs("BaseTownhall", player);
 nTimeLimit = Str2Int(param);

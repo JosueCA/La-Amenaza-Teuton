@@ -1,10 +1,15 @@
 <class id="GSpearman" cpp_class="CVXUnit" parent="Melee" entity="assets/entities/units/GSpearman/GSpearman.ent.xml">
   <properties maxhealth="300"/>
-  <properties minattack="24" maxattack="34" defense_slash="4" defense_pierce="16"/>
+  <properties minattack="24" maxattack="30" defense_slash="4" defense_pierce="12"/>
   <properties speed = "80"/>
   <properties speciality="defensive stand, spread damage"/>
 
   <properties damage_type="pierce"/>
+
+   <properties formation_priority="1200"/>
+  <properties formation_radius="16"/>
+  <properties radius="10" selection_radius="10"/>
+  
   <properties icon     ="gameres/icons/GSpearman.bmp"/>
   <properties display_name="Spearman" display_name_plural="Spearmen"/>
   <properties help="contents/units/GSpearman"/>

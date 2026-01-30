@@ -2,7 +2,7 @@
 
   <properties maxhealth="125"/>
   <properties sight="450" range="450"/>
-  <properties minattack="7" maxattack="14" defense_slash="0" defense_pierce="0"/>
+  <properties minattack="7" maxattack="13" defense_slash="0" defense_pierce="0"/>
   <properties speed="80"/>
   <properties speciality="spread damage"/>
 

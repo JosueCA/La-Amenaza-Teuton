@@ -54,10 +54,10 @@ if (!bFightForFood)
     if (sq.GAIKAIn.settlement.IsStronghold) {
       int time, min;
       time = GetTime / 60000;
-      if (time < 10) min = 15;
-      else if (time < 20) min = 20;
-      else if (time < 30) min = 31;
-      else min = 41;
+      if (time < 10) min = 20;
+      else if (time < 20) min = 30;
+//      else if (time < 30) min = 31;
+//      else min = 41;
       if (sq.Size < min) 
         return 0;
     }
@@ -74,8 +74,8 @@ if (!bFightForFood)
 
     // Don't send weak squads to attack TeutonTents early in the game
     if (g.settlement.IsTeutonTent) {
-      if (GetTime < 300000) return 0; // No tent attacks in first 5 minutes
-      if (GetTime < 600000) if (sq.Eval < 1500) return 0; // Need strong squad for early tent attacks
+      if (GetTime < 120000) return 0; // No tent attacks in first 2 minutes
+      if (GetTime < 300000) if (sq.Eval < 1500) return 0; // Need strong squad for early tent attacks
       if (sq.Eval < 1000) return 0; // Always require minimum strength for tent attacks
     }
 

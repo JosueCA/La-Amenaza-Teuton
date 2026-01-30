@@ -22,9 +22,6 @@ AIPlayer = set.player;
 EnvWriteInt(set, "gSellFood", 0);
 EnvWriteInt(set, "nArmyBuilds", nArmyBuilds);
 
-if (rand(100)<AIVar(AIPlayer, AIV_TrainingRush))
-	EnvWriteInt(AIPlayer, "NeedTraining", 1);
-
 bNeedTraining = EnvReadInt(AIPlayer, "NeedTraining")==1;
 
 //if (set.IsRomeStronghold) SetAIVar(AIPlayer, AIV_ArenaRush, 100); //!!!
@@ -112,14 +109,23 @@ while (set.player == AIPlayer) {
   bHireHero = false;
   if (bMilUnits && !bRush) {
     SquadList  sl;
+    int nHeroes = 0;
 	  bHireHero = true;
 	  g.GetSquads( sl, AI_STAYING + AI_COMING, AIPlayer, AI_OWN );
 	  while (!sl.EOL) {
 		  squad = sl.Cur;	sl.Next;
-		  if (squad.Leader.AsHero.IsValid()) if (squad.Size < 41)
-		    {	bHireHero = false;	break; }
+		  if (squad.Leader.AsHero.IsValid()) {
+		    nHeroes += 1;
+		    if (squad.Size < 41)
+		      // {	bHireHero = false;	break; }
+          {	bHireHero = false; }
+		  }
 	  }
-    if (bHireHero) { 
+
+	  // Limit maximum heroes to 5
+	  if (nHeroes >= 5) bHireHero = false;
+
+    if (bHireHero) {
       int gold, food;
       str cmd; if (set.IsRomeStronghold) cmd = "hireheroR"; else cmd = "hireheroG";
       if (GetCmdCost(cmd, gold, food)) if (set.CanAfford(cmd)){
@@ -215,7 +221,7 @@ while (set.player == AIPlayer) {
 		{
 		// druids
 			i = AIVar(AIPlayer, AIV_Druids);
-			if (i > 0) if (bMilUnits) if (!bAssUnderFire) if (!bRush) if (MilUnits(AIPlayer) >= 20)
+			if (i > 0) if (bMilUnits) if (!bAssUnderFire) if (!bRush) if (MilUnits(AIPlayer) >= AIVar(AIPlayer, AIV_Training_CombatMagic))
 				set.AIRun("ESH_Druids.vs");
 
 		// combat magic (lowest priority)

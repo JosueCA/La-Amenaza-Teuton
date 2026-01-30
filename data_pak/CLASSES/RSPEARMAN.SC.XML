@@ -5,6 +5,11 @@
   <properties speciality="defensive stand, spike damage"/>
 
   <properties damage_type="pierce"/>
+
+  <properties formation_priority="1200"/>
+  <properties formation_radius="16"/>
+  <properties radius="10" selection_radius="10"/>
+  
   <properties edittree_pos="Units/Roman/Principle"/>
   <properties icon     ="gameres/icons/RSpearman.bmp"/>
   <properties display_name="Principle" display_name_plural="Principles"/>

@@ -3,6 +3,16 @@
 int nODist, nADist, nEDist;
 int nPriority, nMul, nDiv;
 bool bExplored;
+int nEnemyInStronghold;
+
+// CRITICAL: Own stronghold under attack = MAXIMUM PRIORITY
+if (g.settlement.IsStronghold) if (g.settlement.IsOwn(idPlayer)) {
+	nEnemyInStronghold = g.Eval(AI_STAYING + AI_COMING, idPlayer, AI_ENEMY);
+	if (nEnemyInStronghold > 0) {
+		// Absolute maximum priority - nothing is more important than defending home
+		return 999999;
+	}
+}
 
 g.GetDistToPlayers(idPlayer, nODist, nADist, nEDist);
 nADist = g.GetDistToArmies(idPlayer); // Discard previous value
@@ -15,14 +25,19 @@ if (nPriority<=0)
 	nPriority = 1; // Just in case
 
 if (g.settlement.IsStronghold)
-  { nMul = 4; nDiv = 3; }
+  {
+    // Boosted to prioritize over RECLAIM, but reduced if very far
+    if (nODist < 8000) { nMul = 6; nDiv = 1; }      // Close: high priority (9x with enemy bonus)
+    else if (nODist < 12000) { nMul = 4; nDiv = 1; } // Medium: moderate priority
+    else { nMul = 2; nDiv = 1; }                     // Far: reduced priority
+  }
 else if (g.settlement.IsVillage)
 	{ nMul = 5; nDiv = 4; }
 else if (g.settlement.IsTeutonTent)
 	{
 		// Don't attack tents early in the game - wait for stronger army
-		if (GetTime < 300000) { nMul = 1; nDiv = 10; } // Very low priority in first 5 minutes
-		else if (GetTime < 600000) if (MilEval(idPlayer) < 3000) { nMul = 1; nDiv = 5; } // Low priority if weak army
+		if (GetTime < 120000) { nMul = 1; nDiv = 10; } // Very low priority in first 2 minutes
+		else if (GetTime < 30000) if (MilEval(idPlayer) < 3000) { nMul = 1; nDiv = 5; } // Low priority if weak army
 		// Don't fight for tents that are too far
 		else if (nODist > nEDist)
 			{
@@ -53,10 +68,31 @@ bExplored = g.Explored(idPlayer);
 
 // Boost enemy settlements near the stronghold, and such far from the stronghold :)
 if (g.settlement.IsEnemy(idPlayer))
-	if (nODist<5000) 
+	if (nODist<5000)
 		{ nMul = nMul * 3; nDiv = nDiv * 2; }
 	else
 		{ nMul = nMul * 6; nDiv = nDiv * 5; }
+
+// --- RECLAIM SYSTEM: Boost priority for nearby uncaptured villages/outposts ---
+// If a village or outpost is close to our stronghold but NOT ours, prioritize capturing it
+// CONFIG: Edit these values directly - AIV_ custom variables not supported by engine
+// nDist1=6000 (x4), nDist2=10000 (x2), nDist3=15000 (x1.5)
+if (!g.settlement.IsOwn(idPlayer)) {
+	if (g.settlement.IsVillage || g.settlement.IsOutpost) {
+		if (nODist < 6000) {
+			nMul = nMul * 4;
+			//pr("RECLAIM[" + idPlayer + "] GAIKA " + g.ID + " dist=" + nODist + " -> x4");
+		}
+		else if (nODist < 10000) {
+			nMul = nMul * 2;
+			//pr("RECLAIM[" + idPlayer + "] GAIKA " + g.ID + " dist=" + nODist + " -> x2");
+		}
+		else if (nODist < 15000) {
+			nMul = nMul * 3; nDiv = nDiv * 2;
+			//pr("RECLAIM[" + idPlayer + "] GAIKA " + g.ID + " dist=" + nODist + " -> x1.5");
+		}
+	}
+}
 
 if (g.Eval(AI_COMING + AI_STAYING, idPlayer, AI_OWN + AI_ALLY) > 0) // taking action here
   if (bExplored)

@@ -3,6 +3,11 @@ Query q;
 int i, nTime, nMaxEnemyTimeout;
 bool bEnemiesLosing;
 
+// Reproducir música al inicio (solo jugador humano, según facción)
+EnvWriteInt("musicPlayer", player);
+Run("data/Z_GAME_MUSIC/GAME_START.VS");
+
+
 q = ClassPlayerObjs("BaseTownhall", player);
 
 EnvWriteInt(player, "elimination", 0);

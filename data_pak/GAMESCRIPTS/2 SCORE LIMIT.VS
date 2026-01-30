@@ -1,12 +1,16 @@
 //void, int player, str param
 
 Query q;
-int i, nScore, nTop1, nTop2; //scores 
+int i, nScore, nTop1, nTop2; //scores
 int nScoreLimit, nNearPercent, nScoreDelta; //constants
 int nTimeout, nSuddenDeathTimeout; //timeouts
 int nMaxEnemyTimeout;
 bool bEnemiesLosing;
 bool bSuddenDeath;
+
+// Reproducir música al inicio (solo jugador humano, según facción)
+EnvWriteInt("musicPlayer", player);
+Run("data/Z_GAME_MUSIC/GAME_START.VS");
 
 q = ClassPlayerObjs("BaseTownhall", player);
 

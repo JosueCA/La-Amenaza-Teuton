@@ -12,14 +12,9 @@ if (!g.Explored(idPlayer)) if (!g.settlement.IsTeutonTent || GetTime > 600000)
 if (g.settlement.IsIndependent) if (!g.settlement.IsTeutonTent) if (!g.settlement.IsStronghold)
 	return 1;
 
-// TeutonTent: require more army at game start, don't attack too early
-if (g.settlement.IsTeutonTent) {
-  if (GetTime < 300000) return 99999; // Don't attack tents in first 5 minutes
-  if (GetTime < 600000) if (MilEval(idPlayer) < 3000) return 99999; // Need 3000+ eval before attacking tents early
-}
 
 if (!g.Revealed(idPlayer)) if (!g.settlement.IsStronghold) if (GetTime - g.LastSeen(idPlayer) >= 200000)
-  enemy = 1; // expect only few enemies if non-stronghold GIAKA not visited for 20.000 ms
+  enemy = 1; // expect only few enemies if non-stronghold GIAKA not visited for 200.000 ms
 
 // Add enemies from adjacent revealed GAIKA
 g.EvalNeighbors(AI_STAYING, idPlayer, own1, ally1, enemy1, true); // 'true' == revealed GAIKA only
@@ -91,8 +86,7 @@ if (bMin) { // min
 		if (!bCap) if (min<vikings+3000) min = vikings+6000; // Do not attack strongholds with viking lords only
   // TeutonTents require significant maximum army for proper attack
   if (Set.IsTeutonTent) {
-    if (GetTime < 60000) min = 6000; // First 1 min: want 6000 eval for full attack
-    else min = 9000; // After 10 min: want 9000 eval for full attack
+    min = 6000;
   }
 	nEval += enemy * 4;
   if ((nEval > 0) && (nEval < min)) nEval = min;

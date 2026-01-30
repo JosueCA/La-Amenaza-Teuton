@@ -1,6 +1,6 @@
 <class id="RHastatus" altid="RSwordsman" cpp_class="CVXUnit" parent="Melee" entity="assets/entities/Units/RSwordsman/RSwordsman.ent.xml">
   <properties maxhealth="240"/>
-  <properties minattack="10" maxattack="20" defense_slash="0" defense_pierce="7"/>
+  <properties minattack="13" maxattack="17" defense_slash="0" defense_pierce="7"/>
   <properties speed="80"/>
   <properties speciality="defensive stand"/>
 

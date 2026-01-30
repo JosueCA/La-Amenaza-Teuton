@@ -5,17 +5,21 @@
   <properties speed="100"/>
   <properties speciality="spread damage"/>
 
+  <properties formation_priority="1000"/>
+  <properties formation_radius="16"/>
+  <properties radius="10" selection_radius="10"/>
+
   <properties icon     ="gameres/icons/gladiator.bmp"/>
   <properties display_name="Gladiator" display_name_plural="Gladiators"/>
   <properties help="contents/units/RGladiator"/>
-  <properties damage_type="pierce"/>
+<!--   <properties damage_type="pierce"/> -->
 
   <properties edittree_pos="Units/Roman/Gladiator"/>
 
   <sounds attack="UnitPikeFight" command="data/sound entities/VoiceRGladiator.xml"/>
 
-	<value1
+<!-- 	<value1
 		icon="gameres/infobar/common/piercing ico.bmp"
 		script="return .AsUnit.minattack + '-' + .AsUnit.maxattack;"
-		help="contents/stats/attack"/>
+		help="contents/stats/attack"/> -->
 </class>

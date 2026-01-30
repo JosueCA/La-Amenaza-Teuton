@@ -1,15 +1,11 @@
 <class id="GSwordsman" cpp_class="CVXUnit" parent="Melee" entity="assets/entities/units/GSwordsman/GSwordsman.ent.xml">
 
-  <properties minattack="10" maxattack="24" defense_slash="0" defense_pierce="0"/>
+  <properties minattack="10" maxattack="18" defense_slash="0" defense_pierce="0"/>
   <properties maxhealth="260"/>
   <properties speed="80"/>
   <properties icon     ="gameres/icons/GSwordsman.bmp"/>
   <properties display_name="Swordsman" display_name_plural="Swordsmen"/>
   <properties help="contents/units/GSwordsman"/>
-
-  <properties formation_priority="1200"/>
-  <properties formation_radius="16"/>
-  <properties radius="10" selection_radius="10"/>
 
   <properties edittree_pos="Units/Gaul/Swordsman"/>
 

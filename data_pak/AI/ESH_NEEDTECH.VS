@@ -40,7 +40,7 @@ if (!set.CanResearch(strTech)) return;
 	}
 	if (bRefuse) { 
 		//if (AIVar(AIPlayer, AIV_LogResearch) != 0) pr("Player " + AIPlayer + " refuses to research " + strTech);
-		//EnvWriteInt(set, "FreezeArmyBuild", 0); 
+		EnvWriteInt(set, "FreezeArmyBuild", 0); 
 		return; 
 	}
 
@@ -78,13 +78,13 @@ if (EnvReadInt(set, "Reserve" + (AIPlayer - 1)) > 0) {
 
 // Check tech budget
 bExcessGold = set.gold >= AIVar(AIPlayer, AIV_ExcessGold);
-if (rand(10)==1) bExcessGold = false;
+// if (rand(10)==1) bExcessGold = false;
 if (!bHire) if (!bExcessGold) if (!set.CheckTechBudget(strTech, AIVar(AIPlayer, AIV_TechBudget))) return;
 
 if (!set.CanAfford(strTech)) { 
   if (AIVar(AIPlayer, AIV_LogFreezeArmy) != 0) if (EnvReadInt(set, "FreezeArmyBuild") == 0)
     pr("Player " + AIPlayer + " freezes army build, saving for " + strTech);
-  EnvWriteInt(set, "FreezeArmyBuild", 10); 
+  EnvWriteInt(set, "FreezeArmyBuild", 20); 
   return; 
 }
 
