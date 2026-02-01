@@ -10,6 +10,33 @@ Este MOD cambia significativamente la experiencia de juego de "Imperivm: La Guer
 
 ---
 
+## Tabla de Contenidos
+
+1. [Correcciones de Audio (Compatibilidad Wine)](#1-correcciones-de-audio-compatibilidad-wine)
+1. [Nuevas resoluciones HD de pantalla](#2-nuevas-resoluciones-hd-de-pantalla)
+1. [Correciones al bioma de invierno](#3-correciones-al-bioma-de-invierno)
+1. [Cambios generales](#4-cambios-generales)
+1. [Cambios en Unidades](#5-cambios-en-unidades)
+   - [Unidades](#unidades)
+   - [Arqueros](#arqueros)
+   - [Heroes](#heroes)
+   - [Eliminado 'entrenamiento' de las unidades](#eliminado-entrenamiento-de-las-unidades)
+   - [Formaciones](#formaciones)
+   - [Druidas/Sacerdotes](#druidassacerdotes)
+   - [Tabla de Estadísticas de Unidades](#tabla-de-estadísticas-de-unidades)
+1. [Mejoras de la IA](#6-mejoras-de-la-ia)
+   - [Más "inteligente"](#más-inteligente)
+   - [Sistema de Construccion de Ejercito](#sistema-de-construccion-de-ejercito)
+   - [Prioridades de Ataque](#prioridades-de-ataque)
+   - [Fortaleza](#fortaleza)
+   - [Druidas y Magia](#druidas-y-magia)
+   - [Monitor de Escuadrones](#monitor-de-escuadrones)
+   - [Teutones](#teutones)
+   - [Aldeas](#aldeas)
+1. [Notas de Instalacion](#notas-de-instalacion)
+
+---
+
 ## 1. Correcciones de Audio (Compatibilidad Wine)
 
 - **Conversión de codec de audio**: Los archivos de voz de las unidades usaban el codec Microsoft ADPCM, que Wine no soporta completamente. Se convirtieron **120+ archivos WAV** de voces (galos, romanos y teutones) a PCM estándar para que funcionen correctamente en Linux/Wine.
@@ -41,18 +68,28 @@ Imperivm 1 solo soporta resoluciones horizontales de hasta 1600 píxeles máximo
 - Reemplazadas las imágenes de los minimap por las de verano
 - Reducida la exposición (brillo) de las texturas de terreno de invierno
 
-## 4. Balance de Unidades
+## 4. Cambios generales
+- Cambios en la música
+- Pequeños ajustes en la interfaz del juego
+- Vídeo introductorio reescalado
+
+
+## 5. Cambios en Unidades
 
 ### Unidades
 - Reajustadas las unidades aleatoriamente
-- Tiempos de reclutamiento reducidos
+- Tiempos de reclutamiento ajustados
 
 ### Arqueros
 - Arqueros con más alcance
+- Más débiles
+- Fuertes contra unidades con poca vida (habilidad)
 
 ### Heroes
 - Modificaciones en las estadísticas base de heroes (más resistentes)
 - Más vida por nivel
+- Añadido un efecto visual cuando el héroe tiene menos del 50% de la vida
+- Reutilizados assets de héroes para generar más héroes aleatorios
 
 ### Eliminado 'entrenamiento' de las unidades
 - Las unidades del cuartel se generan con el nivel según el nivel de 'entrenamiento' investigado
@@ -60,11 +97,14 @@ Imperivm 1 solo soporta resoluciones horizontales de hasta 1600 píxeles máximo
 ### Formaciones
 - Reducido el 'radio' de las unidades en formación. Las unidades en formaciones están más cerca entre sí.
 
+### Druidas/Sacerdotes
+- Reducido daño de los hechizos 
+- Reimplementado la 'Nube Venenosa' (sacerdote) para que no dañe a unidades amigas  
 
 ## Tabla de Estadísticas de Unidades
 #TODO
 
-## 5. Mejoras de la IA
+## 6. Mejoras de la IA
 
 ### Más "inteligente"
 - Mayor dificultad al jugar contra la IA
@@ -84,9 +124,13 @@ Imperivm 1 solo soporta resoluciones horizontales de hasta 1600 píxeles máximo
 - Mejor gestion de objetivos, IA más agresiva
 - Mayores ejércitos
 
+### Fortaleza
+- La IA investiga las mejoras en el coliseo, taberna, templo
+
 ### Druidas y Magia
 - Ajustes al sistema de reclutamiento de druidas
 - La IA utiliza los altares durante las partidas aleatorias
+- La IA utiliza los hechizos en el combate (Espiritu Vampiro, Nube venenosa)
 
 ### Monitor de Escuadrones
 - Ajustes al sistema de monitoreo y control de unidades
@@ -101,7 +145,7 @@ Imperivm 1 solo soporta resoluciones horizontales de hasta 1600 píxeles máximo
 
 ## Notas de Instalacion
 
-Este MOD se aplica directamente sobre la instalacion del juego. Reemplazando los archivos .pak
+Este MOD se aplica directamente sobre la instalacion del juego. Reemplazando los archivos .pak y demás directorios/ficheros incluidos en el zip.
 
 
 *** Generado automáticamente ***

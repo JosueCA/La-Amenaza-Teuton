@@ -19,12 +19,7 @@ while(.HasPath())
 	}
 	target = .BestTargetInSquadSight();
 	if(target.IsValid())
-	if(target.pos.Dist(pt) < .sight/2)
-	{
-		//.pr("hero::move:an enemy near destination");
-		.AddCommand(true, "advance", pt);
-		return;
-	} else if (.AI) if (target.player < 9) if (.IsValidTarget(target)) if (target.maxattack > 0) {
+	if (.AI) if (target.player < 9) if (.IsValidTarget(target)) if (target.maxattack > 0) {
 		.AddCommand(true, "advance", pt);
 		.AddCommand(true, "engage");
 		return;

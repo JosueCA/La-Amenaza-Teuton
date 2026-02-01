@@ -1,0 +1,5 @@
+<class id="GHeroz1" cpp_class="CVXHero" parent="GaulHero" entity="assets/entities/Units/Keltill/Keltill.ent.xml">
+	<properties icon="gameres/icons/KELTIL.BMP"/>
+  <properties display_name="Keltill" display_name_plural="Heroes"/>
+  <sounds command="data/sound entities/VoiceGHero.xml"/>
+</class>

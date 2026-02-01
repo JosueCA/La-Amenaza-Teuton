@@ -2,7 +2,7 @@
 
   <properties maxhealth="300"/>
   <properties formation_priority="2000"/>
-  <properties formation_radius="25"/>
+  <properties formation_radius="20"/>
   <properties radius="20" selection_radius="20" speed="160"/>
   <properties display_name="Cavalry" display_name_plural="Cavalry"/>
   <sounds attack="HorseUnitSwordFight" die="HorseUnitDeath"/>

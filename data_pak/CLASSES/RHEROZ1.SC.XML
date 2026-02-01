@@ -1,0 +1,5 @@
+<class id="RHeroz1" cpp_class="CVXHero" parent="RomanHero" entity="assets/entities/Units/NHero02/NHero02.ent.xml">
+  <properties display_name="César Germánico" display_name_plural="Heroes"/>
+  <properties icon="gameres/icons/THORIK.BMP"/>
+  <sounds command="data/sound entities/VoiceRHero.xml"/>
+</class>

@@ -5,8 +5,10 @@ Unit u;
 Building b;
 point pt;
 int i;
-  
+int lastHealthEffectTime;
+
 this = me.AsHero();
+lastHealthEffectTime = 0;
 
 pt = .posRH;
 
@@ -25,6 +27,16 @@ while(1)
 	{
 		while(u.IsAlive())
 		{
+			// Monitoreo de salud durante el combate - ANTES de atacar
+			if (.health > 0 && .health < (.maxhealth / 2))
+			{
+				if (GetTime() - lastHealthEffectTime > 250)
+				{
+					CreateFeedback("Damage2", .AsUnit());
+					lastHealthEffectTime = GetTime();
+				}
+			}
+
 			while(!.Attack(u))
 			{
 				u = .BestTargetForPos();
@@ -36,11 +48,22 @@ while(1)
 			{
 				for(i = 0; i < 3; i+=1)
 				{
+					// Crear feedback antes de cada ataque adicional
+					if (.health > 0 && .health < (.maxhealth / 2))
+					{
+						if (GetTime() - lastHealthEffectTime > 250)
+						{
+							CreateFeedback("Damage2", .AsUnit());
+							lastHealthEffectTime = GetTime();
+						}
+					}
+
 					if(!.Attack(u))
 						break;
-					 if(!.IsVisible) .SetVisible(true);	 
+					 if(!.IsVisible) .SetVisible(true);
 				}
 			}
+
 			u = .BestTargetForPos();
 		}
 	}
@@ -48,5 +71,15 @@ while(1)
 	{
 		.Idle(2000);
 		u = .BestTargetForPos();
+
+		// Monitoreo de salud cuando está idle
+		if (.health > 0 && .health < (.maxhealth / 2))
+		{
+			if (GetTime() - lastHealthEffectTime > 250)
+			{
+				CreateFeedback("Damage2", .AsUnit());
+				lastHealthEffectTime = GetTime();
+			}
+		}
 	}
 }

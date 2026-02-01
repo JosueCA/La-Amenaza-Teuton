@@ -1,0 +1,5 @@
+<class id="RHeroz2" cpp_class="CVXHero" parent="RomanHero" entity="assets/entities/Units/Caesar/Caesar.ent.xml">
+  <properties display_name="Scipio" display_name_plural="Heroes"/>
+  <properties icon="gameres/IMPERIVM2/UI/ICONS/SCIPIO.BMP"/>
+  <sounds command="data/sound entities/VoiceRHero.xml"/>
+</class>

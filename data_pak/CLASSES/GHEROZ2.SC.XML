@@ -1,0 +1,5 @@
+<class id="GHeroz2" cpp_class="CVXHero" parent="GaulHero" entity="assets/entities/Units/Larax/Larax.ent.xml">
+	<properties icon="gameres/icons/LARAX.BMP"/>
+  <properties display_name="Larax" display_name_plural="Heroes"/>
+  <sounds command="data/sound entities/VoiceGHero.xml"/>
+</class>

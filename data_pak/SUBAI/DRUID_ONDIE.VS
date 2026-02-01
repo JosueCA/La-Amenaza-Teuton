@@ -14,7 +14,7 @@ if(EnvReadString(.player, "Mass Heal") != "researched")
 	return;
 
 ol = ObjsInCircle(.pos, .sight, "Unit").GetObjList();
-HealthDistrubute = 500;
+HealthDistrubute = 250;
 for(i = 0; i < ol.count; i += 1) {
 	u = ol[i].AsUnit();
 	if (.IsEnemy(u)) continue;

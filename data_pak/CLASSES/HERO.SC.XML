@@ -5,7 +5,7 @@
 	<properties sight="300" speed="160"/>
 	<properties max_army="50"/>
 	<properties formation_radius="15"/>
-	<properties radius="30" selection_radius="32"/>
+	<properties radius="30" selection_radius="50"/>
 	<properties minattack="30" maxattack="30" defense_slash="80" defense_pierce="80"/>
 	<properties target_factor="200"/>
 

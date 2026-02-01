@@ -1,6 +1,6 @@
 <class id="RPrinciple" altid="RSpearman" cpp_class="CVXUnit" parent="Melee" entity="assets/entities/units/RSpearman/RSpearman.ent.xml">
   <properties maxhealth="350"/>
-  <properties minattack="20" maxattack="30" defense_slash="7" defense_pierce="15"/>
+  <properties minattack="17" maxattack="23" defense_slash="7" defense_pierce="15"/>
   <properties speed="80"/>
   <properties speciality="defensive stand, spike damage"/>
 

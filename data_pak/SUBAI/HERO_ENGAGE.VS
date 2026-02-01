@@ -3,8 +3,10 @@
 Hero this;
 Obj u;
 point ptStart;
+int lastHealthEffectTime;
 
 this = This.AsHero;
+lastHealthEffectTime = 0;
 ptStart = .pos;
 
 //.pr("hero::engage: looking for enemies");
@@ -34,6 +36,16 @@ if (.IsValidTarget(u))
 			while (.Attack(u))
 				if (!.IsVisible)
 					.SetVisible(true);
+
+		// Monitoreo de salud durante el combate
+		if (.health > 0 && .health < (.maxhealth / 2))
+		{
+			if (GetTime() - lastHealthEffectTime > 250)
+			{
+				CreateFeedback("Damage2", .AsUnit());
+				lastHealthEffectTime = GetTime();
+			}
+		}
 
 		//if (GetTime - nStartTime > 1000) break;
 

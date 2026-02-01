@@ -52,6 +52,20 @@ while (666) {
   if (!gaika.settlement.IsEnemy(AIPlayer))
 		break;
   gaika.Eval(AI_STAYING, AIPlayer, own, ally, enemy);
+
+  // --- THREAT CHECK: Abort conquest if enemy army approaches ---
+  // Check if there are enemies OUTSIDE the fortín that pose a threat
+  if (!gaika.AllEnemiesInHolder(AIPlayer)) {
+    int enemyOutside;
+    gaika.Count(AI_STAYING + AI_COMING, AIPlayer, own, ally, enemyOutside);
+    // If enemy force outside is significant (> 50% of our force), abort to defend
+    if (enemyOutside * 2.5 > own + ally) {
+      // pr("GS_Capture: Aborting conquest - enemy army approaching! Own:" + own + " Ally:" + ally + " Enemy:" + enemyOutside);
+      break;
+    }
+  }
+  // --- END THREAT CHECK ---
+
   if (enemy * 8 > own + ally || (gaika.settlement.IsOutpost() && gaika.settlement.UnitsCount()>10))
 		if (gaika.AllEnemiesInHolder(AIPlayer))
 			state = SS_Siege;

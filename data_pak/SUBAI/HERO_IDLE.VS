@@ -2,8 +2,10 @@
 
 Hero this;
 int i;
+int lastHealthEffectTime;
 
 this = This.AsHero;
+lastHealthEffectTime = 0;
 
 //.army.SetCommand("idle");
 for (i = 0; i<.army.count; i+=1)
@@ -12,7 +14,7 @@ for (i = 0; i<.army.count; i+=1)
 
 while(!.Stop(1000));
 //.pr("Hero::Idle");
-while(1)
+	while(1)
 {
 	if (.IsVisible)
 	{
@@ -30,9 +32,25 @@ while(1)
 				}
 				if (u.IsAlive)
 				if(.IsVisible)
-					while (.Attack(u))
+				{
+					while (true)
+					{
+						// Monitoreo de salud durante el combate - ANTES de cada ataque
+						if (.health > 0 && .health < (.maxhealth / 2))
+						{
+							if (GetTime() - lastHealthEffectTime > 250)
+							{
+								CreateFeedback("Damage2", .AsUnit());
+								lastHealthEffectTime = GetTime();
+							}
+						}
+
+						if (!.Attack(u))
+							break;
 						if (!.IsVisible)
 							break;
+					}
+				}
 				u = .BestTargetInSquadSight;
 			}
 			.FormSetupAndMoveTo(.pos, 0, 0, true);

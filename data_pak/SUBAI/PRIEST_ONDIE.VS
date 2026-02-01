@@ -17,6 +17,6 @@ if(u.IsAlive)
 if(u.AsHero)
 	u.Damage(50);
 else
-	u.Damage(300);
+	u.Damage(150);
 CreateFeedback("Lightning3", u);
 }

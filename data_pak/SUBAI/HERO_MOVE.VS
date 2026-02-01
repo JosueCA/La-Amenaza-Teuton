@@ -2,9 +2,11 @@
 Hero this;
 point ptOrg, ptNew;
 int i;
+int lastHealthEffectTime;
 
 //.pr("hero::move");
 this = This.AsHero();
+lastHealthEffectTime = 0;
 ptOrg = .pos;
 
 // Ivko: Always walk in formation, so newly attached units automatically enter formation
@@ -12,6 +14,16 @@ ptOrg = .pos;
 while (.HasPath ())
 {
   .FormKeepMoving (1500);
+
+  // Monitoreo de salud
+  if (.health > 0 && .health < (.maxhealth / 2))
+  {
+	  if (GetTime() - lastHealthEffectTime > 250)
+	  {
+		  CreateFeedback("Damage2", .AsUnit());
+		  lastHealthEffectTime = GetTime();
+	  }
+  }
 }
 
 if (.IsAlive)

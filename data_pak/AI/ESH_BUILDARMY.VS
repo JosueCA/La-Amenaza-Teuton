@@ -101,15 +101,13 @@ if (EnvReadInt(set, "TechSeq" + AIPlayer + "_Initted") == 0) {
 //        min = 3;
 //      }
 //  }
-  min = 1;
-
-  // scramble
-  for (i = rand(10); i > 0 ; i -= 1) {
+  // shuffle
+  for (i = 5; i > 1; i -= 1) {
     str sa, sb;
-    int a, b, c;
-    a = min + rand(6 - min); b = min + rand(6 - min); if (a == b) continue;
-    sa = "TechSeq" + AIPlayer + "_" + a; sb = "TechSeq" + AIPlayer + "_" + b;
-    c = EnvReadInt(set, sa); EnvWriteInt(set, sa, EnvReadInt(set, sb)); EnvWriteInt(set, sb, c);
+    int j, temp;
+    j = 1 + rand(i);
+    sa = "TechSeq" + AIPlayer + "_" + i; sb = "TechSeq" + AIPlayer + "_" + j;
+    temp = EnvReadInt(set, sa); EnvWriteInt(set, sa, EnvReadInt(set, sb)); EnvWriteInt(set, sb, temp);
   }
   EnvWriteInt(set, "TechSeq" + AIPlayer + "_Initted", 1);
   // log results
@@ -227,7 +225,7 @@ nType = -2;
 if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
   int i, dummy;
   // Base weights favor advanced units (types 1-5) over basic (type 0)
-  int w0 = 0, w1 = 200, w2 = 500, w3 = 500, w4 = 500, w5 = 0, total;
+  int w0 = 0, w1 = 200, w2 = 1000, w3 = 500, w4 = 500, w5 = 0, total;
   int ec, eg, og;
 
   if (bRome) {
@@ -240,9 +238,12 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
     if (IsResearched(set, UTech(4, bRome))) {
       w4 = 2500;
     }
+    if (IsResearched(set, UTech(2, bRome))) {
+      w2 = 2500;
+    }
   }
 
-  if (IsResearched(set, UTech(5, bRome))) // more boost for heavy units when researched
+  if (bRome && IsResearched(set, UTech(5, bRome))) // more boost for heavy units when researched
     w5 = 4000;
   
   // RHastatus counters

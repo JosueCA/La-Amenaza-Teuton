@@ -8,8 +8,8 @@ AIPlayer = set.player;
 percent = AIVar(AIPlayer, AIV_Druids);
 needed = percent * MilUnits(AIPlayer) / 100;
 
-// Minimum 5 druids/priests for Stonehenge rituals
-minDruids = 5;
+// Minimum 10 druids/priests for Stonehenge rituals
+minDruids = 10;
 if (needed < minDruids) {
 	needed = minDruids;
 }

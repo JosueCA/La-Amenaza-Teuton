@@ -2,7 +2,10 @@
 Hero this;
 point pt;
 int i;
+int lastHealthEffectTime;
+
 this = This.AsHero;
+lastHealthEffectTime = 0;
 //.pr("hero::attack: approaching target");
 
 if (!target.IsValid)
@@ -53,11 +56,32 @@ while (target.IsAlive)
 		//.pr("hero::attack: fighting");
 		while (target.IsAlive)
 		{
+			// Monitoreo de salud durante el combate - ANTES del ataque
+			if (.health > 0 && .health < (.maxhealth / 2))
+			{
+				if (GetTime() - lastHealthEffectTime > 250)
+				{
+					CreateFeedback("Damage2", .AsUnit());
+					lastHealthEffectTime = GetTime();
+				}
+			}
+
 			if (!.Attack(target))
 				break;
 			if (!.IsVisible)
 				.SetVisible(true);
+
 			Sleep(19);
+		}
+	}
+
+	// Monitoreo de salud entre ciclos de ataque
+	if (.health > 0 && .health < (.maxhealth / 2))
+	{
+		if (GetTime() - lastHealthEffectTime > 250)
+		{
+			CreateFeedback("Damage2", .AsUnit());
+			lastHealthEffectTime = GetTime();
 		}
 	}
 
