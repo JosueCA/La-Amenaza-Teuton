@@ -73,7 +73,28 @@ while( true )
 					}
 				}
 
-				// Priority 2: Bloodlust - army advantage
+				// Priority 2: Starvation - large enemy army (40+ units per enemy player)
+				if (nSpellId == 0) {
+					if (nOwnUnits < 50 && nEnemyUnits >= (40 * nEnemyPlayers)) {
+						bEnoughFood = false;
+						qStrongholds = ClassPlayerObjs("BaseStronghold", AIPlayer);
+						if (qStrongholds.count > 0) {
+							s = qStrongholds.GetObjList()[0].AsBuilding().settlement;
+							if (s.IsValid) {
+								if (s.food > 5000) {
+									bEnoughFood = true;
+								}
+							}
+						}
+
+						if (bEnoughFood) {
+							nMagesRequired = GetConst("StonehengeStarvation");
+							nSpellId = 2;
+						}
+					}
+				}
+
+				// Priority 3: Bloodlust - army advantage
 				if (nSpellId == 0) {
 					if (nOwnUnits >= 100) {
 						if (nEnemyUnits >= 50 && nEnemyUnits < nOwnUnits) {
@@ -83,33 +104,14 @@ while( true )
 					}
 				}
 
-				// Priority 3: Teuton Disaster - average enemy army per player > 20
+				// Priority 4: Teuton Disaster - average enemy army per player > 20
 				if (nSpellId == 0) {
-					if (nOwnUnits > 50 && nEnemyUnits > 1) {
-						if ((nEnemyUnits / nEnemyPlayers) > 50) {
-							nMagesRequired = GetConst("StonehengeTeutonDisaster");
-							nSpellId = 6;
-						}
-					}
-				}
-
-				// Priority 4: Starvation - large enemy army (20+ units per enemy player)
-				if (nSpellId == 0) {
-					if (nEnemyUnits >= (20 * nEnemyPlayers)) {
-						bEnoughFood = false;
-						qStrongholds = ClassPlayerObjs("BaseStronghold", AIPlayer);
-						if (qStrongholds.count > 0) {
-							s = qStrongholds.GetObjList()[0].AsBuilding().settlement;
-							if (s.IsValid) {
-								if (s.food > 2000) {
-									bEnoughFood = true;
-								}
+					if (!NoTents()) {
+						if (nOwnUnits > 50 && nEnemyUnits > 1) {
+							if ((nEnemyUnits / nEnemyPlayers) > 50) {
+								nMagesRequired = GetConst("StonehengeTeutonDisaster");
+								nSpellId = 6;
 							}
-						}
-
-						if (bEnoughFood) {
-							nMagesRequired = GetConst("StonehengeStarvation");
-							nSpellId = 2;
 						}
 					}
 				}

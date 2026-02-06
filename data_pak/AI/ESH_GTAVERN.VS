@@ -7,11 +7,6 @@ int lastTavernCheck;
 
 AIPlayer = set.player;
 
-// Only check every 1 minute (60000ms)
-lastTavernCheck = EnvReadInt(set, "lastTavernCheck");
-if (GetTime() < lastTavernCheck + 60000) return;
-EnvWriteInt(set, "lastTavernCheck", GetTime());
-
 // Free Beer (unlocks other tavern upgrades)
 strTech = "Free Beer";
 if (!IsResearched(set, strTech)) if (!IsResearching(set, strTech)) {
@@ -52,3 +47,14 @@ if (IsResearched(set, "Nordic trade routes")) {
     return;
   }
 }
+
+// Battle tactics (requires Fights)
+if (IsResearched(set, "Fights")) {
+  strTech = "Battle tactics";
+  if (!IsResearched(set, strTech)) if (!IsResearching(set, strTech)) {
+    EnvWriteString(set, "strTech", strTech);
+    set.AIRun("ESH_NeedTech.vs");
+    return;
+  }
+}
+return;

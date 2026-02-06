@@ -4,15 +4,10 @@ int AIPlayer;
 str strTech;
 int lastCheck;
 
+
+if (GetTime() < 120000) return;
+
 AIPlayer = set.player;
-
-// Only check every 2 minutes (120000ms)
-lastCheck = EnvReadInt(set, "lastCombatMagicCheck");
-if (GetTime() < lastCheck + 120000) return;
-EnvWriteInt(set, "lastCombatMagicCheck", GetTime());
-
-// if (Count(AIPlayer, "RPriest") + Count(AIPlayer, "GDruid") < AIVar(AIPlayer, AIV_CombatMagic))
-//  return;
 
 if (set.IsRomeStronghold) strTech = "Altar of Jupiter"; else strTech = "Ritual chamber";
 if (!IsResearched(set, strTech)) {
@@ -20,7 +15,7 @@ if (!IsResearched(set, strTech)) {
   return;
 }
 
-if (set.IsRomeStronghold) strTech = "Wrath of Jupiter"; else strTech = "Mass heal";
+if (set.IsRomeStronghold) strTech = "Wrath of Jupiter"; else strTech = "Mass Heal";
 if (!IsResearched(set, strTech)) {
   EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
   return;
@@ -31,4 +26,5 @@ if (!IsResearched(set, strTech)) {
   EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
   return;
 }
-    
+
+return;

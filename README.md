@@ -64,7 +64,7 @@ Imperivm 1 solo soporta resoluciones horizontales de hasta 1600 píxeles máximo
 1) EL EJECUTABLE PARCHEADO PUEDE PRODUCIR BUGS DENTRO DEL JUEGO. 
 2) EL ZOOMMAP ESTÁ LIMITADO A 1600 PARA QUE EL JUEGO NO SE CIERRE.
 
-## 3. Correciones al bioma de invierno
+## 3. Correcciones al bioma de invierno
 - Reemplazadas las imágenes de los minimap por las de verano
 - Reducida la exposición (brillo) de las texturas de terreno de invierno
 
@@ -137,6 +137,9 @@ Imperivm 1 solo soporta resoluciones horizontales de hasta 1600 píxeles máximo
 
 ### Teutones
 - Los Teutones pueden capturar fortalezas de los jugadores
+
+### Ruinas
+- La IA usa mejor las ruinas
 
 ### Aldeas
 - Las aldeas producen campesinos automáticamente junto a las mulas de comida

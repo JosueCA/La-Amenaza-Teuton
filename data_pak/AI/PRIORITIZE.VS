@@ -21,5 +21,7 @@ while (666) {
     if (bFirstTime) Sleep(1); else Sleep(200);
   }
   bFirstTime = false;
+
+  Sleep(200);
 //  pr("Done GAIKA Prioritization for player " + AIPlayer);
 }

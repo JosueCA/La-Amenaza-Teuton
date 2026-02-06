@@ -32,8 +32,6 @@ else if (g.settlement.IsTeutonTent)
 				Settlement s;
 				s = NearestStronghold(g.Center, idPlayer);
 				nMul = 5; nDiv = 4;
-				if (s.IsValid) if (EnvReadInt(s, "ArenaRush")) if (g.Explored(idPlayer)) // Making arena rush - boost tent priority
-					{ nMul = 2; nDiv = 1; }
 			}
 	}
 else if (g.settlement.IsOutpost || g.settlement.IsShipyard)

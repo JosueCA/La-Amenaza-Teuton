@@ -12,9 +12,6 @@ bRotated = false;
 .SetTarget( target );
 while (.IsAlive)
 {
-	if (.CmdCount() > 1)
-		break;
-
 	if (.settlement.UnitsCount <= 0) break;
 	ttw = .AttackWait;
 	if (ttw > 0) Sleep(ttw);

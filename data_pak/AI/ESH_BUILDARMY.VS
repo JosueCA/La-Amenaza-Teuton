@@ -18,15 +18,18 @@ int  nEnabled = 0;
 int  nLastResearchTime;
 bool bRome;
 bool bNoArchers;
-bool bNeedTraining;
-bool bAllowResearch;
-bool bAllowNewResearch;
 
 int nDbg = 0;
 int nRandSelect;
 int nTryType;
 int nInitialGold;
 int nArmyDelay;
+int iTechReserve;
+int iTechBudget;
+int iExcessThreshold;
+int iAvailableGold;
+int unitCost;
+int unitFood;
 
 AIPlayer = set.player;
 nAssUnderFire = EnvReadInt(set, "nAssUnderFire");
@@ -35,7 +38,6 @@ nLastResearched = EnvReadInt(set, "nLastResearched");
 nLRCounter = EnvReadInt(set, "nLRCounter");
 nLastBuilt = EnvReadInt(set, "nLastBuilt");
 nLastResearchTime = EnvReadInt(set, "nLastResearchTime");
-bNeedTraining = EnvReadInt(AIPlayer, "NeedTraining")==1;
 bRome = set.IsRomeStronghold;
 
 // check AI vars to see which units are enabled
@@ -77,38 +79,9 @@ if (EnvReadInt(set, "EarlyExploreDone") == 0) {
 
 // decide "research sequence"
 if (EnvReadInt(set, "TechSeq" + AIPlayer + "_Initted") == 0) {
-  int i, min;
-  // init with identity
-  for (i = 1; i < 6; i += 1) EnvWriteInt(set, "TechSeq" + AIPlayer + "_" + i, i);
-
-/*
-  if (bRome) { // temporary code! force pretorian / woman warroir to be first
-    EnvWriteInt(set, "TechSeq" + AIPlayer + "_" + 1, 5);
-    EnvWriteInt(set, "TechSeq" + AIPlayer + "_" + 5, 1);
-  } else {
-    EnvWriteInt(set, "TechSeq" + AIPlayer + "_" + 2, 5);
-    EnvWriteInt(set, "TechSeq" + AIPlayer + "_" + 5, 2);
-  }
-*/
-  // decide min and quick gaul tweak
-//  if (bRome) min = 1;
-//  else {
-//    min = 2;
-//    if (AIVar(AIPlayer, AIV_CounterUnits) == 0)
-//      if (rand(10) != 0) { // make spearmen first, to handle the damn hastati :)
-//        EnvWriteInt(set, "TechSeq" + AIPlayer + "_" + 2, 3);
-//        EnvWriteInt(set, "TechSeq" + AIPlayer + "_" + 3, 2);
-//        min = 3;
-//      }
-//  }
-  // shuffle
-  for (i = 5; i > 1; i -= 1) {
-    str sa, sb;
-    int j, temp;
-    j = 1 + rand(i);
-    sa = "TechSeq" + AIPlayer + "_" + i; sb = "TechSeq" + AIPlayer + "_" + j;
-    temp = EnvReadInt(set, sa); EnvWriteInt(set, sa, EnvReadInt(set, sb)); EnvWriteInt(set, sb, temp);
-  }
+  int i;
+  // random tech sequence (values 0-5 for each position)
+  for (i = 1; i < 6; i += 1) EnvWriteInt(set, "TechSeq" + AIPlayer + "_" + i, rand(6));
   EnvWriteInt(set, "TechSeq" + AIPlayer + "_Initted", 1);
   // log results
   if (AIVar(AIPlayer, AIV_LogResearch) != 0) {
@@ -126,7 +99,7 @@ if (EnvReadInt(set, "TechSeq" + AIPlayer + "_Initted") == 0) {
 // === PROACTIVE RESEARCH ===
 // Try to research next technology if we have 20+ units and enough gold
 // This runs BEFORE recruitment decisions to ensure research gets priority
-if (MilUnits(AIPlayer) >= 20) if (!bNeedTraining || set.gold >= AIVar(AIPlayer, AIV_ExcessGold)) {
+if (MilUnits(AIPlayer) >= 20) if (set.gold >= AIVar(AIPlayer, AIV_ExcessGold)) {
   int rIdx, rGold, rFood;
   str rTech;
   bool bFoundPending = false;
@@ -243,8 +216,8 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
     }
   }
 
-  if (bRome && IsResearched(set, UTech(5, bRome))) // more boost for heavy units when researched
-    w5 = 4000;
+  if (IsResearched(set, UTech(5, bRome))) // more boost for heavy units when researched
+    w5 = 3000;
   
   // RHastatus counters
   ec = EnemyCount(AIPlayer, UType(0, true));
@@ -674,59 +647,9 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
   }
 }
 
-// research new types
-// Allow research even during NeedTraining after some conditions are met
-bAllowNewResearch = false;
-if (bNeedTraining) {
-  if (set.gold >= AIVar(AIPlayer, AIV_ExcessGold)) bAllowNewResearch = true;
-}
-
-if (nType < -1) if (nLastResearched == 0) if (MilUnits(AIPlayer) >= 20) if (bAllowNewResearch)
+if (nType < -1) if (nLastResearched == 0) if (MilUnits(AIPlayer) >= 20)
 if (nLastResearchTime==0 || GetTime()>nLastResearchTime+60000) { // Reduced from 10 to 5 minutes between different unit types
 
-  // PRIORITY 1: Research all Training levels before researching new unit types
-  if(AIVar(AIPlayer, AIV_ResearchTrainingPriority) == 1) {
-    // Check prerequisite: Gladiator Shows (Rome) or Fights (Gaul)
-    if (set.IsRomeStronghold) strTech = "Gladiator Shows"; else strTech = "Fights";
-    if (!IsResearched(set, strTech)) {
-      EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
-      if (IsResearching(set, strTech)) {
-        EnvWriteInt(set, "nLastResearchTime", GetTime());
-        return;
-      }
-    }
-    // Check Training 1
-    if (set.IsRomeStronghold) strTech = "Rome Training 1"; else strTech = "Gaul Training 1";
-    if (!IsResearched(set, strTech)) {
-      EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
-      if (IsResearching(set, strTech)) {
-        EnvWriteInt(set, "nLastResearchTime", GetTime());
-        return;
-      }
-    }
-    // Check Training 2
-    if (set.IsRomeStronghold) strTech = "Rome Training 2"; else strTech = "Gaul Training 2";
-    if (!IsResearched(set, strTech)) {
-      EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
-      if (IsResearching(set, strTech)) {
-        EnvWriteInt(set, "nLastResearchTime", GetTime());
-        return;
-      }
-    }
-    // Check Training 3 (Gaul only)
-    if (!set.IsRomeStronghold) {
-      strTech = "Gaul Training 3";
-      if (!IsResearched(set, strTech)) {
-        EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
-        if (IsResearching(set, strTech)) {
-          EnvWriteInt(set, "nLastResearchTime", GetTime());
-          return;
-        }
-      }
-    }
-  }
-
-  // PRIORITY 2: Research new unit types
   for (nType = 1; nType < 6; nType += 1) {
     int i;
     if (nType == 1) if (!bRome) continue;
@@ -836,26 +759,40 @@ if (strTech != "") if (!IsResearched(set, strTech))
 
 EnvWriteInt(set, "nBuildType", nType);
 strCmd = UTrainCmd(nType, bRome);
-if (set.CanAfford(strCmd, 8)) nCount = 8;
-else if (set.CanAfford(strCmd, 5)) nCount = 5;
-else if (set.CanAfford(strCmd, 3)) nCount = 3;
-else if (nAssUnderFire <= 0) nCount = 1;
+
+// Reserve minimum gold for research - AI cannot recruit if it would go below this
+// Use AIV_TechReserve as the fixed minimum gold reserve
+iTechReserve = AIVar(AIPlayer, AIV_TechReserve);
+
+// Calculate available gold for army after reserve
+iAvailableGold = set.gold - iTechReserve;
+if (iAvailableGold < 0) iAvailableGold = 0;
+
+// Check affordability with reserved gold
+if (!GetCmdCost(strCmd, unitCost, unitFood)) {
+  return; // Can't get cost, abort
+}
+
+// Determine count based on available gold (not total gold)
+if (iAvailableGold >= unitCost * 10) if (set.food >= unitFood * 10) nCount = 10;
+else if (iAvailableGold >= unitCost * 5) if (set.food >= unitFood * 5) nCount = 5;
+else if (iAvailableGold >= unitCost * 1) if (set.food >= unitFood * 1) if (nAssUnderFire <= 0) nCount = 1;
 else {
-  // Can't afford chosen unit - find affordable unit, prefer advanced (search 5 to 0)
+  // Can't afford chosen unit - find affordable unit with tech reserve, prefer advanced (search 5 to 0)
   for (nTryType = 5; nTryType >= 0; nTryType -= 1) {
     if (!UEnabled(nEnabled, nTryType)) continue;
     strTech = UTech(nTryType, bRome);
     if (strTech != "") if (!IsResearched(set, strTech)) continue;
     strCmd = UTrainCmd(nTryType, bRome);
-    if (set.CanAfford(strCmd, 1)) {
-      EnvWriteInt(set, "nBuildType", nTryType);
-      EnvWriteInt(set, "nBuildCount", 1);
-      return;
+    if (GetCmdCost(strCmd, unitCost, unitFood)) {
+      if (iAvailableGold >= unitCost) if (set.food >= unitFood) {
+        EnvWriteInt(set, "nBuildType", nTryType);
+        EnvWriteInt(set, "nBuildCount", 1);
+        return;
+      }
     }
   }
-  // Fallback to type 0 only if nothing else works
-  EnvWriteInt(set, "nBuildType", 0);
-  EnvWriteInt(set, "nBuildCount", 1);
+  // Not enough gold after tech reserve - don't build anything
   return;
 }
 

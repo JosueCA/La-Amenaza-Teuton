@@ -40,11 +40,11 @@ while(1)
 			.Idle(500); 
 			continue;
 		}
-		if(rand(3) == 0)
+		if(rand(6) == 0) // Reduced frequency to save memory
 		{
-			ol = ObjsInCircle(pt, .sight, "Building").GetObjList;
-			if(ol.count != 0)
+			if(ObjsInCircle(pt, .sight, "Building").count != 0)
 			{
+				ol = ObjsInCircle(pt, .sight, "Building").GetObjList;
 				//pr("I don't like it here");
 				ptDir = .pos - ol[0].pos;
 				continue;
@@ -89,15 +89,15 @@ while(1)
 		if(attacker.IsAlive())
 			continue;
 	}
-	ol = Intersect(ObjsInCircle(.pos, .sight * 2, "Wolf"), FriendlyObjs(.player, "Wolf")).GetObjList();
-	if(ol.count > 4)		// should we split
+	if(Intersect(ObjsInCircle(.pos, .sight * 2, "Wolf"), FriendlyObjs(.player, "Wolf")).count > 4)		// should we split
 	{
+		ol = Intersect(ObjsInCircle(.pos, .sight * 2, "Wolf"), FriendlyObjs(.player, "Wolf")).GetObjList();
 		//pr("we should split up");
 		if(this != ol[0])
 			u = ol[0];
 		else
 			u = ol[1];
-		u.SetCommand("lead");	  
+		u.SetCommand("lead");
 		ol.Remove(u);
 		ol.Remove(this);
 		ol.SetCommand("idle");

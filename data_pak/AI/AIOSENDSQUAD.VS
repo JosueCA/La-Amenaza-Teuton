@@ -76,6 +76,7 @@ while (true)
 			ship = PrepareAiTransportShip( l.Cur.GAIKAIn.LSA, g.LSA, l.Cur.Player, cmd, pt );
 			if (!ship.IsValid()) {
         //pr("Could not find transport ship!?!");
+				l.Unlock;
 				return;
       }
       ship.GetSquad.DelOrder;

@@ -16,7 +16,6 @@
 
   <method sig="advance" vs="data/subai/ghost_move.vs"/>
   <method sig="attack" vs="data/subai/ghost_attack.vs"/>
-  <method sig="attack" vs="data/subai/ghost_move.vs"/>
   <method sig="move" vs="data/subai/ghost_move.vs"/>
   <method sig="idle" vs="data/subai/ghost_idle.vs"/>
 

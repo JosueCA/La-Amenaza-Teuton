@@ -7,11 +7,6 @@ int lastTavernCheck;
 
 AIPlayer = set.player;
 
-// Only check every 1 minute (60000ms)
-lastTavernCheck = EnvReadInt(set, "lastRTavernCheck");
-if (GetTime() < lastTavernCheck + 60000) return;
-EnvWriteInt(set, "lastRTavernCheck", GetTime());
-
 // Free Wine (unlocks other tavern upgrades)
 strTech = "Free Wine";
 if (!IsResearched(set, strTech)) if (!IsResearching(set, strTech)) {
@@ -37,3 +32,5 @@ if (IsResearched(set, "Gladiator Shows")) {
     return;
   }
 }
+
+return;

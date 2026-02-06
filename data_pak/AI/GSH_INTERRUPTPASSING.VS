@@ -7,7 +7,7 @@ nMinNeed = g.MinNeed(AIPlayer, own, ally, enemy);
 
 if (own + ally < nMinNeed) {
   lown = g.Eval(AI_LEAVING, AIPlayer);
-  if (own + ally + lown >= nMinNeed) {
+  if (own + ally + lown >= nMinNeed * 5/3) {
     SquadList SL; g.GetSquads(SL, AI_LEAVING, AIPlayer);
     SL.Lock;
     while( SL.EOL == false ) {

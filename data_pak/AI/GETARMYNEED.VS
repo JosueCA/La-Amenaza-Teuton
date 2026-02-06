@@ -23,8 +23,7 @@ enemy += enemy1*2/3;
 if( Set.IsValid )
   if (Set.IsOwn(idPlayer)) { // own settlement
     if (enemy == 0) { // protect unattacked settlements
-      if (Set.IsOutpost) if (Set.supplied.IsValid) // trading outpost, some protection
-        if (bMin) nEval = 6000; else nEval = 10000;
+      // Trading outposts no longer get forced protection - they're treated like normal settlements
       return nEval; 
     } else if (enemy > 500)
 			bCap = false; // no minimum when defending our settlements

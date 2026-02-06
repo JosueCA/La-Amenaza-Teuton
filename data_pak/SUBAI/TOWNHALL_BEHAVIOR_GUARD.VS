@@ -38,7 +38,7 @@ if(.IsValid()) {
 				}
 			}
 		}
-		// WaitQueryCountBetween(Alert,1,-1,-1); // Ivko: Little tricky here when captured!
+		WaitQueryCountBetween(Alert,1,-1,-1); // Ivko: Little tricky here when captured!
 		l = Alert.GetObjList();
 		if((l.count()!=0) && (.settlement.loyalty < GetConst("LoyaltyUnitsOutTreshold")))	{
 			Unit u;

@@ -13,6 +13,7 @@ if (SL.Size == 1) bWait = false;
 else  {
   g.Eval(AI_STAYING, AIPlayer, own, ally, enemy);
   nMinNeed = g.MinNeed(AIPlayer, own, ally, enemy);
+  nMinNeed = nMinNeed * 5 / 3; // Increased force requirement by 5/3
   bWait = (own + ally < nMinNeed);
 }
 

@@ -10,7 +10,7 @@ if (g.settlement.IsStronghold) if (g.settlement.IsOwn(idPlayer)) {
 	nEnemyInStronghold = g.Eval(AI_STAYING + AI_COMING, idPlayer, AI_ENEMY);
 	if (nEnemyInStronghold > 0) {
 		// Absolute maximum priority - nothing is more important than defending home
-		return 999999;
+		return 99999; // enough??
 	}
 }
 
@@ -35,24 +35,40 @@ else if (g.settlement.IsVillage)
 	{ nMul = 5; nDiv = 4; }
 else if (g.settlement.IsTeutonTent)
 	{
-		// Don't attack tents early in the game - wait for stronger army
-		if (GetTime < 120000) { nMul = 1; nDiv = 10; } // Very low priority in first 2 minutes
-		else if (GetTime < 30000) if (MilEval(idPlayer) < 3000) { nMul = 1; nDiv = 5; } // Low priority if weak army
-		// Don't fight for tents that are too far
-		else if (nODist > nEDist)
-			{
-				nMul = 1; nDiv = 1;
-				if (g.settlement.IsIndependent)
-					nDiv += 1;
-			}
-		if (nMul == 0)
-			{
-				Settlement s;
-				s = NearestStronghold(g.Center, idPlayer);
-				nMul = 5; nDiv = 4;
-				if (s.IsValid) if (EnvReadInt(s, "ArenaRush")) if (g.Explored(idPlayer)) // Making arena rush - boost tent priority
-					{ nMul = 2; nDiv = 1; }
-			}
+		// BOOST PRIORITY for TeutonTent that don't belong to the player
+		if (!g.settlement.IsOwn(idPlayer))
+		{
+			// Enemy or independent tents = higher priority
+			if (g.settlement.IsEnemy(idPlayer))
+				{ nMul = 3; nDiv = 1; } // High priority for enemy tents
+			else if (g.settlement.IsIndependent)
+				{ nMul = 5; nDiv = 2; } // Good priority for independent tents
+			else
+				{ nMul = 2; nDiv = 1; } // Default boost for non-owned tents
+
+			// Extra boost if close to our stronghold
+			if (nODist < 6000)
+				{ nMul = nMul * 2; }
+		}
+		else // Own tent - use original logic
+		{
+			// Don't attack tents early in the game - wait for stronger army
+			if (GetTime < 120000) { nMul = 1; nDiv = 10; } // Very low priority in first 2 minutes
+			else if (GetTime < 30000) if (MilEval(idPlayer) < 3000) { nMul = 1; nDiv = 5; } // Low priority if weak army
+			// Don't fight for tents that are too far
+			else if (nODist > nEDist)
+				{
+					nMul = 1; nDiv = 1;
+					if (g.settlement.IsIndependent)
+						nDiv += 1;
+				}
+			if (nMul == 0)
+				{
+					Settlement s;
+					s = NearestStronghold(g.Center, idPlayer);
+					nMul = 5; nDiv = 4;
+				}
+		}
 	}
 else if (g.settlement.IsOutpost || g.settlement.IsShipyard)
 	{
@@ -96,7 +112,7 @@ if (!g.settlement.IsOwn(idPlayer)) {
 
 if (g.Eval(AI_COMING + AI_STAYING, idPlayer, AI_OWN + AI_ALLY) > 0) // taking action here
   if (bExplored)
-    { nPriority += 3000; } // support, man :)
+    { nPriority += 10000; } // support, man :)
   else
     { nMul = nMul * 4; nDiv = nDiv * 5; } // (someone) already taken care of an unexplored GAIKA, screw it :)
 

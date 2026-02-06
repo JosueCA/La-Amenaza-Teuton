@@ -5,7 +5,7 @@ int life, damage, price, range;
 Query qUnits;
 ObjList lUnits;
 Unit unit;
-int i, count;
+int i, count, enemyCount;
 
 this = This.AsSacrifice();
 
@@ -30,13 +30,18 @@ while (life > 0) {
 			lUnits.ClearDead();
 			count = lUnits.count;
 
-			// Apply damage only to enemies
+			// Apply damage only to enemies (max 50)
+			enemyCount = 0;
 			for (i = 0; i < count; i += 1) {
 				unit = lUnits[i].AsUnit();
 				if (unit.IsValid) {
 					if (.IsEnemy(unit)) {
 						unit.Damage(damage);
-						CreateFeedback("Poison", unit);
+						enemyCount += 1;
+						// Stop after damaging 50 enemies
+						if (enemyCount >= 50) {
+							break;
+						}
 					}
 				}
 			}

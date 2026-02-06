@@ -8,6 +8,7 @@ AIRun('Prioritize.vs' );
 AIRun('Recruiter.vs' );
 AIRun('GAIKAMonitor.vs' );
 AIRun('SquadMonitor.vs');
+AIRun('LeaderMonitor.vs');
 AIRun('EconomyMonitor.vs');
 
 

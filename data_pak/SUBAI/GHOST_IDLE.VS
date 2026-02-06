@@ -1,10 +1,10 @@
 // void, Obj me
+// Ghost applies damage passively when near enemies, just needs to move toward them
 
 Unit this;
-point ptOrigin;
+Unit u;
 point pt;
 int own, ally, enemy;
-int patrolState;
 
 this = me.AsUnit();
 
@@ -12,43 +12,43 @@ if (.GetAnim == 17) Sleep(.TimeToAnimFinish);
 
 while (!.Stop(1000));
 
-// Save origin position
-ptOrigin = .pos;
-patrolState = 0; // 0=search enemies, 1=return to origin
-
-//.pr("ghost::patrol: started at origin (" + ptOrigin.x + "," + ptOrigin.y + ")");
+//.pr("ghost::idle: started");
 while(1)
 {
-  if (.AI) {
-    // Evaluate forces around ghost
-    Eval(.player, .pos, 3000, own, ally, enemy);
+  // Find nearest enemy to follow
+  u = .BestTargetInSquadSight();
 
-    if (patrolState == 0) {
-      // STATE 0: Search for enemies and move towards them
-      // Try to find position with enemies using very aggressive parameters
-      pt = .BestMDPos(0, 0, 5000, 1, false);
+  if(u.IsAlive() && u.maxattack > 0)
+  {
+    //.pr("ghost::idle: found enemy, moving to it");
+    // Just move toward the enemy (ghost damages passively when near)
+    if (!.Goto(u.pos, 100, 3000, true, 5000)) {
+      Sleep(500);
+    }
+    continue;
+  }
 
-      if (pt.x >= 0) {
-        //.pr("ghost::patrol: moving to enemy position (" + pt.x + "," + pt.y + ")");
-        .AddCommand(true, "move", pt);
-        patrolState = 1; // Switch to return state
-        return;
+  // No enemy in sight, search for enemies in area
+  Eval(.player, .pos, 3000, own, ally, enemy);
+
+  if (enemy > 0) {
+    //.pr("ghost::idle: enemies nearby (" + enemy + "), finding best position");
+    pt = .BestMDPos(0, 0, 5000, 1, true);
+
+    if (pt.x >= 0) {
+      //.pr("ghost::idle: moving to enemy position");
+      if (!.Goto(pt, 0, 5000, true, 5000)) {
+        Sleep(500);
       }
-    } else {
-      // STATE 1: Return to origin
-      if (.DistTo(ptOrigin) > 200) {
-        //.pr("ghost::patrol: returning to origin");
-        .AddCommand(true, "move", ptOrigin);
-        return;
-      } else {
-        // At origin, start searching again
-        patrolState = 0;
-      }
+      continue;
     }
   }
 
-  if (.Stop(2000)) {
-	  //.pr("ghost::patrol: idling");
-	  .Idle(2000);
+  // No enemies found, idle
+  //.pr("ghost::idle: no enemies, idling");
+  if (.Stop(1000)) {
+    .Idle(1000);
   }
+
+  Sleep(200);
 }

@@ -1,6 +1,6 @@
 <class id="GAxeman" cpp_class="CVXUnit" parent="Melee" entity="assets/entities/Units/GAxeman/GAxeman.ent.xml">
 
-  <properties minattack="18" maxattack="28" defense_slash="8" defense_pierce="0"/>
+  <properties minattack="18" maxattack="24" defense_slash="0" defense_pierce="0"/>
   <properties maxhealth="280"/>
   <properties speed="80"/>
 

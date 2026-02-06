@@ -5,4 +5,5 @@ this = This.AsUnit();
 .SetSpeedFactor(150);
 .SetWalkAnim(1);
 
-while (!.Goto(pt, 0, 2000, true, 0));
+while (!.Goto(pt, 0, 2000, true, 0))
+	Sleep(100);

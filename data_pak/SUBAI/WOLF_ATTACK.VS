@@ -16,23 +16,23 @@
 		{
 			 if(!.IsValidTarget(u)) break;
 
-			while(!.GotoAttack(u, 1500, true, -1)) 
+			while(!.GotoAttack(u, 1500, true, -1))
 			{
 				pr("advance: approaching target!");
 				if(!u.IsAlive() || !.IsValidTarget(u)) break;
-				if(.health < .maxhealth/2) // I'm sooooo scared 
+				if(.health < .maxhealth/2) // I'm sooooo scared
 				{
 					qEnemy = Intersect(Union(ObjsInSight(this, "Military"), ObjsInSight(this, "Tower")), EnemyObjs(.player, "Military"));
-					ol = qEnemy.GetObjList();
-					if(ol.count > 0)
+					if(qEnemy.count > 0)
 					{
+						ol = qEnemy.GetObjList();
 						ptCenter = ol[0].pos;
 						for(i = 1; i < ol.count; i += 1)
 						{
 							ptCenter = ptCenter + ol[i].pos;
 						}
 						ptCenter = ptCenter / ol.count;
-						ptCenter = .pos - ptCenter; 
+						ptCenter = .pos - ptCenter;
 						ptCenter.SetLen(.sight*3);
 						qWolves = Intersect(ObjsInCircle(.pos, .sight*2, "Wolf"), FriendlyObjs(.player, "Wolf"));
 						ol = qWolves.GetObjList;
@@ -42,6 +42,7 @@
 						return;
 					}
 				}
+				Sleep(100);
 			}
 			pr("advance: attacking target!");
 			if (u.IsAlive() && .IsValidTarget(u))

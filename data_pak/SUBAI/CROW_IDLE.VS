@@ -15,7 +15,7 @@ strangely_shaped_rocks = ObjsInRange(this, "Building", 550);
 
 Sleep(rand(2000));
 while (1) {
-	
+
 	if (!.IsInAir())
 		{
 			iters = 0;
@@ -24,19 +24,23 @@ while (1) {
 				iters+=1;
 				.Idle(1300);
 
-				ol = crows.GetObjList();
-				for (i = 0; i<ol.count; i+=1)
-					{
-						if (ol[i].AsFlying().IsInAir())
-							{
-								if (ol[i].AsFlying().user==1)
-									{ fly = false; break; }
-								fly = true;
-							}
-					}
+				if (iters % 10 == 0) // Check every 10 iterations to reduce memory usage
+				{
+					ol = crows.GetObjList();
+					for (i = 0; i<ol.count; i+=1)
+						{
+							if (ol[i].AsFlying().IsInAir())
+								{
+									if (ol[i].AsFlying().user==1)
+										{ fly = false; break; }
+									fly = true;
+								}
+						}
+				}
 				if (fly) break;
 				if (iters>30 && rand(15)==1) break;
-				if (!bad_scary_giants.IsEmpty()) 
+				if (iters>60) break; // Timeout to prevent infinite loop
+				if (!bad_scary_giants.IsEmpty())
 					{ /*.pr("Too scared - we will fly"+GetTime()+" an "+bad_scary_giants.GetObjList()[0].class+" found.");*/ break; }
 			}
 		}
@@ -79,7 +83,7 @@ while (1) {
 		else
 			ptDir.Rot(15+rand(15)); // Go round in the opposite direction
 		ptDir.SetLen(75);
-		
+
 		z = .z;
 		if (z<targetz)
 			z += 15+rand(8);
@@ -87,7 +91,7 @@ while (1) {
 			z -= 15+rand(8);
 		if (z<GetTerrainHeight(.pos+ptDir)+30) // We're too low
 			z += 25;
-		
+
 		.AdjustFlyDir(ptDir);
 		.PlayAnim(0, .pos+ptDir, z);
 
@@ -103,10 +107,13 @@ while (1) {
 		if (bad_scary_giants.IsEmpty())
 			if (strangely_shaped_rocks.IsEmpty())
 				{
-					ol = crows.GetObjList();
-					for (i = 0; i<ol.count; i+=1)
-						if (ol[i].AsFlying().user == 1)
-							{ .SetUser(1); targetz = 0; }
+					if (iters % 15 == 0) // Check every 15 iterations to reduce memory usage
+					{
+						ol = crows.GetObjList();
+						for (i = 0; i<ol.count; i+=1)
+							if (ol[i].AsFlying().user == 1)
+								{ .SetUser(1); targetz = 0; }
+					}
 					if (iters>40)
 						if (rand(25)==17 || iters>160)
 							{ .SetUser(1); targetz = 0; }
@@ -116,6 +123,7 @@ while (1) {
 					z += 40;
 		if (iters>80 && (GetTime()/5000)%3==1)
 			{ behavior = 0; /*.pr("Cannot land - flying straigh ahead");*/ }
+		if (iters>200) break; // Safety timeout to prevent infinite loop
 	}
 
 	// Now land carefully

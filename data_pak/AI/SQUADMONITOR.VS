@@ -25,6 +25,36 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
   if (!sq.Leader.IsValid) { pr("Inconsistent squad?!?"); continue; }
   if (sq.TestFlags(SF_NOAI)) continue;
 
+  // CHECK: Remove excess druids from heroes
+  if (sq.Leader.AsHero.IsValid) {
+    int druidCount;
+    int maxDruids;
+    int militaryUnits;
+    druidCount = sq.Count("BaseMage");
+    maxDruids = AIVar(AIPlayer, AIV_MaxDruidsPerHero);
+    if (maxDruids <= 0) maxDruids = 10;
+
+    // Calculate military units (excluding hero and druids)
+    militaryUnits = sq.Size - druidCount - 1;
+
+    // If hero doesn't have enough military units (min 20), remove all druids
+    if (militaryUnits < 20) {
+      if (druidCount > 0) {
+        sq.Leader.AsHero.DetachArmy;
+        Sleep(200);
+        continue;
+      }
+    }
+
+    // If hero has way too many druids (more than limit + 5), detach entire army
+    // The attachment system will reassign them properly with the limit
+    if (druidCount > maxDruids + 5) {
+      sq.Leader.AsHero.DetachArmy;
+      Sleep(200);
+      continue;
+    }
+  }
+
   if (IsWaterLsa(sq.GAIKAIn.LSA)) {
     if (sq.InHolder || sq.Leader.AsShip.IsValid) continue; // ships and units in ships are not "monitored"
     // todo: squad in water GAIKA, move it out (be careful not to take boarding units away)
@@ -59,7 +89,7 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
 													sq.GAIKAIn.GetSquads(SL, AI_STAYING, AIPlayer); SL.Lock;
 													for (0; !SL.EOL; SL.Next)
 														if (SL.Cur.Leader.GetHolderSett.IsTeutonTent())
-															sq.SetCmd(SS_Flee, 0, SF_ADVCHOOSER, "enter", s.GetCentralBuilding());
+															SL.Cur.SetCmd(SS_Flee, 0, SF_ADVCHOOSER, "enter", s.GetCentralBuilding());
 													SL.Unlock;
 													Sleep(100);
 													continue;
@@ -80,7 +110,7 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
 			}
 
 	// Retreat idle units from tower range
-  if (sq.State == SS_IDLE || sq.State == SS_Wait) if (sq.Leader.command == "idle" || sq.Leader.command == "stand_position") 
+  if (sq.State == SS_IDLE || sq.State == SS_Wait) if (sq.Leader.command == "idle" || sq.Leader.command == "stand_position")
 		if (sq.LastFightTime() > GetTime()-3000) if (sq.GetLastAttacker().AsBuilding())
 			{
 				point pt;
@@ -89,23 +119,65 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
 				sq.SetCmd(SS_IDLE, 0, SF_ADVCHOOSER, "move", sq.pos + pt);
 			}
 
-  // use ruins
-	if (rand(2)==2) if (AIVar(AIPlayer, AIV_UseRuins) != 0) if (sq.InHolder) if (sq.Leader.AsHero) if (sq.GAIKAIn.settlement.IsStronghold)
-		{
-			Obj ruins;
-			if (sq.State == SS_Ruins)
-				sq.SetState(SS_IDLE);
-			ruins = FindRuins(sq.pos, 6500, sq.Leader.level);
-			if (ruins.IsValid)
-				{
-					sq.Leader.AsHero.DetachArmy;
-					sq.SetCmd(SS_Ruins, 0, SF_ADVCHOOSER, "enter", ruins);
-					sq.Leader.AddCommand(false, "enter", sq.GAIKAIn.settlement.GetCentralBuilding);
+	// NEW: Detect enemies during movement and respond
+	if (sq.State == SS_Approach || sq.State == SS_ApproachWait) if (!sq.TestFlags(SF_PEACEFUL)) {
+		// Check if being attacked or enemies in sight
+		if (sq.Leader.BestTargetInSquadSight.IsValid) {
+			int own, ally, enemy, nMinNeed;
+
+			// Evaluate forces in current GAIKA
+			own = 0; ally = 0; enemy = 0; nMinNeed = 0;
+			sq.GAIKAIn.Eval(AI_ALL, AIPlayer, own, ally, enemy);
+			//pr("COMBAT[P" + AIPlayer + " S" + sq.No + "]: Eval(AI_ALL) at GAIKA " + sq.GAIKAIn.ID + " -> own=" + own + " ally=" + ally + " enemy=" + enemy);
+
+			// If we have reasonable forces or are near destination, fight back
+			if (sq.GAIKAIn == sq.AIDest) {
+				// At destination - always engage
+				//pr("COMBAT[P" + AIPlayer + " S" + sq.No + "]: Enemy at destination GAIKA " + sq.GAIKAIn.ID + " - engaging");
+				sq.SetCmd(SS_KillAll, 0, SF_ADVCHOOSER, "ai_killall");
+				Sleep(100);
+				continue;
+			} else {
+				// En route - check if we should stop and fight or keep moving
+				nMinNeed = sq.GAIKAIn.MinNeed(AIPlayer, own, ally, enemy);
+				//pr("COMBAT[P" + AIPlayer + " S" + sq.No + "]: MinNeed calculated -> " + nMinNeed);
+
+				// Fight if: we're strong enough OR being actively attacked
+				if (own + ally >= nMinNeed / 2) {
+					// Stop and fight - interrupt the march
+					//pr("COMBAT[P" + AIPlayer + " S" + sq.No + "]: Enemy en route at GAIKA " + sq.GAIKAIn.ID + " (own=" + own + " ally=" + ally + " enemy=" + enemy + " need=" + nMinNeed + ") - stopping to fight");
+					sq.SetCmd(SS_KillAll, 0, SF_ADVCHOOSER, "ai_killall");
 					Sleep(100);
 					continue;
+				} else {
+					// Squad is not strong enough - retreat to safety
+					GAIKA gFlee; gFlee = NearestHospital(sq);
+					if (gFlee != 0) if (gFlee != sq.GAIKAIn) {
+						sq.SetState(SS_Flee);
+						sq.SendTo(gFlee, 1000);
+						Sleep(100);
+						continue;
+					}
 				}
+			}
 		}
-	
+	}
+
+	// NEW: Resume movement after clearing enemies during transit
+	if (sq.State == SS_KillAll) if (sq.GAIKAIn != sq.AIDest) if (!sq.TestFlags(SF_PEACEFUL)) {
+		// Check if fight is over (no enemies in sight and haven't fought recently)
+		if (!sq.Leader.BestTargetInSquadSight.IsValid) if (sq.LastFightTime() < GetTime() - 3000) {
+			// No enemies visible and no recent combat - resume march
+			//pr("COMBAT[P" + AIPlayer + " S" + sq.No + "]: Combat cleared at GAIKA " + sq.GAIKAIn.ID + " - resuming march to GAIKA " + sq.AIDest.ID);
+			sq.SetState(SS_Approach);
+			sq.SendTo(sq.AIDest, 100);
+			Sleep(100);
+			continue;
+		}
+	}
+
+	// use ruins - MOVED TO LEADERMONITOR.VS
+
 	// use items
   if (AIVar(AIPlayer, AIV_UseItems) != 0) if (sq.Leader.AsHero.IsValid) if (sq.Leader.item_count > 0) {
     if (sq.Leader.HasItem("Poison Mushroom")) if (sq.Leader.HasItem("Healing herbs"))
@@ -139,13 +211,18 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
 				}
   }
 
-  if (AIVar(AIPlayer, AIV_FeedWithWagons) != 0) if (sq.State != SS_Flee) if (sq.Eval >= 3000) { // check feeding
+  if (AIVar(AIPlayer, AIV_FeedWithWagons) != 0) if (sq.State != SS_Flee) if (sq.Eval >= 1500) { // check feeding
     int dist, food, needed;
     dist = sq.pos.Dist(sq.AIDest.Center) + 200; // add 200 to help feeding already hungry squads :)
     food = sq.food + sq.FoodComing;
-    needed = sq.Size * dist / 700;
+    needed = sq.Size * dist / 500;
     if (AIVar(AIPlayer, AIV_SynchApproach))
       needed = needed*4/3;
+
+    if(food < 250) {
+      food = 250;
+    }
+
     if (food + 100 < needed) // don't ask for less than 100 food
       if (sq.SendFoodWagon(needed - food, 3000)) if (AIVar(AIPlayer, AIV_LogFeed) != 0)
         UserNotification("location message", "Sent food wagon", sq.pos, AIPlayer);
@@ -159,7 +236,7 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
 	// Flee logic
   if (sq.Leader.AsHero) if (sq.State != SS_Flee) if (sq.State != SS_Ruins) { // --------- hero squad
 		// Init druid attaching for the hero
-		if (sq.Size == 1)
+		if (sq.Size == 1 || sq.Count("BaseMage") < 8)
 			if (rand(100) < AIVar(AIPlayer, AIV_DruidAttach))
 				sq.SetState(sq.State, SF_WANTDRUIDS, 0);
 			else
@@ -174,18 +251,12 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
 				if (sq.Leader.BestTargetInSquadSight.IsAlive) nFlee += 2; // hero badly hurt in battle
       if (AIVar(AIPlayer, AIV_Coward) != 0) {
         if (sq.health < sq.maxhealth / 2) nFlee += 4; // army sick
-        // MODIFIED: Also check when in combat (visible enemies), not just at destination
         if (sq.GAIKAIn.settlement.IsTeutonTent || (sq.AIDest == sq.GAIKAIn) || sq.Leader.BestTargetInSquadSight.IsAlive) {
           int own, ally, enemy, nMinNeed;
           sq.GAIKAIn.Eval(AI_ALL, AIPlayer, own, ally, enemy);
           nMinNeed = sq.GAIKAIn.MinNeed(AIPlayer, own, ally, enemy);
           if (own + ally < nMinNeed / 2)
             nFlee += 8;
-          // NEW: Flee if outnumbered 4:1 in combat
-          if (sq.Leader.BestTargetInSquadSight.IsAlive) if (enemy * 10 > (own + ally) * 40) {
-            // pr("FLEE RATIO: own=" + own + " ally=" + ally + " enemy=" + enemy);
-            if (nFlee == 0) nFlee += 8;
-          }
         }
       }
 
@@ -263,7 +334,7 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
     }
 
     // take items from nearby item holders
-    if (AIVar(AIPlayer, AIV_TakeItems) != 0) if (sq.TakeNearbyItems(sq.Leader.sight)) { 
+    if (AIVar(AIPlayer, AIV_TakeItems) != 0) if (sq.TakeNearbyItems(sq.Leader.sight * 3)) { 
       // UserNotification("location message", "Found item", sq.pos, AIPlayer);
       Sleep(100);
       continue;
@@ -312,8 +383,19 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
 				if (SL.Cur.State == SS_Ruins)
 					continue;
 				if (sq.Leader.AsDruid.IsValid) {
+					int maxDruids;
+					int heroMilitaryUnits;
 					if (!SL.Cur.TestFlags(SF_WANTDRUIDS)) continue;
-					if (SL.Cur.Count("BaseMage")>=9)
+					maxDruids = AIVar(AIPlayer, AIV_MaxDruidsPerHero);
+					if (maxDruids <= 0) maxDruids = 10;
+
+					// Don't attach druids to heroes with less than 20 military units
+					heroMilitaryUnits = SL.Cur.Size - SL.Cur.Count("BaseMage") - 1;
+					if (heroMilitaryUnits < 20)
+						continue;
+
+					// Don't attach if hero already has max druids
+					if (SL.Cur.Count("BaseMage")>=maxDruids)
 						continue;
 				}
 				if (SL.Cur.Size!=1)
@@ -321,11 +403,11 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
 						if (sq.Count("Horse")!=sq.Size)
 							{ /*pr("Refusing to attach non-horse units");*/ continue; }
 
-        if (eval > BestEval) 
+        if (eval > BestEval)
           { BestHero = SL.Cur.Leader; BestEval = eval; }
       }
     }
-    if (BestEval > 0) 
+    if (BestEval > 0)
       if (!sq.Leader.AsHero.IsValid) {
         bool bAttached = true;
         if (!BestHero.InHolder || sq.InHolder) {
@@ -335,7 +417,7 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
         } else
           sq.SetCmd(SS_Attach, 0, SF_ADVCHOOSER, "enter", sq.GAIKAIn.settlement.GetCentralBuilding);
         if (bAttached) {
-          Sleep(100); 
+          Sleep(100);
           continue;
          }
       } else if (BestHero != sq.Leader.AsHero) if (sq.Size > 1) if (sq.Size < 51) if (BestHero.InHolder) if (sq.Leader.SameHolderAs(BestHero)) {
@@ -359,7 +441,7 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
   if (sq.Leader.command == "move" || sq.Leader.command == "enter"|| sq.Leader.command == "unload") { 
     int own, ally, enemy;
     sq.GAIKAIn.Eval(AI_STAYING, AIPlayer, own, ally, enemy);
-    if (enemy > 1000) if (own + ally < 500) { // peaceful go around
+    if (enemy > 1000) if (own + ally < 800) { // peaceful go around
       SetMAIKA(sq.SrcGAIKA, sq.AIDest, sq.GAIKAIn);
       if (AIVar(AIPlayer, AIV_GoAround) != 0) if (sq.CalcGoAround) { 
         //UserNotification("location message", "Peaceful go around", sq.pos, AIPlayer);

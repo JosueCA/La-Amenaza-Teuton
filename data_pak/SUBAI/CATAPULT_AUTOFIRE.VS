@@ -14,8 +14,6 @@ sleeptime = 1000;
 
 while (.IsAlive)
 {
-	if (.CmdCount() > 1)
-		return;
 
 	if (.settlement.UnitsCount <= 0) break;
   target = .GetCurrentTarget;

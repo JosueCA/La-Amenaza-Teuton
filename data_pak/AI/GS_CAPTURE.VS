@@ -59,7 +59,7 @@ while (666) {
     int enemyOutside;
     gaika.Count(AI_STAYING + AI_COMING, AIPlayer, own, ally, enemyOutside);
     // If enemy force outside is significant (> 50% of our force), abort to defend
-    if (enemyOutside * 2.5 > own + ally) {
+    if (enemyOutside > 3) {
       // pr("GS_Capture: Aborting conquest - enemy army approaching! Own:" + own + " Ally:" + ally + " Enemy:" + enemyOutside);
       break;
     }

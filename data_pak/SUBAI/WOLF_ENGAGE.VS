@@ -22,7 +22,7 @@
 				break;
 			 if(!.IsValidTarget(u)) break;
 		
-			while(!.GotoAttack(u, 1500, true, -1)) 
+			while(!.GotoAttack(u, 1500, true, -1))
 			{
 				noattacktime += 1;
 				if((noattacktime >= 2 && .maxattack > 1) ||
@@ -34,6 +34,7 @@
 					break;
 				else
 				 if(!.IsValidTarget(u)) break;
+				Sleep(100);
 			}
 			//pr("advance: attacking target!");
 			if (u.IsAlive() && .IsValidTarget(u))
@@ -53,19 +54,19 @@
 				}
 				noattacktime = 0;
 			}
-			if(bImSoScared) // I'm sooooo scared 
+			if(bImSoScared) // I'm sooooo scared
 			{
 				qEnemy = Intersect(ObjsInSight(this, "Military,Tower"), EnemyObjs(.player, "Object"));
-				ol = qEnemy.GetObjList();
-				if(ol.count > 0)
+				if(qEnemy.count > 0)
 				{
+					ol = qEnemy.GetObjList();
 					ptCenter = ol[0].pos;
 					for(i = 1; i < ol.count; i += 1)
 					{
 						ptCenter = ptCenter + ol[i].pos;
 					}
 					ptCenter = ptCenter / ol.count;
-					ptCenter = ptCenter - .pos; 
+					ptCenter = ptCenter - .pos;
 					ptCenter.SetLen(.sight*3);
 					ptCenter = .pos - ptCenter;
 					ptCenter = ptCenter.ClampToMap();
