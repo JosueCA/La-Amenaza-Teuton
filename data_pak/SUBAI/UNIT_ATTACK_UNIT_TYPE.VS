@@ -8,7 +8,7 @@ ObjList ol;
 this = me.AsUnit;
 tgt = target.AsUnit;
 class = tgt.class;
-pt = tgt.posRH;
+pt = tgt.pos;
 
 
 while(!.Goto(pt, 0, 4000, true, 0))
@@ -16,7 +16,7 @@ while(!.Goto(pt, 0, 4000, true, 0))
 
 	if(tgt.IsAlive)
 	{
-		pt = tgt.posRH;
+		pt = tgt.pos;
 	}
 	if(.DistTo(pt) < .sight*2/3)
 	{

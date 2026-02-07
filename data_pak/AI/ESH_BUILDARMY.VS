@@ -15,9 +15,11 @@ int  nLastResearched;
 int  nLRCounter;
 int  nLastBuilt;
 int  nEnabled = 0;
+int  nEarlyResearch;
 int  nLastResearchTime;
 bool bRome;
 bool bNoArchers;
+bool bNeedTraining;
 
 int nDbg = 0;
 int nRandSelect;
@@ -37,7 +39,9 @@ nArmyBuilds = EnvReadInt(set, "nArmyBuilds");
 nLastResearched = EnvReadInt(set, "nLastResearched");
 nLRCounter = EnvReadInt(set, "nLRCounter");
 nLastBuilt = EnvReadInt(set, "nLastBuilt");
+nEarlyResearch = EnvReadInt(set, "nEarlyResearch");
 nLastResearchTime = EnvReadInt(set, "nLastResearchTime");
+bNeedTraining = EnvReadInt(AIPlayer, "NeedTraining")==1;
 bRome = set.IsRomeStronghold;
 
 // check AI vars to see which units are enabled
@@ -77,120 +81,75 @@ if (EnvReadInt(set, "EarlyExploreDone") == 0) {
 }
 
 
-// decide "research sequence"
-if (EnvReadInt(set, "TechSeq" + AIPlayer + "_Initted") == 0) {
-  int i;
-  // random tech sequence (values 0-5 for each position)
-  for (i = 1; i < 6; i += 1) EnvWriteInt(set, "TechSeq" + AIPlayer + "_" + i, rand(6));
-  EnvWriteInt(set, "TechSeq" + AIPlayer + "_Initted", 1);
-  // log results
-  if (AIVar(AIPlayer, AIV_LogResearch) != 0) {
-    pr("Player " + AIPlayer + " army research sequence:");
-    for (nType = 1; nType < 6; nType += 1) {
-      i = EnvReadInt(set, "TechSeq" + AIPlayer + "_" + nType);
-      strTech = UTech(i, bRome);
-      if (strTech == "") continue;
-      if (!UEnabled(nEnabled, i)) strTech = strTech + " (disabled)";
-      pr("  [" + i + "]" + strTech);
-    }
-  }
-}
-
-// === PROACTIVE RESEARCH ===
-// Try to research next technology if we have 20+ units and enough gold
-// This runs BEFORE recruitment decisions to ensure research gets priority
-if (MilUnits(AIPlayer) >= 20) if (set.gold >= AIVar(AIPlayer, AIV_ExcessGold)) {
-  int rIdx, rGold, rFood;
-  str rTech;
-  bool bFoundPending = false;
-
-  // PRIORITY 1: Research all Training levels before unit upgrades
-  if(AIVar(AIPlayer, AIV_ResearchTrainingPriority) == 1) {
-    // Check prerequisite: Gladiator Shows (Rome) or Fights (Gaul)
-    if (set.IsRomeStronghold) strTech = "Gladiator Shows"; else strTech = "Fights";
-    if (!IsResearched(set, strTech)) {
-      EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
-      return;
-    }
-    // Check Training 1
-    if (set.IsRomeStronghold) strTech = "Rome Training 1"; else strTech = "Gaul Training 1";
-    if (!IsResearched(set, strTech)) {
-      EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
-      return;
-    }
-    // Check Training 2
-    if (set.IsRomeStronghold) strTech = "Rome Training 2"; else strTech = "Gaul Training 2";
-    if (!IsResearched(set, strTech)) {
-      EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
-      return;
-    }
-    // Check Training 3 (Gaul only)
-    if (!set.IsRomeStronghold) {
-      strTech = "Gaul Training 3";
-      if (!IsResearched(set, strTech)) {
-        EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
-        return;
-      }
-    }
-  }
-
-  // PRIORITY 2: Find next unresearched unit technology
-  for (rIdx = 1; rIdx < 6; rIdx += 1) {
-    int rType;
-    if (rIdx == 1) if (!bRome) continue;
-    rType = EnvReadInt(set, "TechSeq" + AIPlayer + "_" + rIdx);
-    if (!UEnabled(nEnabled, rType)) continue;
-    rTech = UTech(rType, bRome);
-    if (rTech == "") continue;
-    if (IsResearched(set, rTech)) continue;
-    if (IsResearching(set, rTech)) continue;
-    bFoundPending = true;
-
-    // Try to research if we can afford it
-    if (GetCmdCost(rTech, rGold, rFood)) {
-      if (set.gold >= rGold) {
-        EnvWriteString(set, "strTech", rTech);
-        set.AIRun("ESH_NeedTech.vs");
-        if (IsResearching(set, rTech)) {
-          EnvWriteInt(set, "nLastResearched", rType);
-          EnvWriteInt(set, "nLRCounter", 20);
-          EnvWriteInt(set, "nLastResearchTime", GetTime());
-          if (AIVar(AIPlayer, AIV_LogResearch) != 0)
-            pr("Player " + AIPlayer + " proactively researching " + rTech);
-          // Don't return - continue to try recruiting
-        }
-      }
-    }
-    break;
-  }
-}
-// === END PROACTIVE RESEARCH ===
-
 // decide whether to build army at all
 // Simplified: always build if we have barracks and minimum population
 if (!set.BestBarrack(10).IsValid)
   bBuildArmy = false;
 else if (set.population <= 5)
   bBuildArmy = false;
-else if (EnvReadInt(set, "FreezeArmyBuild") != 0)
+else if (EnvReadInt(set, "FreezeArmyBuild") > 0)
   bBuildArmy = false;
 else
   bBuildArmy = true;
 
-// Original conditions commented out:
-// else if (nAssUnderFire > 0)
-//   bBuildArmy = true;
-// else if (EnvReadInt(set, "FreezeArmyBuild") != 0)
-//   bBuildArmy = false;
-// else if ((set.food < 100) && (MilUnits(AIPlayer) >= 100))
-//   bBuildArmy = false;
-// else  {
-//   int nPop;
-//   if (MilUnits(AIPlayer) < 20) nPop = 60;
-//   else if (nArmyBuilds < 2) nPop = 60; else if (nArmyBuilds < 10) nPop = 80; else nPop = 100;
-//   bBuildArmy = (set.population >= set.max_population * nPop / 100);
-// }
+// === RANDOM RESEARCH: Pick randomly from pending techs ===
+// Research is independent of army building freeze
+if (MilUnits(AIPlayer) >= 2) {
+  // Skip if all techs already researched
+  if (EnvReadInt(set, "AllTechsResearched_" + AIPlayer) == 0) {
+    int resType, pendingCount, randomChoice, currentPending, lastResearchTime, currentTime;
+    str resTech;
 
+    // Check if 60 seconds have passed since last research attempt
+    lastResearchTime = EnvReadInt(set, "LastResearchTime_" + AIPlayer);
+    currentTime = GetTime();
+
+    if (currentTime - lastResearchTime >= 120000) {
+      // Count pending techs
+      pendingCount = 0;
+      for (resType = 1; resType < 6; resType += 1) {
+        if (!UEnabled(nEnabled, resType)) continue;
+        resTech = UTech(resType, bRome);
+        if (resTech == "") continue;
+        if (IsResearched(set, resTech)) continue;
+        pendingCount += 1;
+      }
+
+      // If there are pending techs, pick one randomly
+      if (pendingCount > 0) {
+        randomChoice = rand(pendingCount);
+        currentPending = 0;
+
+        for (resType = 1; resType < 6; resType += 1) {
+          if (!UEnabled(nEnabled, resType)) continue;
+          resTech = UTech(resType, bRome);
+          if (resTech == "") continue;
+          if (IsResearched(set, resTech)) continue;
+
+          // Is this the randomly chosen one?
+          if (currentPending == randomChoice) {
+            // Try to start research
+            EnvWriteString(set, "strTech", resTech);
+            set.AIRun("ESH_NeedTech.vs");
+
+            if (IsResearching(set, resTech)) {
+              EnvWriteInt(set, "nLastResearched", resType);
+              EnvWriteInt(set, "nLRCounter", 10);
+            }
+
+            // Update last research time
+            EnvWriteInt(set, "LastResearchTime_" + AIPlayer, currentTime);
+            break;
+          }
+          currentPending += 1;
+        }
+      } else {
+        // No pending techs, mark as all researched
+        EnvWriteInt(set, "AllTechsResearched_" + AIPlayer, 1);
+      }
+    }
+  }
+}
 
 // build counter units
 
@@ -198,30 +157,21 @@ nType = -2;
 if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
   int i, dummy;
   // Base weights favor advanced units (types 1-5) over basic (type 0)
-  int w0 = 0, w1 = 200, w2 = 1000, w3 = 500, w4 = 500, w5 = 0, total;
+  int w0 = 0, w1 = 500, w2 = 500, w3 = 0, w4 = 0, w5 = 0, total;
   int ec, eg, og;
 
-  if (bRome) {
-    // MOD: boost princeps
-    if (IsResearched(set, UTech(3, bRome))) {
-      w3 = 2500;
-    }
-  } else {
-    // MOD: boost ghorseman, strong
-    if (IsResearched(set, UTech(4, bRome))) {
-      w4 = 2500;
-    }
-    if (IsResearched(set, UTech(2, bRome))) {
-      w2 = 2500;
-    }
-  }
+  if (IsResearched(set, UTech(3, bRome)))
+    w3 = 800;
 
-  if (IsResearched(set, UTech(5, bRome))) // more boost for heavy units when researched
-    w5 = 3000;
+  if (IsResearched(set, UTech(4, bRome)))
+    w4 = 800;
+
+  if (IsResearched(set, UTech(5, bRome)))
+    w5 = 800;
   
   // RHastatus counters
   ec = EnemyCount(AIPlayer, UType(0, true));
-  if (ec >= 8) if (GetCmdCost(UTrainCmd(0, true), eg, dummy)) {
+  if (ec >= 15) if (GetCmdCost(UTrainCmd(0, true), eg, dummy)) {
     eg = eg * ec;
     if (bRome) {
       // RSpearman
@@ -250,7 +200,7 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
 
   // RGladiator counters
   ec = EnemyCount(AIPlayer, UType(2, true));
-  if (ec >= 5) if (GetCmdCost(UTrainCmd(2, true), eg, dummy)) {
+  if (ec >= 10) if (GetCmdCost(UTrainCmd(2, true), eg, dummy)) {
     eg = eg * ec;
     if (bRome) {
       // RHorseman
@@ -279,7 +229,7 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
 
   // RSpearman counters
   ec = EnemyCount(AIPlayer, UType(3, true));
-  if (ec >= 5) if (GetCmdCost(UTrainCmd(3, true), eg, dummy)) {
+  if (ec >= 10) if (GetCmdCost(UTrainCmd(3, true), eg, dummy)) {
     eg = eg * ec;
     if (bRome) {
       // RSpearman
@@ -308,7 +258,7 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
 
   // RScout counters
   ec = EnemyCount(AIPlayer, UType(4, true));
-  if (ec >= 5) if (GetCmdCost(UTrainCmd(4, true), eg, dummy)) {
+  if (ec >= 10) if (GetCmdCost(UTrainCmd(4, true), eg, dummy)) {
     eg = eg * ec;
     if (bRome) {
       // RSpearman (Princeps) - effective vs cavalry
@@ -395,7 +345,7 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
 
   // GSwordsman counters
   ec = EnemyCount(AIPlayer, UType(0, false));
-  if (ec >= 8) if (GetCmdCost(UTrainCmd(0, true), eg, dummy)) {
+  if (ec >= 15) if (GetCmdCost(UTrainCmd(0, true), eg, dummy)) {
     eg = eg * ec;
     if (bRome) {
       // RGladiator
@@ -424,7 +374,7 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
 
   // GArcher counters
   ec = EnemyCount(AIPlayer, UType(1, false));
-  if (ec >= 8) if (GetCmdCost(UTrainCmd(1, true), eg, dummy)) {
+  if (ec >= 15) if (GetCmdCost(UTrainCmd(1, true), eg, dummy)) {
     eg = eg * ec;
     if (bRome) {
       // RScout - cavalry vs archers
@@ -462,7 +412,7 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
 
   // GAxeman counters
   ec = EnemyCount(AIPlayer, UType(2, false));
-  if (ec >= 5) if (GetCmdCost(UTrainCmd(2, true), eg, dummy)) {
+  if (ec >= 10) if (GetCmdCost(UTrainCmd(2, true), eg, dummy)) {
     eg = eg * ec;
     if (bRome) {
       // RPraetorian - heavy infantry effective vs spearmen
@@ -486,7 +436,7 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
 
   // GSpearman counters
   ec = EnemyCount(AIPlayer, UType(3, false));
-  if (ec >= 5) if (GetCmdCost(UTrainCmd(3, true), eg, dummy)) {
+  if (ec >= 10) if (GetCmdCost(UTrainCmd(3, true), eg, dummy)) {
     eg = eg * ec;
     if (bRome) {
       // RGladiator
@@ -515,7 +465,7 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
 
   // GHorseman counters
   ec = EnemyCount(AIPlayer, UType(4, false));
-  if (ec >= 5) if (GetCmdCost(UTrainCmd(4, true), eg, dummy)) {
+  if (ec >= 10) if (GetCmdCost(UTrainCmd(4, true), eg, dummy)) {
     eg = eg * ec;
     if (bRome) {
       // RSpearman (Princeps) - effective vs cavalry
@@ -647,29 +597,6 @@ if (nLastResearched == 0) if (AIVar(AIPlayer, AIV_CounterUnits) != 0) {
   }
 }
 
-if (nType < -1) if (nLastResearched == 0) if (MilUnits(AIPlayer) >= 20)
-if (nLastResearchTime==0 || GetTime()>nLastResearchTime+60000) { // Reduced from 10 to 5 minutes between different unit types
-
-  for (nType = 1; nType < 6; nType += 1) {
-    int i;
-    if (nType == 1) if (!bRome) continue;
-    i = EnvReadInt(set, "TechSeq" + AIPlayer + "_" + nType);
-    if (!UEnabled(nEnabled, i)) continue;
-    strTech = UTech(i, bRome);
-
-    if (!IsResearched(set, strTech)) {
-      EnvWriteString(set, "strTech", strTech); set.AIRun("ESH_NeedTech.vs");
-      if (IsResearching(set, strTech)) {
-        EnvWriteInt(set, "nLastResearched", i);
-        EnvWriteInt(set, "nLRCounter", 20);
-				EnvWriteInt(set, "nLastResearchTime", GetTime());
-        return;
-      }
-      break;
-    }
-  }
-  nType = -2;
-}
 
 // Reduce army build delay for low-gold starts (less than 5000 gold)
 nInitialGold = EnvReadInt(set, "InitialGold");

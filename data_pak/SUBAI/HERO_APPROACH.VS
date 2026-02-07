@@ -8,12 +8,10 @@ this = This.AsHero();
 
 if (other.IsAlive())
   {
-    if (.InHolder || .PathTo(other, .FormRadius, 0) > .sight) {
     .FormSetupAndMoveTo (other, 20, 0, true);
     while (.HasPath ())
     {
       .FormKeepMoving (1500);
     }
-  }
   }
 

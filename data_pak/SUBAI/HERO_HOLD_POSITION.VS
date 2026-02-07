@@ -10,7 +10,7 @@ int lastHealthEffectTime;
 this = me.AsHero();
 lastHealthEffectTime = 0;
 
-pt = .posRH;
+pt = .pos;
 
 .FormSetupAndMoveTo(pt,0,0,true);
 while(.HasPath())

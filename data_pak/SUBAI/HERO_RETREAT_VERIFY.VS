@@ -3,4 +3,4 @@
 Hero this;
 this = This.AsHero();
 
-return (.EnemiesInSight() && pt.Dist(.posRH) > .sight/2);
+return (.EnemiesInSight() && pt.Dist(.pos) > .sight/2);

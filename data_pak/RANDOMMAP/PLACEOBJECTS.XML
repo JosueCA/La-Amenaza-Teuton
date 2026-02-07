@@ -183,20 +183,33 @@
 </ifdef>
 
 <ifdef id="trees">
-	<TreeGroup name="Trees" weight="100">
-	  <TreeSubGrp name="Broad-leaved" weight="100"/>
-	  <TreeSubGrp name="Pine trees" weight="100"/>
-	  <TreeSubGrp name="Dead trees" weight="30"/>
+	<TreeGroup name="Trees" weight="80">
+	  <TreeSubGrp name="Broad-leaved" weight="80"/>
+	  <TreeSubGrp name="Pine trees" weight="80"/>
+	  <!-- <TreeSubGrp name="Dead trees" weight="30"/> -->
 	</TreeGroup>
-	<TreeGroup name="Bushes" weight="50">
-	  <TreeSubGrp name="Green bushes" weight="100"/>
-	  <TreeSubGrp name="Dead bushes" weight="30"/>
+
+	<TreeGroup name="Bushes" weight="20">
+		<TreeSubGrp name="Broad-leaved" weight="50"/>
+	</TreeGroup>
+
+	<TreeGroup name="Skeletons" weight="20">
+		<TreeSubGrp name="Dead trees" weight="30"/>
+		<TreeSubGrp name="Dead bushes" weight="30"/>
+	  <TreeSubGrp name="SkeletonsSub" weight="30"/>
+	  <TreeSubGrp name="WetlandsSub" weight="10"/>
 	</TreeGroup>
 
 	<new-perlin id="trees" first-minor-oct="2" oct-count="3" persistence="0.3" cell-bits="6"/>
 
-		<PlaceTrees perlin-id="trees" thres="0.35" dens="0.15" inf-max="20" r1="3" r2="10"/>
+		<!-- Pase 1: Vegetación principal - Separación moderada -->
+		<PlaceTrees perlin-id="trees" thres="0.25" dens="0.25" inf-max="20" r1="4" r2="12"/>
 
+		<!-- Pase 2: Vegetación secundaria - Mayor separación -->
+		<PlaceTrees perlin-id="trees" thres="0.30" dens="0.20" inf-max="20" r1="1" r2="10"/>
+
+		<!-- Pase 3: Elementos dispersos - Máxima separación -->
+		<PlaceTrees perlin-id="trees" thres="0.35" dens="0.15" inf-max="16" r1="1" r2="10"/>
 	<del-perlin id="trees"/>
 </ifdef>
 

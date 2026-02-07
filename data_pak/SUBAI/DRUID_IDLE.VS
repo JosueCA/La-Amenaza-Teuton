@@ -57,9 +57,9 @@ while (1)
           Eval(.player, .pos, 3000, own, ally, enemy);
           //pr("[DRUID_IDLE] Player " + .player + " nearby forces - own:" + own + " ally:" + ally + " enemy:" + enemy);
 
-          if (enemy > 500) {
+          if (enemy > 1000) {
             //pr("[DRUID_IDLE] Player " + .player + " enough enemies detected, searching for target");
-            pt = .BestMDPos(0, 0, 1500, 1, true);
+            pt = .BestMDPos(0, 0, 3000, 1, true);
             //pr("[DRUID_IDLE] Player " + .player + " BestMDPos result: pt.x=" + pt.x + " pt.y=" + pt.y);
 
             if (pt.x >= 0) {
@@ -88,23 +88,16 @@ while (1)
             Eval(.player, .pos, 3000, own, ally, enemy);
             //pr("[DRUID_IDLE] Player " + .player + " nearby forces - own:" + own + " ally:" + ally + " enemy:" + enemy);
 
-            if (enemy > 500) {
+            if (enemy > 1000) {
               //pr("[DRUID_IDLE] Player " + .player + " enough enemies detected, searching for target");
-              pt = .BestMDPos(0, 0, 1500, 1, true);
+              pt = .BestMDPos(0, 0, 3000, 1, true);
               //pr("[DRUID_IDLE] Player " + .player + " BestMDPos result: pt.x=" + pt.x + " pt.y=" + pt.y);
 
               if (pt.x >= 0) {
-                //pr("[DRUID_IDLE] Player " + .player + " found valid target position");
-                mist_range = GetConst("MistRange");
-                if (.Goto(pt, mist_range, 1000, false, 1500)) {
-                  //pr("[DRUID_IDLE] Player " + .player + " SUMMONING GHOUL at (" + pt.x + "," + pt.y + ")");
-                  .AddCommand(true, "ghost", pt);
-                  Sleep(400);
-                  return;
-                } //else {
-                  //pr("[DRUID_IDLE] Player " + .player + " failed to reach target position");
-                //}
-                continue;
+                //pr("[DRUID_IDLE] Player " + .player + " found valid target position, summoning at druid position");
+                .AddCommand(true, "ghost", .pos);
+                Sleep(400);
+                return;
               } //else {
                 //pr("[DRUID_IDLE] Player " + .player + " no valid target found by BestMDPos");
               //}

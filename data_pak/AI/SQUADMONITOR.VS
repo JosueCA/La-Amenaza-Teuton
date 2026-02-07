@@ -109,16 +109,6 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
 							}
 			}
 
-	// Retreat idle units from tower range
-  if (sq.State == SS_IDLE || sq.State == SS_Wait) if (sq.Leader.command == "idle" || sq.Leader.command == "stand_position")
-		if (sq.LastFightTime() > GetTime()-3000) if (sq.GetLastAttacker().AsBuilding())
-			{
-				point pt;
-				pt = sq.pos - sq.GetLastAttacker().pos;
-				pt.SetLen(100);
-				sq.SetCmd(SS_IDLE, 0, SF_ADVCHOOSER, "move", sq.pos + pt);
-			}
-
 	// NEW: Detect enemies during movement and respond
 	if (sq.State == SS_Approach || sq.State == SS_ApproachWait) if (!sq.TestFlags(SF_PEACEFUL)) {
 		// Check if being attacked or enemies in sight

@@ -30,31 +30,20 @@ if(other.AsUnit.IsValid())
 					continue;
 				}
 				bld = sett.GetCentralBuilding();
-				if( bld.IsValid ) {
-					if( bld.IsHeirOf( "BaseRuins" )) {
-						Sleep(11000);
-					  	.AddCommand(true, "follow", other);
-						return;
-					} else if( bld.IsHeirOf("Catapult") ) {
-						Sleep(1000);
-						.AddCommand(true, "follow", other);
-						return;
-					}
-					pt = bld.GetEnterPoint(this);
-					while(other.IsAlive())
+				pt = bld.GetEnterPoint(this);
+				while(other.IsAlive())
+				{
+					if(other.AsUnit.InHolder)
 					{
-						if(other.AsUnit.InHolder)
+						.SetEntering(true);
+						if(.GotoEnter(pt, 0, 1000, false, -1))
 						{
-							.SetEntering(true);
-							if(.GotoEnter(pt, 0, 1000, false, -1))
-							{
-								sett.AddUnit(this);
-								sle = sett;
-								break;
-							}
+							sett.AddUnit(this);
+							sle = sett;
+							break;
 						}
-						else break;
 					}
+					else break;
 				}
 			}
 			else

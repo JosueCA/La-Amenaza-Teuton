@@ -23,7 +23,7 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
     Obj ruins;
     if (sq.State == SS_Ruins)
       sq.SetState(SS_IDLE);
-    ruins = FindRuins(sq.pos, 2000, sq.Leader.level);
+    ruins = FindRuins(sq.pos, 2500, sq.Leader.level);
     if (ruins.IsValid) if (rand(2)==1) {
       // sq.Leader.AsHero.DetachArmy;
       sq.SetCmd(SS_Ruins, 0, SF_ADVCHOOSER, "enter", ruins);
@@ -35,5 +35,5 @@ for (i = 1; i < NumSquads(AIPlayer); i += 1) [
   Sleep(200);
 ]
 
-Sleep(60000);
+Sleep(30000);
 }

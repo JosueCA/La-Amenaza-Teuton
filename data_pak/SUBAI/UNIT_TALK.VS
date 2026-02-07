@@ -15,6 +15,6 @@ if( other.IsAlive())
 }
 if( other.IsAlive())
 {
-	.Face( other.posRH );
+	.Face( other.pos );
 	.Idle( 3000 + rand( 200 ));
 }

@@ -20,7 +20,7 @@ while(.health > .maxhealth/10 && .inherentlevel < maxlevel)
 	{
 		if (.IsEnemy(u))
 			{
-				UserNotification("cannot train", "", .posRH, .player);
+				UserNotification("cannot train", "", .pos, .player);
 				return; // break the training; enemy approaching
 			}
 		//.pr("unit::train: approaching train partner");

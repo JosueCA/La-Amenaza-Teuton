@@ -13,6 +13,9 @@ if (set.gold < AIVar(AIPlayer, AIV_ExcessGold)) {
   EnvWriteInt(set, "FreezeArmyBuild", 0);
   return;
 }
+if (EnvReadInt(set, "FreezeArmyBuild") > 0) {
+  return;
+}
 
 if (set.IsRomeStronghold) strTech = "Gladiator Shows"; else strTech = "Fights";
 if (!IsResearched(set, strTech)) {

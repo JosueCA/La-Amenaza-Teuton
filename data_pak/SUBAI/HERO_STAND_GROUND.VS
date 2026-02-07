@@ -6,8 +6,8 @@ int   formed,i;
 
 this = me.AsHero();
 
-dest = GetVec( .posRH, pt, 16 );
-.FormSetupAndMoveTo(.posRH + dest,0,0,true);
+dest = GetVec( .pos, pt, 16 );
+.FormSetupAndMoveTo(.pos + dest,0,0,true);
 for( i = 0; i < .army.count; i += 1 )
 {
 	.army[i].AddCommand( false, "stand_position" );

@@ -6,7 +6,7 @@ bool b;
 
 this = me.AsUnit();
 master = master_obj.AsUnit();
-offs = .posRH - master.posRH;
+offs = .pos - master.pos;
 
 //.pr("unit::protect: protecting");
 

@@ -9,7 +9,7 @@ bld = Bld.AsBuilding();
 
 .SetEntering(true);
 pt = bld.GetEnterPoint(this);
-while(!.GotoEnter(pt, 0, 2000, false, 120000));
+while(!.GotoEnter(pt, 0, 1000, false, 10000));
 
 if (.restype == 1) { // food
   bld.settlement.SetFood(bld.settlement.food + .amount);

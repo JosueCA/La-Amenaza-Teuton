@@ -55,7 +55,7 @@ if (.IsValidTarget(u))
 		if (.DistTo(ptStart) > 1000)
 			break;
 	}
-	
+
 	while (!.Stop(1000));
 	//.pr("hero::engage: enemies killed");
 }

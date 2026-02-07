@@ -51,20 +51,20 @@ if (bRefuse) {
   return;
 }
 
-// If not enough gold, add the needed amount
+// Check if can afford research
 if (!set.CanAfford(strTech)) {
-  int neededGold; neededGold = gold - set.gold;
-  if (neededGold > 0) {
-    set.SetGold(set.gold + neededGold);
-    if (AIVar(AIPlayer, AIV_LogResearch) != 0)
-      pr("Player " + AIPlayer + " added " + neededGold + " gold to research " + strTech);
-  }
+  // Not enough gold, freeze army building to save gold
+  EnvWriteInt(set, "FreezeArmyBuild", 20);
+  if (AIVar(AIPlayer, AIV_LogResearch) != 0)
+    pr("Player " + AIPlayer + " freezing army to save " + (gold - set.gold) + " gold for " + strTech);
+  return;
 }
 
-// Research the tech
+// Has enough gold, unfreeze and research
+EnvWriteInt(set, "FreezeArmyBuild", 0);
+
 if (AIVar(AIPlayer, AIV_LogResearch) != 0)
   pr("Player " + AIPlayer + " is researching " + strTech);
 
-EnvWriteInt(set, "FreezeArmyBuild", 0);
 set.Research(strTech);
 

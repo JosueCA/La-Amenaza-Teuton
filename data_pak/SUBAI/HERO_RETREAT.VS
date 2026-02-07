@@ -25,4 +25,4 @@ this = This.AsHero();
 	}
 
 }
-Sleep(2000);
+Sleep(5000);

@@ -7,7 +7,7 @@
   this = This.AsHero ();
   lastHealthEffectTime = 0;
   //.pr("Hero::Patrol");
-  .AddCommand(false, "patrol", .posRH);
+  .AddCommand(false, "patrol", .pos);
 
   //.pr("Hero::patroling");
   {
@@ -55,7 +55,7 @@
 						// Monitoreo de salud durante combate
 						if (.health > 0 && .health < (.maxhealth / 2))
 						{
-							if (GetTime() - lastHealthEffectTime > 500)
+							if (GetTime() - lastHealthEffectTime > 250)
 							{
 								CreateFeedback("Damage2", .AsUnit());
 								lastHealthEffectTime = GetTime();
@@ -64,7 +64,7 @@
 					}
 				}
 				u = .BestTargetInSquadSight();
-			}											
+			}
 		    .FormSetupAndMoveTo (pt, 0, 0, true);
 		}
 		//.pr("Hero::Patrol::No Enemy");

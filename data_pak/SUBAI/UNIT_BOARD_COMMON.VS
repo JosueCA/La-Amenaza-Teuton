@@ -19,7 +19,7 @@ while( 1 )
 		{ if( .GotoEnter( pt, 120, 2000, true, -1 )) Sleep( 100 ); }
   if (!ship.IsAlive) return;
 	time += 2000;
-	dist = Dist( .posRH, ship.pos );
+	dist = Dist( .pos, ship.pos );
 	if( ( dist > 4000 && time > 12000 ) ||
 		( dist > 2000 && time > 8000 ) ||
 		( dist > 1000 && time > 4000 ) ||

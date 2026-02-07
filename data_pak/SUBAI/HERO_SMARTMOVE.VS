@@ -5,7 +5,7 @@ this = This.AsHero();
 
 if(.TimePastLastAttack() < 2500)
 {
-	if(pt.Dist(.posRH) < .sight/2)
+	if(pt.Dist(.pos) < .sight/2)
 	{
 		.pr("hero::move:moving hero around the fight");
 		while(!.Goto(pt, 0, 1000, false, -1))

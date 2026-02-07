@@ -10,7 +10,7 @@ if (g.settlement.IsStronghold) if (g.settlement.IsOwn(idPlayer)) {
 	nEnemyInStronghold = g.Eval(AI_STAYING + AI_COMING, idPlayer, AI_ENEMY);
 	if (nEnemyInStronghold > 0) {
 		// Absolute maximum priority - nothing is more important than defending home
-		return 99999; // enough??
+		return 99999;
 	}
 }
 
@@ -49,25 +49,6 @@ else if (g.settlement.IsTeutonTent)
 			// Extra boost if close to our stronghold
 			if (nODist < 6000)
 				{ nMul = nMul * 2; }
-		}
-		else // Own tent - use original logic
-		{
-			// Don't attack tents early in the game - wait for stronger army
-			if (GetTime < 120000) { nMul = 1; nDiv = 10; } // Very low priority in first 2 minutes
-			else if (GetTime < 30000) if (MilEval(idPlayer) < 3000) { nMul = 1; nDiv = 5; } // Low priority if weak army
-			// Don't fight for tents that are too far
-			else if (nODist > nEDist)
-				{
-					nMul = 1; nDiv = 1;
-					if (g.settlement.IsIndependent)
-						nDiv += 1;
-				}
-			if (nMul == 0)
-				{
-					Settlement s;
-					s = NearestStronghold(g.Center, idPlayer);
-					nMul = 5; nDiv = 4;
-				}
 		}
 	}
 else if (g.settlement.IsOutpost || g.settlement.IsShipyard)
