@@ -11,7 +11,7 @@ bool bWasInHolder;
 this = me.AsUnit();
 //.pr("unit::guard: stoping");
 while (!.Stop(1000));
-pt = .posRH;
+pt = .pos;
 //.pr("unit::guard: stoped");
 {
 	//.pr("unit: guard: guarding location");

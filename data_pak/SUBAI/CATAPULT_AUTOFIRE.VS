@@ -14,7 +14,6 @@ sleeptime = 1000;
 
 while (.IsAlive)
 {
-
 	if (.settlement.UnitsCount <= 0) break;
   target = .GetCurrentTarget;
 	if (!target.IsValid) target = .BestTarget();
@@ -23,9 +22,6 @@ while (.IsAlive)
 		bRotated = false;
 		while(target.IsAlive && .IsEnemy(target) && .IsValidTarget(target))
 		{
-			if (.CmdCount() > 1)
-				return;
-
 			ttw = .AttackWait;
 			if (ttw > 0) Sleep(ttw);
 			

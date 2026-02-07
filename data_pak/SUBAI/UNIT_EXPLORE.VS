@@ -15,7 +15,7 @@ if (This.AsHero().IsValid()) {
 //if the user gives an impassable or unreachable point for goto
 while (1) {
 //	pr("goto start");
-	ptOld = .posRH;
+	ptOld = .pos;
 	b = .Goto(pt, 0, 3000, true, -1);
 	if (b) break; //reached the point
 	if (.pos == ptOld) //not moved for a while
@@ -31,10 +31,10 @@ while (1) {
 	if (pt.x == -1) break; //cannot go anywhere
 	while (1) {
 		//pr("going...");
-		ptOld = .posRH;
+		ptOld = .pos;
 		b = .Goto(pt, 0, 5000, true, -1);
 		if (b) break;
-		if (ptOld == .posRH)
+		if (ptOld == .pos)
 			break; //stuck again :(
 	}
 //	if (b) pr("reached!"); else pr("stuck!");

@@ -15,9 +15,9 @@
   		settlement_gold = "0"
   		settlement_maxfood = "5000"
   		settlement_maxgold = "5000"
-  		population = "12"
+  		population = "30"
   		efficiency = "1"
-  		max_population = "20"
+  		max_population = "30"
   		max_units = "0"
   		settlement_icon_name = "assets/interface/settlement icon"
 	/>

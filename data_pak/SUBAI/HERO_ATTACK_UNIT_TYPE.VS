@@ -8,18 +8,15 @@ ObjList ol;
 this = me.AsHero;
 tgt = target.AsUnit;
 class = tgt.class;
-pt = tgt.posRH;
+pt = tgt.pos;
 
 
 .FormSetupAndMoveTo (pt, 0, 0, false);
-// Wait for army to exit
-while(!.IsArmyOutside())
-	.FormKeepMoving(500);
 while(.HasPath())
 {
 	if(tgt.IsAlive)
 	{
-		pt = tgt.posRH;
+		pt = tgt.pos;
 	}
 	if(.DistTo(pt) < .sight)
 	{

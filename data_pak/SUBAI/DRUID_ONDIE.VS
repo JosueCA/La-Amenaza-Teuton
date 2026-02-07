@@ -7,9 +7,6 @@ int HealthDistrubute, Give, i;
 
 this = THIS.AsDruid;
 
-if (.InHolder())
-	return;
-
 if(EnvReadString(.player, "Mass Heal") != "researched")
 	return;
 

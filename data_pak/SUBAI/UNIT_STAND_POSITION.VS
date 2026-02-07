@@ -7,14 +7,12 @@ bool  bSleeped;
 
 this = me.AsUnit();
 while( ! .Stop( 1000 ));
-pt = .posRH;
+pt = .pos;
 range = 120;
 
 while( ! .Stop( 200 ));
-while(.IsAlive)
+while( 1 )
 {
-	if (.CmdCount() > 1)
-		break;
 	if( .IsRanged )
 	{
 		u = .BestTargetInRange( pt, .range );
@@ -57,7 +55,7 @@ while(.IsAlive)
 		}
 	}
 	.pr("main loop");
-	if( ! u.IsAlive && ( pt.x != .posRH.x || pt.y != .posRH.y ))
+	if( ! u.IsAlive && ( pt.x != .pos.x || pt.y != .pos.y ))
 	{
 		while( ! .Goto( pt, 0, 2000, false, -1 ));
 	}

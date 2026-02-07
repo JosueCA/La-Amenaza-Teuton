@@ -1,9 +1,19 @@
 // void, Obj This
 
-Hero this;
-this = This.AsHero ();
+	Hero this;
+	Obj u;
+	point pt;
 
-while (!.BestTargetInSquadSight.IsValid);
-
-.AddCommand(true, "advance", .posRH);
-.AddCommand(true, "engage"); 
+	this = This.AsHero ();
+	pt = .pos;
+	while(1)
+	{
+		u = .BestTargetInSquadSight();
+		if(u.IsValid())
+		{
+			.AddCommand(true, "advance");
+			.AddCommand(true, "engage");
+			return;
+		}
+	}
+ 

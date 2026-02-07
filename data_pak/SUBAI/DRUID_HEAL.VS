@@ -18,10 +18,7 @@ amount = GetConst("HealAmount") + .level;
 		if( tgt.AsShip().IsValid()) return;
 		while (tgt.IsAlive()) 
 		{
-			if( !.IsValid ) 
-				break;
-			if( !.IsAlive )
-				break;
+
 			if(	.IsEnemy(tgt) || 
 				tgt.InHolder  ||
 				!.CanSee(tgt) || 

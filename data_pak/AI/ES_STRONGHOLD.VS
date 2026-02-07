@@ -4,37 +4,42 @@ int        i;
 int        AIPlayer;
 Squad      squad;
 bool       bHireHero, bMilUnits;
-int        nArmyBuilds = 0;
+int        nArmyBuilds;
 int        nFreezeArmyBuild;
 bool       bAssUnderFire, bEnemies;
 int        nAssUnderFire;
 GAIKA      g;
 int        own, ally, enemy;
-int        train;
-bool       bExitTraining;
-int        nTrainLevel;
-int        nTrainingStartTime;
+int        researchRoll;
 
+nArmyBuilds = 0;
 g = set.GetGaika();
 AIPlayer = set.player;
 EnvWriteInt(set, "gSellFood", 0);
 EnvWriteInt(set, "nArmyBuilds", nArmyBuilds);
 
+// Initialize NeedTraining to prevent ESH_BUILDARMY.VS from reading undefined value
+EnvWriteInt(AIPlayer, "NeedTraining", 0);
 
 while (set.player == AIPlayer) {
-// Apply difficulty bonus gold and food
-  i = AIVar(AIPlayer, AIV_GoldBonus);
-  if (i > 0) set.SetGold(set.gold + i);
-  i = AIVar(AIPlayer, AIV_FoodBonus);
-  if (i > 0) set.SetFood(set.food + i);
 
 // freeze army build counter
   nFreezeArmyBuild = EnvReadInt(set, "FreezeArmyBuild");
   if (nFreezeArmyBuild > 0) {
-    nFreezeArmyBuild -= 1;
-    EnvWriteInt(set, "FreezeArmyBuild", nFreezeArmyBuild);
-    if (nFreezeArmyBuild == 0) if (AIVar(AIPlayer, AIV_LogFreezeArmy) != 0)
-      pr("Player " + AIPlayer + " enables army build (gave up)");
+    // Only decrement if has enough gold reserved for tech
+    if (set.gold >= AIVar(AIPlayer, AIV_TechReserve)) {
+      nFreezeArmyBuild -= 1;
+      EnvWriteInt(set, "FreezeArmyBuild", nFreezeArmyBuild);
+      if (nFreezeArmyBuild == 0) if (AIVar(AIPlayer, AIV_LogFreezeArmy) != 0)
+        pr("Player " + AIPlayer + " enables army build (gave up)");
+    } else {
+      // Apply difficulty bonus gold and food
+      i = AIVar(AIPlayer, AIV_GoldBonus);
+      if (i > 0) set.SetGold(set.gold + i);
+
+      i = AIVar(AIPlayer, AIV_FoodBonus);
+      if (i > 0) set.SetFood(set.food + i);
+    }
   }
 
 // check "ass under fire"
@@ -60,13 +65,15 @@ while (set.player == AIPlayer) {
   bMilUnits = true;
   if (AIVar(AIPlayer, AIV_BuildArmy) == 0) {
     bMilUnits = false;
+  } else if(nFreezeArmyBuild > 0) {
+    bMilUnits = false;
   } else {
     i = AIVar(AIPlayer, AIV_MaxMilUnits);
     if (i < 0) ;
     else if (i == 0) bMilUnits = false;
     else if (MilUnits(AIPlayer) >= i) bMilUnits = false;
 
-    if (set.food < 200) bMilUnits = false;
+    if (set.food < 500) bMilUnits = false;
 
     if (bMilUnits) {
       i = AIVar(AIPlayer, AIV_MaxMilEval);
@@ -75,17 +82,27 @@ while (set.player == AIPlayer) {
       else if (MilEval(AIPlayer) >= i) bMilUnits = false;
     }
   }
+
+  // Early exploration override
+  if(EnvReadInt(set, "EarlyExploreDone") == 0) {
+    bMilUnits = true;
+  }
+
 // hero support
   bHireHero = false;
   if (bMilUnits) {
     SquadList  sl;
 	  bHireHero = true;
 	  g.GetSquads( sl, AI_STAYING + AI_COMING, AIPlayer, AI_OWN );
-	  while (!sl.EOL) {
-		  squad = sl.Cur;	sl.Next;
+    sl.Lock;
+		while( sl.EOL == false ) {
+		  squad = sl.Cur;
 		  if (squad.Leader.AsHero.IsValid()) if (squad.Size < 41)
 		    {	bHireHero = false;	break; }
+
+      sl.Next;
 	  }
+    sl.Unlock;
     if (bHireHero) { 
       int gold, food;
       str cmd; if (set.IsRomeStronghold) cmd = "hireheroR"; else cmd = "hireheroG";
@@ -104,7 +121,9 @@ while (set.player == AIPlayer) {
   if (bMilUnits) if (!bHireHero) {
     Barrack    brk;
     str cmd;
-    int nCount; EnvReadInt(set, "nBuildCount");
+    int nCount;
+    
+    nCount = EnvReadInt(set, "nBuildCount");
     if (nCount >= 0) { // < 0 means retry with the last
       EnvWriteInt(set, "nBuildCount", 0);
       set.AIRun("ESH_BuildArmy.vs");
@@ -114,11 +133,12 @@ while (set.player == AIPlayer) {
     if (!brk.IsValid) nCount = 0;
     if (nCount > 0) cmd = UTrainCmd(EnvReadInt(set, "nBuildType"), set.IsRomeStronghold);
 
-    // Check FreezeArmyBuild to allow saving gold for research
-    if (nCount > 0) if (!bAssUnderFire)
-      if (!set.CanAfford(cmd, nCount)) { nCount = 0; EnvWriteInt(set, "nBuildCount", -1); }
-      else if (nFreezeArmyBuild != 0)
-        nCount = 0;
+    if (nCount > 0) {
+        if (!set.CanAfford(cmd, nCount)) {
+            nCount = 0; 
+            EnvWriteInt(set, "nBuildCount", -1); 
+        }
+    }
 
     if (nCount > 0) {
       int   gold, food;
@@ -130,35 +150,41 @@ while (set.player == AIPlayer) {
         set.SpentGoldOnArmy(gold * nCount);
 
       //pr("Player " + AIPlayer + ": (" + nArmyBuilds + ") " + cmd + "(" + nCount + ")");
-      for (i = 0; i < nCount; i += 1) brk.ExecCmd( cmd, ptDummy, objDummy, false );
+      for (i = 0; i < nCount; i += 1) {
+        if (brk.IsValid) {
+          brk.ExecCmd( cmd, ptDummy, objDummy, false );
+        }
+      }
     }
   }
 
-// repair
+  // repair
 	if (!bEnemies)
 		set.RepairAll;
 
-// barrack upgrade
-	if (AIVar(AIPlayer, AIV_UpgradeBarracks) != 0) if (!bAssUnderFire && (set.gold >= 500))
-		set.UpgradeBestBarrack(8);
-
-// food donate
+  // food donate
   i = AIVar(AIPlayer, AIV_DonateFood);
+  if (i > 0)
     set.AIRun("ESH_DonateFood.vs");
 
-// food trade
+  // food trade
   i = AIVar(AIPlayer, AIV_TradeFood);
   if (i > 0) if (set.food >= i)
     set.AIRun("ESH_FoodTrade.vs");
 
-// gold trade
+  // gold trade
   i = AIVar(AIPlayer, AIV_TradeGold);
   if (i > 0)
     set.AIRun("ESH_GoldTrade.vs");
 
+if (!(nFreezeArmyBuild > 0)) {
+// barrack upgrade
+	if (AIVar(AIPlayer, AIV_UpgradeBarracks) != 0) if (!bAssUnderFire && (set.gold >= 500))
+		set.UpgradeBestBarrack(8);
+
 // training
-	train = AIVar(AIPlayer, AIV_Training);
-	if (train > 0) if (!bAssUnderFire) if (MilUnits(AIPlayer) >= train)
+	i = AIVar(AIPlayer, AIV_Training);
+	if (i > 0) if (!bAssUnderFire) if (MilUnits(AIPlayer) >= i)
 		set.AIRun("ESH_ResearchTraining.vs");
 
 	// arena units and tavern research - always run regardless of training mode
@@ -176,19 +202,19 @@ while (set.player == AIPlayer) {
 		}
 	}
   
-// FIX: Both scripts use 'research', they fight with each other for research
-if(rand(6)==1) {
-  // combat magic (lowest priority)
-  i = AIVar(AIPlayer, AIV_CombatMagic);
-  if (i > 0) if (MilUnits(AIPlayer) >= AIVar(AIPlayer, AIV_Training_CombatMagic))
-    set.AIRun("ESH_CombatMagic.vs");
-} else {
-  // druids
-  i = AIVar(AIPlayer, AIV_Druids);
-  if (i > 0) if (bMilUnits) if (MilUnits(AIPlayer) >= AIVar(AIPlayer, AIV_Training_CombatMagic))
-    set.AIRun("ESH_Druids.vs");
+  // FIX: Both scripts use 'research', they fight with each other for research
+  if(rand(6)==1) {
+    // combat magic (lowest priority)
+    i = AIVar(AIPlayer, AIV_CombatMagic);
+    if (i > 0) if (MilUnits(AIPlayer) >= AIVar(AIPlayer, AIV_Training_CombatMagic))
+      set.AIRun("ESH_CombatMagic.vs");
+  } else {
+    // druids
+    i = AIVar(AIPlayer, AIV_Druids);
+    if (i > 0) if (bMilUnits) if (MilUnits(AIPlayer) >= AIVar(AIPlayer, AIV_Training_CombatMagic))
+      set.AIRun("ESH_Druids.vs");
+  }
 }
-
   
 // sleep  
 	Sleep(AIVar(AIPlayer, AIV_Sleep_ES));

@@ -18,7 +18,7 @@ while (1)
 	if (!.HasPath) break;
 	if (!target.IsAlive) break;
 	if (.DistTo(target) <= .sight * 2 / 3) break;
-	.FormKeepMoving(1500);	
+	.FormKeepMoving(1500);
 }
 }
 
