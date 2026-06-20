@@ -11,7 +11,7 @@
 
 #### - AnotherWar
 <p align="center">
-    <img src="ScenariosMod/AnotherWar/AnotherWar_2026_v1.png" style="width: 100%;  max-width: 1024px;max-height:576px;" alt="AnotherWar">
+    <img src="ScenariosMod/AnotherWar/Another War.png" style="width: 100%;  max-width: 1024px;max-height:576px;" alt="AnotherWar">
 </p>
 
 #### - Colina Romana MOD
