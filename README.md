@@ -28,3 +28,8 @@
 <p align="center">
     <img src="ScenariosMod/La batalla de Stonehenge MOD/La batalla de Stonehenge MOD.png" style="width: 100%;  max-width: 1024px;max-height:576px;" alt="La batalla de Stonehenge MOD">
 </p>
+
+#### - Tierras Castigadas MOD
+<p align="center">
+    <img src="ScenariosMod/Tierras Castigadas MOD/Tierras Castigadas MOD.png" style="width: 100%;  max-width: 1024px;max-height:576px;" alt="Tierras Castigadas MOD">
+</p>
