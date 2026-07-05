@@ -20,6 +20,9 @@
 - Aumentada velocidad de la unidad
 ```
 
+### Mulas
+- La limpieza de mulas (wagon_idle.vs) se ha limitado a mulas de comida con menos de 100 unidades
+
 ### Map10 ARENA
 - Los Gladiadores deben ganar contra los lobos en el duelo inicial
 M10_Main - seq0.vs
