@@ -1,6 +1,9 @@
 # Compatiblidad con aventuras
 #### Este MOD no es 100% compatible con las aventuras. Para disfrutar de la experiencia original en Full HD, utilizar el parche independiente para el juego.
 
+## "Tutorial"
+- El tutorial se puede completar
+
 ## "Celtic Kings Adventure"
 
 - Copiar "Celtic Kings Adventure DEV.BFHP" como "Celtic Kings Adventure.BFHP" para disponer de los objetos de Lárax y saltar rápidamente entre escenarios (experimental, para poder debuguear fallos)
