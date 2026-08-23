@@ -10,7 +10,7 @@
 ### Escenarios para el mod
 
 ### 2026/08/23
-Los mapas con IA no personalizable requiere la versión del mod La-Amenaza-Teuton-v0.6.3 o superior (Con el nuevo perfil 'LAT' de IA)
+Los mapas con IA no personalizable requieren la versión del mod La-Amenaza-Teuton-v0.6.3 o superior (Con el nuevo perfil 'LAT' de IA)
 
 #### - AnotherWar
 <p align="center">
