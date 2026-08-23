@@ -9,6 +9,9 @@
 
 ### Escenarios para el mod
 
+### 2026/08/23
+Los mapas con IA no personalizable requiere la versión del mod La-Amenaza-Teuton-v0.6.3 o superior (Con el nuevo perfil 'LAT' de IA)
+
 #### - AnotherWar
 <p align="center">
     <img src="ScenariosMod/AnotherWar/Another War.png" style="width: 100%;  max-width: 1024px;max-height:576px;" alt="AnotherWar">
